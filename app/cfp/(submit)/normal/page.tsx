@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div className="container">一般議程</div>;
+  return <div>一般議程</div>;
 }

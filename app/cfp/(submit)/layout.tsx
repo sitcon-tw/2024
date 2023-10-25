@@ -6,8 +6,8 @@ export default function SubmitLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-2 container">
-      <div className="w-[150px] border flex flex-col">
+    <div className="flex gap-6 container">
+      <div className="w-[150px] border hidden lg:flex flex-col">
         <Link href="/cfp/submit">投稿頁面</Link>
         <Link href="/cfp/normal">一般議程</Link>
         <Link href="/cfp/undefined">開放式議程</Link>

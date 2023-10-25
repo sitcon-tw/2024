@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div className="container">CoC</div>;
+  return <div>CoC</div>;
 }
