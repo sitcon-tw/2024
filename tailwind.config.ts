@@ -17,7 +17,11 @@ const config: Config = {
         xl: "1280px",
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Lato", "Noto Sans TC", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
