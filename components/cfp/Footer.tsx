@@ -9,6 +9,7 @@ import {
   faTelegramPlane,
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 function SocialLink({
   href,
   icon,
@@ -35,14 +36,59 @@ export default function Footer() {
   return (
     <footer className="bg-[#F1F1F1]">
       <div className="container">
-        <div className="flex items-end justify-between gap-2 py-8"></div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12">
+          <div className="flex flex-col gap-2">
+            <div className="text-[#FF3495] font-bold text-lg">連結</div>
+            <Link href="/cfp/" className="link">
+              首頁
+            </Link>
+            <Link href="/cfp/submit" className="link">
+              議程與徵稿
+            </Link>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="text-[#AC24FF] font-bold text-lg">支持我們</div>
+            <a href="#" className="link">
+              我要贊助
+            </a>
+            <a href="#" className="link">
+              索取贊助徵求書
+            </a>
+          </div>
+          <div className="flex flex-col gap-2 col-span-2 lg:col-span-1">
+            <div className="text-[#65B5FF] font-bold text-lg">歷年主題網站</div>
+            <div className="flex flex-wrap gap-2">
+              {Array.from({ length: 11 }).map((_, i) => (
+                <a
+                  href={`https://sitcon.org/${2013 + i}`}
+                  className="link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {2013 + i}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="text-[#0CE295] font-bold text-lg">聯絡我們</div>
+            <a href="mailto:contact@sitcon.org" className="link">
+              contact@sitcon.org
+            </a>
+          </div>
+        </div>
         <div className="flex lg:items-end flex-col lg:flex-row lg:justify-between gap-8 py-8 border-t border-[#E5C366]">
-          <div>
-            <img src="/sitcon_logo.svg" alt="SITCON Logo" className="h-10" />
-            <br />
-            學生計算機年會
-            <br />
-            Students' Information Technology Conference
+          <div className="lg:flex lg:items-center lg:gap-4">
+            <img
+              src="/sitcon_logo.svg"
+              alt="SITCON Logo"
+              className="h-10 lg:-translate-y-1.5"
+            />
+            <div className="mt-4 lg:mt-0">
+              學生計算機年會
+              <br />
+              Students' Information Technology Conference
+            </div>
           </div>
           <div className="flex gap-4 items-center">
             <SocialLink href="https://sitcon.org/fb" icon={faFacebookF} />
