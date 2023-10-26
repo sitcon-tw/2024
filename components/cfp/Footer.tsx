@@ -64,6 +64,7 @@ export default function Footer() {
                   className="link"
                   target="_blank"
                   rel="noreferrer"
+                  key={i}
                 >
                   {2013 + i}
                 </a>
