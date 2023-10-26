@@ -34,8 +34,9 @@ function SocialLink({
 export default function Footer() {
   return (
     <footer className="bg-[#F1F1F1]">
-      <div className="container py-8">
-        <div className="flex items-end justify-between gap-2">
+      <div className="container">
+        <div className="flex items-end justify-between gap-2 py-8"></div>
+        <div className="flex lg:items-end flex-col lg:flex-row lg:justify-between gap-8 py-8 border-t border-[#E5C366]">
           <div>
             <img src="/sitcon_logo.svg" alt="SITCON Logo" className="h-10" />
             <br />
@@ -43,7 +44,7 @@ export default function Footer() {
             <br />
             Students' Information Technology Conference
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-4 items-center">
             <SocialLink href="https://sitcon.org/fb" icon={faFacebookF} />
             <SocialLink href="https://sitcon.org/twitter" icon={faXTwitter} />
             <SocialLink href="https://sitcon.org/yt" icon={faYoutube} />
