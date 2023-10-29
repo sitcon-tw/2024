@@ -5,30 +5,52 @@ function ColorNumber({ n, color }: { n: number; color: string }) {
 }
 
 type EventProp = {
-  time: [number, number, number | string]
+  time: [number, string, number | string]
+  // [2023, 'Nov.', 19]
+  // [2023, 'Nov.', 下旬]
 
-  endTime?: [number, number, number | string]
+  endTime?: [number, string, number | string]
 
-  type: ('general' | 'undefined' | 'poster')[]
+  type: ('general' | 'undefined' | 'poster' | 'SITCON')[]
 
   name: string
 
   desc?: string
 }
 
-function Event({ time, endTime, type, desc }: EventProp) {
+function Event({ time, endTime, type, name, desc }: EventProp) {
   const typeColor = {
-    'general': '#AC24FF',
-    'undefined': '#FF3495',
-    'poster': '#0CE295',
+    'general': 'bg-[#AC24FF]',
+    'undefined': 'bg-[#FF3495]',
+    'poster': 'bg-[#0CE295]',
+    'SITCON': 'bg-[#46A5FD]',
   }
 
-  return <div>
-    <div>
-      {type.map(type => <div key={type} className={`bg-[${typeColor[type]}] w-[5px] h-[100px]`} />)}
+  function zero(n: number | string) {
+    if (typeof n === 'string') return n
 
+    if (n < 10) return `0${n}`
+    return `${n}`
+
+  }
+
+  return <div className="h-[110px] w-[512px] flex border border-[0.5px] border-[#D9D9D9] rounded shadow-[0px_4px_8px_0px_#0000001A] my-6">
+    <div className="flex flex-col">
+      {type.map(type => <div key={type} className={`${typeColor[type]} w-[5px] flex-grow first:rounded-tl-[3.5px] last:rounded-bl-[3.5px]`} />)}
     </div>
-
+    <div className="flex flex-col items-center p-2">
+      <span className="text-[#E5C366]">{time[0]}</span>
+      <span className="text-[#E5C366] text-2xl">{time[1]}</span>
+    </div>
+    <div className={`text-[#E5C366] flex flex-col items-center py-2 px-1 ${typeof time[2] === 'string' ? 'text-2xl' : 'text-5xl'}`}>
+      <span>{zero(time[2])}</span>
+      {/* todo: endTime */}
+    </div>
+    {/* todo: align */}
+    <div className="text-[#808080] my-2 mx-4 flex flex-col">
+      <span className="text-[32px] font-bold">{name}</span>
+      <span>{desc}</span>
+    </div>
   </div>
 }
 
@@ -41,10 +63,10 @@ export default function Page() {
       <div className="flex flex-col items-center gap-4">
         <p>距離投稿截止還有：</p>
         <div className="w-full border-[#E5C366] border-2 rounded-full py-[50px] px-[100px] grid grid-cols-4">
-          <ColorNumber n={99} color={'#FF3495'} />
-          <ColorNumber n={99} color={'#AC24FF'} />
-          <ColorNumber n={99} color={'#46A5FD'} />
-          <ColorNumber n={99} color={'#0CE295'} />
+          <span className="text-[#FF3495] text-6xl text-center">99</span>
+          <span className="text-[#46A5FD] text-6xl text-center">99</span>
+          <span className="text-[#0CE295] text-6xl text-center">99</span>
+          <span className="text-[#AC24FF] text-6xl text-center">99</span>
           <span className="font-medium text-[#E5C366] text-center">
             DAYS
           </span>
@@ -85,7 +107,13 @@ export default function Page() {
         </div>
 
         <div>
-          {/* <Event time={[2023, 1, 19]} name="開始徵稿" type={['general', 'undefined', 'poster']} /> */}
+          <Event time={[2023, 'Nov.', 19]} name="開始徵稿" type={['general', 'undefined', 'poster']} />
+          <Event time={[2024, 'Jan.', 20]} name="投稿截止" type={['general', 'undefined', 'poster']} desc="至 2024 年 1 月 20 日（六）23:59" />
+          <Event time={[2024, 'Jan.', '下旬']} name="稿件錄取通知" type={['general', 'undefined', 'poster']} />
+          <Event time={[2024, 'Jan.', '下旬']} endTime={[2024, 'Feb.', '中旬']} name="試講" type={['general', 'undefined']} />
+          <Event time={[2024, 'Feb.', 18]} name="錄取海報檔案上傳截止" type={['poster']} />
+          <Event time={[2024, 'Mar.', 8]} name="彩排" type={['general', 'undefined']} />
+          <Event time={[2024, 'Mar.', 9]} name="年會" type={['SITCON']} />
 
         </div>
 
