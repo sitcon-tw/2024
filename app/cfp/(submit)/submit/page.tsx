@@ -1,6 +1,6 @@
 'use client'
 import Title from '@/components/cfp/Title'
-import Event, { EventType, typeColor } from '@/components/cfp/Event'
+import Event, { EventType } from '@/components/cfp/Event'
 import { useEffect, useReducer, useState } from 'react'
 
 function Countdown() {
@@ -83,7 +83,7 @@ export default function Page() {
       <Countdown />
       {/* submit botton */}
       <div className="flex justify-center">
-        <button className="bg-[#E5C366] text-white h-[60px] w-[196px] rounded-full">
+        <button className="bg-[#E5C366] text-white h-[60px] w-[196px] rounded-full hover:shadow-[0px_4px_16px_0px_#E5C366CC] active:bg-[#D6A41D] active:shadow-[0px_2px_4px_0px_#E5C36699] focus:border focus:border-[#AC24FF] disabled:text-[#808080] disabled:bg-[#BFBFBF]">
           立刻投稿
         </button>
       </div>
@@ -94,8 +94,8 @@ export default function Page() {
           <h2 className="text-[32px] font-medium">時程表</h2>
           <button
             className={`text-[#AC24FF] rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border ${type === 'general'
-                ? 'bg-[#AC24FF1A] border-[#AC24FF1A]'
-                : 'bg-white  border-[#AC24FF]'
+              ? 'bg-[#AC24FF1A] border-[#AC24FF1A]'
+              : 'bg-white  border-[#AC24FF]'
               }`}
             onClick={() => toggleTyoe('general')}
           >
@@ -103,8 +103,8 @@ export default function Page() {
           </button>
           <button
             className={`text-[#FF3495] rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border ${type === 'undefined'
-                ? 'bg-[#FF34951A] border-[#FF34951A]'
-                : 'bg-white  border-[#FF3495]'
+              ? 'bg-[#FF34951A] border-[#FF34951A]'
+              : 'bg-white  border-[#FF3495]'
               }`}
             onClick={() => toggleTyoe('undefined')}
           >
@@ -112,8 +112,8 @@ export default function Page() {
           </button>
           <button
             className={`text-[#0CE295] rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border ${type === 'poster'
-                ? 'bg-[#0CE2951A] border-[#0CE2951A]'
-                : 'bg-white  border-[#0CE295]'
+              ? 'bg-[#0CE2951A] border-[#0CE2951A]'
+              : 'bg-white  border-[#0CE295]'
               }`}
             onClick={() => toggleTyoe('poster')}
           >
