@@ -1,6 +1,6 @@
 'use client'
 import Title from '@/components/cfp/Title'
-import Event, { EventType } from '@/components/cfp/Event'
+import Event, { EventType, typeColor } from '@/components/cfp/Event'
 import { useEffect, useReducer, useState } from 'react'
 
 function Countdown() {
@@ -93,19 +93,28 @@ export default function Page() {
         <div className="flex items-center gap-6">
           <h2 className="text-[32px] font-medium">時程表</h2>
           <button
-            className="bg-[#AC24FF1A] text-[#AC24FF] rounded-full w-[110px] h-[40px] flex justify-center items-center"
+            className={`text-[#AC24FF] rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border ${type === 'general'
+                ? 'bg-[#AC24FF1A] border-[#AC24FF1A]'
+                : 'bg-white  border-[#AC24FF]'
+              }`}
             onClick={() => toggleTyoe('general')}
           >
             一般議程
           </button>
           <button
-            className="text-[#FF3495] border border-[#FF3495] rounded-full w-[110px] h-[40px] flex justify-center items-center"
+            className={`text-[#FF3495] rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border ${type === 'undefined'
+                ? 'bg-[#FF34951A] border-[#FF34951A]'
+                : 'bg-white  border-[#FF3495]'
+              }`}
             onClick={() => toggleTyoe('undefined')}
           >
             開放式議程
           </button>
           <button
-            className="text-[#0CE295] border border-[#0CE295] rounded-full w-[110px] h-[40px] flex justify-center items-center"
+            className={`text-[#0CE295] rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border ${type === 'poster'
+                ? 'bg-[#0CE2951A] border-[#0CE2951A]'
+                : 'bg-white  border-[#0CE295]'
+              }`}
             onClick={() => toggleTyoe('poster')}
           >
             海報
