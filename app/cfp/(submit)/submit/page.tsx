@@ -76,7 +76,7 @@ export default function Page() {
   )
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 mb-12">
       <Title content="投稿頁面" />
 
       {/* count down */}
