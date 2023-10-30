@@ -11,14 +11,14 @@ export type EventProp = {
 
     type: EventType[]
 
-    selectedType: EventType | ''
+    selectedType?: EventType | ''
 
     name: string
 
     desc?: string
 }
 
-export default function Event({ time, endTime, type, selectedType, name, desc }: EventProp) {
+export default function jkEvent({ time, endTime, type, selectedType, name, desc }: EventProp) {
     function Time({ time }: { time: EventTime }) {
         return (
             <div className="flex h-min px-2 first:pt-2 last:pb-2">
@@ -51,7 +51,7 @@ export default function Event({ time, endTime, type, selectedType, name, desc }:
         return `${n}`
     }
 
-    const isGray = type.includes('SITCON') || selectedType === '' || type.includes(selectedType)
+    const isGray = selectedType === undefined || (type.includes('SITCON') || selectedType === '' || type.includes(selectedType))
 
     return (
         <div className={`min-h-[110px] w-[512px] flex border border-[#D9D9D9] rounded shadow-[0px_4px_8px_0px_#0000001A] my-6 ${isGray ? '' : 'grayscale'}`}>
