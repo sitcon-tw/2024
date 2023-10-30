@@ -93,27 +93,27 @@ export default function Page() {
         <div className="flex items-center gap-6">
           <h2 className="text-[32px] font-medium">時程表</h2>
           <button
-            className={`text-[#AC24FF] rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border ${type === 'general'
-              ? 'bg-[#AC24FF1A] border-[#AC24FF1A]'
-              : 'bg-white  border-[#AC24FF]'
+            className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-[#A441E0] ${type === 'general'
+              ? 'text-[#A441E0] bg-white'
+              : 'text-white bg-[#A441E0]'
               }`}
             onClick={() => toggleTyoe('general')}
           >
             一般議程
           </button>
           <button
-            className={`text-[#FF3495] rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border ${type === 'undefined'
-              ? 'bg-[#FF34951A] border-[#FF34951A]'
-              : 'bg-white  border-[#FF3495]'
+            className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-[#FF3495] ${type === 'undefined'
+              ? 'text-[#FF3495] bg-white'
+              : 'text-white bg-[#FF3495]'
               }`}
             onClick={() => toggleTyoe('undefined')}
           >
             開放式議程
           </button>
           <button
-            className={`text-[#0CE295] rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border ${type === 'poster'
-              ? 'bg-[#0CE2951A] border-[#0CE2951A]'
-              : 'bg-white  border-[#0CE295]'
+            className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-[#00D98B] ${type === 'poster'
+              ? 'text-[#00D98B] bg-white'
+              : 'text-white bg-[#00D98B]'
               }`}
             onClick={() => toggleTyoe('poster')}
           >
