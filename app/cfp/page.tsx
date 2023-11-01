@@ -1,4 +1,5 @@
 "use client"
+import BackToTopButton from '@/components/BackToTopBtn';
 import Button from '@/components/Button';
 import Title from '@/components/Title'
 import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
@@ -130,11 +131,11 @@ export default function Page() {
             自 2012 發源以來， <br />
             我們帶領了無數學子進入資訊的殿堂，更做到： <br />
         </div>
-        <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full aspect-square mb-16">
+        <div className="grid md:grid-cols-2 md:grid-rows-2 grid-cols-1 grid-rows-4 gap-4 w-full aspect-auto md:aspect-square mb-16">
           {[1, 2, 3, 4].map(i => (
             <div key={i} className="bg-black p-4 rounded-lg relative group transform transition-transform duration-400 hover:scale-105 flex flex-col justify-end">
               <div className="absolute inset-0 bg-cover bg-center rounded-lg" style={{ backgroundImage: `url('/statscard/${i}.jpg')` }}></div>
-              <div className="relative z-10 flex flex-col items-center justify-end space-y-2">
+              <div className="relative text-xs sm:text-sm md:text-base xl:text-xl flex flex-col items-center justify-end">
                 <span className="text-white text-lg font-light">{statsContentText(i)}</span>
                 <span className="text-white text-4xl font-bold">{statsContentCount(i)}</span>
                 <span className="text-white text-base font-light ml-2 inline-block">{statsContentUnit(i)}</span>
@@ -247,6 +248,7 @@ export default function Page() {
         <div className="text-center text-4xl font-bold gap-2 leading-relaxed mb-16">
           因為，我們終究是人類。
         </div>
+        <BackToTopButton className="" />
       </div>
     </div>
   </div>);
