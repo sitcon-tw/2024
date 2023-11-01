@@ -81,13 +81,13 @@ export default function Page() {
 
   return <div className="container">
     <div className="h-screen flex justify-center items-center">
-      <div class="text-center w-1/2">
-        <h1 class="text-3xl font-bold mb-2">SITCON 贊助徵求</h1>
+      <div className="text-center w-1/2">
+        <h1 className="text-3xl font-bold mb-2">SITCON 贊助徵求</h1>
         <p>
         SITCON 秉持著不向與會者收費的原則，十年以來致力於推廣學生資訊教育，創造學生交流、教學互長的機會。
         </p>
-        <h2 class="text-xl font-bold mt-6">自 2012 發源以來，</h2>
-        <h2 class="text-xl font-bold">我們帶領了無數學子進入資訊的殿堂，更做到：</h2>
+        <h2 className="text-xl font-bold mt-6">自 2012 發源以來，</h2>
+        <h2 className="text-xl font-bold">我們帶領了無數學子進入資訊的殿堂，更做到：</h2>
         <div className="grid grid-cols-2 gap-4 w-full aspect-w-1 aspect-h-1">
           {[1, 2, 3, 4].map(i => (
             <div key={i} className="bg-black p-4 rounded-lg relative group transform transition-transform duration-400 hover:scale-105">
