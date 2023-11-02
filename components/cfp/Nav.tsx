@@ -1,6 +1,13 @@
 "use client";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
+  useSpring,
+} from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { usePathname } from "next/navigation";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
@@ -35,9 +42,21 @@ function NavLink({
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { scrollY } = useScroll();
+  const navBackgroundOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+  const navBackground = useMotionTemplate`rgba(229, 195, 102, ${navBackgroundOpacity})`;
+  const isIndex = usePathname() === "/cfp";
   return (
     <NavContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
-      <nav className="w-full bg-[#E5C366] sticky top-0 self-start z-10">
+      <motion.nav
+        className="w-full sticky top-0 self-start z-10"
+        style={{
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          backgroundColor: isIndex ? navBackground : "rgba(229, 195, 102, 1)",
+          transition: "background-color 0.2s ease-in-out",
+        }}
+      >
         {/* desktop nav */}
         <div className="container items-center justify-start gap-6 h-16 hidden lg:flex">
           <Link href="/cfp">
@@ -69,7 +88,7 @@ export default function Nav() {
             />
           </Link>
         </div>
-      </nav>
+      </motion.nav>
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -97,12 +116,14 @@ export default function Nav() {
               </Link>
             </div>
             <div className="container flex flex-col gap-4 border-t border-[#373737] border-opacity-50 py-6">
-              <NavLink href="/cfp">首頁</NavLink>
-
               <div className="text-[#000] font-bold text-lg mt-2 tracking-wider">
-                議程與海報徵稿
+                徵稿
               </div>
+              <NavLink href="/cfp">首頁</NavLink>
               <NavLink href="/cfp/submit">投稿頁面</NavLink>
+              <div className="text-[#000] font-bold text-lg mt-2 tracking-wider">
+                稿件說明
+              </div>
               <NavLink href="/cfp/normal">一般議程</NavLink>
               <NavLink href="/cfp/undefined">開放式議程</NavLink>
               <NavLink href="/cfp/poster">海報</NavLink>
