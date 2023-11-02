@@ -115,7 +115,7 @@ export default function Nav() {
                 />
               </Link>
             </div>
-            <div className="container flex flex-col gap-4 border-t border-[#373737] border-opacity-50 py-6">
+            <div className="container flex flex-col gap-3 border-t border-[#373737] border-opacity-50 py-6">
               <div className="text-[#000] font-bold text-lg mt-2 tracking-wider">
                 徵稿
               </div>
