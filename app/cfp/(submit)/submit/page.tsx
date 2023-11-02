@@ -3,33 +3,9 @@ import Title from '@/components/cfp/Title'
 import Event, { EventType } from '@/components/cfp/Event'
 import { useEffect, useReducer, useState } from 'react'
 
+import useCountdown from "@/hooks/useCountdown";
 function Countdown() {
-  const [deadline] = useState(new Date('2024-01-20T23:59:00+08:00'))
-  const [days, setDays] = useState(99)
-  const [hours, setHours] = useState(99)
-  const [minutes, setMinutes] = useState(99)
-  const [seconds, setSeconds] = useState(99)
-
-  useEffect(() => {
-    let diff = (deadline.getTime() - Date.now()) / 1000
-
-    if (diff <= 0) {
-      return
-    }
-
-    const interval = setInterval(() => {
-      setSeconds(Math.floor(diff % 60))
-      diff /= 60
-      setMinutes(Math.floor(diff % 60))
-      diff /= 60
-      setHours(Math.floor(diff % 24))
-      diff /= 24
-      setDays(Math.floor(diff))
-    }, 1000)
-
-    return () => clearInterval(interval)
-  }, [days, hours, minutes, minutes, seconds, deadline])
-
+  const { days, hours, minutes, seconds } = useCountdown();
   return (
     <div className="flex flex-col items-center gap-4">
       <p>距離投稿截止還有：</p>
