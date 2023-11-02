@@ -1,19 +1,9 @@
 "use client";
 import BackToTopButton from "@/components/BackToTopBtn";
 import Button from "@/components/Button";
-import Title from "@/components/Title";
-import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
-import React, { useState, useEffect, useRef } from "react";
-
+import React, { useState, useEffect } from "react";
+import Counter from "@/components/cfp/Counter";
 export default function Page() {
-  const [counts, setCounts] = useState({
-    audience: 0,
-    speaker: 0,
-    lecture: 0,
-    camp: 0,
-    volunteer: 0,
-  });
-
   const statsContentText = (index: number) => {
     switch (index) {
       case 1:
@@ -40,13 +30,13 @@ export default function Page() {
   const statsContentCount = (index: number) => {
     switch (index) {
       case 1:
-        return counts.audience.toLocaleString();
+        return <Counter value={10000} />;
       case 2:
-        return counts.speaker.toLocaleString();
+        return <Counter value={350} />;
       case 3:
-        return counts.lecture.toLocaleString();
+        return <Counter value={400} />;
       case 4:
-        return counts.volunteer.toLocaleString();
+        return <Counter value={1000} />;
       default:
         return "";
     }
@@ -55,54 +45,17 @@ export default function Page() {
   const statsContentUnit = (index: number) => {
     switch (index) {
       case 1:
-        return "名 與會者";
+        return "名與會者";
       case 2:
-        return "名 學生講者";
+        return "名學生講者";
       case 3:
-        return "場 聚會與講座";
+        return "場聚會與講座";
       case 4:
-        return "名 資訊推廣志工";
+        return "名資訊推廣志工";
       default:
         return "";
     }
   };
-
-  useEffect(() => {
-    const rawCounts = {
-      audience: 10000,
-      speaker: 350,
-      lecture: 400,
-      camp: 7,
-      volunteer: 1000,
-    };
-
-    const intervals = {};
-
-    for (const key in rawCounts) {
-      intervals[key] = setInterval(() => {
-        setCounts((prev) => {
-          if (prev[key] < rawCounts[key]) {
-            return {
-              ...prev,
-              [key]: prev[key] + Math.floor(rawCounts[key] / 100),
-            };
-          } else {
-            clearInterval(intervals[key]);
-            return {
-              ...prev,
-              [key]: rawCounts[key],
-            };
-          }
-        });
-      }, 10);
-    }
-
-    return () => {
-      for (const key in intervals) {
-        clearInterval(intervals[key]);
-      }
-    };
-  }, []);
 
   const styles = {
     linesContainer: {
@@ -189,7 +142,7 @@ export default function Page() {
                 <div
                   className="absolute inset-0 bg-cover bg-center rounded-lg"
                   style={{ backgroundImage: `url('/statscard/${i}.jpg')` }}
-                ></div>
+                />
                 <div className="relative z-10 flex flex-col items-center justify-end space-y-2">
                   <span className="text-white text-lg font-light">
                     {statsContentText(i)}
