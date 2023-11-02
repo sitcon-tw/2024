@@ -17,10 +17,10 @@ export default function Counter({
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : 0);
   const springValue = useSpring(motionValue, {
-    damping: 100,
-    stiffness: 100,
+    damping: 300,
+    stiffness: 20,
   });
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (isInView) {
