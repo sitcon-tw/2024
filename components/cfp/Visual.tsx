@@ -40,7 +40,7 @@ export default function Visual() {
           </div>
           <Link
             href="/cfp/submit"
-            className="rounded-full bg-[#1E1E1E] text-2xl text-center text-white p-4"
+            className="rounded-full bg-[#1E1E1E] text-2xl text-center text-white p-4 hover:bg-opacity-90 active:bg-opacity-80"
           >
             前往查看
           </Link>
