@@ -1,12 +1,25 @@
+function AboutButton({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      className="bg-[#E5C366] hover:opacity-90 active:opacity-80 rounded-full p-2 min-w-[150px] text-center"
+    >
+      {children}
+    </a>
+  );
+}
 export default function About() {
   return (
     <div className="relative my-10">
-      <img
-        src="/hero_bg.webp"
-        className="absolute top-0 bottom-0 right-0 w-[50vw] -z-10"
-      />
       <div className="container relative py-10">
-        <div className="w-full lg:w-[500px]">
+        <div className="w-full lg:w-[500px] leading-8">
           <h1 className="text-4xl font-bold mb-4">關於 SITCON</h1>
           <div>
             學生計算機年會（Students’ Information Technology Conference）自 2013
@@ -20,8 +33,16 @@ export default function About() {
             若你想進一步了解過往討論的內容，也歡迎到 GitLab 上查看 SITCON 2024
             的籌備歷程。
           </div>
+          <div className="flex gap-4 mt-8 items-center justify-center lg:justify-end">
+            <AboutButton href="#">訂閱郵件論壇</AboutButton>
+            <AboutButton href="#">查看 GitLab</AboutButton>
+          </div>
         </div>
       </div>
+      <img
+        src="/hero_bg.webp"
+        className="mx-auto hidden lg:block lg:absolute top-0 bottom-0 right-0 lg:w-[35vw] xl:w-[50vw] -z-10"
+      />
     </div>
   );
 }
