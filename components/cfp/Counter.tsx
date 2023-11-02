@@ -40,5 +40,5 @@ export default function Counter({
     [springValue]
   );
 
-  return <span ref={ref} />;
+  return <span className="tabular-nums" ref={ref} />;
 }
