@@ -20,7 +20,7 @@ export default function Visual() {
         </div>
         <div className="flex flex-col tracking-widest mt-16 lg:absolute bottom-8 left-8 lg:text-[24px] lg:mt-0 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
           <div>SITCON 2024</div>
-          <div className="text-[2.5em]">03.09</div>
+          <div className="text-[2.5em] leading-[1.25em]">03.09</div>
           <div className="border-t-2 border-[#1E1E1E] pt-[0.5em] w-max">
             中央研究院
             <br />
