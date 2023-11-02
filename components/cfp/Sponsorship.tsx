@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 function FeatureCards({ children }: { children: React.ReactNode }) {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full aspect-square mb-16">
+    <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full mb-16">
       {children}
     </div>
   );
@@ -18,22 +18,17 @@ function FeatureCard({
   bg: string;
 }) {
   return (
-    <motion.div
-      className="bg-black p-4 rounded-lg overflow-hidden relative flex flex-col justify-end transition-shadow hover:shadow-xl"
-      whileHover={{
-        scale: 1.05,
-      }}
-    >
+    <motion.div className="bg-black p-4 rounded-lg overflow-hidden relative flex flex-col pt-32 hover:pt-16 hover:pb-16 hover:shadow-xl group transition-all hover:scale-105 duration-300 ease-in-out">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center group-hover:scale-110 group-hover:opacity-50 transition-all duration-300 ease-in-out"
         style={{
           backgroundImage: `url('/statscard/${bg}.jpg')`,
-          mask: "linear-gradient(180deg, #000 70%, #0000 100%)",
-          WebkitMask: "linear-gradient(180deg, #000 70%, #0000 100%)",
+          mask: "linear-gradient(180deg, #000 60%, #0000 100%)",
+          WebkitMask: "linear-gradient(180deg, #000 60%, #0000 100%)",
         }}
       />
       <div
-        className="relative text-xs sm:text-sm md:text-base xl:text-xl flex flex-col items-center text-white"
+        className="relative text-xs sm:text-sm md:text-base flex flex-col items-center text-white group-hover:scale-125 transition-all h-full justify-end group-hover:justify-center duration-300 ease-in-out"
         style={{
           textShadow: "0 0 8px rgba(0,0,0,0.5)",
         }}
@@ -77,13 +72,26 @@ export default function Sponsorship() {
           <span>學生講者</span>
         </FeatureCard>
         <FeatureCard bg="3">
-          <div>
-            <span className="text-2xl lg:text-4xl mr-1">
-              <Counter value={350} />
-            </span>
-            場
+          <div className="flex gap-6">
+            <div>
+              <div>
+                <span className="text-2xl lg:text-4xl mr-1">
+                  <Counter value={350} />
+                </span>
+                場
+              </div>
+              <span>聚會與講座</span>
+            </div>
+            <div>
+              <div>
+                <span className="text-2xl lg:text-4xl mr-1">
+                  <Counter value={7} />
+                </span>
+                場
+              </div>
+              <span>夏令營</span>
+            </div>
           </div>
-          <span>聚會與講座</span>
         </FeatureCard>
         <FeatureCard bg="4">
           <span>扶植近</span>
