@@ -19,7 +19,7 @@ export default function About() {
   return (
     <div className="relative my-10">
       <div className="container relative py-10">
-        <div className="w-full lg:w-[500px] leading-8">
+        <div className="w-full lg:w-[500px]">
           <h1 className="text-4xl font-bold mb-4">關於 SITCON</h1>
           <div>
             學生計算機年會（Students’ Information Technology Conference）自 2013

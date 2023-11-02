@@ -15,7 +15,7 @@ function NavLink({
     <Link
       href={href}
       className={twMerge(
-        "flex gap-2 transition-colors",
+        "flex items-center gap-2 transition-colors",
         !isActive
           ? "text-[#808080] hover:text-[#595959]"
           : "text-black font-bold -translate-x-3"
@@ -23,7 +23,7 @@ function NavLink({
     >
       {isActive && (
         <motion.div
-          className="h-full w-1 bg-[#AC24FF] rounded-full"
+          className="h-[1.2em] w-1 bg-[#AC24FF] rounded-full"
           layout
           layoutId="indicator"
         />
@@ -40,7 +40,7 @@ export default function SubmitLayout({
 }) {
   return (
     <div className="flex gap-6 container">
-      <div className="min-w-[150px] hidden lg:flex flex-col gap-2.5 mt-6">
+      <div className="min-w-[150px] hidden lg:flex flex-col gap-2 mt-6">
         <div className="text-[#0CE295] font-bold text-lg">議程與海報徵稿</div>
         <NavLink href="/cfp/submit">投稿頁面</NavLink>
         <NavLink href="/cfp/normal">一般議程</NavLink>
