@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useInterval } from "usehooks-ts";
 export default function useCountdown() {
   const [deadline] = useState(new Date("2024-01-20T23:59:00+08:00"));
@@ -7,7 +7,7 @@ export default function useCountdown() {
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
 
-  useInterval(() => {
+  function updateCountdown() {
     let diff = (deadline.getTime() - Date.now()) / 1000;
 
     if (diff > 0) {
@@ -19,7 +19,13 @@ export default function useCountdown() {
       diff /= 24;
       setDays(("0" + Math.floor(diff)).slice(-2));
     }
+  }
+  useInterval(() => {
+    updateCountdown();
   }, 1000);
+  useEffect(() => {
+    updateCountdown();
+  }, []);
 
   return {
     days,
