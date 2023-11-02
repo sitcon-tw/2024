@@ -32,7 +32,12 @@ function FeatureCard({
           WebkitMask: "linear-gradient(180deg, #000 70%, #0000 100%)",
         }}
       />
-      <div className="relative text-xs sm:text-sm md:text-base xl:text-xl flex flex-col items-center text-white drop-shadow-2xl">
+      <div
+        className="relative text-xs sm:text-sm md:text-base xl:text-xl flex flex-col items-center text-white"
+        style={{
+          textShadow: "0 0 8px rgba(0,0,0,0.5)",
+        }}
+      >
         {children}
       </div>
     </motion.div>
@@ -40,58 +45,6 @@ function FeatureCard({
 }
 
 export default function Sponsorship() {
-  const statsContentText = (index: number) => {
-    switch (index) {
-      case 1:
-        return "超過";
-      case 2:
-        return "";
-      case 3:
-        return "";
-      case 4:
-        return "扶植近";
-      case 5:
-        return "接觸學生資訊人才";
-      case 6:
-        return "提升品牌影響力";
-      case 7:
-        return "深入學生群體";
-      case 8:
-        return "推廣產品內容";
-      default:
-        return "";
-    }
-  };
-
-  const statsContentCount = (index: number) => {
-    switch (index) {
-      case 1:
-        return <Counter value={10000} />;
-      case 2:
-        return <Counter value={350} />;
-      case 3:
-        return <Counter value={400} />;
-      case 4:
-        return <Counter value={1000} />;
-      default:
-        return "";
-    }
-  };
-
-  const statsContentUnit = (index: number) => {
-    switch (index) {
-      case 1:
-        return "名與會者";
-      case 2:
-        return "名學生講者";
-      case 3:
-        return "場聚會與講座";
-      case 4:
-        return "名資訊推廣志工";
-      default:
-        return "";
-    }
-  };
   return (
     <div className="max-w-[700px] container mx-auto">
       <h1 className="text-center text-5xl font-bold mb-6">SITCON 贊助徵求</h1>
