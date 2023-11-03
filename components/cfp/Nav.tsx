@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, createContext, useContext } from "react";
 const NavContext = createContext({
   isMenuOpen: false,
-  setIsMenuOpen: (value: boolean) => {},
+  setIsMenuOpen: (value: boolean) => { },
 });
 function NavLink({
   href,
@@ -49,7 +49,7 @@ export default function Nav() {
   return (
     <NavContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
       <motion.nav
-        className="w-full sticky top-0 self-start z-10"
+        className="w-full sticky top-0 self-start z-50"
         style={{
           backdropFilter: "blur(8px)",
           WebkitBackdropFilter: "blur(8px)",

@@ -3,43 +3,13 @@ import { useReducer } from 'react'
 
 import Title from '@/components/cfp/Title'
 import Event from '@/components/cfp/Event'
-import Card from '@/components/cfp/Card'
+import Cards from '@/components/cfp/Card'
 import { Required, Public, Optional } from '@/components/cfp/Badge'
-
-function Cards() {
-  const [open, updateOpen] = useReducer((state: number, action: number) => {
-    if (state === action) return -1
-    return action
-  }, -1)
-
-  let data = [
-    {
-      title: '議題探討',
-      content:
-        '資訊發展快速，卻也延伸出許多可以深入討論的議題，我們期待透過講者的引言，拋磚引玉，激發聽眾的想法，透過互相討論的模式為這些議題提出不一樣的看法與觀點。 例如：人工智慧是否會有自我意識？',
-    },
-    {
-      title: '經驗交流',
-      content:
-        '不同於一般議程，在開放式議程中的經驗分享可以變得十分多元，我們期待講者透過分享自己在資訊領域遇到的難題和解決方式，並以此為開端，與聽眾碰撞出更多的論點與討論。例如：學測還是特殊選材？我如何在學科與術科中做選擇？',
-    },
-    {
-      title: '更多形式',
-      content:
-        '不只有上述的形式，我們非常歡迎其他形式的議程。\n無論是主持一場圓桌會議，一起腦力激盪，甚至舉辦一場小競賽，任何你想得到的非傳統議程形式都可以在開放式議程中進行！',
-    },
-  ]
-
-  // TODO: style
-  return data.map((item, index) =>
-    Card({ ...item, open: index === open, click: () => updateOpen(index) })
-  )
-}
 
 export default function Page() {
   return (
     <div className="flex flex-col gap-6 mb-12">
-      <Title content="投稿頁面" />
+      <Title content="開放式議程" />
 
       <h2 className="text-[32px] font-bold mt-4">重要時程</h2>
       <div>
@@ -87,7 +57,25 @@ export default function Page() {
           <span className="text-purple">雙向交流</span>。SITCON
           作為學生展現自己的舞台，我們期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是一同探討學生相關議題等。
         </p>
-        <Cards />
+        <Cards
+          data={[
+            {
+              title: '議題探討',
+              content:
+                '資訊發展快速，卻也延伸出許多可以深入討論的議題，我們期待透過講者的引言，拋磚引玉，激發聽眾的想法，透過互相討論的模式為這些議題提出不一樣的看法與觀點。 例如：人工智慧是否會有自我意識？',
+            },
+            {
+              title: '經驗交流',
+              content:
+                '不同於一般議程，在開放式議程中的經驗分享可以變得十分多元，我們期待講者透過分享自己在資訊領域遇到的難題和解決方式，並以此為開端，與聽眾碰撞出更多的論點與討論。例如：學測還是特殊選材？我如何在學科與術科中做選擇？',
+            },
+            {
+              title: '更多形式',
+              content:
+                '不只有上述的形式，我們非常歡迎其他形式的議程。\n無論是主持一場圓桌會議，一起腦力激盪，甚至舉辦一場小競賽，任何你想得到的非傳統議程形式都可以在開放式議程中進行！',
+            },
+          ]}
+        />
 
         <h2>投稿格式</h2>
         <p>
@@ -102,9 +90,7 @@ export default function Page() {
         <h4>
           摘要 Abstract <Required /> <Public />
         </h4>
-        <small>
-          建議 150–250 字，使用於宣傳與網站公告。
-        </small>
+        <small>建議 150–250 字，使用於宣傳與網站公告。</small>
         <h4>
           進行模式 Method <Required /> <Public />
         </h4>
@@ -114,9 +100,7 @@ export default function Page() {
         <h4>
           議程大綱 Outline <Required />
         </h4>
-        <small>
-          請說明該開放式議程的大綱及時間長度規劃。
-        </small>
+        <small>請說明該開放式議程的大綱及時間長度規劃。</small>
         <h4>
           目標受眾 Target Audience <Required />
         </h4>
@@ -175,9 +159,7 @@ export default function Page() {
         <h4>
           手機號碼 Phone <Required />
         </h4>
-        <small>
-          用於大會聯絡、確認資訊用的電話號碼。
-        </small>
+        <small>用於大會聯絡、確認資訊用的電話號碼。</small>
         <h4>
           其他聯絡方式 Other contact information <Required />
         </h4>

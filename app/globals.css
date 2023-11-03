@@ -5,33 +5,34 @@
   @apply text-black text-opacity-80 hover:underline hover:underline-offset-2 active:text-opacity-100;
 }
 
-.content h2, h3, h3, h4 {
+.content > h2 {
   @apply text-black;
   color: #1E1E1E;
   font-weight: 700;
-}
-
-.content h2 {
   font-size: 32px;
   margin-top: 20px;
 }
 
-.content h3 {
+.content > h3 {
+  @apply text-black;
+  color: #1E1E1E;
+  font-weight: 700;
   font-size: 20px;
   margin-top: 16px;
 }
 
-.content h4 {
+.content > h4 {
   @apply text-6-6;
+  font-weight: 700;
   font-size: 16px;
   margin-top: 16px;
 }
 
-.content p {
+.content > p {
   @apply text-black;
 }
 
-.content small {
+.content > small {
   @apply text-4-6;
   font-size: 16px;
 }
