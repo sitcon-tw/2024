@@ -1,14 +1,8 @@
 "use client"
-import { useReducer } from 'react'
 import Title from '@/components/cfp/Title'
 import Event, {EventType} from '@/components/cfp/Event';
 
 export default function Page() {
-  const [type, toggleTyoe] = useReducer((state: EventType | '', action: EventType | '') => {
-    if (state === '') return action
-    if (state === action) return ''
-    else return action
-  }, '')
   return (
     <div className='flex flex-col ml-4'>
       <div className='mt-4'>
@@ -20,40 +14,40 @@ export default function Page() {
         <Event
               time={[2023, 'Nov.', 19]}
               type={['general']}
-              selectedType={type}
+              selectedType={""}
               name="開始徵稿"
         />
         <Event
               time={[2024, 'Jan.', 20]}
               type={['general']}
-              selectedType={type}
+              selectedType={""}
               name="投稿截止"
               desc='至 2024 年 1 月 20 日（六）23:59'
         />
         <Event
               time={[2024, 'Jan.','下旬']}
               type={['general']}
-              selectedType={type}
+              selectedType={""}
               name="稿件錄取通知"
         />   
         <Event
             time={[2024,'Jan.','下旬']}
             endTime={[2024,'Feb.','中旬']}
             type={['general']}
-            selectedType={type}
+            selectedType={""}
             name="試講"
             desc='若稿件入選，確切時間將再與您協調'
         />   
         <Event
               time={[2024, 'Mar.', 8]}
               type={['general']}
-              selectedType={type}
+              selectedType={""}
               name="彩排"
         />    
         <Event
               time={[2024, 'Mar.', 9]}
               type={['SITCON']}
-              selectedType={type}
+              selectedType={""}
               name="年會"
         />                  
       </div>
