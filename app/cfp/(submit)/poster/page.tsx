@@ -7,7 +7,7 @@ export default function Page() {
     <div className="flex flex-col gap-6 mb-12">
       <Title content="海報 Poster" />
 
-      <h2 className="text-2xl font-bold mt-4">重要時程</h2>
+      <h2 className="text-[32px] font-bold mt-4">重要時程</h2>
       <div>
         <Event
           time={[2023, 'Nov.', 19]}
