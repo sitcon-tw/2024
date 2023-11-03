@@ -1,9 +1,10 @@
+import Subtitle from "@/components/cfp/Subtitle";
 import Title from "@/components/cfp/Title";
 export default function Page() {
   return (
     <div className="flex flex-col gap-6 mb-5">
       <Title content="投稿注意事項與授權" />
-      <h2 className="tex text-[32px] font-bold">投稿注意事項</h2>
+      <Subtitle content="投稿注意事項" />
       <ul className="list-disc ml-4">
         <li>除非內容明顯偏離講題、違反 CoC 或不符事實，我們不會強制要求講者對演講內容進行修正</li>
         <li>「議程題目」、「摘要」與「先備知識」將放置於官方網站與大會發行的文宣中</li>
@@ -15,8 +16,8 @@ export default function Page() {
         <li>若同一稿件有多個講者，請在「暱稱 / 名字」欄位標示所有講者的稱呼，並在「演講大綱」詳細說明各個講者如何分配演講內容。稿件經接受者，無論講者人數，皆只提供一組可轉贈的入場票邀請碼、一份講者識別證與一份講者專屬迎賓禮。未佩戴識別證的講者，僅能在自己的演講時，於該議程時段進入議程所在的會議廳</li>
       </ul>
       <p>若有任何問題或投稿建議，請來信 SITCON 議程組信箱 session@sitcon.org。</p>
-      <h2 className="tex text-[32px] font-bold">授權</h2>
-      <p>今年將採取實體與線上同步之模式進行，除開放式議程外，年會當天將對每一場議程進行直播串流。如果您同意以 <a target="_blank" className="text-blue-600" href="https://creativecommons.org/licenses/by/4.0/">創用 CC「姓名標示」4.0</a> 授權釋出議程錄影，我們將會上傳至 <a target="_blank" className="text-blue-600" href="https://www.youtube.com/c/SITCONArchive">YouTube</a> 及 <a target="_blank" className="text-blue-600" href="https://odysee.com/@SITCON:f">LBRY</a> 的 SITCON 頻道。您為議程準備的其餘相關素材（如投影片），將於年會後由 SITCON 議程組向您蒐集素材連結，並整理在年會官方網站的議程資訊上。您可以自行決定在何種平台、以何種方式釋出，我們不會干涉，但鼓勵您選擇允許知識共享的 創用 CC 系列授權。</p>
+      <Subtitle content="授權" />
+      <p>今年將採取實體與線上同步之模式進行，除開放式議程外，年會當天將對每一場議程進行直播串流。如果您同意以 <a target="_blank" className="text-blue-light" href="https://creativecommons.org/licenses/by/4.0/">創用 CC「姓名標示」4.0</a> 授權釋出議程錄影，我們將會上傳至 <a target="_blank" className="text-blue-light" href="https://www.youtube.com/c/SITCONArchive">YouTube</a> 及 <a target="_blank" className="text-blue-light" href="https://odysee.com/@SITCON:f">LBRY</a> 的 SITCON 頻道。您為議程準備的其餘相關素材（如投影片），將於年會後由 SITCON 議程組向您蒐集素材連結，並整理在年會官方網站的議程資訊上。您可以自行決定在何種平台、以何種方式釋出，我們不會干涉，但鼓勵您選擇允許知識共享的 創用 CC 系列授權。</p>
     </div>
   );
 }
