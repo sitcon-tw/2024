@@ -47,27 +47,27 @@ export default function Page() {
         <h4>
           中文題目 Chinese Project Title <Required /> <Public />
         </h4>
-        <p className="text-[#808080]">長度請自行斟酌。</p>
+        <small>長度請自行斟酌。</small>
         <h4>
           英文題目 English Project Title <Required /> <Public />
         </h4>
-        <p className="text-[#808080]">長度請自行斟酌。</p>
+        <small>長度請自行斟酌。</small>
         <h4>
           摘要 Abstract <Required /> <Public />
         </h4>
-        <p className="text-[#808080]">
+        <small>
           建議約 350 字，使用於宣傳與網站公告。
-        </p>
+        </small>
         <h4>
           關鍵詞 Keywords <Required /> <Public />
         </h4>
-        <p className="text-[#808080]">
+        <small>
           建議約 350 字，使用於宣傳與網站公告。
-        </p>
+        </small>
         <h4>
           研究說明 Project Content <Required />
         </h4>
-        <p className="text-[#808080]">
+        <small>
           請以 pdf 檔案上傳，需簡要說明（一）研究動機與目的 Research
           Question or Problem；（二）研究方法與過程
           Methodology；（三）研究結果與討論 Results and Interpretation
@@ -81,22 +81,22 @@ export default function Page() {
             臺灣國際科學展覽會實施要點
           </a>{' '}
           第 17 頁說明。
-        </p>
+        </small>
         <h4>海報內容 Poster Content</h4>
-        <p className="text-[#808080]">
-          <span className="text-[#A441E0] font-bold">錄取後上傳</span>
+        <small>
+          <span className="text-sitcon-purple font-bold">錄取後上傳</span>
           。以呈現研究結果為主，除題目與摘要之外，建議依序可包含前言、研究方法、結論及參考文獻等，內容請投稿作者自行斟酌，以不超過海報尺寸為限。請以直版寬
           xx 公分、高 xx 公分規格製作為 pdf
           檔案，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，
-          <span className="text-[#A441E0] font-bold">
+          <span className="text-sitcon-purple font-bold">
             統一由大會進行印製與佈展
           </span>
           。
-        </p>
+        </small>
         <h4>其他說明 Additional Instructions</h4>
-        <p className="text-[#808080]">
+        <small>
           其他以上未提及之說明，若為延續性研究作品也請在此標明。
-        </p>
+        </small>
 
         <h3>個人資料</h3>
         <p>
@@ -106,35 +106,35 @@ export default function Page() {
         <h4>
           電子郵件 Email <Required />
         </h4>
-        <p className="text-[#808080]">
+        <small>
           能讓大會聯絡的電子信箱。（注意：請您在大會的聯絡過程中，維持使用相同信箱）
-        </p>
+        </small>
         <h4>
           暱稱 / 名字 Name <Required /> <Public />
         </h4>
-        <p className="text-[#808080]">公開於講者海報及網站的稱呼。</p>
+        <small>公開於講者海報及網站的稱呼。</small>
         <h4>
           學校系級 Institution <Optional /> <Public />
         </h4>
         <h4>
           自我介紹 Self Introduction <Required /> <Public />
         </h4>
-        <p className="text-[#808080]">
+        <small>
           公開於講者海報及網站，將有助於會眾更加了解有關你的資訊。
-        </p>
+        </small>
         <h4>
           手機號碼 Phone <Required />
         </h4>
-        <p className="text-[#808080]">
+        <small>
           用於大會聯絡、確認資訊用的電話號碼。
-        </p>
+        </small>
         <h4>
           其他聯絡方式 Other contact information <Required />
         </h4>
-        <p className="text-[#808080]">
+        <small>
           其他任何我們能聯絡您的方式（如
           Telegram、住處電話等），以利我們在審稿時即時向您釐清投稿資訊。
-        </p>
+        </small>
 
         <h3>海報格式建議參酌</h3>
         <ul className="list-disc list-outside ml-4">

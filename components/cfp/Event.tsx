@@ -23,12 +23,12 @@ export default function jkEvent({ time, endTime, type, selectedType, name, desc 
         return (
             <div className="flex h-min px-2 first:pt-2 last:pb-2">
                 <div className="flex flex-col items-center">
-                    <div className="text-[#E5C366]">{time[0]}</div>
-                    <div className="text-[#E5C366] text-2xl">{time[1]}</div>
+                    <div className="text-gold">{time[0]}</div>
+                    <div className="text-gold text-2xl">{time[1]}</div>
                 </div>
 
                 <div
-                    className={`text-[#E5C366] flex flex-col justify-end items-center ${typeof time[2] === 'string' ? 'text-2xl' : 'text-5xl'
+                    className={`text-gold flex flex-col justify-end items-center ${typeof time[2] === 'string' ? 'text-2xl' : 'text-5xl'
                         }`}
                 >
                     <div>{zero(time[2])}</div>
@@ -38,10 +38,10 @@ export default function jkEvent({ time, endTime, type, selectedType, name, desc 
     }
 
     const typeColor = {
-        general: 'bg-[#AC24FF]',
-        undefined: 'bg-[#FF3495]',
-        poster: 'bg-[#0CE295]',
-        SITCON: 'bg-[#46A5FD]',
+        general: 'bg-purple',
+        undefined: 'bg-pink',
+        poster: 'bg-green',
+        SITCON: 'bg-blue',
     }
 
     function zero(n: number | string) {
@@ -54,7 +54,7 @@ export default function jkEvent({ time, endTime, type, selectedType, name, desc 
     const isGray = selectedType === undefined || (type.includes('SITCON') || selectedType === '' || type.includes(selectedType))
 
     return (
-        <div className={`min-h-[110px] w-[512px] flex border border-[#D9D9D9] rounded shadow-[0px_4px_8px_0px_#0000001A] my-6 ${isGray ? '' : 'grayscale'}`}>
+        <div className={`min-h-[110px] w-[512px] flex border border-1-6 rounded shadow-[0px_4px_8px_0px_#0000001A] my-6 ${isGray ? '' : 'grayscale'}`}>
             <div className="flex flex-col">
                 {type.map(type => (
                     <div
@@ -69,14 +69,14 @@ export default function jkEvent({ time, endTime, type, selectedType, name, desc 
 
                 {endTime ? (
                     <>
-                        <div className="border border-white border-r-[#E5C366] w-[94px] h-[37px]" />
+                        <div className="border border-white border-r-gold w-[94px] h-[37px]" />
                         <Time time={endTime} />
                     </>
                 ) : null}
             </div>
 
             {/* todo: align */}
-            <div className="text-[#808080] my-2 mx-4 flex flex-col">
+            <div className="text-4-6 my-2 mx-4 flex flex-col">
                 <span className="text-[32px] font-bold">{name}</span>
                 <span>{desc}</span>
             </div>
