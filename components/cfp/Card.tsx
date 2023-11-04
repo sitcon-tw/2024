@@ -122,7 +122,7 @@ export function Card({
       </div>
       {/* desktop */}
       <div
-        className="h-[500px] relative justify-center hidden lg:flex overflow-y-hidden"
+        className="h-[500px] relative justify-center hidden lg:flex overflow-y-hidden rounded-lg "
         onMouseOver={() => setOpen(true)}
         onMouseOut={() => setOpen(false)}
       >
