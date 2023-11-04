@@ -168,18 +168,15 @@ export default function Page() {
                     SITCON 工作人員、業界人士及學界人士組成。
                 </p>
                 <p>審稿委員將針對以下項目進行篩選：</p>
-                <ul className="list-disc list-outside ml-4">
+                <ul className="list-disc ml-4">
                     <li>
-                        <span className="text-purple">稿件內容</span>
-                        ：講者是否熟悉這個題目、和會眾的交流效果、可執行性等等。
+                        稿件內容：講者是否熟悉這個題目、和會眾的交流效果、可執行性等等。
                     </li>
                     <li>
-                        <span className="text-purple">表達能力</span>
-                        ：提供的資料是否有條理、文句暢通，提供資料（尤其是稿件的詳細說明）之完整度。我們偏好完整的資料，讓審稿委員更清楚了解演講細節。
+                        表達能力：提供的資料是否有條理、文句暢通，提供資料（尤其是稿件的詳細說明）之完整度。我們偏好完整的資料，讓審稿委員更清楚了解演講細節。
                     </li>
                     <li>
-                        <span className="text-purple">適合聽眾</span>
-                        ：稿件是否適合 SITCON 大多數的與會者討論。
+                        適合聽眾：稿件是否適合 SITCON 大多數的與會者討論。
                     </li>
                 </ul>
             </div>

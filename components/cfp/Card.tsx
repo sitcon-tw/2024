@@ -1,3 +1,4 @@
+'use client'
 import { useLayoutEffect, useState } from 'react'
 
 type Card = {
@@ -92,8 +93,12 @@ export function Card({
                 </p>
             </div>
             <div
-                className={`h-[200px] absolute z-10 ${open ? `${varients[varient].bg} ${varients[varient].shadow}` : 'bg-gold'
-                    } ${open ? '-translate-x-[198px] w-[200px] rounded-l-lg' : 'w-[300px] rounded-lg'
+                className={`h-[200px] absolute z-10 ${open
+                    ? `${varients[varient].bg} ${varients[varient].shadow}`
+                    : 'bg-gold'
+                    } ${open
+                        ? '-translate-x-[198px] w-[200px] rounded-l-lg'
+                        : 'w-[300px] rounded-lg'
                     } transition-all flex justify-center items-center`}
             >
                 <h1
@@ -121,18 +126,22 @@ export function CardDesktop({
             onMouseOver={() => setOpen(true)}
             onMouseOut={() => setOpen(false)}
         >
-            <div className={`h-[400px] w-full absolute z-0 top-0 border rounded-lg py-5 px-10 ${varients[varient].text} ${varients[varient].border} ${varients[varient].shadow} `}>
-                <h1 className="text-2xl text-center font-bold mt-4">{title}</h1>
-                <p className="text-[15px] mt-4">{content}</p>
+            <div
+                className={`h-[400px] w-full absolute z-0 top-0 border rounded-lg py-5 px-10 ${varients[varient].text} ${varients[varient].border} ${varients[varient].shadow} `}
+            >
+                <h1 className="text-2xl text-center font-bold my-4">{title}</h1>
+                {content.split('\n').map((item, index) => (
+                    <p className="text-[15px]" key={index}>
+                        {item}
+                    </p>
+                ))}
             </div>
             <div
-                className={`h-[400px] w-full rounded-lg absolute z-10 bg-gold ${open && '-translate-y-[400px]'
+                className={`h-[400px] w-full p-12 rounded-lg absolute z-10 bg-gold ${open && '-translate-y-[400px]'
                     } transition-all flex justify-center items-center shadow-[0px_4px_16px_0px_#E5C366CC]`}
             >
-                <h1 className="text-white font-bold text-[64px] leading-[93px]">
-                    {title.slice(0, 2)}
-                    <br />
-                    {title.slice(2)}
+                <h1 className="text-white text-center font-bold text-[64px] leading-[93px]">
+                    {title}
                 </h1>
             </div>
         </div>

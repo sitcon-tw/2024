@@ -150,7 +150,7 @@ export default function Page() {
 			</div>
 
 			{/* hero bg image */}
-			<div className="w-[calc(100vw-70%)] xl:w-[calc(100vw-60%)] h-[900px] overflow-hidden top-0 left-0 mt-[920px] ml-[70%] xl:ml-[60%] absolute z-[-1] hidden lg:block">
+			<div className="w-[calc(100vw-70%)] xl:w-[calc(100vw-60%)] h-[900px] overflow-hidden top-0 left-0 mt-[920px] ml-[70%] xl:ml-[60%] absolute -z-10 hidden lg:block">
 				<Image
 					src="/hero_bg.webp"
 					width={1857}
