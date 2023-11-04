@@ -36,7 +36,7 @@ function FeatureCard({
   return (
     <motion.div className="bg-black px-2 py-4 rounded-lg overflow-hidden relative flex flex-col pt-40 hover:pt-20 hover:pb-20 hover:shadow-xl group transition-all hover:scale-105 duration-300 ease-in-out">
       <div
-        className="absolute inset-0 bg-cover bg-center group-hover:scale-110 group-hover:opacity-50 transition-all duration-300 ease-in-out"
+        className="absolute inset-0 bg-cover bg-center group-hover:scale-110 group-hover:opacity-50 transition-all duration-300 ease-in-out group-hover:blur-sm"
         style={{
           backgroundImage: `url('/statscard/${bg}.jpg')`,
           mask: "linear-gradient(180deg, #000 60%, #0000 100%)",
