@@ -137,7 +137,7 @@ export function CardDesktop({
                 ))}
             </div>
             <div
-                className={`h-[400px] w-full p-12 rounded-lg absolute z-10 bg-gold ${open && '-translate-y-[400px]'
+                className={`h-[400px] w-full p-12 rounded-lg absolute z-10 bg-4-6 ${open && '-translate-y-[400px]'
                     } transition-all flex justify-center items-center shadow-[0px_4px_16px_0px_#E5C366CC]`}
             >
                 <h1 className="text-white text-center font-bold text-[64px] leading-[93px]">

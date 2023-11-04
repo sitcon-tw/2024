@@ -69,35 +69,39 @@ export default function Page() {
 
 			{/* time table */}
 			<div className="flex flex-col gap-4 pt-16">
-				<div className="flex items-center gap-6">
-					<h2 className="text-[32px] font-medium">時程表</h2>
-					<button
-						className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-purple ${type === 'general'
-							? 'text-purple bg-white'
-							: 'text-white bg-purple'
-							}`}
-						onClick={() => toggleTyoe('general')}
-					>
-						一般議程
-					</button>
-					<button
-						className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-pink ${type === 'undefined'
-							? 'text-pink bg-white'
-							: 'text-white bg-pink'
-							}`}
-						onClick={() => toggleTyoe('undefined')}
-					>
-						開放式議程
-					</button>
-					<button
-						className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-green ${type === 'poster'
-							? 'text-green bg-white'
-							: 'text-white bg-green'
-							}`}
-						onClick={() => toggleTyoe('poster')}
-					>
-						海報
-					</button>
+				<div className="flex items-center gap-6 flex-wrap max-w-[512px]">
+					<div>
+						<h2 className="text-[32px] font-medium">時程表</h2>
+					</div>
+					<div className="flex grow place-content-between">
+						<button
+							className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-purple ${type === 'general'
+								? 'text-purple bg-white'
+								: 'text-white bg-purple'
+								}`}
+							onClick={() => toggleTyoe('general')}
+						>
+							一般議程
+						</button>
+						<button
+							className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-pink ${type === 'undefined'
+								? 'text-pink bg-white'
+								: 'text-white bg-pink'
+								}`}
+							onClick={() => toggleTyoe('undefined')}
+						>
+							開放式議程
+						</button>
+						<button
+							className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-green ${type === 'poster'
+								? 'text-green bg-white'
+								: 'text-white bg-green'
+								}`}
+							onClick={() => toggleTyoe('poster')}
+						>
+							海報
+						</button>
+					</div>
 				</div>
 
 				<div>
