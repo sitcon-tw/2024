@@ -1,13 +1,14 @@
 import Title from "@/components/cfp/Title";
 import Event from "@/components/cfp/Event";
 import { Required, Public } from "@/components/cfp/Badge";
+import Subtitle from "@/components/cfp/Subtitle";
 
 export default function Page() {
   return (
     <div className="flex flex-col mb-12">
       <Title>海報 Poster</Title>
 
-      <h2 className="text-[32px] font-bold mt-8">重要時程</h2>
+      <Subtitle>重要時程</Subtitle>
       <div>
         <Event time={[2023, "Nov.", 19]} type={["poster"]} name="開始徵稿" />
         <Event
