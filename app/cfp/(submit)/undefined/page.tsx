@@ -35,7 +35,7 @@ export default function Page() {
       </div>
 
       <div className="content">
-        <h2>議程說明</h2>
+        <Subtitle>議程說明</Subtitle>
         <p>
           開放式議程為 <span className="text-purple">40 分鐘的議程</span>{" "}
           ，該議程不限定進行方式，希望跳脫傳統議程框架，透過雙向互動、實作等，任何你想得到的非傳統形式進行此場議程。
@@ -70,7 +70,7 @@ export default function Page() {
           ]}
         />
 
-        <h2>投稿格式</h2>
+        <Subtitle>投稿格式</Subtitle>
         <p>除標示為公開之資訊會對外公布外，其餘僅供審稿委員於審稿時閱讀。</p>
 
         <h3>稿件資訊</h3>
@@ -153,7 +153,7 @@ export default function Page() {
           ID、住處電話等），以利我們在審稿時即時向您釐清投稿資訊。
         </small>
 
-        <h2>審稿方式</h2>
+        <Subtitle>審稿方式</Subtitle>
         <p>
           稿件均經議程組形式審查，交予該領域之審稿委員審稿。審稿委員由 SITCON
           工作人員、業界人士及學界人士組成。

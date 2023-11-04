@@ -31,12 +31,12 @@ export default function Page() {
       </div>
 
       <div className="content">
-        <h2>海報投稿說明</h2>
+        <Subtitle>海報投稿說明</Subtitle>
         <p>
           海報投稿以靜態海報展出學生個人或團隊專案研究作品，作品以資訊相關領域為主，不限語言，不接受一稿多投，若為延伸作品需於投稿時載明。期望透過此方式使更多學生能有展現自我的機會，同時為會眾帶來不同形式的學習與交流。
         </p>
 
-        <h2>投稿格式</h2>
+        <Subtitle>投稿格式</Subtitle>
         <p>除標示為公開之資訊會對外公布外，其餘僅供審稿委員於審稿時閱讀。</p>
         <h3>稿件資訊</h3>
         <h4>
@@ -139,7 +139,7 @@ export default function Page() {
           </li>
         </ul>
 
-        <h2>審稿方式</h2>
+        <Subtitle>審稿方式</Subtitle>
         <p>
           稿件均經議程組形式審查，交予該領域之審稿委員審稿。審稿委員由 SITCON
           工作人員、業界人士及學界人士組成。
@@ -155,7 +155,7 @@ export default function Page() {
           <li>表達完整性：文句暢通，且文意清楚周全。</li>
         </ul>
 
-        <h2>佈展</h2>
+        <Subtitle>佈展</Subtitle>
         <p>
           請以直版寬 xx 公分、高 xx 公分規格製作為 pdf
           檔案，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，統一由大會進行印製與佈展。
