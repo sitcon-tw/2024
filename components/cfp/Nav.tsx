@@ -6,7 +6,6 @@ import {
   useScroll,
   useTransform,
   useMotionTemplate,
-  useSpring,
 } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { usePathname } from "next/navigation";
