@@ -18,7 +18,7 @@ function FeatureCard({
   bg: string;
 }) {
   return (
-    <motion.div className="bg-black p-4 rounded-lg overflow-hidden relative flex flex-col pt-32 hover:pt-16 hover:pb-16 hover:shadow-xl group transition-all hover:scale-105 duration-300 ease-in-out">
+    <motion.div className="bg-black p-4 rounded-lg overflow-hidden relative flex flex-col pt-40 hover:pt-20 hover:pb-20 hover:shadow-xl group transition-all hover:scale-105 duration-300 ease-in-out">
       <div
         className="absolute inset-0 bg-cover bg-center group-hover:scale-110 group-hover:opacity-50 transition-all duration-300 ease-in-out"
         style={{
@@ -42,21 +42,21 @@ function FeatureCard({
 export default function Sponsorship() {
   return (
     <div className="max-w-[700px] container mx-auto">
-      <h1 className="text-center text-5xl font-bold mb-6">SITCON 贊助徵求</h1>
+      <h1 className="text-center text-4xl font-bold mb-6">SITCON 贊助徵求</h1>
       <p className="mb-12">
         SITCON
         秉持著不向與會者收費的原則，十年以來致力於推廣學生資訊教育，創造學生交流、教學互長的機會。
       </p>
       <div className="text-center text-2xl font-bold gap-2 leading-relaxed mb-9">
         自 2012 發源以來， <br />
-        我們帶領了無數學子進入資訊的殿堂，更做到： <br />
+        我們帶領了無數學子進入資訊的殿堂，更做到
       </div>
       <FeatureCards>
         <FeatureCard bg="1">
-          <span>超過</span>
+          <span>累積逾</span>
           <div>
             <span className="text-2xl lg:text-4xl mr-1">
-              <Counter value={10000} />
+              <Counter value={11000} />
             </span>
             名
           </div>
@@ -65,18 +65,19 @@ export default function Sponsorship() {
         <FeatureCard bg="2">
           <div>
             <span className="text-2xl lg:text-4xl mr-1">
-              <Counter value={350} />
+              <Counter value={400} />
             </span>
             名
           </div>
           <span>學生講者</span>
         </FeatureCard>
         <FeatureCard bg="3">
+          <span>舉辦逾</span>
           <div className="flex gap-6">
             <div>
               <div>
                 <span className="text-2xl lg:text-4xl mr-1">
-                  <Counter value={350} />
+                  <Counter value={400} />
                 </span>
                 場
               </div>
@@ -85,7 +86,7 @@ export default function Sponsorship() {
             <div>
               <div>
                 <span className="text-2xl lg:text-4xl mr-1">
-                  <Counter value={7} />
+                  <Counter value={8} />
                 </span>
                 場
               </div>
@@ -97,11 +98,11 @@ export default function Sponsorship() {
           <span>扶植近</span>
           <div>
             <span className="text-2xl lg:text-4xl mr-1">
-              <Counter value={350} />
+              <Counter value={1100} />
             </span>
             名
           </div>
-          <span>資訊推廣志工</span>
+          <span>熱愛資訊的志工</span>
         </FeatureCard>
       </FeatureCards>
       <div className="text-center text-2xl font-bold gap-2 leading-relaxed mb-16">
@@ -116,13 +117,23 @@ export default function Sponsorship() {
         <FeatureCard bg="8">推廣產品內容</FeatureCard>
       </FeatureCards>
       <p>
-        如果您也認同 SITCON 的理念，歡迎以行動支持 SITCON
-        的運作，點擊下方「我要贊助」，您的支持將會成為我們的動力，讓更多學生能在舞台上展現自我、讓資訊教育遍及臺灣的每個角落！
+        如果您也認同 SITCON 的理念，歡迎以行動支持 SITCON 的運作，點擊下方「
+        <a href="#" target="_blank" className="link">
+          我要贊助
+        </a>
+        」，您的支持將會成為我們的動力，讓更多學生能在舞台上展現自我、讓資訊教育遍及臺灣的每個角落！
       </p>
       <br />
       <p>
-        若您有興趣成為我們的贊助夥伴，歡迎點擊下方「索取贊助徵求書」，了解詳細合作方案，或是利用
-        contact@sitcon.org 聯絡我們，商討更多的合作方式！
+        若您有興趣成為我們的贊助夥伴，歡迎點擊下方「
+        <a href="#" target="_blank" className="link">
+          索取贊助徵求書
+        </a>
+        」，了解詳細合作方案，或是利用{" "}
+        <a href="mailto:contact@sitcon.org" target="_blank" className="link">
+          contact@sitcon.org
+        </a>{" "}
+        聯絡我們，商討更多的合作方式！
       </p>
       <div className="flex justify-center gap-4 mt-8 mb-16">
         <Button href="/sponsorship">我要贊助</Button>
