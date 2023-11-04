@@ -4,7 +4,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { twMerge } from "tailwind-merge";
-export default function Question(props: { question: string; answer: string }) {
+export default function Question({
+  question,
+  children,
+}: {
+  question: string;
+  children: React.ReactNode;
+}) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -13,7 +19,7 @@ export default function Question(props: { question: string; answer: string }) {
         className="cursor-pointer font-bold flex justify-between items-center"
         onClick={() => setOpen(!open)}
       >
-        {props.question}
+        {question}
         <FontAwesomeIcon
           icon={faAngleDown}
           className={twMerge("mx-4 transition-transform", open && "rotate-180")}
@@ -38,7 +44,7 @@ export default function Question(props: { question: string; answer: string }) {
               overflow: "hidden",
             }}
           >
-            <p className="pt-2">{props.answer}</p>
+            <p className="pt-2">{children}</p>
           </motion.div>
         )}
       </AnimatePresence>
