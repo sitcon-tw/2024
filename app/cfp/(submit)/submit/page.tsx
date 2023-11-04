@@ -61,7 +61,7 @@ function Countdown() {
 }
 
 export default function Page() {
-  const [type, toggleTyoe] = useReducer(
+  const [type, toggleType] = useReducer(
     (state: EventType | "", action: EventType | "") => {
       if (state === "") return action;
       if (state === action) return "";
@@ -96,7 +96,7 @@ export default function Page() {
                   ? "text-purple bg-white"
                   : "text-white bg-purple"
               }`}
-              onClick={() => toggleTyoe("general")}
+              onClick={() => toggleType("general")}
             >
               一般議程
             </button>
@@ -106,7 +106,7 @@ export default function Page() {
                   ? "text-pink bg-white"
                   : "text-white bg-pink"
               }`}
-              onClick={() => toggleTyoe("undefined")}
+              onClick={() => toggleType("undefined")}
             >
               開放式議程
             </button>
@@ -116,7 +116,7 @@ export default function Page() {
                   ? "text-green bg-white"
                   : "text-white bg-green"
               }`}
-              onClick={() => toggleTyoe("poster")}
+              onClick={() => toggleType("poster")}
             >
               海報
             </button>
