@@ -2,7 +2,6 @@
 import Title from '@/components/cfp/Title'
 import Event, {EventType} from '@/components/cfp/Event';
 import { Required, Public, Optional } from '@/components/cfp/Badge'
-import BackToTopButton from "@/components/BackToTopBtn";
 import Card from '@/components/cfp/Card';
 
 export default function Page() {
@@ -185,7 +184,6 @@ export default function Page() {
           </ul>
         </div>
       </div>
-      <BackToTopButton className="" />
     </div>
   )
 }

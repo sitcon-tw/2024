@@ -1,5 +1,4 @@
 "use client";
-import BackToTopButton from "@/components/BackToTopBtn";
 import Sponsorship from "@/components/cfp/Sponsorship";
 import React, { useState, useEffect } from "react";
 import About from "@/components/cfp/About";
@@ -132,7 +131,6 @@ export default function Page() {
             <div className="text-center text-4xl font-bold gap-2 leading-relaxed mb-16">
               因為，我們終究是人類。
             </div>
-            <BackToTopButton className="" />
           </div>
         </div>
       </div>
