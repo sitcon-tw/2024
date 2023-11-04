@@ -91,7 +91,7 @@ export default function Footer() {
               Students' Information Technology Conference
             </div>
           </div>
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 flex-wrap items-center">
             <SocialLink href="https://sitcon.org/fb" icon={faFacebookF} />
             <SocialLink href="https://sitcon.org/twitter" icon={faXTwitter} />
             <SocialLink href="https://sitcon.org/yt" icon={faYoutube} />

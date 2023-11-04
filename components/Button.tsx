@@ -19,7 +19,7 @@ export default function Button({
         `shadow-glass rounded-full backdrop-blur
         bg-pink-400 hover:bg-pink-300 active:bg-pink-500
         transition-colors
-        w-1/3 py-4 px-6 text-lg drop-shadow text-white
+        w-[160px] py-2 lg:py-4 px-4 lg:px-6 text-lg drop-shadow text-white
         justify-center cursor-pointer
         inline-flex items-center text-center group`,
         className

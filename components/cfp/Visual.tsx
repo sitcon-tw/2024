@@ -9,7 +9,7 @@ export default function Visual() {
         backgroundImage: `url('/intro.webp')`,
       }}
     >
-      <div className="p-4 flex flex-col gap-4 relative container h-full">
+      <div className="py-4 flex flex-col gap-4 relative container h-full">
         <div className="lg:absolute top-8 left-8 flex items-start justify-center flex-col">
           <div className="text-[128px] font-black leading-[1em] lg:text-[256px]">
             CFP

@@ -18,7 +18,7 @@ function FeatureCard({
   bg: string;
 }) {
   return (
-    <motion.div className="bg-black p-4 rounded-lg overflow-hidden relative flex flex-col pt-40 hover:pt-20 hover:pb-20 hover:shadow-xl group transition-all hover:scale-105 duration-300 ease-in-out">
+    <motion.div className="bg-black px-2 py-4 rounded-lg overflow-hidden relative flex flex-col pt-40 hover:pt-20 hover:pb-20 hover:shadow-xl group transition-all hover:scale-105 duration-300 ease-in-out">
       <div
         className="absolute inset-0 bg-cover bg-center group-hover:scale-110 group-hover:opacity-50 transition-all duration-300 ease-in-out"
         style={{
@@ -136,7 +136,7 @@ export default function Sponsorship() {
         </a>{" "}
         聯絡我們，商討更多的合作方式！
       </p>
-      <div className="flex justify-center gap-4 mt-8 mb-16">
+      <div className="flex flex-wrap justify-center gap-4 mt-8 mb-16">
         <Button href="/sponsorship">我要贊助</Button>
         <Button href="/sponsorship">索取贊助徵求書</Button>
       </div>

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useSpring, motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 function AboutButton({
   children,
   href,
@@ -23,10 +23,7 @@ export default function About() {
     target: ref,
     offset: ["end end", "start start"],
   });
-  const imgY = useSpring(useTransform(scrollYProgress, [0, 1], [175, -175]), {
-    damping: 50,
-    stiffness: 200,
-  });
+  const imgY = useTransform(scrollYProgress, [0, 1], [175, -175]);
 
   return (
     <>

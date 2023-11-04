@@ -81,7 +81,7 @@ export default function Theme() {
               。
             </motion.div>
             <LineDivider />
-            <div className="p-10">
+            <div className="py-10">
               <h2 className="text-2xl mb-4 text-center">
                 SITCON 2024 年會主題
               </h2>
