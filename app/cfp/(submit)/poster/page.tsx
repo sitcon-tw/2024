@@ -71,7 +71,7 @@ export default function Page() {
                     600~1500 字為限。可參考{' '}
                     <a
                         href="https://twsf.ntsec.gov.tw/FileAtt.ashx?fcode=AC1C403BD297CA5A6A628EBAD362874E&lang=1"
-                        className="link"
+                        className="text-blue underline"
                     >
                         臺灣國際科學展覽會實施要點
                     </a>{' '}
