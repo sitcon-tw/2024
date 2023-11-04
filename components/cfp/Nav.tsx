@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, createContext, useContext } from "react";
 const NavContext = createContext({
   isMenuOpen: false,
-  setIsMenuOpen: (value: boolean) => { },
+  setIsMenuOpen: (value: boolean) => {},
 });
 function NavLink({
   href,
@@ -92,7 +92,7 @@ export default function Nav() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-[#E5C366] z-10 lg:hidden"
+            className="fixed inset-0 bg-[#E5C366] z-50 lg:hidden"
             initial={{ clipPath: "circle(0% at 36px 36px)" }}
             animate={{ clipPath: "circle(150% at 36px 36px)" }}
             exit={{ clipPath: "circle(0% at 36px 36px)" }}
