@@ -1,45 +1,61 @@
 "use client";
 import { useReducer } from "react";
+import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 
 import Title from "@/components/cfp/Title";
 import Event, { EventType } from "@/components/cfp/Event";
 
 import useCountdown from "@/hooks/useCountdown";
+function CountdownItem({
+  time,
+  label,
+  timeClassName,
+}: {
+  time: string;
+  label: string;
+  timeClassName?: string;
+}) {
+  return (
+    <div className="leading-[1em] flex flex-col justify-center items-center gap-2">
+      <div
+        className={twMerge(
+          "text-[32px] lg:text-[64px] leading-[1em]",
+          timeClassName
+        )}
+      >
+        {time}
+      </div>
+      <div className="font-medium text-[10px] lg:text-[16px] leading-[1em] text-gold">
+        {label}
+      </div>
+    </div>
+  );
+}
 
 function Countdown() {
   const { days, hours, minutes, seconds } = useCountdown();
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 text-center">
       <p>距離投稿截止還有：</p>
-      <div className="w-full border-gold border-2 rounded-full py-7 px-14 lg:py-[50px] lg:px-[100px] grid grid-cols-4">
-        <span className="text-pink text-[32px] lg:text-[64px] lg:leading-[71px] text-center">
-          {days}
-        </span>
-        <span className="text-purple text-[32px] lg:text-[64px] lg:leading-[71px] text-center">
-          {hours}
-        </span>
-        <span className="text-blue text-[32px] lg:text-[64px] lg:leading-[71px] text-center">
-          {minutes}
-        </span>
-        <span className="text-green text-[32px] lg:text-[64px] lg:leading-[71px] text-center">
-          {seconds}
-        </span>
-        <span className="font-medium text-[10px] lg:text-base text-gold text-center">
-          DAYS
-        </span>
-        <span className="font-medium text-[10px] lg:text-base text-gold text-center">
-          HOURS
-        </span>
-        <span className="font-medium text-[10px] lg:text-base text-gold text-center">
-          MINUTES
-        </span>
-        <span className="font-medium text-[10px] lg:text-base text-gold text-center">
-          SECONDS
-        </span>
+      <div className="w-full border-gold border-2 rounded-full py-7 px-14 lg:py-[50px] lg:px-[100px] grid grid-cols-4 leading-7">
+        <CountdownItem time={days} label="DAYS" timeClassName="text-pink" />
+        <CountdownItem time={hours} label="HOURS" timeClassName="text-purple" />
+        <CountdownItem
+          time={minutes}
+          label="MINUTES"
+          timeClassName="text-blue"
+        />
+        <CountdownItem
+          time={seconds}
+          label="SECONDS"
+          timeClassName="text-green"
+        />
       </div>
-      <p className="text-sm font-bold">截止日期</p>
-      <p>即日起至 2024 年 1 月 20 日（六）23:59</p>
+      <div>
+        <p className="font-bold">截止日期</p>
+        <p>即日起至 2024 年 1 月 20 日（六）23:59</p>
+      </div>
     </div>
   );
 }
