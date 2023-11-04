@@ -47,7 +47,7 @@ export default function Sponsorship() {
         SITCON
         秉持著不向與會者收費的原則，十年以來致力於推廣學生資訊教育，創造學生交流、教學互長的機會。
       </p>
-      <div className="text-center text-2xl font-bold gap-2 leading-relaxed mb-9">
+      <div className="text-center text-2xl font-bold gap-2 mb-8 leading-10">
         自 2012 發源以來， <br />
         我們帶領了無數學子進入資訊的殿堂，更做到
       </div>
@@ -105,9 +105,10 @@ export default function Sponsorship() {
           <span>熱愛資訊的志工</span>
         </FeatureCard>
       </FeatureCards>
-      <div className="text-center text-2xl font-bold gap-2 leading-relaxed mb-16">
+      <div className="text-center text-2xl font-bold gap-2 mb-8 leading-10">
         此外，我們也樂見企業與學生的近距離交流， <br />
-        成為我們的合作夥伴您可以： <br />
+        成為我們的合作夥伴您可以
+        <br />
       </div>
 
       <FeatureCards>
