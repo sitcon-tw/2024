@@ -1,43 +1,42 @@
 import React, { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 function BackToTopButton({ className }: { className?: string }) {
+  const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const checkScroll = () => {
-      if (
-        document.documentElement.scrollHeight -
-          (window.innerHeight + window.scrollY) <
-        1200
-      ) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    };
-    window.addEventListener("scroll", checkScroll);
-    return () => {
-      window.removeEventListener("scroll", checkScroll);
-    };
-  }, []);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const screenHeight = window.innerHeight;
+    const screenWidth = window.innerWidth;
+    const pageHeight = document.body.clientHeight;
+    const footerHeight = document.querySelector("footer")?.clientHeight || 0;
+
+    const overScreenHeight = latest > screenHeight;
+    const belowFooter = latest < pageHeight - footerHeight - screenHeight;
+    setVisible((overScreenHeight && belowFooter) || screenWidth < 1024);
+  });
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  if (!visible) return null;
-
   return (
-    <div
+    <motion.button
       className={twMerge(
-        `back-to-top fixed bottom-16 right-16 animate-bounce cursor-pointer transition-transform transform hover:scale-105 active:scale-95 focus:outline-none focus:ring focus:ring-opacity-50`,
+        `mx-auto block my-8 lg:fixed lg:m-0 bottom-8 right-8 text-green border border-green rounded-full w-12 h-12 z-50 hover:bg-green hover:text-white transition-all duration-300 ease-in-out`,
         className
       )}
+      style={{
+        opacity: visible ? 1 : 0,
+        pointerEvents: visible ? "auto" : "none",
+      }}
+      whileTap={{ scale: 0.9 }}
       onClick={scrollToTop}
     >
-      <img className="w-16 h-16" src="/upArrow.png"></img>
-    </div>
+      <FontAwesomeIcon icon={faArrowUp} />
+    </motion.button>
   );
 }
 
