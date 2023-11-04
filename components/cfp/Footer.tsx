@@ -39,19 +39,19 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12">
           <div className="flex flex-col gap-2">
             <div className="text-[#FF3495] font-bold text-lg">連結</div>
-            <Link href="/cfp/" className="link">
+            <Link href="/cfp/" className="footer-link">
               首頁
             </Link>
-            <Link href="/cfp/submit" className="link">
+            <Link href="/cfp/submit" className="footer-link">
               議程與徵稿
             </Link>
           </div>
           <div className="flex flex-col gap-2">
             <div className="text-[#AC24FF] font-bold text-lg">支持我們</div>
-            <a href="#" className="link">
+            <a href="#" className="footer-link">
               我要贊助
             </a>
-            <a href="#" className="link">
+            <a href="#" className="footer-link">
               索取贊助徵求書
             </a>
           </div>
@@ -61,7 +61,7 @@ export default function Footer() {
               {Array.from({ length: 11 }).map((_, i) => (
                 <a
                   href={`https://sitcon.org/${2013 + i}`}
-                  className="link"
+                  className="footer-link"
                   target="_blank"
                   rel="noreferrer"
                   key={i}
@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-2">
             <div className="text-[#0CE295] font-bold text-lg">聯絡我們</div>
-            <a href="mailto:contact@sitcon.org" className="link">
+            <a href="mailto:contact@sitcon.org" className="footer-link">
               contact@sitcon.org
             </a>
           </div>
