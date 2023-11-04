@@ -12,29 +12,29 @@ function Countdown() {
 	return (
 		<div className="flex flex-col items-center gap-4">
 			<p>距離投稿截止還有：</p>
-			<div className="w-full border-gold border-2 rounded-full py-[50px] px-[100px] grid grid-cols-4">
-				<span className="text-pink text-6xl text-center">
+			<div className="w-full border-gold border-2 rounded-full py-7 px-14 lg:py-[50px] lg:px-[100px] grid grid-cols-4">
+				<span className="text-pink text-[32px] lg:text-[64px] text-center">
 					{days}
 				</span>
-				<span className="text-purple text-6xl text-center">
+				<span className="text-purple text-[32px] lg:text-[64px] text-center">
 					{hours}
 				</span>
-				<span className="text-blue text-6xl text-center">
+				<span className="text-blue text-[32px] lg:text-[64px] text-center">
 					{minutes}
 				</span>
-				<span className="text-green text-6xl text-center">
+				<span className="text-green text-[32px] lg:text-[64px] text-center">
 					{seconds}
 				</span>
-				<span className="font-medium text-gold text-center">
+				<span className="font-medium text-[10px] lg:text-base text-gold text-center">
 					DAYS
 				</span>
-				<span className="font-medium text-gold text-center">
+				<span className="font-medium text-[10px] lg:text-base text-gold text-center">
 					HOURS
 				</span>
-				<span className="font-medium text-gold text-center">
+				<span className="font-medium text-[10px] lg:text-base text-gold text-center">
 					MINUTES
 				</span>
-				<span className="font-medium text-gold text-center">
+				<span className="font-medium text-[10px] lg:text-base text-gold text-center">
 					SECONDS
 				</span>
 			</div>
@@ -62,7 +62,7 @@ export default function Page() {
 			<Countdown />
 			{/* submit botton */}
 			<div className="flex justify-center">
-				<button className="bg-gold text-white h-[60px] w-[196px] rounded-full hover:shadow-[0px_4px_16px_0px_#E5C366CC] active:bg-[#D6A41D] active:shadow-[0px_2px_4px_0px_#E5C36699] focus:border focus:border-purple disabled:text-4-6 disabled:bg-2-6">
+				<button className="bg-gold text-xl font-bold text-white h-[60px] w-[196px] rounded-full hover:shadow-[0px_4px_16px_0px_#E5C366CC] active:bg-[#D6A41D] active:shadow-[0px_2px_4px_0px_#E5C36699] focus:border focus:border-purple disabled:text-4-6 disabled:bg-2-6">
 					立刻投稿
 				</button>
 			</div>
@@ -75,28 +75,31 @@ export default function Page() {
 					</div>
 					<div className="flex grow place-content-between">
 						<button
-							className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-purple ${type === 'general'
-								? 'text-purple bg-white'
-								: 'text-white bg-purple'
-								}`}
+							className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-purple ${
+								type === 'general'
+									? 'text-purple bg-white'
+									: 'text-white bg-purple'
+							}`}
 							onClick={() => toggleTyoe('general')}
 						>
 							一般議程
 						</button>
 						<button
-							className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-pink ${type === 'undefined'
-								? 'text-pink bg-white'
-								: 'text-white bg-pink'
-								}`}
+							className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-pink ${
+								type === 'undefined'
+									? 'text-pink bg-white'
+									: 'text-white bg-pink'
+							}`}
 							onClick={() => toggleTyoe('undefined')}
 						>
 							開放式議程
 						</button>
 						<button
-							className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-green ${type === 'poster'
-								? 'text-green bg-white'
-								: 'text-white bg-green'
-								}`}
+							className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-green ${
+								type === 'poster'
+									? 'text-green bg-white'
+									: 'text-white bg-green'
+							}`}
 							onClick={() => toggleTyoe('poster')}
 						>
 							海報
