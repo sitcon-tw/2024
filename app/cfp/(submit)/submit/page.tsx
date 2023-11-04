@@ -13,16 +13,16 @@ function Countdown() {
     <div className="flex flex-col items-center gap-4">
       <p>距離投稿截止還有：</p>
       <div className="w-full border-gold border-2 rounded-full py-7 px-14 lg:py-[50px] lg:px-[100px] grid grid-cols-4">
-        <span className="text-pink text-[32px] lg:text-[64px] text-center">
+        <span className="text-pink text-[32px] lg:text-[64px] lg:leading-[71px] text-center">
           {days}
         </span>
-        <span className="text-purple text-[32px] lg:text-[64px] text-center">
+        <span className="text-purple text-[32px] lg:text-[64px] lg:leading-[71px] text-center">
           {hours}
         </span>
-        <span className="text-blue text-[32px] lg:text-[64px] text-center">
+        <span className="text-blue text-[32px] lg:text-[64px] lg:leading-[71px] text-center">
           {minutes}
         </span>
-        <span className="text-green text-[32px] lg:text-[64px] text-center">
+        <span className="text-green text-[32px] lg:text-[64px] lg:leading-[71px] text-center">
           {seconds}
         </span>
         <span className="font-medium text-[10px] lg:text-base text-gold text-center">
