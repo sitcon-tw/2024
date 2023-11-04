@@ -1,5 +1,20 @@
 import Link from "next/link";
 import useCountdown from "@/hooks/useCountdown";
+import { motion, AnimatePresence } from "framer-motion";
+function CountDownItem({ time }: { time: string }) {
+  return (
+    <AnimatePresence mode="popLayout">
+      <motion.span
+        key={time}
+        initial={{ opacity: 0, y: "-0.25em", scaleY: 0.5 }}
+        animate={{ opacity: 1, y: 0, scaleY: 1 }}
+        exit={{ opacity: 0, y: "0.25em", scaleY: 0.5 }}
+      >
+        {time}
+      </motion.span>
+    </AnimatePresence>
+  );
+}
 export default function Visual() {
   const { days, hours, minutes, seconds } = useCountdown();
   return (
@@ -36,7 +51,8 @@ export default function Visual() {
             距離投稿截止還有
           </div>
           <div className="bg-white bg-opacity-90 backdrop-blur-xl rounded-full border border-[#E5C366] text-[#E5C366] p-4 text-3xl lg:text-4xl text-center tabular-nums tracking-[.1em]">
-            {days}:{hours}:{minutes}:{seconds}
+            <CountDownItem time={days} />:<CountDownItem time={hours} />:
+            <CountDownItem time={minutes} />:<CountDownItem time={seconds} />
           </div>
           <Link
             href="/cfp/submit"
