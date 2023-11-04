@@ -41,7 +41,7 @@ export default function About() {
       </div>
       <img
         src="/hero_bg.webp"
-        className="mx-auto hidden lg:block lg:absolute top-0 bottom-0 right-0 lg:w-[35vw] xl:w-[50vw] -z-10"
+        className="mx-auto hidden lg:block lg:absolute top-0 bottom-0 right-0 lg:w-[45vw] xl:w-[50vw] -z-10"
       />
     </div>
   );
