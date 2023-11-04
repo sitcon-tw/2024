@@ -1,5 +1,5 @@
-export default function Subtitle(props: {content:string}) {
+export default function Subtitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="w text-2xl lg:text-[32px] font-bold">{props.content}</h2>
+    <h2 className="text-2xl lg:text-[32px] font-bold mt-8 mb-4">{children}</h2>
   );
 }

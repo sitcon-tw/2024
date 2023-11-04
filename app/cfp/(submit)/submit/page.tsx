@@ -1,6 +1,7 @@
 "use client";
 import { useReducer } from "react";
 import { twMerge } from "tailwind-merge";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 import Title from "@/components/cfp/Title";
@@ -18,14 +19,20 @@ function CountdownItem({
 }) {
   return (
     <div className="leading-[1em] flex flex-col justify-center items-center gap-2">
-      <div
-        className={twMerge(
-          "text-[32px] lg:text-[64px] leading-[1em]",
-          timeClassName
-        )}
-      >
-        {time}
-      </div>
+      <AnimatePresence mode="popLayout">
+        <motion.div
+          className={twMerge(
+            "text-[32px] lg:text-[64px] leading-[1em]",
+            timeClassName
+          )}
+          key={time}
+          initial={{ opacity: 0, y: "-0.25em", scaleY: 0.5 }}
+          animate={{ opacity: 1, y: 0, scaleY: 1 }}
+          exit={{ opacity: 0, y: "0.25em", scaleY: 0.5 }}
+        >
+          {time}
+        </motion.div>
+      </AnimatePresence>
       <div className="font-medium text-[10px] lg:text-[16px] leading-[1em] text-gold">
         {label}
       </div>
@@ -72,7 +79,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col gap-6 overflow-hidden">
-      <Title content="投稿頁面" />
+      <Title>投稿頁面</Title>
 
       {/* count down */}
       <Countdown />

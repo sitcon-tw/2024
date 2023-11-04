@@ -4,7 +4,7 @@ import Question from "@/components/cfp/Question";
 export default function Page() {
   return (
     <div className="flex flex-col mb-5">
-      <Title content="Q&A" />
+      <Title>Q&A</Title>
       <Question question="「先備知識」與「目標受眾」有何不同？">
         「目標受眾」表示您預期何種人將會前來參與該場議程，此欄位可能表示為與會者的興趣、生活環境抑或年齡層。「先備知識」表示對該議程有興趣者，您建議須先備哪些基礎技術、能力或經驗，有助於了解與吸收該場議程的知識精華。舉例而言，若一講題為「在營隊中使用虛擬貨幣」，則先備知識可能是「沒有」，目標受眾可能是「有想要辦營隊的人」。而如果是有關
         Julia

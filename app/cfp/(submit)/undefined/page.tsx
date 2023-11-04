@@ -2,13 +2,14 @@ import Title from "@/components/cfp/Title";
 import Event from "@/components/cfp/Event";
 import Cards from "@/components/cfp/Card";
 import { Required, Public, Optional } from "@/components/cfp/Badge";
+import Subtitle from "@/components/cfp/Subtitle";
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-6 mb-12">
-      <Title content="開放式議程" />
+    <div className="flex flex-col mb-12">
+      <Title>開放式議程</Title>
 
-      <h2 className="text-[32px] font-bold mt-4">重要時程</h2>
+      <Subtitle>重要時程</Subtitle>
       <div>
         <Event time={[2023, "Nov.", 19]} type={["undefined"]} name="開始徵稿" />
         <Event
