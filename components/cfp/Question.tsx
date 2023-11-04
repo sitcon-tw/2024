@@ -1,37 +1,47 @@
-'use client'
-import { useState } from 'react'
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { twMerge } from "tailwind-merge";
+export default function Question(props: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
 
-export default function Question(props: {question:string, answer:string}) {
-    const [open, setOpen] = useState(false);
-
-    function toggleOpen() {
-        setOpen(!open);
-    }
-
-    function answer() {
-        if (open) {
-            return (
-                <p className="mt-4">{props.answer}</p>
-            );
-        }
-    }
-
-    function question() {
-        if (open) {
-            return (
-                <p className="cursor-pointer font-bold" onClick={toggleOpen}>{props.question}</p>
-            );
-        } else {
-            return (
-                <p className="cursor-pointer" onClick={toggleOpen}>{props.question}</p>
-            );
-        }
-    }
-
-    return (
-        <div className="py-4 border-b-[#E5C366] border-b">
-            {question()}
-            {answer()}
-        </div>
-    );
+  return (
+    <div className="py-4 border-b-[#E5C366] border-b">
+      <p
+        className="cursor-pointer font-bold flex justify-between items-center"
+        onClick={() => setOpen(!open)}
+      >
+        {props.question}
+        <FontAwesomeIcon
+          icon={faAngleDown}
+          className={twMerge("mx-4 transition-transform", open && "rotate-180")}
+        />
+      </p>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{
+              height: 0,
+              opacity: 0,
+              overflow: "hidden",
+            }}
+            animate={{
+              height: "auto",
+              opacity: 1,
+              overflow: "visible",
+            }}
+            exit={{
+              height: 0,
+              opacity: 0,
+              overflow: "hidden",
+            }}
+          >
+            <p className="pt-2">{props.answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 }
