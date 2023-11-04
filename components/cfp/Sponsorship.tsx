@@ -1,7 +1,23 @@
 "use client";
-import Button from "@/components/Button";
 import Counter from "@/components/cfp/Counter";
 import { motion } from "framer-motion";
+function Button({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href?: string;
+}) {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      className="bg-pink-400 hover:opacity-90 active:opacity-80 rounded-full p-2 min-w-[150px] text-center text-white"
+    >
+      {children}
+    </motion.a>
+  );
+}
 
 function FeatureCards({ children }: { children: React.ReactNode }) {
   return (
