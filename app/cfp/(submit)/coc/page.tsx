@@ -8,7 +8,7 @@ export default function Page() {
         歡迎不同身分、來自不同背景的與會者，我們鼓勵女性、性少數與多元背景的參與者。為了讓大家都能愉快地參加
         SITCON，我們要求所有參與者閱讀年會的{" "}
         <a
-          className="text-blue-light"
+          className="link"
           target="_blank"
           href="https://sitcon.org/code-of-conduct/"
         >
