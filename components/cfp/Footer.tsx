@@ -88,7 +88,7 @@ export default function Footer() {
             <div className="mt-4 lg:mt-0 leading-6">
               學生計算機年會
               <br />
-              Students' Information Technology Conference
+              Students&apos; Information Technology Conference
             </div>
           </div>
           <div className="flex gap-4 flex-wrap items-center">
