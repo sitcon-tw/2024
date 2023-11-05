@@ -95,8 +95,12 @@ export default function About() {
               的籌備歷程。
             </div>
             <div className="flex gap-4 mt-8 items-center justify-center lg:justify-end">
-              <AboutButton href="#">訂閱郵件論壇</AboutButton>
-              <AboutButton href="#">查看 GitLab</AboutButton>
+              <AboutButton href="https://groups.google.com/g/sitcon-general/">
+                訂閱郵件論壇
+              </AboutButton>
+              <AboutButton href="https://gitlab.com/sitcon-tw/2024/board">
+                查看 GitLab
+              </AboutButton>
             </div>
           </div>
         </div>
