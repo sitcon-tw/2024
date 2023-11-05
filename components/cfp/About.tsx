@@ -1,5 +1,10 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion";
 function AboutButton({
   children,
   href,
@@ -17,14 +22,59 @@ function AboutButton({
     </a>
   );
 }
-export default function About() {
+function MobileRock() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
   });
   const imgY = useTransform(scrollYProgress, [0, 1], [175, -175]);
-
+  return (
+    <div
+      className="w-full flex items-center justify-center overflow-hidden h-[300px] my-4 lg:hidden"
+      ref={ref}
+    >
+      <motion.img
+        src="/hero_bg.webp"
+        className="w-full"
+        style={{
+          y: imgY,
+          scale: 1.2,
+        }}
+      />
+    </div>
+  );
+}
+function Rock() {
+  const ref = useRef(null);
+  const { scrollYProgress, scrollY } = useScroll({
+    target: ref,
+  });
+  const imgY = useTransform(scrollYProgress, [0, 1], [-100, 500]);
+  const opacity = useTransform(
+    scrollY,
+    [0, 300, 900, 1200, 1500],
+    [0.25, 1, 1, 0.25, 0]
+  );
+  const blur = useTransform(
+    scrollY,
+    [0, 300, 900, 1200, 1500],
+    [10, 0, 0, 10, 10]
+  );
+  const filter = useMotionTemplate`blur(${blur}px)`;
+  return (
+    <motion.img
+      src="/hero_bg.webp"
+      className="mx-auto hidden lg:block lg:absolute top-0 bottom-0 right-0 lg:w-[45vw] xl:w-[50vw] -z-10"
+      style={{
+        y: imgY,
+        opacity,
+        filter,
+      }}
+    />
+  );
+}
+export default function About() {
   return (
     <>
       <div className="relative my-10">
@@ -50,24 +100,9 @@ export default function About() {
             </div>
           </div>
         </div>
-        <img
-          src="/hero_bg.webp"
-          className="mx-auto hidden lg:block lg:absolute top-0 bottom-0 right-0 lg:w-[45vw] xl:w-[50vw] -z-10"
-        />
+        <Rock />
       </div>
-      <div
-        className="w-full flex items-center justify-center overflow-hidden h-[300px] my-4 lg:hidden"
-        ref={ref}
-      >
-        <motion.img
-          src="/hero_bg.webp"
-          className="w-full"
-          style={{
-            y: imgY,
-            scale: 1.2,
-          }}
-        />
-      </div>
+      <MobileRock />
     </>
   );
 }
