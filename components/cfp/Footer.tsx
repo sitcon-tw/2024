@@ -85,7 +85,7 @@ export default function Footer() {
               alt="SITCON Logo"
               className="h-10 lg:-translate-y-1.5"
             />
-            <div className="mt-4 lg:mt-0">
+            <div className="mt-4 lg:mt-0 leading-6">
               學生計算機年會
               <br />
               Students' Information Technology Conference
