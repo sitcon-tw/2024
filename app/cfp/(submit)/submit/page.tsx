@@ -1,9 +1,13 @@
 "use client";
-import { useReducer } from "react";
+import { useReducer, useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+  useSpring,
+} from "framer-motion";
 import Title from "@/components/cfp/Title";
 import Event, { EventType } from "@/components/cfp/Event";
 
@@ -66,7 +70,30 @@ function Countdown() {
     </div>
   );
 }
+function HeroBgImage() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [250, 100, 0]);
+  const skew = useTransform(scrollYProgress, [0, 1], [0, -10]);
+  const x = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
+  return (
+    <div
+      className="w-[calc(100vw-70%)] xl:w-[calc(100vw-60%)] -z-10 fixed bottom-0 right-0"
+      ref={ref}
+    >
+      <motion.img
+        src="/hero_corner.webp"
+        className="w-full"
+        style={{
+          x,
+          y,
+          skew,
+        }}
+      />
+    </div>
+  );
+}
 export default function Page() {
   const [type, toggleType] = useReducer(
     (state: EventType | "", action: EventType | "") => {
@@ -179,16 +206,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* hero bg image */}
-      <div className="w-[calc(100vw-70%)] xl:w-[calc(100vw-60%)] h-[900px] overflow-hidden top-0 left-0 mt-[920px] ml-[70%] xl:ml-[60%] absolute -z-10 hidden lg:block">
-        <Image
-          src="/hero_bg.webp"
-          width={1857}
-          height={1998}
-          alt=""
-          className="max-w-[unset]"
-        />
-      </div>
+      <HeroBgImage />
     </div>
   );
 }
