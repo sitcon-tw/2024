@@ -3,13 +3,22 @@ import Event from "@/components/cfp/Event";
 import Cards from "@/components/cfp/Card";
 import { Required, Public, Optional } from "@/components/cfp/Badge";
 import Subtitle from "@/components/cfp/Subtitle";
+import Toc from "@/components/cfp/Toc";
 
 export default function Page() {
+  const tocs = [
+    {link: "#time", name: '重要時程'},
+    {link: '#description', name: '議程說明'},
+    {link: '#format', name: '投稿格式'},
+    {link: '#review', name: '審稿方式'},
+  ]
+  
   return (
     <div className="flex flex-col mb-12">
+      <Toc sections={tocs}/>
       <Title>開放式議程</Title>
 
-      <Subtitle>重要時程</Subtitle>
+      <Subtitle id="time">重要時程</Subtitle>
       <div>
         <Event time={[2023, "Nov.", 19]} type={["undefined"]} name="開始徵稿" />
         <Event
@@ -35,7 +44,7 @@ export default function Page() {
       </div>
 
       <div className="content">
-        <Subtitle>議程說明</Subtitle>
+        <Subtitle id="description">議程說明</Subtitle>
         <p>
           開放式議程為 <span className="text-purple">40 分鐘的議程</span>{" "}
           ，該議程不限定進行方式，希望跳脫傳統議程框架，透過雙向互動、實作等，任何你想得到的非傳統形式進行此場議程。
@@ -70,7 +79,7 @@ export default function Page() {
           ]}
         />
 
-        <Subtitle>投稿格式</Subtitle>
+        <Subtitle id="format">投稿格式</Subtitle>
         <p>除標示為公開之資訊會對外公布外，其餘僅供審稿委員於審稿時閱讀。</p>
 
         <h3>稿件資訊</h3>
@@ -153,7 +162,7 @@ export default function Page() {
           ID、住處電話等），以利我們在審稿時即時向您釐清投稿資訊。
         </small>
 
-        <Subtitle>審稿方式</Subtitle>
+        <Subtitle id="review">審稿方式</Subtitle>
         <p>
           稿件均經議程組形式審查，交予該領域之審稿委員審稿。審稿委員由 SITCON
           工作人員、業界人士及學界人士組成。
