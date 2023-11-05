@@ -1,6 +1,5 @@
 "use client";
 import Counter from "@/components/cfp/Counter";
-import { motion } from "framer-motion";
 function Button({
   children,
   href,
@@ -9,13 +8,13 @@ function Button({
   href?: string;
 }) {
   return (
-    <motion.a
+    <a
       href={href}
       target="_blank"
       className="bg-pink-400 hover:opacity-90 active:opacity-80 rounded-full p-2 min-w-[150px] text-center text-white"
     >
       {children}
-    </motion.a>
+    </a>
   );
 }
 
@@ -34,7 +33,7 @@ function FeatureCard({
   bg: string;
 }) {
   return (
-    <motion.div className="bg-black px-2 py-4 rounded-lg overflow-hidden relative flex flex-col pt-40 hover:pt-20 hover:pb-20 hover:shadow-xl group transition-all hover:scale-105 duration-300 ease-in-out">
+    <div className="bg-black px-2 py-4 rounded-lg overflow-hidden relative flex flex-col pt-40 hover:pt-20 hover:pb-20 hover:shadow-xl group transition-all hover:scale-105 duration-300 ease-in-out">
       <div
         className="absolute inset-0 bg-cover bg-center group-hover:scale-110 group-hover:opacity-50 transition-all duration-300 ease-in-out group-hover:blur-sm"
         style={{
@@ -51,7 +50,7 @@ function FeatureCard({
       >
         {children}
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -59,7 +58,7 @@ export default function Sponsorship() {
   return (
     <div className="max-w-[700px] container mx-auto">
       <h1 className="text-center text-4xl font-bold mb-6">SITCON 贊助徵求</h1>
-      <p className="mb-12">
+      <p className="mb-12 z-20">
         SITCON
         秉持著不向與會者收費的原則，十年以來致力於推廣學生資訊教育，創造學生交流、教學互長的機會。
       </p>
