@@ -17,7 +17,7 @@ export default function Toc({ sections }) {
       // }, delay);
 
       setSelectedSection(link);
-      setTimeout(() => setOpen(false), 1000)
+      setTimeout(() => setOpen(false), 1000);
       // setOpen(false)
     }
   };
@@ -75,7 +75,7 @@ export default function Toc({ sections }) {
           </ul>
         </div>
       </div>
-      <div className="lg:w-[143px] xl:w-[196px] hidden lg:flex flex-col p-4 fixed top-0 right-4 mt-24 bg-white hover:cursor-pointer gap-4">
+      <div className="min-w-[200px] hidden lg:flex flex-col p-4 hover:cursor-pointer gap-4 sticky top-[88px] self-start">
         <button className="bg-gold text-xl font-bold text-white h-[40px] w-full rounded-full hover:shadow-[0px_4px_16px_0px_#E5C366CC] active:bg-[#D6A41D] active:shadow-[0px_2px_4px_0px_#E5C36699] focus:border focus:border-purple disabled:text-4-6 disabled:bg-2-6">
           立刻投稿
         </button>
