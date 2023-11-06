@@ -16,7 +16,7 @@ export default function Page() {
   ];
 
   return (
-    <div className="flex flex-row-reverse relative">
+    <div className="flex flex-col lg:flex-row-reverse relative">
       <Toc sections={tocs} />
       <div className="flex flex-col overflow-hidden">
         <div>
