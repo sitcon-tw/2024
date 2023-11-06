@@ -44,7 +44,7 @@ export default function Nav() {
   const { scrollY } = useScroll();
   const navBackgroundOpacity = useTransform(scrollY, [0, 100], [0, 1]);
   const navBackground = useMotionTemplate`rgba(229, 195, 102, ${navBackgroundOpacity})`;
-  const isIndex = usePathname() === "/cfp";
+  const isIndex = usePathname() === "/cfp/";
   return (
     <NavContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
       <motion.nav
@@ -58,15 +58,15 @@ export default function Nav() {
       >
         {/* desktop nav */}
         <div className="container items-center justify-start gap-6 h-16 hidden lg:flex">
-          <Link href="/cfp">
+          <Link href="/cfp/">
             <img
               src="/sitcon_logo.svg"
               alt="SITCON Logo"
               className="-translate-y-1 h-10 mr-2"
             />
           </Link>
-          <NavLink href="/cfp">首頁</NavLink>
-          <NavLink href="/cfp/submit">議程與徵稿</NavLink>
+          <NavLink href="/cfp/">首頁</NavLink>
+          <NavLink href="/cfp/submit/">議程與徵稿</NavLink>
         </div>
         {/* mobile nav */}
         <div className="container grid grid-cols-4 items-center justify-start gap-6 h-16 lg:hidden">
@@ -77,7 +77,7 @@ export default function Nav() {
           />
 
           <Link
-            href="/cfp"
+            href="/cfp/"
             className="col-span-2 flex items-center justify-center"
           >
             <img
@@ -104,7 +104,7 @@ export default function Nav() {
               />
 
               <Link
-                href="/cfp"
+                href="/cfp/"
                 className="col-span-2 flex items-center justify-center"
               >
                 <img
@@ -118,21 +118,21 @@ export default function Nav() {
               <div className="text-[#000] font-bold text-lg mt-2 tracking-wider">
                 徵稿
               </div>
-              <NavLink href="/cfp">首頁</NavLink>
-              <NavLink href="/cfp/submit">投稿頁面</NavLink>
+              <NavLink href="/cfp/">首頁</NavLink>
+              <NavLink href="/cfp/submit/">投稿頁面</NavLink>
               <div className="text-[#000] font-bold text-lg mt-2 tracking-wider">
                 稿件說明
               </div>
-              <NavLink href="/cfp/normal">一般議程</NavLink>
-              <NavLink href="/cfp/undefined">開放式議程</NavLink>
-              <NavLink href="/cfp/poster">海報</NavLink>
+              <NavLink href="/cfp/normal/">一般議程</NavLink>
+              <NavLink href="/cfp/undefined/">開放式議程</NavLink>
+              <NavLink href="/cfp/poster/">海報</NavLink>
               <div className="text-[#000] font-bold text-lg mt-2 tracking-wider">
                 其他事項
               </div>
-              <NavLink href="/cfp/coc">Code of Conduct</NavLink>
-              <NavLink href="/cfp/notice">投稿注意事項與授權</NavLink>
-              <NavLink href="/cfp/rehearsal">試講與彩排</NavLink>
-              <NavLink href="/cfp/qa">Q&A</NavLink>
+              <NavLink href="/cfp/coc/">Code of Conduct</NavLink>
+              <NavLink href="/cfp/notice/">投稿注意事項與授權</NavLink>
+              <NavLink href="/cfp/rehearsal/">試講與彩排</NavLink>
+              <NavLink href="/cfp/qa/">Q&A</NavLink>
             </div>
           </motion.div>
         )}
