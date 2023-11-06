@@ -1,17 +1,19 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 export default function Toc({ sections }) {
-    const [selectedSection, setSelectedSection] = useState(null);
+  const [selectedSection, setSelectedSection] = useState(null);
+  const [open, setOpen] = useState(false);
 
   const handleClick = (link) => {
-    const navbarHeight = 69;
+    const navbarHeight = 69+40;
     const targetElement = document.querySelector(link);
     if (targetElement) {
       const offset = targetElement.getBoundingClientRect().top - navbarHeight;
       const delay = 100; //ms
       setTimeout(() => {
-        window.scrollTo({ top: window.scrollY + offset, behavior: 'smooth' });
+        window.scrollTo({ top: window.scrollY + offset, behavior: "smooth" });
       }, delay);
 
       setSelectedSection(link);
@@ -19,6 +21,57 @@ export default function Toc({ sections }) {
   };
 
   return (
+    <>
+      <div className="flex lg:hidden flex-col mb-4">
+        {/* dropdown */}
+        <div
+          className="border border-gold rounded-lg flex flex-grow justify-center items-center px-4"
+          onClick={() => setOpen((open) => !open)}
+        >
+          <h1 className="text-gold">本頁目錄</h1>
+          <span className="flex-grow" />
+          <span>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 21.0001L7.5 16.5001L8.95 15.0501L12 18.1001L15.05 15.0501L16.5 16.5001L12 21.0001ZM8.95 9.0501L7.5 7.6001L12 3.1001L16.5 7.6001L15.05 9.0501L12 6.0001L8.95 9.0501Z"
+                fill="#E5C366"
+              />
+            </svg>
+          </span>
+        </div>
+        {/* menu */}
+        {/* TODO: fix border */}
+        <div
+          className={twMerge(
+            "px-4 overflow-hidden transition-all border-x-2-6 border-b-2-6 rounded-lg",
+            open ? "h-fit border" : "h-0"
+          )}
+        >
+          <ul>
+            {sections.map((section, index) => (
+              <li key={index}>
+                <a
+                  className={`block ${
+                    section.link === selectedSection
+                      ? "text-black font-extrabold "
+                      : "text-gray-500"
+                  }`}
+                  onClick={() => handleClick(section.link)}
+                >
+                  <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
+                  {section.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
       <div className="lg:w-[143px] xl:w-[196px] hidden lg:flex flex-col p-4 fixed top-0 right-4 mt-24 bg-white hover:cursor-pointer gap-4">
         <button className="bg-gold text-xl font-bold text-white h-[40px] w-full rounded-full hover:shadow-[0px_4px_16px_0px_#E5C366CC] active:bg-[#D6A41D] active:shadow-[0px_2px_4px_0px_#E5C36699] focus:border focus:border-purple disabled:text-4-6 disabled:bg-2-6">
           立刻投稿
@@ -28,7 +81,11 @@ export default function Toc({ sections }) {
           {sections.map((section, index) => (
             <li key={index}>
               <a
-                className={`block ${section.link === selectedSection ? "text-black font-extrabold " : "text-gray-500"}`}
+                className={`block ${
+                  section.link === selectedSection
+                    ? "text-black font-extrabold "
+                    : "text-gray-500"
+                }`}
                 onClick={() => handleClick(section.link)}
               >
                 <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
@@ -38,5 +95,6 @@ export default function Toc({ sections }) {
           ))}
         </ul>
       </div>
+    </>
   );
 }
