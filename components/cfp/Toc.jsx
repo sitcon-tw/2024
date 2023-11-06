@@ -7,16 +7,18 @@ export default function Toc({ sections }) {
   const [open, setOpen] = useState(false);
 
   const handleClick = (link) => {
-    const navbarHeight = 69+40;
+    // const navbarHeight = 69+250;
     const targetElement = document.querySelector(link);
     if (targetElement) {
-      const offset = targetElement.getBoundingClientRect().top - navbarHeight;
-      const delay = 100; //ms
-      setTimeout(() => {
-        window.scrollTo({ top: window.scrollY + offset, behavior: "smooth" });
-      }, delay);
+      // const offset = targetElement.getBoundingClientRect().top - navbarHeight;
+      // const delay = 100; //ms
+      // setTimeout(() => {
+      //   window.scrollTo({ top: window.scrollY + offset, behavior: "smooth" });
+      // }, delay);
 
       setSelectedSection(link);
+      setTimeout(() => setOpen(false), 1000)
+      // setOpen(false)
     }
   };
 
@@ -57,6 +59,7 @@ export default function Toc({ sections }) {
             {sections.map((section, index) => (
               <li key={index}>
                 <a
+                  href={section.link}
                   className={`block ${
                     section.link === selectedSection
                       ? "text-black font-extrabold "
@@ -81,6 +84,7 @@ export default function Toc({ sections }) {
           {sections.map((section, index) => (
             <li key={index}>
               <a
+                href={section.link}
                 className={`block ${
                   section.link === selectedSection
                     ? "text-black font-extrabold "
