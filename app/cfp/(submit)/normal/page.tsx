@@ -8,16 +8,16 @@ import Toc from "@/components/cfp/Toc";
 
 export default function Page() {
   const tocs = [
-    {link: "#time", name: "重要時程"},
-    {link: "#type", name: "議程種類"},
-    {link: "#eg", name: "投稿主題範例"},
-    {link: "#attype", name: "投稿格式"},
-    {link: "#check", name: "審稿方式"},
-  ]
-  
+    { link: "#time", name: "重要時程" },
+    { link: "#type", name: "議程種類" },
+    { link: "#eg", name: "投稿主題範例" },
+    { link: "#attype", name: "投稿格式" },
+    { link: "#check", name: "審稿方式" },
+  ];
+
   return (
     <div className="flex flex-col overflow-hidden">
-    <Toc sections={tocs}/>
+      <Toc sections={tocs} />
       <div>
         <Title>一般議程</Title>
         <Subtitle id="time">重要時程</Subtitle>
