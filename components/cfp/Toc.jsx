@@ -1,10 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
 export default function Toc({ sections }) {
   const [selectedSection, setSelectedSection] = useState(null);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        console.log("entries", entries.length);
+        for (const entry of entries) {
+            console.log("intersecting", entry.target.id);
+            if (entry.isIntersecting) {
+            setSelectedSection("#" + entry.target.id);
+            break;
+          }
+        }
+      },
+    );
+
+    for (const section of sections) {
+      const targetElement = document.querySelector(section.link);
+      if (!targetElement) continue;
+      observer.observe(targetElement);
+    }
+
+    setSelectedSection(sections[0].link);
+    console.log("set selected section to", sections[0].link);
+  }, [sections]);
 
   const handleClick = (link) => {
     // const navbarHeight = 69+250;
@@ -16,7 +41,6 @@ export default function Toc({ sections }) {
       //   window.scrollTo({ top: window.scrollY + offset, behavior: "smooth" });
       // }, delay);
 
-      setSelectedSection(link);
       setTimeout(() => setOpen(false), 1000);
       // setOpen(false)
     }
@@ -60,11 +84,10 @@ export default function Toc({ sections }) {
               <li key={index}>
                 <a
                   href={section.link}
-                  className={`block ${
-                    section.link === selectedSection
+                  className={`block ${section.link === selectedSection
                       ? "text-black font-extrabold "
                       : "text-gray-500"
-                  }`}
+                    }`}
                   onClick={() => handleClick(section.link)}
                 >
                   <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
@@ -85,11 +108,10 @@ export default function Toc({ sections }) {
             <li key={index}>
               <a
                 href={section.link}
-                className={`block ${
-                  section.link === selectedSection
+                className={`block ${section.link === selectedSection
                     ? "text-black font-extrabold "
                     : "text-gray-500"
-                }`}
+                  }`}
                 onClick={() => handleClick(section.link)}
               >
                 <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
