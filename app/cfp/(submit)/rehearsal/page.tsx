@@ -1,10 +1,17 @@
 import Title from "@/components/cfp/Title";
 import Subtitle from "@/components/cfp/Subtitle";
+import Toc from "@/components/cfp/Toc";
 export default function Page() {
+  const tocs = [
+    { link: "#trial", name: "試講" },
+    { link: "#rehearsal", name: "彩排" },
+  ];
   return (
-    <div className="flex flex-col mb-5">
+    <div className="flex flex-col lg:flex-row-reverse relative">
+      <Toc sections={tocs} />
+      <div className="flex flex-col mb-5">
       <Title>試講與彩排</Title>
-      <Subtitle>試講</Subtitle>
+      <Subtitle id="trial">試講</Subtitle>
       <p>
         試講提供講者提升演講品質的機會，比照年會時間安排供講者講完整場演講，並
         <strong>有議程組人員提供建議（如簡報、臺風等）</strong>
@@ -16,7 +23,7 @@ export default function Page() {
       <p>
         試講交通補助：依照客運價格標準，我們將補助講者至最近試講場地的全額或部分車資。
       </p>
-      <Subtitle>彩排</Subtitle>
+      <Subtitle id="rehearsal">彩排</Subtitle>
       <p>
         本屆 SITCON
         將在年會前一天提供入選講者彩排的機會。彩排能讓講者熟悉現場設備環境、攝影機位置，並且測試
@@ -36,5 +43,7 @@ export default function Page() {
         提供設備：與年會當天場地的設備相同，例如麥克風、倒數計時器等。
       </p>
     </div>
+    </div>
+    
   );
 }
