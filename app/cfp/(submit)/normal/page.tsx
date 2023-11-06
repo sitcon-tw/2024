@@ -65,13 +65,13 @@ export default function Page() {
       </div>
 
       <div className="content">
-        <h2 className="text-4xl font-medium " id="type" >議程種類</h2>
+        <Subtitle id="type">議程種類</Subtitle>
         <div className="flex flex-row items-center justify-center space-x-12">
           <p>Presentation</p>
           <p>Espresso</p>
         </div>
 
-        <h2 className="text-4xl font-medium" id="eg">投稿主題範例</h2>
+        <Subtitle id="eg">投稿主題範例</Subtitle>
         <div>
           <p>
             SITCON
@@ -149,7 +149,7 @@ export default function Page() {
           </p>
         </div>
 
-        <h2 className="text-4xl leading-[75px] font-medium" id="attype">投稿格式</h2>
+        <Subtitle id="attype">投稿格式</Subtitle>
         <p>
           各議程類型的投稿格式相同，除標示為公開之資訊會對外公布外，其餘僅供審稿委員於審稿時閱讀。
         </p>
@@ -255,7 +255,7 @@ export default function Page() {
           ID、住處電話等），以利我們在審稿時即時向您釐清投稿資訊。
         </small>
 
-        <h2 className="text-4xl leading-[75px] font-medium" id="check">審稿方式</h2>
+        <Subtitle id="check">審稿方式</Subtitle>
         <p>
           稿件均經議程組形式審查，交予該領域之審稿委員審稿。審稿委員由 SITCON
           工作人員、業界人士及學界人士組成。
