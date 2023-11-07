@@ -14,7 +14,7 @@ export default function Page() {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row-reverse relative">
+    <div className="flex flex-col lg:flex-row-reverse relative gap-6">
       <Toc sections={tocs} />
       <div className="flex flex-col mb-12">
         <Title>海報 Poster</Title>

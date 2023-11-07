@@ -7,7 +7,7 @@ export default function Page() {
     { link: "#auth", name: "授權" },
   ];
   return (
-    <div className="flex flex-col lg:flex-row-reverse relative">
+    <div className="flex flex-col lg:flex-row-reverse relative gap-6">
       <Toc sections={tocs} />
       <div className="flex flex-col mb-5">
         <Title>投稿注意事項與授權</Title>
@@ -62,7 +62,11 @@ export default function Page() {
             YouTube
           </a>{" "}
           及{" "}
-          <a target="_blank" className="link" href="https://odysee.com/@SITCON:f">
+          <a
+            target="_blank"
+            className="link"
+            href="https://odysee.com/@SITCON:f"
+          >
             LBRY
           </a>{" "}
           的 SITCON 頻道。您為議程準備的其餘相關素材（如投影片），將於年會後由
