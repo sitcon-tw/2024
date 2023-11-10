@@ -26,7 +26,7 @@ function MobileRock() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["end end", "start start"],
+    offset: ["start end", "end start"],
   });
   const imgY = useTransform(scrollYProgress, [0, 1], [175, -175]);
   return (
