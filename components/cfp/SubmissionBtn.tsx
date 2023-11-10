@@ -24,7 +24,7 @@ export default function SubmissionBtn({ href }: { href: string }) {
     <>
       <div
         className={twMerge(
-          "fixed lg:relative bottom-0 left-0 w-full p-2 flex items-center justify-center lg:p-0",
+          "fixed lg:relative bottom-0 left-0 w-full p-2 flex items-center justify-center lg:p-0 z-10",
           "transition-all duration-500 ease-in-out",
           !show && "translate-y-[100%] opacity-0"
         )}
