@@ -21,7 +21,7 @@ export default function Page() {
         <SubmissionBtn href="https://docs.google.com/forms/d/e/1FAIpQLScoIZBr-GY8ia6v0-4aD0UXtQuIlAWiDX_hst4ku5vixnc-Og/viewform" />
       </Toc>
       <div className="flex flex-col mb-12">
-        <Title>海報 Poster</Title>
+        <Title>海報投稿</Title>
         <Subtitle id="time">重要時程</Subtitle>
         <div>
           <Event time={[2023, "Nov.", 19]} type={["poster"]} name="開始徵稿" />
@@ -54,11 +54,7 @@ export default function Page() {
           <p>除標示為公開之資訊會對外公布外，其餘僅供審稿委員於審稿時閱讀。</p>
           <h3>稿件資訊</h3>
           <h4>
-            中文題目 Chinese Project Title <Required /> <Public />
-          </h4>
-          <small>長度請自行斟酌。</small>
-          <h4>
-            英文題目 English Project Title <Required /> <Public />
+            題目 Project Title <Required /> <Public />
           </h4>
           <small>長度請自行斟酌。</small>
           <h4>
@@ -66,14 +62,14 @@ export default function Page() {
           </h4>
           <small>建議約 350 字，使用於宣傳與網站公告。</small>
           <h4>
-            關鍵詞 Keywords <Required /> <Public />
+            主題標籤 Labels <Required /> <Public />
           </h4>
-          <small>至多三個。</small>
+          <small>請填寫 1~3 個與海報內文相關的領域與知識標籤，例如：ML、Data Science、資安、NLP 等；錄取後會與提供稿件者溝通微調後公開於官網。</small>
           <h4>
             研究說明 Project Content <Required />
           </h4>
           <small>
-            請以 pdf 檔案上傳，需簡要說明（一）研究動機與目的 Research Question
+            請以 PDF 檔案上傳，需簡要說明（一）研究動機與目的 Research Question
             or Problem；（二）研究方法與過程 Methodology；（三）研究結果與討論
             Results and Interpretation of these results；（四）結論應用及展望
             Conclusions 等，以 600~1500 字為限。可參考{" "}
@@ -85,15 +81,15 @@ export default function Page() {
             </a>{" "}
             第 17 頁說明。
           </small>
-          <h4>海報內容 Poster Content</h4>
+          <h4>海報內容 Poster Content <Public /></h4>
           <small>
-            <span className="text-purple>">錄取後上傳</span>
-            。以呈現研究結果為主，除題目與摘要之外，建議依序可包含前言、研究方法、結論及參考文獻等，內容請投稿作者自行斟酌，以不超過海報尺寸為限。
-            <span className="text-purple>">
-              請以直版寬 841 mm、高 1189 mm (A0 大小)規格製作為 pdf 檔案
+            <span className="text-purple font-bold">錄取後上傳</span>
+            。以呈現研究結果為主，除題目與摘要之外，建議依序可包含前言、研究方法、結論及參考文獻等，內容請投稿作者自行斟酌，以不超過海報尺寸為限，大會方將會提供參考模板給錄取者。
+            <span className="text-purple font-bold">
+              請以直版寬 841 mm、高 1189 mm（A0 大小）規格製作為 pdf 檔案
             </span>
             ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，
-            <span className="text-purple>">統一由大會進行印製與佈展</span>。
+            <span className="text-purple font-bold">統一由大會進行印製與佈展</span>。
           </small>
           <h4>其他說明 Additional Instructions</h4>
           <small>其他以上未提及之說明，若為延續性研究作品也請在此標明。</small>
@@ -101,7 +97,7 @@ export default function Page() {
           <h3>個人資料</h3>
           <p>
             除了暱稱 /
-            名字被用於宣傳，其餘資訊僅需提供一人作為代表（當稿件同時有多位講者時），供議程組於聯絡時使用。
+            名字、自我介紹被用於宣傳，其餘資訊僅需提供一人作為代表（當稿件同時有多位講者時），供議程組於聯絡時使用。
           </p>
           <h4>
             電子郵件 Email <Required />
@@ -124,32 +120,28 @@ export default function Page() {
           </h4>
           <small>用於大會聯絡、確認資訊用的電話號碼。</small>
           <h4>
-            其他聯絡方式 Other contact information <Required />
+            其他聯絡方式 Other Contact Information <Required />
           </h4>
           <small>
             其他任何我們能聯絡您的方式（如 Telegram
             ID、住處電話等），以利我們在審稿時即時向您釐清投稿資訊。
           </small>
 
-          <h3>海報格式建議參酌</h3>
+          <h3>海報格式</h3>
           <ul className="list-disc list-outside ml-4">
             <li>
               中文名稱：字體大小範圍為 70 號字〜90
-              號字，且最多不可超過兩行，置中對齊方式。
+              號字，且最建議多不超過兩行，置中對齊方式。
             </li>
             <li>
               英文名稱：字體大小範圍為 40 號字〜80
-              號字，且最多不可超過兩行，置中對齊方式。
+              號字，且建議最多可超過兩行，置中對齊方式。
             </li>
             <li>
               作者中、英文姓名：字體大小範圍 30 號字〜40 號字，置中對齊方式。
             </li>
-            <li>
-              學校系所或單位名稱 (全銜)：字體大小範圍 30 號字〜40
-              號字，置中對齊方式。
-            </li>
-            <li>海報紙上下側及左右邊各留至少 5 公分。</li>
-            <li>內文中文以標楷體或黑體書寫、英文請以 Times New Roman 書寫。</li>
+            <li>海報頁面的上下側及左右邊各留至少 5 公分。</li>
+            <li>內文中文建議以標楷體或黑體書寫、英文以Times New Roman 書寫。</li>
             <li>
               圖表需以良好解析度呈現，可以列在文中，或列在參考文獻之後。列在文中者，請盡量靠近文中第一次提及的地方。各圖、表請備說明內容，圖的說明應置於圖的下方，而表的說明則應置於表的上方。
             </li>
@@ -173,11 +165,9 @@ export default function Page() {
 
           <Subtitle id="present">佈展</Subtitle>
           <p>
-            請以直版寬 xx 公分、高 xx 公分規格製作為 pdf
-            檔案，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，統一由大會進行印製與佈展。
+            請以<span className="text-purple font-bold">直版寬841 mm、高 1189 mm （A0 大小）規格製作為 pdf 檔案</span>，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，統一由大會進行印製與佈展。
           </p>
-          <p>佈展方式：(說明佈展展板形式)</p>
-          <p>佈展地點：TBD</p>
+          <p>佈展方式與地點：地點於 2 樓梯廳，其餘細節將於稿件錄取後通知。</p>
         </div>
       </div>
     </div>

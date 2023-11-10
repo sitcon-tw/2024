@@ -55,13 +55,13 @@ export default function Page() {
         <div className="content">
           <Subtitle id="description">議程說明</Subtitle>
           <p>
-            開放式議程為 <span className="text-purple">40 分鐘的議程</span>{" "}
+            開放式議程為 <span className="text-purple font-bold">40 分鐘的議程</span>{" "}
             ，該議程不限定進行方式，希望跳脫傳統議程框架，透過雙向互動、實作等，任何你想得到的非傳統形式進行此場議程。
           </p>
           <h3>什麼是開放式議程？</h3>
           <p>
             在追求創新的時代，我們為講者提供了開放式議程這個選項，跳脫講者對聽眾單向陳述式的演講，開放式議程更加強調主講者和與會者的{" "}
-            <span className="text-purple">雙向交流</span>。SITCON
+            <span className="text-purple font-bold">雙向交流</span>。SITCON
             作為學生展現自己的舞台，我們期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是一同探討學生相關議題等。
           </p>
           <p>對於還在猶豫的講者們，以下是我們提供的幾種議程形式範例：</p>
@@ -144,7 +144,7 @@ export default function Page() {
           </small>
 
           <h3>個人資料</h3>
-          <p></p>
+          <p>除了暱稱 / 名字、自我介紹被用於宣傳，其餘資訊僅需提供一人作為代表（當稿件同時有多位講者時），供議程組於聯絡時使用。</p>
           <h4>
             電子郵件 Email <Required />
           </h4>
@@ -166,7 +166,7 @@ export default function Page() {
           </h4>
           <small>用於大會聯絡、確認資訊用的電話號碼。</small>
           <h4>
-            其他聯絡方式 Other contact information <Required />
+            其他聯絡方式 Other Contact Information <Required />
           </h4>
           <small>
             其他任何我們能聯絡您的方式（如 Telegram
