@@ -16,6 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
     authors: [{ name: "SITCON" }],
     keywords: "SITCON, SITCON 2024",
     description,
+    metadataBase: new URL("https://sitcon.org/2024/"),
     openGraph: {
       type: "website",
       locale: "zh_TW",
