@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+console.log("🥞    - url:", "http://localhost:3000/2024");
 const nextConfig = {
   output: "export",
   // https://nextjs.org/docs/pages/api-reference/next-config-js/basePath

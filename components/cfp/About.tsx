@@ -35,7 +35,7 @@ function MobileRock() {
       ref={ref}
     >
       <motion.img
-        src="/hero_bg.webp"
+        src="/2024/cfp/hero_bg.webp"
         className="w-full"
         style={{
           y: imgY,
@@ -64,7 +64,7 @@ function Rock() {
   const filter = useMotionTemplate`blur(${blur}px)`;
   return (
     <motion.img
-      src="/hero_bg.webp"
+      src="/2024/cfp/hero_bg.webp"
       className="mx-auto hidden lg:block lg:absolute top-0 bottom-0 right-0 lg:w-[45vw] xl:w-[50vw] -z-10"
       style={{
         y: imgY,

@@ -60,7 +60,7 @@ export default function Nav() {
         <div className="container items-center justify-start gap-6 h-16 hidden lg:flex">
           <Link href="/cfp/">
             <img
-              src="/sitcon_logo.svg"
+              src="/2024/sitcon_logo.svg"
               alt="SITCON Logo"
               className="-translate-y-1 h-10 mr-2"
             />
@@ -81,7 +81,7 @@ export default function Nav() {
             className="col-span-2 flex items-center justify-center"
           >
             <img
-              src="/sitcon_logo.svg"
+              src="/2024/cfp/sitcon_logo.svg"
               alt="SITCON Logo"
               className="-translate-y-1 h-10 pointer-events-none"
             />
@@ -108,7 +108,7 @@ export default function Nav() {
                 className="col-span-2 flex items-center justify-center"
               >
                 <img
-                  src="/sitcon_logo.svg"
+                  src="/2024/sitcon_logo.svg"
                   alt="SITCON Logo"
                   className="-translate-y-1 h-10 pointer-events-none"
                 />

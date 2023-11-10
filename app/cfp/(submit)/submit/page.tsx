@@ -84,7 +84,7 @@ function HeroBgImage() {
       ref={ref}
     >
       <motion.img
-        src="/hero_corner.webp"
+        src="/2024/cfp/hero_corner.webp"
         className="w-full"
         style={{
           x,

@@ -21,7 +21,7 @@ export default function Visual() {
     <div
       className="h-[calc(100svh-64px)] min-h-[768px] bg-white bg-cover bg-[left_20%_center] lg:bg-center"
       style={{
-        backgroundImage: `url('/intro.webp')`,
+        backgroundImage: `url('/2024/cfp/intro.webp')`,
       }}
     >
       <div className="py-4 flex flex-col gap-4 relative container h-full">

@@ -81,7 +81,7 @@ export default function Footer() {
         <div className="flex lg:items-end flex-col lg:flex-row lg:justify-between gap-8 py-8 border-t border-[#E5C366]">
           <div className="lg:flex lg:items-center lg:gap-4">
             <img
-              src="/sitcon_logo.svg"
+              src="/2024/sitcon_logo.svg"
               alt="SITCON Logo"
               className="h-10 lg:-translate-y-1.5"
             />
