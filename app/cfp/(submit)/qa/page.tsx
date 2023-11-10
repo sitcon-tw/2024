@@ -11,7 +11,7 @@ export default function Page() {
         程式語言的演講，則先備知識可能是「知道平行運算是什麼」，目標受眾可能是「想用
         Julia 做資料科學的人」。
       </Question>
-      <Question question="投稿主題是否有必要切合年會主題（TBD）？">
+      <Question question="投稿主題是否有必要切合年會主題？">
         不用。審稿時僅會依照上文所述方式審查，不會因為切合主題就拿到比較高分，或因為與主題無關就被扣分。
       </Question>
       <Question question="還有疑問怎麼辦？">
