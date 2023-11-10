@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Toc({
   sections,
@@ -14,9 +15,7 @@ export default function Toc({
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      console.log("entries", entries.length);
       for (const entry of entries) {
-        console.log("intersecting", entry.target.id);
         if (entry.isIntersecting) {
           setSelectedSection("#" + entry.target.id);
           break;
@@ -38,24 +37,18 @@ export default function Toc({
     // const navbarHeight = 69+250;
     const targetElement = document.querySelector(link);
     if (targetElement) {
-      // const offset = targetElement.getBoundingClientRect().top - navbarHeight;
-      // const delay = 100; //ms
-      // setTimeout(() => {
-      //   window.scrollTo({ top: window.scrollY + offset, behavior: "smooth" });
-      // }, delay);
-
+      // close dropdown
       setTimeout(() => setOpen(false), 1000);
-      // setOpen(false)
     }
   };
 
   return (
     <>
-      <div className="flex lg:hidden flex-col mb-4">
+      <div className="flex lg:hidden flex-col">
         {children && children}
         {/* dropdown */}
         <div
-          className="border border-gold rounded-lg flex flex-grow justify-center items-center px-4"
+          className="border border-gold rounded-lg flex flex-grow justify-center items-center px-4 mb-2 cursor-pointer"
           onClick={() => setOpen((open) => !open)}
         >
           <h1 className="text-gold">本頁目錄</h1>
@@ -75,55 +68,57 @@ export default function Toc({
             </svg>
           </span>
         </div>
-        {/* menu */}
-        {/* TODO: fix border */}
-        <div
-          className={twMerge(
-            "px-4 overflow-hidden transition-all border-x-2-6 border-b-2-6 rounded-lg",
-            open ? "h-fit border" : "h-0"
+        {/* mobile menu */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ height: 0, overflow: "hidden" }}
+              animate={{ height: "auto" }}
+              exit={{ height: 0 }}
+              className="rounded-lg border border-gold bg-white"
+            >
+              <div className="px-4 overflow-hidden">
+                {sections.map((section, index) => (
+                  <a
+                    href={section.link}
+                    className={`block ${
+                      section.link === selectedSection
+                        ? "text-black font-extrabold "
+                        : "text-gray-500"
+                    }`}
+                    onClick={() => handleClick(section.link)}
+                    key={index}
+                  >
+                    <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
+                    {section.name}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
           )}
-        >
-          <ul>
-            {sections.map((section, index) => (
-              <li key={index}>
-                <a
-                  href={section.link}
-                  className={`block ${
-                    section.link === selectedSection
-                      ? "text-black font-extrabold "
-                      : "text-gray-500"
-                  }`}
-                  onClick={() => handleClick(section.link)}
-                >
-                  <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
-                  {section.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        </AnimatePresence>
       </div>
-      <div className="min-w-[200px] hidden lg:flex flex-col p-4 hover:cursor-pointer gap-4 sticky top-[88px] self-start">
+      <div className="min-w-[200px] hidden lg:flex flex-col p-4 hover:cursor-pointer gap-3 sticky top-[88px] self-start leading-6">
         {children && children}
         <h2 className="text-xl font-bold">本頁目錄</h2>
-        <ul>
-          {sections.map((section, index) => (
-            <li key={index}>
-              <a
-                href={section.link}
-                className={`block ${
-                  section.link === selectedSection
-                    ? "text-black font-extrabold "
-                    : "text-gray-500"
-                }`}
-                onClick={() => handleClick(section.link)}
-              >
-                <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
-                {section.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {sections.map((section, index) => (
+          <a
+            href={section.link}
+            className={twMerge(
+              `block transition-all duration-300`,
+              section.link === selectedSection
+                ? "text-black font-extrabold"
+                : "text-gray-500",
+              `border-l pl-1 -translate-x-1 border-l-transparent`,
+              section.link === selectedSection && "border-l-black"
+            )}
+            onClick={() => handleClick(section.link)}
+            key={index}
+          >
+            <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
+            {section.name}
+          </a>
+        ))}
       </div>
     </>
   );
