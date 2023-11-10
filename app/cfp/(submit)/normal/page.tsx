@@ -2,6 +2,7 @@
 import Title from "@/components/cfp/Title";
 import Event, { EventType } from "@/components/cfp/Event";
 import { Required, Public, Optional } from "@/components/cfp/Badge";
+import SubmissionBtn from "@/components/cfp/SubmissionBtn";
 import Card from "@/components/cfp/Card";
 import Subtitle from "@/components/cfp/Subtitle";
 import Toc from "@/components/cfp/Toc";
@@ -17,7 +18,9 @@ export default function Page() {
 
   return (
     <div className="flex flex-col lg:flex-row-reverse relative gap-6">
-      <Toc sections={tocs} />
+      <Toc sections={tocs}>
+        <SubmissionBtn href="https://docs.google.com/forms/d/e/1FAIpQLSfa0U4w2hknzih_vPpo1eU8QI21AkODwXiEtPDiW_UFhVcVuw/viewform" />
+      </Toc>
       <div className="flex flex-col overflow-hidden">
         <div>
           <Title>一般議程</Title>

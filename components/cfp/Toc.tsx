@@ -52,6 +52,7 @@ export default function Toc({
   return (
     <>
       <div className="flex lg:hidden flex-col mb-4">
+        {children && children}
         {/* dropdown */}
         <div
           className="border border-gold rounded-lg flex flex-grow justify-center items-center px-4"

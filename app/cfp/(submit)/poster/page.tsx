@@ -1,8 +1,10 @@
+"use client";
 import Title from "@/components/cfp/Title";
 import Event from "@/components/cfp/Event";
 import { Required, Public } from "@/components/cfp/Badge";
 import Subtitle from "@/components/cfp/Subtitle";
 import Toc from "@/components/cfp/Toc";
+import SubmissionBtn from "@/components/cfp/SubmissionBtn";
 
 export default function Page() {
   const tocs = [
@@ -15,10 +17,11 @@ export default function Page() {
 
   return (
     <div className="flex flex-col lg:flex-row-reverse relative gap-6">
-      <Toc sections={tocs} />
+      <Toc sections={tocs}>
+        <SubmissionBtn href="https://docs.google.com/forms/d/e/1FAIpQLScoIZBr-GY8ia6v0-4aD0UXtQuIlAWiDX_hst4ku5vixnc-Og/viewform" />
+      </Toc>
       <div className="flex flex-col mb-12">
         <Title>海報 Poster</Title>
-
         <Subtitle id="time">重要時程</Subtitle>
         <div>
           <Event time={[2023, "Nov.", 19]} type={["poster"]} name="開始徵稿" />

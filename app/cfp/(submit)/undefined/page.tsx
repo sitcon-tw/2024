@@ -1,7 +1,9 @@
+"use client";
 import Title from "@/components/cfp/Title";
 import Event from "@/components/cfp/Event";
 import Cards from "@/components/cfp/Card";
 import { Required, Public, Optional } from "@/components/cfp/Badge";
+import SubmissionBtn from "@/components/cfp/SubmissionBtn";
 import Subtitle from "@/components/cfp/Subtitle";
 import Toc from "@/components/cfp/Toc";
 
@@ -15,7 +17,9 @@ export default function Page() {
 
   return (
     <div className="flex flex-col lg:flex-row-reverse relative gap-6">
-      <Toc sections={tocs} />
+      <Toc sections={tocs}>
+        <SubmissionBtn href="https://docs.google.com/forms/d/e/1FAIpQLSfRIRgHbDAuM6MD7BjMGgh01tu3uCaf7fApJ0rEgEEh4QjTcA/viewform" />
+      </Toc>
       <div className="flex flex-col mb-12">
         <Title>開放式議程</Title>
 
