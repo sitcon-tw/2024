@@ -81,7 +81,7 @@ export default function Nav() {
             className="col-span-2 flex items-center justify-center"
           >
             <img
-              src="/2024/cfp/sitcon_logo.svg"
+              src="/2024/sitcon_logo.svg"
               alt="SITCON Logo"
               className="-translate-y-1 h-10 pointer-events-none"
             />
