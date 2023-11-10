@@ -86,7 +86,7 @@ export default function Page() {
             <span className="text-purple font-bold">錄取後上傳</span>
             。以呈現研究結果為主，除題目與摘要之外，建議依序可包含前言、研究方法、結論及參考文獻等，內容請投稿作者自行斟酌，以不超過海報尺寸為限，大會方將會提供參考模板給錄取者。
             <span className="text-purple font-bold">
-              請以直版寬 841 mm、高 1189 mm（A0 大小）規格製作為 pdf 檔案
+              請以直版寬 841 mm、高 1189 mm（A0 大小）規格製作為 PDF 檔案
             </span>
             ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，
             <span className="text-purple font-bold">統一由大會進行印製與佈展</span>。
@@ -165,7 +165,7 @@ export default function Page() {
 
           <Subtitle id="present">佈展</Subtitle>
           <p>
-            請以<span className="text-purple font-bold">直版寬841 mm、高 1189 mm （A0 大小）規格製作為 pdf 檔案</span>，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，統一由大會進行印製與佈展。
+            請以<span className="text-purple font-bold">直版寬841 mm、高 1189 mm （A0 大小）規格製作為 PDF 檔案</span>，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，統一由大會進行印製與佈展。
           </p>
           <p>佈展方式與地點：地點於 2 樓梯廳，其餘細節將於稿件錄取後通知。</p>
         </div>
