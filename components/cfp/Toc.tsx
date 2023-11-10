@@ -109,7 +109,7 @@ export default function Toc({
               section.link === selectedSection
                 ? "text-black font-extrabold"
                 : "text-gray-500",
-              `border-l pl-1 -translate-x-1 border-l-transparent`,
+              `border-l-2 pl-1.5 -translate-x-1.5 border-l-transparent`,
               section.link === selectedSection && "border-l-black"
             )}
             onClick={() => handleClick(section.link)}
