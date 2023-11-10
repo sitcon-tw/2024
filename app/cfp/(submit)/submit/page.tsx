@@ -94,13 +94,66 @@ function HeroBgImage() {
     </div>
   );
 }
+function ToggleButton({
+  type,
+  toggleType,
+  children,
+  bgColor,
+  buttonType,
+}: {
+  type: EventType;
+  toggleType: (type: EventType) => void;
+  children: string;
+  bgColor: string;
+  buttonType: string;
+}) {
+  return (
+    <motion.button
+      className={twMerge(
+        `rounded-full px-4 py-1 flex justify-center items-center gap-2 transition-colors relative`,
+        type === buttonType ? `text-white` : `text-gray-500`
+      )}
+      onClick={() => toggleType(type)}
+      whileTap={{
+        scale: 0.9,
+      }}
+    >
+      <div
+        className={twMerge(
+          type === buttonType ? "bg-white" : bgColor,
+          "w-2 h-2 rounded-full transition-colors"
+        )}
+      />
+      {children}
+      <AnimatePresence>
+        {type === buttonType && (
+          <motion.div
+            className={twMerge(
+              "w-full h-full rounded-full absolute top-0 left-0 -z-10",
+              bgColor
+            )}
+            initial={{
+              scale: 0,
+              opacity: 0,
+            }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+            }}
+            exit={{
+              scale: 0,
+              opacity: 0,
+            }}
+          />
+        )}
+      </AnimatePresence>
+    </motion.button>
+  );
+}
 export default function Page() {
   const [type, toggleType] = useReducer(
-    (state: EventType | "", action: EventType | "") => {
-      if (state === "") return action;
-      if (state === action) return "";
-      else return action;
-    },
+    (state: EventType | "", action: EventType | "") =>
+      state === action ? "" : action,
     ""
   );
 
@@ -111,7 +164,7 @@ export default function Page() {
       {/* count down */}
       <Countdown />
       {/* submit botton */}
-      <div className="flex justify-center">
+      <div className="flex justify-center relative">
         <button className="bg-gold text-xl font-bold text-white h-[60px] w-[196px] rounded-full hover:shadow-[0px_4px_16px_0px_#E5C366CC] active:bg-[#D6A41D] active:shadow-[0px_2px_4px_0px_#E5C36699] focus:border focus:border-purple disabled:text-4-6 disabled:bg-2-6">
           立刻投稿
         </button>
@@ -123,37 +176,31 @@ export default function Page() {
           <div>
             <h2 className="text-[32px] font-medium">時程表</h2>
           </div>
-          <div className="flex grow place-content-between">
-            <button
-              className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-purple ${
-                type === "general"
-                  ? "text-purple bg-white"
-                  : "text-white bg-purple"
-              }`}
-              onClick={() => toggleType("general")}
+          <div className="flex -gap-2">
+            <ToggleButton
+              type="general"
+              toggleType={toggleType}
+              bgColor="bg-purple"
+              buttonType={type}
             >
               一般議程
-            </button>
-            <button
-              className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-pink ${
-                type === "undefined"
-                  ? "text-pink bg-white"
-                  : "text-white bg-pink"
-              }`}
-              onClick={() => toggleType("undefined")}
+            </ToggleButton>
+            <ToggleButton
+              type="undefined"
+              toggleType={toggleType}
+              bgColor="bg-pink"
+              buttonType={type}
             >
               開放式議程
-            </button>
-            <button
-              className={`rounded-full w-[110px] h-[40px] flex justify-center items-center transition-colors border border-green ${
-                type === "poster"
-                  ? "text-green bg-white"
-                  : "text-white bg-green"
-              }`}
-              onClick={() => toggleType("poster")}
+            </ToggleButton>
+            <ToggleButton
+              type="poster"
+              toggleType={toggleType}
+              bgColor="bg-green"
+              buttonType={type}
             >
               海報
-            </button>
+            </ToggleButton>
           </div>
         </div>
 
