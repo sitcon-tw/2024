@@ -2,8 +2,14 @@
 import React, { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function Toc({ sections }) {
-  const [selectedSection, setSelectedSection] = useState(null);
+export default function Toc({
+  sections,
+  children,
+}: {
+  sections: { link: string; name: string }[];
+  children?: React.ReactNode;
+}) {
+  const [selectedSection, setSelectedSection] = useState<null | string>(null);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -28,7 +34,7 @@ export default function Toc({ sections }) {
     console.log("set selected section to", sections[0].link);
   }, [sections]);
 
-  const handleClick = (link) => {
+  const handleClick = (link: string) => {
     // const navbarHeight = 69+250;
     const targetElement = document.querySelector(link);
     if (targetElement) {
@@ -97,6 +103,7 @@ export default function Toc({ sections }) {
         </div>
       </div>
       <div className="min-w-[200px] hidden lg:flex flex-col p-4 hover:cursor-pointer gap-4 sticky top-[88px] self-start">
+        {children && children}
         <h2 className="text-xl font-bold">本頁目錄</h2>
         <ul>
           {sections.map((section, index) => (
