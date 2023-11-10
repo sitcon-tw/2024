@@ -7,19 +7,16 @@ export default function Toc({ sections }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        console.log("entries", entries.length);
-        for (const entry of entries) {
-            console.log("intersecting", entry.target.id);
-            if (entry.isIntersecting) {
-            setSelectedSection("#" + entry.target.id);
-            break;
-          }
+    const observer = new IntersectionObserver((entries) => {
+      console.log("entries", entries.length);
+      for (const entry of entries) {
+        console.log("intersecting", entry.target.id);
+        if (entry.isIntersecting) {
+          setSelectedSection("#" + entry.target.id);
+          break;
         }
-      },
-    );
+      }
+    });
 
     for (const section of sections) {
       const targetElement = document.querySelector(section.link);
@@ -84,10 +81,11 @@ export default function Toc({ sections }) {
               <li key={index}>
                 <a
                   href={section.link}
-                  className={`block ${section.link === selectedSection
+                  className={`block ${
+                    section.link === selectedSection
                       ? "text-black font-extrabold "
                       : "text-gray-500"
-                    }`}
+                  }`}
                   onClick={() => handleClick(section.link)}
                 >
                   <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
@@ -99,19 +97,17 @@ export default function Toc({ sections }) {
         </div>
       </div>
       <div className="min-w-[200px] hidden lg:flex flex-col p-4 hover:cursor-pointer gap-4 sticky top-[88px] self-start">
-        <button className="bg-gold text-xl font-bold text-white h-[40px] w-full rounded-full hover:shadow-[0px_4px_16px_0px_#E5C366CC] active:bg-[#D6A41D] active:shadow-[0px_2px_4px_0px_#E5C36699] focus:border focus:border-purple disabled:text-4-6 disabled:bg-2-6">
-          立刻投稿
-        </button>
         <h2 className="text-xl font-bold">本頁目錄</h2>
         <ul>
           {sections.map((section, index) => (
             <li key={index}>
               <a
                 href={section.link}
-                className={`block ${section.link === selectedSection
+                className={`block ${
+                  section.link === selectedSection
                     ? "text-black font-extrabold "
                     : "text-gray-500"
-                  }`}
+                }`}
                 onClick={() => handleClick(section.link)}
               >
                 <div className="w-1 h-1.2em rounded-full bg-[#AC24FF] transition-all duration-300" />
