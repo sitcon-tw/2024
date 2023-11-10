@@ -198,7 +198,7 @@ export default function Page() {
             各議程類型的投稿格式相同，除標示為公開之資訊會對外公布外，其餘僅供審稿委員於審稿時閱讀。
           </p>
 
-          <h3 className="text-2xl leading-[75px] font-medium">稿件資訊</h3>
+          <h3>稿件資訊</h3>
 
           <h4 className="font-bold">
             投稿類型 Type <Required /> <Public />

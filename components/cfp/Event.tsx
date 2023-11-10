@@ -78,7 +78,7 @@ export default function Event({
   );
 
   return (
-    <div className="min-h-[110px] max-w-[512px] flex border border-1-6 rounded-lg shadow-[0px_4px_8px_0px_#0000001A] my-6 bg-white">
+    <div className="min-h-[110px] max-w-[512px] flex border border-1-6 rounded-lg shadow-[0px_4px_8px_0px_#0000001A] mb-6 bg-white">
       <div className="flex flex-col">
         {type.map((type) => (
           <div
