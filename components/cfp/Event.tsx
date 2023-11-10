@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-
+import { motion, AnimatePresence } from "framer-motion";
 export type EventTime = [number, string, number | string];
 
 export type EventType = "general" | "undefined" | "poster" | "SITCON";
@@ -23,8 +23,8 @@ function zero(n: number | string) {
 
 function Time({ time, isGray }: { time: EventTime; isGray: boolean }) {
   return (
-    <div className="flex h-min px-2 first:pt-2 last:pb-2">
-      <div className="flex flex-col items-center">
+    <div className="flex h-min p-2">
+      <div className="flex flex-col">
         <div
           className={twMerge(
             "transition-colors",
@@ -46,7 +46,7 @@ function Time({ time, isGray }: { time: EventTime; isGray: boolean }) {
       <div
         className={twMerge(
           "flex flex-col justify-end items-center transition-colors",
-          typeof time[2] === "string" ? "text-2xl" : "text-5xl",
+          typeof time[2] === "string" ? "text-2xl" : "text-3xl lg:text-5xl",
           isGray ? "text-1-6" : "text-4-6"
         )}
       >
@@ -78,14 +78,16 @@ export default function Event({
   );
 
   return (
-    <div className="min-h-[110px] max-w-[512px] flex border border-1-6 rounded-lg shadow-[0px_4px_8px_0px_#0000001A] mb-6 bg-white">
+    <div className="lg:min-h-[110px] max-w-[512px] flex border border-1-6 rounded-lg shadow-[0px_4px_8px_0px_#0000001A] mb-6 bg-white">
       <div className="flex flex-col">
         {type.map((type) => (
-          <div
+          <motion.div
             key={type}
+            layout
+            layoutId={selectedType}
             className={twMerge(
               "w-[5px] flex-grow first:rounded-tl-[3.5px] last:rounded-bl-[3.5px] transition-colors",
-              typeColor[type],
+              selectedType ? typeColor[selectedType] : typeColor[type],
               isGray && "bg-1-6"
             )}
           />
@@ -108,11 +110,10 @@ export default function Event({
         ) : null}
       </div>
 
-      {/* todo: align */}
-      <div className="text-4-6 my-2 mx-4 flex flex-col">
+      <div className="text-4-6 my-2 mx-4 flex flex-col self-center">
         <span
           className={twMerge(
-            "text-[32px] font-bold transition-colors",
+            "text-xl lg:text-[32px] font-bold transition-colors",
             isGray && "text-1-6"
           )}
         >
