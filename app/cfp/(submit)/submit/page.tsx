@@ -1,16 +1,17 @@
 "use client";
 import { useReducer, useRef } from "react";
 import { twMerge } from "tailwind-merge";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   motion,
   AnimatePresence,
   useScroll,
   useTransform,
-  useSpring,
 } from "framer-motion";
 import Title from "@/components/cfp/Title";
 import Event, { EventType } from "@/components/cfp/Event";
-
+import Link from "next/link";
 import useCountdown from "@/hooks/useCountdown";
 function CountdownItem({
   time,
@@ -94,6 +95,32 @@ function HeroBgImage() {
     </div>
   );
 }
+function ToButton({
+  bgColor,
+  children,
+  href,
+}: {
+  bgColor: string;
+  children: string;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={twMerge(
+        bgColor,
+        "px-4 pt-10 pb-2 text-center w-[192px] text-xl text-white rounded-lg transition-colors hover:bg-opacity-80 active:bg-opacity-100 group",
+        "flex justify-between items-center"
+      )}
+    >
+      {children}
+      <FontAwesomeIcon
+        icon={faArrowRight}
+        className="ml-2 group-hover:translate-x-1 transition-transform"
+      />
+    </Link>
+  );
+}
 function ToggleButton({
   type,
   toggleType,
@@ -110,8 +137,10 @@ function ToggleButton({
   return (
     <motion.button
       className={twMerge(
-        `rounded-full px-4 py-1 flex justify-center items-center gap-2 transition-colors relative`,
-        type === buttonType ? `text-white` : `text-gray-500`
+        `rounded-full px-4 py-1 flex justify-center items-center gap-2 transition-colors relative group`,
+        type === buttonType
+          ? `text-white`
+          : `text-gray-500 hover:text-gray-600 active:text-gray-700`
       )}
       onClick={() => toggleType(type)}
       whileTap={{
@@ -121,7 +150,7 @@ function ToggleButton({
       <div
         className={twMerge(
           type === buttonType ? "bg-white" : bgColor,
-          "w-2 h-2 rounded-full transition-colors"
+          "w-1.5 h-1.5 rounded-full transition-all group-hover:scale-125"
         )}
       />
       {children}
@@ -164,10 +193,16 @@ export default function Page() {
       {/* count down */}
       <Countdown />
       {/* submit botton */}
-      <div className="flex justify-center relative">
-        <button className="bg-gold text-xl font-bold text-white h-[60px] w-[196px] rounded-full hover:shadow-[0px_4px_16px_0px_#E5C366CC] active:bg-[#D6A41D] active:shadow-[0px_2px_4px_0px_#E5C36699] focus:border focus:border-purple disabled:text-4-6 disabled:bg-2-6">
-          立刻投稿
-        </button>
+      <div className="flex justify-center items-center relative flex-col lg:flex-row gap-2">
+        <ToButton bgColor="bg-purple" href="/cfp/normal">
+          一般議程
+        </ToButton>
+        <ToButton bgColor="bg-pink" href="/cfp/undefined">
+          開放式議程
+        </ToButton>
+        <ToButton bgColor="bg-green" href="/cfp/poster">
+          海報
+        </ToButton>
       </div>
 
       {/* time table */}
