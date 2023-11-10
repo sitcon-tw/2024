@@ -38,7 +38,7 @@ export default function Theme() {
               className="text-center text-2xl mb-16 leading-[2em]"
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-200px" }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1 }}
             >
               從計算機自百年前誕生後，
@@ -49,7 +49,7 @@ export default function Theme() {
               <motion.span
                 initial={{ filter: "blur(10px)", scale: 2 }}
                 whileInView={{ filter: "blur(0px)", scale: 1 }}
-                viewport={{ once: true, margin: "-200px" }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.75 }}
                 className="text-gold font-bold"
               >
@@ -61,7 +61,7 @@ export default function Theme() {
               className="text-center text-2xl mb-16 leading-[2em]"
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-200px" }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1 }}
             >
               但無論計算機如何發展，
@@ -72,7 +72,7 @@ export default function Theme() {
               <motion.span
                 initial={{ filter: "blur(10px)", scale: 2 }}
                 whileInView={{ filter: "blur(0px)", scale: 1 }}
-                viewport={{ once: true, margin: "-200px" }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.75 }}
                 className="text-gold font-bold"
               >
