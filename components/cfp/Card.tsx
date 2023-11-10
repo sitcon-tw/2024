@@ -139,7 +139,7 @@ export function Card({
           ))}
         </div>
         <div
-          className={`h-[500px] w-full p-12 rounded-lg absolute z-10 bg-gold ${
+          className={`h-[500px] w-full py-12 px-4 rounded-lg absolute z-10 bg-gold ${
             open && "-translate-y-[500px]"
           } transition-all flex justify-center items-center shadow-[0px_4px_16px_0px_#E5C366CC] flex-col`}
         >

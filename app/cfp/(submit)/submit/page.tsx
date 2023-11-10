@@ -109,7 +109,7 @@ function ToButton({
       href={href}
       className={twMerge(
         bgColor,
-        "px-4 pt-10 pb-2 text-center w-[192px] text-xl text-white rounded-lg transition-colors hover:bg-opacity-80 active:bg-opacity-100 group",
+        "px-4 pt-10 pb-2 text-center w-full lg:w-[192px] text-xl text-white rounded-lg transition-colors hover:bg-opacity-80 active:bg-opacity-100 group",
         "flex justify-between items-center"
       )}
     >
