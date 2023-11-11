@@ -3,7 +3,7 @@ import Title from "@/components/cfp/Title";
 import Event, { EventType } from "@/components/cfp/Event";
 import { Required, Public, Optional } from "@/components/cfp/Badge";
 import SubmissionBtn from "@/components/cfp/SubmissionBtn";
-import Card from "@/components/cfp/Card";
+import CardForNormal from "@/components/cfp/CardForNormal";
 import Subtitle from "@/components/cfp/Subtitle";
 import Toc from "@/components/cfp/Toc";
 
@@ -70,10 +70,22 @@ export default function Page() {
 
         <div className="content">
           <Subtitle id="type">議程種類</Subtitle>
-          <div className="flex flex-row items-center justify-center space-x-12">
-            <p>Presentation</p>
-            <p>Espresso</p>
-          </div>
+          <CardForNormal
+            data={[
+              {
+                title1: "Presentation",
+                title2: "",
+                content:
+                  "Presentation 共 40 分鐘。\n包含完整 30 分鐘的議程與 10 分鐘的問答時間\n讓您有充分的時間展示想法\n描述經歷、和與會者交流",
+              },
+              {
+                title1: "Espresso",
+                title2: "",
+                content:
+                  "Espresso 僅有 10 分鐘。\n挑戰最為濃縮與精華的議程\n為與會者帶來短而精緻的知識洗禮。",
+              },
+            ]}
+          />
 
           <Subtitle id="eg">投稿主題範例</Subtitle>
           <div>
