@@ -47,7 +47,7 @@ export default function Nav() {
   const isIndex = usePathname() === "/cfp/";
   return (
     <NavContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
-      <motion.nav
+      <motion.div
         className="w-full sticky top-0 self-start z-50"
         style={{
           backdropFilter: "blur(8px)",
@@ -57,7 +57,7 @@ export default function Nav() {
         }}
       >
         {/* desktop nav */}
-        <div className="container items-center justify-start gap-6 h-16 hidden lg:flex">
+        <nav className="container items-center justify-start gap-6 h-16 hidden lg:flex">
           <Link href="/cfp/">
             <img
               src="/2024/sitcon_logo.svg"
@@ -67,9 +67,9 @@ export default function Nav() {
           </Link>
           <NavLink href="/cfp/">首頁</NavLink>
           <NavLink href="/cfp/submit/">議程與徵稿</NavLink>
-        </div>
+        </nav>
         {/* mobile nav */}
-        <div className="container grid grid-cols-4 items-center justify-start gap-6 h-16 lg:hidden">
+        <nav className="container grid grid-cols-4 items-center justify-start gap-6 h-16 lg:hidden">
           <FontAwesomeIcon
             icon={faBars}
             className="text-[#1E1E1E] text-2xl cursor-pointer"
@@ -86,8 +86,8 @@ export default function Nav() {
               className="-translate-y-1 h-10 pointer-events-none"
             />
           </Link>
-        </div>
-      </motion.nav>
+        </nav>
+      </motion.div>
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
