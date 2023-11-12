@@ -6,6 +6,7 @@ import SubmissionBtn from "@/components/cfp/SubmissionBtn";
 import CardForNormal from "@/components/cfp/CardForNormal";
 import Subtitle from "@/components/cfp/Subtitle";
 import Toc from "@/components/cfp/Toc";
+import VideoCard from "@/components/cfp/VideoCard";
 
 export default function Page() {
   const tocs = [
@@ -194,6 +195,12 @@ export default function Page() {
             </p>
             <p>讓您有充分的時間展示想法、描述經歷、和與會者交流</p>
           </div>
+          {/* <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8 mt-4">
+            <VideoCard href="#" image="test.jpg" title="test" />
+            <VideoCard href="#" image="test.jpg" title="test" />
+            <VideoCard href="#" image="test.jpg" title="test" />
+            <VideoCard href="#" image="test.jpg" title="test" />
+          </div> */}
 
           <h2 className="text-2xl mt-8 font-medium">ESPRESSO</h2>
 
