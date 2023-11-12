@@ -11,7 +11,7 @@ import { twMerge } from "tailwind-merge";
 import { usePathname } from "next/navigation";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 const NavContext = createContext({
   isMenuOpen: false,
   setIsMenuOpen: (value: boolean) => {},
@@ -41,10 +41,14 @@ function NavLink({
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isIndex, setIsIndex] = useState(false);
   const { scrollY } = useScroll();
   const navBackgroundOpacity = useTransform(scrollY, [0, 100], [0, 1]);
   const navBackground = useMotionTemplate`rgba(229, 195, 102, ${navBackgroundOpacity})`;
-  const isIndex = usePathname() === "/cfp/";
+  const pathname = usePathname();
+  useEffect(() => {
+    setIsIndex(pathname === "/cfp/");
+  }, [pathname]);
   return (
     <NavContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
       <motion.div
