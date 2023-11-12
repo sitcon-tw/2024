@@ -3,7 +3,7 @@ import useCountdown from "@/hooks/useCountdown";
 import { motion, AnimatePresence } from "framer-motion";
 function CountDownItem({ time }: { time: string }) {
   return (
-    <AnimatePresence mode="popLayout">
+    <AnimatePresence mode="popLayout" initial={false}>
       <motion.span
         key={time}
         initial={{ opacity: 0, y: "-0.25em", scaleY: 0.5 }}

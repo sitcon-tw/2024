@@ -24,7 +24,7 @@ function CountdownItem({
 }) {
   return (
     <div className="leading-[1em] flex flex-col justify-center items-center gap-2">
-      <AnimatePresence mode="popLayout">
+      <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           className={twMerge(
             "text-[32px] lg:text-[64px] leading-[1em]",
