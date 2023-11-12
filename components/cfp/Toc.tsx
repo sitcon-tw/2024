@@ -98,17 +98,17 @@ export default function Toc({
           )}
         </AnimatePresence>
       </div>
-      <div className="min-w-[200px] hidden lg:flex flex-col p-4 hover:cursor-pointer gap-3 sticky top-[88px] self-start leading-6">
+      <div className="min-w-[200px] hidden lg:flex flex-col gap-3 sticky top-[88px] self-start leading-6">
         {children && children}
         <h2 className="text-xl font-bold">本頁目錄</h2>
         {sections.map((section, index) => (
           <a
             href={section.link}
             className={twMerge(
-              `block transition-all duration-300`,
+              `block transition-all duration-300 cursor-pointer`,
               section.link === selectedSection
                 ? "text-black font-extrabold"
-                : "text-gray-500",
+                : "text-gray-500 hover:text-gray-600 active:text-gray-700",
               `border-l-2 pl-1.5 -translate-x-1.5 border-l-transparent`,
               section.link === selectedSection && "border-l-black"
             )}
