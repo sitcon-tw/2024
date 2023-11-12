@@ -22,7 +22,6 @@ export default function Page() {
       </Toc>
       <div className="flex flex-col mb-12">
         <Title>開放式議程</Title>
-
         <Subtitle id="time">重要時程</Subtitle>
         <div>
           <Event
@@ -55,7 +54,8 @@ export default function Page() {
         <div className="content">
           <Subtitle id="description">議程說明</Subtitle>
           <p>
-            開放式議程為 <span className="text-purple font-bold">40 分鐘的議程</span>{" "}
+            開放式議程為{" "}
+            <span className="text-purple font-bold">40 分鐘的議程</span>{" "}
             ，該議程不限定進行方式，希望跳脫傳統議程框架，透過雙向互動、實作等，任何你想得到的非傳統形式進行此場議程。
           </p>
           <h3>什麼是開放式議程？</h3>
@@ -144,7 +144,10 @@ export default function Page() {
           </small>
 
           <h3>個人資料</h3>
-          <p>除了暱稱 / 名字、自我介紹被用於宣傳，其餘資訊僅需提供一人作為代表（當稿件同時有多位講者時），供議程組於聯絡時使用。</p>
+          <p>
+            除了暱稱 /
+            名字、自我介紹被用於宣傳，其餘資訊僅需提供一人作為代表（當稿件同時有多位講者時），供議程組於聯絡時使用。
+          </p>
           <h4>
             電子郵件 Email <Required />
           </h4>

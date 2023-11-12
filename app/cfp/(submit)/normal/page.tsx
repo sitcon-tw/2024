@@ -23,10 +23,8 @@ export default function Page() {
         <SubmissionBtn href="https://docs.google.com/forms/d/e/1FAIpQLSfa0U4w2hknzih_vPpo1eU8QI21AkODwXiEtPDiW_UFhVcVuw/viewform" />
       </Toc>
       <div className="flex flex-col overflow-hidden">
-        <div>
-          <Title>一般議程</Title>
-          <Subtitle id="time">重要時程</Subtitle>
-        </div>
+        <Title>一般議程</Title>
+        <Subtitle id="time">重要時程</Subtitle>
         <div>
           <Event
             time={[2023, "Nov.", 19]}
