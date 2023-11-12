@@ -31,9 +31,21 @@ function CountdownItem({
             timeClassName
           )}
           key={time}
-          initial={{ opacity: 0, y: "-0.25em", scaleY: 0.5 }}
-          animate={{ opacity: 1, y: 0, scaleY: 1 }}
-          exit={{ opacity: 0, y: "0.25em", scaleY: 0.5 }}
+          initial={{
+            opacity: 0,
+            y: "-0.25em",
+            scaleY: 0.75,
+            filter: "blur(0.1em)",
+            transformOrigin: "top",
+          }}
+          animate={{ opacity: 1, y: 0, scaleY: 1, filter: "blur(0px)" }}
+          exit={{
+            opacity: 0,
+            y: "0.25em",
+            scaleY: 0.75,
+            filter: "blur(0.1em)",
+            transformOrigin: "bottom",
+          }}
         >
           {time}
         </motion.div>

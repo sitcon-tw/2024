@@ -4,14 +4,26 @@ import { motion, AnimatePresence } from "framer-motion";
 function CountDownItem({ time }: { time: string }) {
   return (
     <AnimatePresence mode="popLayout" initial={false}>
-      <motion.span
+      <motion.div
         key={time}
-        initial={{ opacity: 0, y: "-0.25em", scaleY: 0.5 }}
-        animate={{ opacity: 1, y: 0, scaleY: 1 }}
-        exit={{ opacity: 0, y: "0.25em", scaleY: 0.5 }}
+        initial={{
+          opacity: 0,
+          y: "-0.25em",
+          scaleY: 0.75,
+          filter: "blur(0.1em)",
+          transformOrigin: "top",
+        }}
+        animate={{ opacity: 1, y: 0, scaleY: 1, filter: "blur(0px)" }}
+        exit={{
+          opacity: 0,
+          y: "0.25em",
+          scaleY: 0.75,
+          filter: "blur(0.1em)",
+          transformOrigin: "bottom",
+        }}
       >
         {time}
-      </motion.span>
+      </motion.div>
     </AnimatePresence>
   );
 }
@@ -50,7 +62,7 @@ export default function Visual() {
           <div className="text-sm lg:text-base text-center">
             距離投稿截止還有
           </div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-xl rounded-full border border-[#E5C366] text-[#E5C366] p-4 text-3xl lg:text-4xl text-center tabular-nums tracking-[.1em]">
+          <div className="bg-white bg-opacity-90 backdrop-blur-xl rounded-full border border-[#E5C366] text-[#E5C366] p-4 text-3xl lg:text-4xl tabular-nums tracking-[.1em] flex items-center justify-center">
             <CountDownItem time={days} />:<CountDownItem time={hours} />:
             <CountDownItem time={minutes} />:<CountDownItem time={seconds} />
           </div>
