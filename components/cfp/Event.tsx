@@ -45,7 +45,7 @@ function Time({ time, isGray }: { time: EventTime; isGray: boolean }) {
 
       <div
         className={twMerge(
-          "flex flex-col justify-end items-center transition-colors",
+          "flex flex-col justify-end items-center transition-colors break-keep",
           typeof time[2] === "string" ? "text-2xl" : "text-3xl lg:text-5xl",
           isGray ? "text-1-6" : "text-4-6"
         )}
