@@ -64,15 +64,24 @@ export default function Page() {
           <h4>
             主題標籤 Labels <Required /> <Public />
           </h4>
-          <small>請填寫 1~3 個與海報內文相關的領域與知識標籤，例如：ML、Data Science、資安、NLP 等；錄取後會與提供稿件者溝通微調後公開於官網。</small>
+          <small>
+            請填寫 1~3 個與海報內文相關的領域與知識標籤，例如：ML、Data
+            Science、資安、NLP 等；錄取後會與提供稿件者溝通微調後公開於官網。
+          </small>
           <h4>
             研究說明 Project Content <Required />
           </h4>
           <small>
-            請以 PDF 檔案上傳，需簡要說明（一）研究動機與目的 Research Question
-            or Problem；（二）研究方法與過程 Methodology；（三）研究結果與討論
-            Results and Interpretation of these results；（四）結論應用及展望
-            Conclusions 等，以 600~1500 字為限。可參考{" "}
+            請以 PDF 檔案上傳，需簡要說明：
+            <ul className="list-disc ml-4">
+              <li>（一）研究動機與目的 Research Question or Problem</li>
+              <li>（二）研究方法與過程 Methodology</li>
+              <li>
+                （三）研究結果與討論 Results and Interpretation of these results
+              </li>
+              <li>（四）結論應用及展望 Conclusions 等</li>
+            </ul>
+            以 600~1500 字為限。可參考{" "}
             <a
               href="https://twsf.ntsec.gov.tw/FileAtt.ashx?fcode=AC1C403BD297CA5A6A628EBAD362874E&lang=1"
               className="text-blue underline"
@@ -81,7 +90,9 @@ export default function Page() {
             </a>{" "}
             第 17 頁說明。
           </small>
-          <h4>海報內容 Poster Content <Public /></h4>
+          <h4>
+            海報內容 Poster Content <Public />
+          </h4>
           <small>
             <span className="text-purple font-bold">錄取後上傳</span>
             。以呈現研究結果為主，除題目與摘要之外，建議依序可包含前言、研究方法、結論及參考文獻等，內容請投稿作者自行斟酌，以不超過海報尺寸為限，大會方將會提供參考模板給錄取者。
@@ -89,7 +100,10 @@ export default function Page() {
               請以直版寬 841 mm、高 1189 mm（A0 大小）規格製作為 PDF 檔案
             </span>
             ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，
-            <span className="text-purple font-bold">統一由大會進行印製與佈展</span>。
+            <span className="text-purple font-bold">
+              統一由大會進行印製與佈展
+            </span>
+            。
           </small>
           <h4>其他說明 Additional Instructions</h4>
           <small>其他以上未提及之說明，若為延續性研究作品也請在此標明。</small>
@@ -131,17 +145,19 @@ export default function Page() {
           <ul className="list-disc list-outside ml-4">
             <li>
               中文名稱：字體大小範圍為 70 號字〜90
-              號字，且最建議多不超過兩行，置中對齊方式。
+              號字，且建議最多不超過兩行，置中對齊方式。
             </li>
             <li>
               英文名稱：字體大小範圍為 40 號字〜80
-              號字，且建議最多可超過兩行，置中對齊方式。
+              號字，且建議最多不超過兩行，置中對齊方式。
             </li>
             <li>
               作者中、英文姓名：字體大小範圍 30 號字〜40 號字，置中對齊方式。
             </li>
             <li>海報頁面的上下側及左右邊各留至少 5 公分。</li>
-            <li>內文中文建議以標楷體或黑體書寫、英文以Times New Roman 書寫。</li>
+            <li>
+              內文中文建議以標楷體或黑體書寫、英文以Times New Roman 書寫。
+            </li>
             <li>
               圖表需以良好解析度呈現，可以列在文中，或列在參考文獻之後。列在文中者，請盡量靠近文中第一次提及的地方。各圖、表請備說明內容，圖的說明應置於圖的下方，而表的說明則應置於表的上方。
             </li>
@@ -153,7 +169,7 @@ export default function Page() {
             工作人員、業界人士及學界人士組成。
           </p>
           <p>審稿委員將針對以下項目進行篩選：</p>
-          <ul className="list-disc list-outside ml-4">
+          <ul className="list-disc ml-4">
             <li>
               題材創新性：研究專案內容與方法具原創與可行性，產生貢獻或影響之潛力。
             </li>
@@ -165,7 +181,11 @@ export default function Page() {
 
           <Subtitle id="present">佈展</Subtitle>
           <p>
-            請以<span className="text-purple font-bold">直版寬841 mm、高 1189 mm （A0 大小）規格製作為 PDF 檔案</span>，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，統一由大會進行印製與佈展。
+            請以
+            <span className="text-purple font-bold">
+              直版寬 841 mm、高 1189 mm （A0 大小）規格製作為 PDF 檔案
+            </span>
+            ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，統一由大會進行印製與佈展。
           </p>
           <p>佈展方式與地點：地點於 2 樓梯廳，其餘細節將於稿件錄取後通知。</p>
         </div>
