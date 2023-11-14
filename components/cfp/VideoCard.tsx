@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle, faClose } from "@fortawesome/free-solid-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { twMerge } from "tailwind-merge";
 export default function VideoCard({
   id,
   title,
@@ -65,32 +66,33 @@ export default function VideoCard({
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
-              <div className="relative mt-2 flex justify-between items-center gap-4">
+              <div className="relative mt-2 flex justify-between items-center gap-2 flex-wrap">
                 <div className="text-xl font-bold">{title}</div>
-                <div className="flex gap-4">
+                <div className="flex gap-2">
                   {infoHref && (
                     <a
-                      className="rounded-lg transition-all flex flex-col items-center justify-center text-xs leading-5 hover:opacity-80 active:opacity-70 break-keep"
+                      className={twMerge(
+                        `bg-gold bg-opacity-20 text-gold`,
+                        "px-2 py-1 gap-2",
+                        "rounded-full transition-all flex items-center justify-center leading-5 hover:opacity-80 active:opacity-70 break-keep"
+                      )}
                       target="_blank"
                       href={infoHref}
                     >
-                      <div className="w-10 h-10 flex justify-center items-center bg-gold bg-opacity-20 text-gold rounded-full">
-                        <FontAwesomeIcon
-                          icon={faInfoCircle}
-                          className="text-2xl"
-                        />
-                      </div>
+                      <FontAwesomeIcon icon={faInfoCircle} />
                       議程資訊
                     </a>
                   )}
                   <a
-                    className="rounded-lg transition-all flex flex-col items-center justify-center text-xs leading-5 hover:opacity-80 active:opacity-70 break-keep"
+                    className={twMerge(
+                      `bg-red-500 bg-opacity-20 text-red-500`,
+                      "px-2 py-1 gap-2",
+                      "rounded-full transition-all flex items-center justify-center leading-5 hover:opacity-80 active:opacity-70 break-keep"
+                    )}
                     target="_blank"
                     href={`https://www.youtube.com/watch?v=${id}`}
                   >
-                    <div className="w-10 h-10 flex justify-center items-center bg-red-500 bg-opacity-20 text-red-500 rounded-full">
-                      <FontAwesomeIcon icon={faYoutube} className="text-2xl" />
-                    </div>
+                    <FontAwesomeIcon icon={faYoutube} />
                     YouTube
                   </a>
                 </div>
