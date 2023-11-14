@@ -4,7 +4,7 @@ import Toc from "@/components/cfp/Toc";
 export default function Page() {
   const tocs = [
     { link: "#present_notice", name: "議程投稿注意事項" },
-    { link: "#poster_notice", name: "議程投稿注意事項"},
+    { link: "#poster_notice", name: "海報投稿注意事項"},
     { link: "#auth", name: "授權" },
   ];
   return (
