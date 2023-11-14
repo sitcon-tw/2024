@@ -30,7 +30,9 @@ function NavLink({
       href={href}
       className={twMerge(
         "flex items-center gap-2 transition-colors",
-        !isActive ? "text-[#1E1E1E] hover:font-bold" : "text-black font-bold"
+        !isActive
+          ? "text-[#1E1E1E] hover:font-bold"
+          : "text-[#1E1E1E] font-bold"
       )}
       onClick={() => setIsMenuOpen(false)}
     >

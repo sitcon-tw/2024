@@ -17,7 +17,7 @@ function NavLink({
         "flex items-center gap-2 transition-colors -translate-x-3 group",
         !isActive
           ? "text-[#808080] hover:text-[#595959]"
-          : "text-black font-bold"
+          : "text-[#1E1E1E] font-bold"
       )}
     >
       <div

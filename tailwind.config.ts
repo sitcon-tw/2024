@@ -11,7 +11,6 @@ const config: Config = {
       padding: {
         DEFAULT: "1rem",
         lg: "2rem",
-
       },
       center: true,
       screens: {
@@ -27,7 +26,6 @@ const config: Config = {
       },
       colors: {
         white: { light: "#FFFFFF", DEFAULT: "#FFFFFF", dark: "#FFFFFF" },
-        black: { light: "#1E1E1E", DEFAULT: "#1E1E1E", dark: "#373737" },
         gold: { light: "#E5C366", DEFAULT: "#E5C366", dark: "#CBAB58" },
         purple: { light: "#A441E0", DEFAULT: "#A441E0", dark: "#B53DFF" },
         pink: { light: "#FF3495", DEFAULT: "#FF3495", dark: "#EB127A" },

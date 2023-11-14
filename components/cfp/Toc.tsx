@@ -83,7 +83,7 @@ export default function Toc({
                     href={section.link}
                     className={`block ${
                       section.link === selectedSection
-                        ? "text-black font-extrabold "
+                        ? "text-[#1E1E1E] font-extrabold "
                         : "text-gray-500"
                     }`}
                     onClick={() => handleClick(section.link)}
@@ -107,7 +107,7 @@ export default function Toc({
             className={twMerge(
               `block transition-all duration-300 cursor-pointer`,
               section.link === selectedSection
-                ? "text-black font-extrabold"
+                ? "text-[#1E1E1E] font-extrabold"
                 : "text-gray-500 hover:text-gray-600 active:text-gray-700",
               `border-l-2 pl-1.5 -translate-x-1.5 border-l-transparent`,
               section.link === selectedSection && "border-l-black"
