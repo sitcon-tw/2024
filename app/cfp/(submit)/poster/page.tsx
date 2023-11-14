@@ -12,7 +12,7 @@ export default function Page() {
     { link: "#description", name: "海報投稿說明" },
     { link: "#format", name: "投稿格式" },
     { link: "#review", name: "審稿方式" },
-    { link: "#present", name: "佈展" },
+    { link: "#present", name: "佈展與其它" },
   ];
 
   return (
@@ -77,7 +77,7 @@ export default function Page() {
               <li>（一）研究動機與目的 Research Question or Problem</li>
               <li>（二）研究方法與過程 Methodology</li>
               <li>
-                （三）研究結果與討論 Results and Interpretation of these results
+                （三）研究結果與討論 Results and Interpretation of These Results
               </li>
               <li>（四）結論應用及展望 Conclusions 等</li>
             </ul>
@@ -130,6 +130,12 @@ export default function Page() {
             公開於講者海報及網站，將有助於會眾更加了解有關你的資訊。
           </small>
           <h4>
+            聯絡方式 QR code <Required /> <Public />
+          </h4>
+          <small>
+            由大會印製，於年會當天貼在海報旁，將有助會眾更容易與你交流。（不限 Facebook、Instagram、電子郵件、Telegram、Linktree 等）
+          </small>
+          <h4>
             手機號碼 Phone <Required />
           </h4>
           <small>用於大會聯絡、確認資訊用的電話號碼。</small>
@@ -156,7 +162,7 @@ export default function Page() {
             </li>
             <li>海報頁面的上下側及左右邊各留至少 5 公分。</li>
             <li>
-              內文中文建議以標楷體或黑體書寫、英文以Times New Roman 書寫。
+              內文中文建議以標楷體或黑體書寫、英文以 Times New Roman 書寫。
             </li>
             <li>
               圖表需以良好解析度呈現，可以列在文中，或列在參考文獻之後。列在文中者，請盡量靠近文中第一次提及的地方。各圖、表請備說明內容，圖的說明應置於圖的下方，而表的說明則應置於表的上方。
@@ -179,7 +185,7 @@ export default function Page() {
             <li>表達完整性：文句暢通，且文意清楚周全。</li>
           </ul>
 
-          <Subtitle id="present">佈展</Subtitle>
+          <Subtitle id="present">佈展與其它</Subtitle>
           <p>
             請以
             <span className="text-purple font-bold">
@@ -188,6 +194,17 @@ export default function Page() {
             ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，統一由大會進行印製與佈展。
           </p>
           <p>佈展方式與地點：地點於 2 樓梯廳，其餘細節將於稿件錄取後通知。</p>
+          <p>補充說明：</p>
+          <ul className="list-disc ml-4">
+            <li>
+              海報投稿
+              <span className="text-purple font-bold">
+                不辦理
+              </span>
+              彩排與試講。
+            </li>
+            <li>錄取後會請作者填寫表單，在可配合的時段於海報旁與會眾交流。</li>
+          </ul>
         </div>
       </div>
     </div>

@@ -244,7 +244,7 @@ export default function Page() {
           </small>
           <small>
             在這邊為您提供過往的會眾比例：大學生 45%、高中/職生 38%、社會人士
-            10%、研究生 5%、國中生 2%
+            10%、研究生 5%、國中生 2%。
           </small>
 
           <h4 className="font-bold">
