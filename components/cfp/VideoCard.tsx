@@ -65,9 +65,9 @@ export default function VideoCard({
             <motion.div
               className="bg-white w-[min(512px,100vw)] p-4 relative rounded-t-2xl md:rounded-2xl shadow-2xl flex flex-col"
               layoutId={isMobile ? undefined : `video-card-${id}`}
-              initial={isMobile && { y: 10 }}
+              initial={isMobile && { y: 50 }}
               animate={isMobile && { y: 0 }}
-              exit={isMobile ? { y: "100%" } : undefined}
+              exit={isMobile ? { y: 50 } : undefined}
               drag={isMobile ? "y" : false}
               dragConstraints={{ top: 0, bottom: 0 }}
               onDrag={checkSwipeToDismiss}
