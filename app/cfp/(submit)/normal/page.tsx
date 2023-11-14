@@ -75,7 +75,7 @@ export default function Page() {
                 title1: "Presentation",
                 title2: "",
                 content:
-                  "Presentation 共 40 分鐘。\n包含完整 30 分鐘的議程與 10 分鐘的問答時間\n讓您有充分的時間展示想法\n描述經歷、和與會者交流",
+                  "Presentation 共 40 分鐘。\n包含完整 30 分鐘的議程與 10 分鐘的問答時間\n讓您有充分的時間展示想法\n描述經歷、和與會者交流。",
               },
               {
                 title1: "Espresso",
@@ -190,7 +190,7 @@ export default function Page() {
             <p>
               Presentation <span className="text-purple"> 共 40 分鐘</span>
               ，包含完整 30 分鐘的議程與 10
-              分鐘的問答時間，讓您有充分的時間展示想法、描述經歷、和與會者交流
+              分鐘的問答時間，讓您有充分的時間展示想法、描述經歷、和與會者交流。
             </p>
           </div>
           {/* <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8 mt-4">
