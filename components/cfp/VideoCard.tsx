@@ -26,7 +26,7 @@ export default function VideoCard({
   }, [width]);
   const y = useMotionValue(0);
   function checkSwipeToDismiss() {
-    y.get() > 150 && setOpen(false);
+    y.get() > 50 && setOpen(false);
   }
 
   return (
