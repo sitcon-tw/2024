@@ -51,51 +51,52 @@ export default function VideoCard({
               className="bg-white w-[min(512px,90vw)] p-4 relative rounded-2xl shadow-2xl"
               layoutId={`video-card-${id}`}
             >
-              <div className="relative text-2xl font-bold mb-4 flex justify-between items-start gap-4">
-                議程
-                <button
-                  className="bg-gray-100 bg-opacity-50 text-gray-400 rounded-full aspect-square w-8 h-8 flex justify-center items-center hover:bg-gray-200 active:bg-gray-300 transition-all"
-                  onClick={() => setOpen(false)}
-                >
-                  <FontAwesomeIcon icon={faClose} />
-                </button>
-              </div>
+              <button
+                className={twMerge(
+                  "absolute top-5 right-5 z-10",
+                  "bg-gray-100 bg-opacity-80 backdrop-blur-xl text-gray-400 rounded-md flex justify-center items-center gap-2 hover:bg-gray-200 active:bg-gray-300 transition-all w-8 h-8 aspect-square shadow-xl"
+                )}
+                onClick={() => setOpen(false)}
+              >
+                <FontAwesomeIcon icon={faClose} />
+              </button>
+
               <iframe
                 className="relative aspect-video w-full rounded-lg"
                 src={`https://www.youtube-nocookie.com/embed/${id}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
-              <div className="relative mt-2 flex justify-between items-center gap-2 flex-wrap">
-                <div className="text-xl font-bold">{title}</div>
-                <div className="flex gap-2">
-                  {infoHref && (
-                    <a
-                      className={twMerge(
-                        `bg-gold bg-opacity-20 text-gold`,
-                        "px-2 py-1 gap-2",
-                        "rounded-full transition-all flex items-center justify-center leading-5 hover:opacity-80 active:opacity-70 break-keep"
-                      )}
-                      target="_blank"
-                      href={infoHref}
-                    >
-                      <FontAwesomeIcon icon={faInfoCircle} />
-                      議程資訊
-                    </a>
-                  )}
+
+              <div className="text-xl font-bold mt-2">{title}</div>
+
+              <div className="flex gap-2 mt-2">
+                {infoHref && (
                   <a
                     className={twMerge(
-                      `bg-red-500 bg-opacity-20 text-red-500`,
+                      `bg-gold bg-opacity-20 text-gold`,
                       "px-2 py-1 gap-2",
-                      "rounded-full transition-all flex items-center justify-center leading-5 hover:opacity-80 active:opacity-70 break-keep"
+                      "rounded-lg transition-all flex items-center justify-center leading-5 hover:opacity-80 active:opacity-70 break-keep"
                     )}
                     target="_blank"
-                    href={`https://www.youtube.com/watch?v=${id}`}
+                    href={infoHref}
                   >
-                    <FontAwesomeIcon icon={faYoutube} />
-                    YouTube
+                    <FontAwesomeIcon icon={faInfoCircle} />
+                    議程資訊
                   </a>
-                </div>
+                )}
+                <a
+                  className={twMerge(
+                    `bg-red-500 bg-opacity-20 text-red-500`,
+                    "px-2 py-1 gap-2",
+                    "rounded-lg transition-all flex items-center justify-center leading-5 hover:opacity-80 active:opacity-70 break-keep"
+                  )}
+                  target="_blank"
+                  href={`https://www.youtube.com/watch?v=${id}`}
+                >
+                  <FontAwesomeIcon icon={faYoutube} />
+                  YouTube
+                </a>
               </div>
             </motion.div>
           </motion.div>
