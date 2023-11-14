@@ -71,14 +71,14 @@ export default function Page() {
           <Subtitle id="type">議程種類</Subtitle>
           <div className="grid grid-rows-2 gap-3 lg:grid-cols-2 lg:grid-rows-1 mt-4 mb-6">
             <Card title="Presentation" varient="pink">
-              <div className="absolute right-6 top-4">
+              <div className="absolute right-6 top-6">
                 <span className="text-2xl">40</span> 分鐘
               </div>
               包含完整 30 分鐘的議程與 10
               分鐘的問答時間，讓您有充分的時間展示想法，描述經歷、和與會者交流。
             </Card>
             <Card title="Espresso" varient="purple">
-              <div className="absolute right-6 top-4">
+              <div className="absolute right-6 top-6">
                 <span className="text-2xl">10</span> 分鐘
               </div>
               挑戰最為濃縮與精華的議程，為與會者帶來短而精緻的知識洗禮。
