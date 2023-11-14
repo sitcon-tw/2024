@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -36,16 +36,18 @@ export default function Card({
   className?: string;
 }) {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
+  const { scrollYProgress } = useScroll({ target: ref });
+  const warpProgress = useSpring(scrollYProgress, {
+    stiffness: 200,
+    damping: 50,
   });
-  const opacity = useTransform(scrollYProgress, [0.8, 0.9], [0, 1]);
+  const opacity = useTransform(warpProgress, [0.8, 0.9], [0, 1]);
   const filter = useTransform(
-    scrollYProgress,
+    warpProgress,
     [0.8, 0.9],
     ["blur(4px)", "blur(0px)"]
   );
-  const textScale = useTransform(scrollYProgress, [0.8, 0.9], [2, 1]);
+  const textScale = useTransform(warpProgress, [0.8, 0.9], [2, 1]);
   return (
     <div
       className={twMerge("relative justify-center flex", className)}
