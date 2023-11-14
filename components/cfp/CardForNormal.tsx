@@ -16,10 +16,10 @@ export default function CardForNormal({ data }: CardsProps) {
 
   // TODO: style
   return (
-    <div className="grid grid-rows-3 gap-3 lg:grid-cols-2 lg:grid-rows-1 lg:gap-[14px] my-10">
-    {data.map((item, index) => (
+    <div className="grid grid-rows-2 gap-3 lg:grid-cols-2 lg:grid-rows-1 lg:gap-[14px] my-10">
+      {data.map((item, index) => (
         <Card key={`${index}`} {...item} varient={varients[index % 3]} />
-    ))}
+      ))}
     </div>
   );
 }
