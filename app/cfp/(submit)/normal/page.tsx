@@ -6,7 +6,8 @@ import SubmissionBtn from "@/components/cfp/SubmissionBtn";
 import Card from "@/components/cfp/Card";
 import Subtitle from "@/components/cfp/Subtitle";
 import Toc from "@/components/cfp/Toc";
-import VideoCard from "@/components/cfp/VideoCard";
+import PresentationVideos from "@/components/cfp/PresentationVideos";
+import EspressoVideos from "@/components/cfp/EspressoVideos";
 
 export default function Page() {
   const tocs = [
@@ -192,12 +193,7 @@ export default function Page() {
               分鐘的問答時間，讓您有充分的時間展示想法、描述經歷、和與會者交流。
             </p>
           </div>
-          {/* <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8 mt-4">
-            <VideoCard href="#" image="test.jpg" title="test" />
-            <VideoCard href="#" image="test.jpg" title="test" />
-            <VideoCard href="#" image="test.jpg" title="test" />
-            <VideoCard href="#" image="test.jpg" title="test" />
-          </div> */}
+          <PresentationVideos />
 
           <h2 className="text-2xl mt-8 font-medium">ESPRESSO</h2>
 
@@ -208,7 +204,7 @@ export default function Page() {
               ，挑戰最為濃縮與精華的議程，為與會者帶來短而精緻的知識洗禮。
             </p>
           </div>
-
+          <EspressoVideos />
           <Subtitle id="attype">投稿格式</Subtitle>
           <p>
             各議程類型的投稿格式相同，除標示為公開之資訊會對外公布外，其餘僅供審稿委員於審稿時閱讀。
