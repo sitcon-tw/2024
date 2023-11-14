@@ -1,7 +1,7 @@
 "use client";
 import Title from "@/components/cfp/Title";
 import Event from "@/components/cfp/Event";
-import Cards from "@/components/cfp/Card";
+import Card from "@/components/cfp/Card";
 import { Required, Public, Optional } from "@/components/cfp/Badge";
 import SubmissionBtn from "@/components/cfp/SubmissionBtn";
 import Subtitle from "@/components/cfp/Subtitle";
@@ -65,28 +65,24 @@ export default function Page() {
             作為學生展現自己的舞台，我們期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是一同探討學生相關議題等。
           </p>
           <p>對於還在猶豫的講者們，以下是我們提供的幾種議程形式範例：</p>
-          <Cards
-            data={[
-              {
-                title1: "議題探討",
-                title2: "形式",
-                content:
-                  "資訊發展快速，卻也延伸出許多可以深入討論的議題，我們期待透過講者的引言，拋磚引玉，激發聽眾的想法，透過互相討論的模式為這些議題提出不一樣的看法與觀點。 例如：人工智慧是否會有自我意識？",
-              },
-              {
-                title1: "經驗交流",
-                title2: "形式",
-                content:
-                  "不同於一般議程，在開放式議程中的經驗分享可以變得十分多元，我們期待講者透過分享自己在資訊領域遇到的難題和解決方式，並以此為開端，與聽眾碰撞出更多的論點與討論。例如：\n學測還是特殊選材？\n我如何在學科與術科中做選擇？",
-              },
-              {
-                title1: "更多形式",
-                title2: "由您來創造",
-                content:
-                  "不只有上述的形式，我們非常歡迎其他形式的議程。\n無論是主持一場圓桌會議，一起腦力激盪，甚至舉辦一場小競賽，任何你想得到的非傳統議程形式都可以在開放式議程中進行！",
-              },
-            ]}
-          />
+          <div className="grid grid-rows-3 gap-3 lg:grid-cols-2 lg:grid-rows-1 lg:gap-[14px] my-10">
+            <Card title="議題探討形式" varient="pink">
+              資訊發展快速，卻也延伸出許多可以深入討論的議題，我們期待透過講者的引言，拋磚引玉，激發聽眾的想法，透過互相討論的模式為這些議題提出不一樣的看法與觀點。
+              例如：人工智慧是否會有自我意識？
+            </Card>
+            <Card title="經驗交流形式" varient="purple">
+              不同於一般議程，在開放式議程中的經驗分享可以變得十分多元，我們期待講者透過分享自己在資訊領域遇到的難題和解決方式，並以此為開端，與聽眾碰撞出更多的論點與討論。例如：學測還是特殊選材？我如何在學科與術科中做選擇？
+            </Card>
+            <Card
+              title="更多形式由您來創造"
+              varient="green"
+              className="lg:col-span-2"
+            >
+              不只有上述的形式，我們非常歡迎其他形式的議程。
+              <br />
+              無論是主持一場圓桌會議，一起腦力激盪，甚至舉辦一場小競賽，任何你想得到的非傳統議程形式都可以在開放式議程中進行！
+            </Card>
+          </div>
 
           <Subtitle id="format">投稿格式</Subtitle>
           <p>除標示為公開之資訊會對外公布外，其餘僅供審稿委員於審稿時閱讀。</p>

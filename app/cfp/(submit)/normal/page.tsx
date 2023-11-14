@@ -3,7 +3,7 @@ import Title from "@/components/cfp/Title";
 import Event, { EventType } from "@/components/cfp/Event";
 import { Required, Public, Optional } from "@/components/cfp/Badge";
 import SubmissionBtn from "@/components/cfp/SubmissionBtn";
-import CardForNormal from "@/components/cfp/CardForNormal";
+import Card from "@/components/cfp/Card";
 import Subtitle from "@/components/cfp/Subtitle";
 import Toc from "@/components/cfp/Toc";
 import VideoCard from "@/components/cfp/VideoCard";
@@ -22,7 +22,7 @@ export default function Page() {
       <Toc sections={tocs}>
         <SubmissionBtn href="https://docs.google.com/forms/d/e/1FAIpQLSfa0U4w2hknzih_vPpo1eU8QI21AkODwXiEtPDiW_UFhVcVuw/viewform" />
       </Toc>
-      <div className="flex flex-col overflow-hidden">
+      <div className="flex flex-col">
         <Title>一般議程</Title>
         <Subtitle id="time">重要時程</Subtitle>
         <div>
@@ -69,22 +69,21 @@ export default function Page() {
 
         <div className="content">
           <Subtitle id="type">議程種類</Subtitle>
-          <CardForNormal
-            data={[
-              {
-                title1: "Presentation",
-                title2: "",
-                content:
-                  "Presentation 共 40 分鐘。\n包含完整 30 分鐘的議程與 10 分鐘的問答時間\n讓您有充分的時間展示想法\n描述經歷、和與會者交流。",
-              },
-              {
-                title1: "Espresso",
-                title2: "",
-                content:
-                  "Espresso 僅有 10 分鐘。\n挑戰最為濃縮與精華的議程\n為與會者帶來短而精緻的知識洗禮。",
-              },
-            ]}
-          />
+          <div className="grid grid-rows-2 gap-3 lg:grid-cols-2 lg:grid-rows-1 mt-4 mb-6">
+            <Card title="Presentation" varient="pink">
+              <div className="absolute right-6 top-4">
+                <span className="text-2xl">40</span> 分鐘
+              </div>
+              包含完整 30 分鐘的議程與 10
+              分鐘的問答時間，讓您有充分的時間展示想法，描述經歷、和與會者交流。
+            </Card>
+            <Card title="Espresso" varient="purple">
+              <div className="absolute right-6 top-4">
+                <span className="text-2xl">10</span> 分鐘
+              </div>
+              挑戰最為濃縮與精華的議程，為與會者帶來短而精緻的知識洗禮。
+            </Card>
+          </div>
 
           <Subtitle id="eg">投稿主題範例</Subtitle>
           <div>
