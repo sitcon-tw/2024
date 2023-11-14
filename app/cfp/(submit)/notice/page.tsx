@@ -49,7 +49,7 @@ export default function Page() {
           <a
             target="_blank"
             className="link"
-            href="https://creativecommons.org/licenses/by/4.0/"
+            href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant"
           >
             創用 CC「姓名標示」4.0
           </a>{" "}
@@ -72,7 +72,14 @@ export default function Page() {
           的 SITCON 頻道。您為議程準備的其餘相關素材（如投影片），將於年會後由
           SITCON
           議程組向您蒐集素材連結，並整理在年會官方網站的議程資訊上。您可以自行決定在何種平台、以何種方式釋出，我們不會干涉，但鼓勵您選擇允許知識共享的
-          <a href="http://creativecommons.tw/explore" className="link" target="_blank">創用 CC 系列授權</a>。
+          <a
+            href="https://tw.creativecommons.net/home-page/"
+            className="link"
+            target="_blank"
+          >
+            創用 CC 系列授權
+          </a>
+          。
         </p>
       </div>
     </div>
