@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle, faClose } from "@fortawesome/free-solid-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { twMerge } from "tailwind-merge";
+import { useWindowSize } from "usehooks-ts";
 export default function VideoCard({
   id,
   title,
@@ -14,11 +15,25 @@ export default function VideoCard({
   infoHref?: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const { width } = useWindowSize();
+  useEffect(() => {
+    if (width < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [width]);
+  const y = useMotionValue(0);
+  function checkSwipeToDismiss() {
+    y.get() > 50 && setOpen(false);
+  }
+
   return (
     <>
       <motion.div
         onClick={() => setOpen(true)}
-        className="cursor-pointer"
+        className="cursor-pointer rounded-2xl"
         layoutId={`video-card-${id}`}
       >
         <motion.div
@@ -39,7 +54,7 @@ export default function VideoCard({
       </motion.div>
       <AnimatePresence>
         {open && (
-          <motion.div className="fixed top-0 left-0 w-full h-full z-[60] flex justify-center items-center">
+          <motion.div className="fixed top-0 left-0 w-full h-full z-[60] flex justify-center items-end md:items-center">
             <motion.div
               className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-10 backdrop-blur-md cursor-pointer"
               onClick={() => setOpen(false)}
@@ -48,13 +63,21 @@ export default function VideoCard({
               exit={{ opacity: 0 }}
             />
             <motion.div
-              className="bg-white w-[min(512px,90vw)] p-4 relative rounded-2xl shadow-2xl"
-              layoutId={`video-card-${id}`}
+              className="bg-white w-[min(512px,100vw)] p-4 relative rounded-t-2xl md:rounded-2xl shadow-2xl flex flex-col"
+              layoutId={isMobile ? undefined : `video-card-${id}`}
+              initial={isMobile && { y: 50 }}
+              animate={isMobile && { y: 0 }}
+              exit={isMobile ? { y: 50 } : undefined}
+              drag={isMobile ? "y" : false}
+              dragConstraints={{ top: 0, bottom: 0 }}
+              onDrag={checkSwipeToDismiss}
+              style={{ y }}
             >
+              <div className="bg-gray-200 w-[128px] h-[6px] rounded-full mb-4 self-center md:hidden" />
               <button
                 className={twMerge(
                   "absolute top-5 right-5 z-10",
-                  "bg-gray-100 bg-opacity-80 backdrop-blur-xl text-gray-400 rounded-md flex justify-center items-center gap-2 hover:bg-gray-200 active:bg-gray-300 transition-all w-8 h-8 aspect-square shadow-xl"
+                  "bg-gray-100 bg-opacity-80 backdrop-blur-xl text-gray-400 rounded-md justify-center items-center gap-2 hover:bg-gray-200 active:bg-gray-300 transition-all w-8 h-8 aspect-square shadow-xl hidden md:flex"
                 )}
                 onClick={() => setOpen(false)}
               >
@@ -67,9 +90,7 @@ export default function VideoCard({
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
-
               <div className="text-xl font-bold mt-2">{title}</div>
-
               <div className="flex gap-2 mt-2">
                 {infoHref && (
                   <a
