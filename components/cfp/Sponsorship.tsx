@@ -121,10 +121,15 @@ export default function Sponsorship() {
         </FeatureCard>
       </FeatureCards>
       <div className="text-center text-2xl font-bold gap-2 mb-8 leading-10">
-        此外，我們也樂見企業 <br className="m md:hidden" />
-        與學生的近距離交流， <br />
-        成為我們的合作夥伴您可以
+        <span className="hidden md:inline-block">
+          此外，我們也樂見企業與學生的近距離交流，
+        </span>
+        <span className="md:hidden">
+          此外，我們也樂見企業 <br />
+          與學生的近距離交流，
+        </span>
         <br />
+        <span>成為我們的合作夥伴您可以</span>
       </div>
 
       <FeatureCards>
