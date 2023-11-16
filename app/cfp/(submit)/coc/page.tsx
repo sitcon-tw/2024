@@ -22,7 +22,7 @@ export default function Page() {
       </ul>
       <p>
         以下的行為是
-        <span className="text-pink">
+        <span className="text-pink font-bold">
           不被社群所容忍
         </span>
         的：
