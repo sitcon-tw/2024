@@ -29,11 +29,18 @@ export default function VideoCard({
       setIsMobile(false);
     }
   }, [width]);
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [open]);
   const y = useMotionValue(0);
   const yVelocity = useVelocity(y);
   const zIndex = useMotionValue(open ? 2 : 0);
   function checkSwipeToDismiss() {
-    if (yVelocity.get() > 300) {
+    if (Math.abs(yVelocity.get()) > 500) {
       setOpen(false);
     }
   }
