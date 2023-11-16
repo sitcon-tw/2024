@@ -14,7 +14,9 @@ export default function Page() {
         <Subtitle id="trial">試講</Subtitle>
         <p>
           試講提供講者提升演講品質的機會，比照年會時間安排供講者講完整場演講，並
-          <strong>有議程組人員提供建議（如簡報、臺風等）</strong>
+          <span className="text-pink font-bold">
+            有議程組人員提供建議（如簡報、臺風等）
+          </span>
           ，講者可以自由參加，並自行選擇最合適的場次。若您的稿件確認入選，議程組將再與您協調確切時間。為了維護所有講者的權利，試講時間恕不接受更改，請各位講者準時參與。
         </p>
         <p>
