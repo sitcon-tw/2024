@@ -48,10 +48,18 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-2">
             <div className="text-[#AC24FF] font-bold text-lg">支持我們</div>
-            <a href="#" className="footer-link">
+            <a
+              href="https://sitcon.org/donate"
+              target="_blank"
+              className="footer-link"
+            >
               我要贊助
             </a>
-            <a href="#" className="footer-link">
+            <a
+              href="https://i.sitcon.org/2024cfs-form"
+              target="_blank"
+              className="footer-link"
+            >
               索取贊助徵求書
             </a>
           </div>

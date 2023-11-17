@@ -140,7 +140,7 @@ export default function Sponsorship() {
       </FeatureCards>
       <p>
         如果您也認同 SITCON 的理念，歡迎以行動支持 SITCON 的運作，點擊下方「
-        <a href="#" target="_blank" className="link">
+        <a href="https://sitcon.org/donate" target="_blank" className="link">
           我要贊助
         </a>
         」，您的支持將會成為我們的動力，讓更多學生能在舞台上展現自我、讓資訊教育遍及臺灣的每個角落！
@@ -148,7 +148,11 @@ export default function Sponsorship() {
       <br />
       <p>
         若您有興趣成為我們的贊助夥伴，歡迎點擊下方「
-        <a href="#" target="_blank" className="link">
+        <a
+          href="https://i.sitcon.org/2024cfs-form"
+          target="_blank"
+          className="link"
+        >
           索取贊助徵求書
         </a>
         」，了解詳細合作方案，或是利用{" "}
@@ -158,8 +162,8 @@ export default function Sponsorship() {
         聯絡我們，商討更多的合作方式！
       </p>
       <div className="flex flex-wrap justify-center gap-4 mt-8 mb-16">
-        <Button href="/sponsorship">我要贊助</Button>
-        <Button href="/sponsorship">索取贊助徵求書</Button>
+        <Button href="https://sitcon.org/donate">我要贊助</Button>
+        <Button href="https://i.sitcon.org/2024cfs-form">索取贊助徵求書</Button>
       </div>
     </div>
   );
