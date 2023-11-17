@@ -66,7 +66,7 @@ export default function Page() {
           </h4>
           <small>
             請填寫 1~3 個與海報內文相關的領域與知識標籤，例如：ML、Data
-            Science、資安、NLP 等；錄取後會與提供稿件者溝通微調後公開於官網。
+            Science、資安、NLP 等；錄取後會與提供稿件作者溝通微調後公開於官網。
           </small>
           <h4>
             研究說明 Project Content <Required />
@@ -99,11 +99,33 @@ export default function Page() {
             <span className="text-purple font-bold">
               請以直版寬 841 mm、高 1189 mm（A0 大小）規格製作為 PDF 檔案
             </span>
-            ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，
+            ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明於 2024 年 2 月 18 日前上傳最終版海報檔案，
             <span className="text-purple font-bold">
               統一由大會進行印製與佈展
             </span>
             。
+            <br />
+            海報格式：
+            <ul className="list-disc ml-4">
+              <li>
+                中文名稱：字體大小範圍為 70 號字〜90
+                號字，且建議最多不超過兩行，置中對齊方式。
+              </li>
+              <li>
+                英文名稱：字體大小範圍為 40 號字〜80
+                號字，且建議最多不超過兩行，置中對齊方式。
+              </li>
+              <li>
+                作者中、英文姓名：字體大小範圍建議 30 號字〜40 號字，置中對齊方式。
+              </li>
+              <li>海報頁面的上下側及左右邊各留至少 5 公分。</li>
+              <li>
+                內文中文建議以標楷體或黑體書寫、英文以 Times New Roman 書寫。
+              </li>
+              <li>
+                圖表需以良好解析度呈現，可以列在文中，或列在參考文獻之後。列在文中者，請盡量靠近文中第一次提及的地方。各圖、表請備說明內容，圖的說明應置於圖的下方，而表的說明則應置於表的上方。
+              </li>
+            </ul>
           </small>
           <h4>其他說明 Additional Instructions</h4>
           <small>其他以上未提及之說明，若為延續性研究作品也請在此標明。</small>
@@ -122,18 +144,26 @@ export default function Page() {
           <h4>
             暱稱 / 名字 Name <Required /> <Public />
           </h4>
-          <small>公開於講者海報及網站的稱呼，至多三人。</small>
+          <small>
+            公開於講者海報旁及網站的稱呼，
+            <span className="text-purple font-bold">
+              至多三人
+            </span>
+            。
+          </small>
           <h4>
             自我介紹 Self Introduction <Required /> <Public />
           </h4>
           <small>
-            公開於講者海報及網站，將有助於會眾更加了解有關你的資訊。
+            公開於講者海報旁及網站，將有助於會眾更加了解有關你的資訊。
           </small>
           <h4>
-            聯絡方式 QR code <Required /> <Public />
+            聯絡方式 Contact Information <Required /> <Public />
           </h4>
           <small>
-            由大會印製，於年會當天貼在海報旁，將有助會眾更容易與你交流。（不限 Facebook、Instagram、電子郵件、Telegram、Linktree 等）
+            請提供聯絡方式的「連結網址」（亦可提供電子郵件或電話，請擇一），
+            由大會印製與設計成 QR code 貼於年會當天的海報旁，將有助會眾更容易與你交流。
+            （連結網址不限 Facebook、Instagram、Telegram、Linktree 等）
           </small>
           <h4>
             手機號碼 Phone <Required />
@@ -146,28 +176,6 @@ export default function Page() {
             其他任何我們能聯絡您的方式（如 Telegram
             ID、住處電話等），以利我們在審稿時即時向您釐清投稿資訊。
           </small>
-
-          <h3>海報格式</h3>
-          <ul className="list-disc list-outside ml-4">
-            <li>
-              中文名稱：字體大小範圍為 70 號字〜90
-              號字，且建議最多不超過兩行，置中對齊方式。
-            </li>
-            <li>
-              英文名稱：字體大小範圍為 40 號字〜80
-              號字，且建議最多不超過兩行，置中對齊方式。
-            </li>
-            <li>
-              作者中、英文姓名：字體大小範圍 30 號字〜40 號字，置中對齊方式。
-            </li>
-            <li>海報頁面的上下側及左右邊各留至少 5 公分。</li>
-            <li>
-              內文中文建議以標楷體或黑體書寫、英文以 Times New Roman 書寫。
-            </li>
-            <li>
-              圖表需以良好解析度呈現，可以列在文中，或列在參考文獻之後。列在文中者，請盡量靠近文中第一次提及的地方。各圖、表請備說明內容，圖的說明應置於圖的下方，而表的說明則應置於表的上方。
-            </li>
-          </ul>
 
           <Subtitle id="review">審稿方式</Subtitle>
           <p>
