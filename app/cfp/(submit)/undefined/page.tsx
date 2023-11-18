@@ -64,7 +64,7 @@ export default function Page() {
             <span className="text-purple font-bold">
               多元創新
             </span>形式的交流活動。SITCON
-            作為學生展現自己的舞台，我們期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是一同探討學生相關議題等。
+            作為學生展現自己的舞台，我們期待以學生為主體的投稿，可以是從學生角度出發的經驗、技術分享或工作坊，甚至是一同探討學生相關議題的小論壇等。
           </p>
           <p>對於還在猶豫的講者們，以下是我們提供的幾種議程形式範例：</p>
           <div className="grid grid-rows-3 gap-3 lg:grid-cols-2 lg:grid-rows-1 lg:gap-[14px] my-10">
