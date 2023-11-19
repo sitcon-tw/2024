@@ -60,9 +60,11 @@ export default function Page() {
           </p>
           <h3>什麼是開放式議程？</h3>
           <p>
-            在追求創新的時代，我們為講者提供了開放式議程這個選項，跳脫講者對聽眾單向陳述式的演講，開放式議程更加強調主講者和與會者的
-            <span className="text-purple font-bold">雙向交流</span>。SITCON
-            作為學生展現自己的舞台，我們期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是一同探討學生相關議題等。
+            在求新求變的時代，我們為講者提供了開放式議程這個選項，跳脫講者對聽眾單向陳述式的演講，開放式議程更加強調任何
+            <span className="text-purple font-bold">
+              多元創新
+            </span>形式的交流活動。SITCON
+            作為學生展現自己的舞台，我們期待以學生為主體的投稿，可以是從學生角度出發的經驗、技術分享或工作坊，甚至是一同探討學生相關議題的小論壇等。
           </p>
           <p>對於還在猶豫的講者們，以下是我們提供的幾種議程形式範例：</p>
           <div className="grid grid-rows-3 gap-3 lg:grid-cols-2 lg:grid-rows-1 lg:gap-[14px] my-10">
