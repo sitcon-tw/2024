@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <div className="flex flex-col lg:flex-row-reverse relative gap-6">
       <Toc sections={tocs}>
-        <SubmissionBtn href="https://docs.google.com/forms/d/e/1FAIpQLScoIZBr-GY8ia6v0-4aD0UXtQuIlAWiDX_hst4ku5vixnc-Og/viewform" />
+        <SubmissionBtn href="https://forms.gle/LmkTzxLKMdTHDu2d7" />
       </Toc>
       <div className="flex flex-col mb-12">
         <Title>海報投稿</Title>
