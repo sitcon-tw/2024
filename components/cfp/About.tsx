@@ -98,8 +98,8 @@ export default function About() {
               <AboutButton href="https://groups.google.com/g/sitcon-general/">
                 訂閱郵件論壇
               </AboutButton>
-              <AboutButton href="https://gitlab.com/sitcon-tw/2024/board">
-                查看 GitLab
+              <AboutButton href="https://gitlab.com/sitcon-tw/2024/board/-/boards/">
+                查看籌備進度
               </AboutButton>
             </div>
           </div>
