@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <div className="h-screen flex flex-col">
         <Nav />
-        <div className="grow" >
+        <div className="grow mx-[33px]">
           {children}
         </div>
         <Footer />
