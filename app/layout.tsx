@@ -79,7 +79,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans leading-8 overflow-x-hidden">{children}</body>
+      <body className="overflow-x-hidden font-sans leading-8">{children}</body>
     </html>
   );
 }
