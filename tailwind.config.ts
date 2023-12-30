@@ -23,6 +23,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Lato", "Noto Sans TC", "sans-serif"],
+        rubik: ["Rubik", "Noto Sans TC", "sans-serif"],
       },
       colors: {
         white: { light: "#FFFFFF", DEFAULT: "#FFFFFF", dark: "#FFFFFF" },
