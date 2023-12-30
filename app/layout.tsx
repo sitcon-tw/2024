@@ -50,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="zh-TW">
       <head>
+        <link rel="icon" href="/2024/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
