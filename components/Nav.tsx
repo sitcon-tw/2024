@@ -30,7 +30,7 @@ const NavLinks = [
   },
 ];
 export default function Nav() {
-  return <nav className="flex justify-between items-center py-6 w-full max-w-[1280px] mx-auto sticky top-0 bg-[#F8F3E8]/80 backdrop-blur-lg">
+  return <nav className="flex justify-between items-center py-6 container sticky top-0 bg-[#F8F3E8]/80 backdrop-blur-lg">
 
 <Link href="/"
     className="text-2xl font-bold font-rubik"
