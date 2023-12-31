@@ -70,7 +70,12 @@ export default function Nav() {
   }, [isMenuOpen]);
   return (
     <>
-      <nav className="sticky top-0 bg-[#F8F3E8]/90 backdrop-blur-lg z-10">
+      <motion.nav
+        className="sticky top-0 bg-[#F8F3E8]/90 backdrop-blur-lg z-10"
+        style={{ position: "sticky" }}
+        layoutRoot
+        layout
+      >
         <div className="flex justify-between items-center py-6 container">
           <Link
             href="/"
@@ -98,7 +103,7 @@ export default function Nav() {
             ))}
           </div>
         </div>
-      </nav>
+      </motion.nav>
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
