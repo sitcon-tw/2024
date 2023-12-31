@@ -30,21 +30,27 @@ export default function TableOfContent({
       }),
     );
     setHeadings(elements);
+    updateHeadings();
   }, []);
-  useMotionValueEvent(scrollY, "change", (latest) => {
+  useMotionValueEvent(scrollY, "change", () => {
+    updateHeadings();
+  });
+  function updateHeadings() {
+    const scrollY = document.documentElement.scrollTop;
     let newHeadings = [...headings].map((heading) => ({
       ...heading,
       active: false,
     }));
     for (let heading of newHeadings) {
       //@ts-ignore
-      if (latest <= document.getElementById(heading.id)?.offsetTop + 84) {
+      if (scrollY <= document.getElementById(heading.id)?.offsetTop + 84) {
         heading.active = true;
         setHeadings(newHeadings);
         return;
       }
     }
-  });
+  }
+
   return (
     <div className="container md:grid md:grid-cols-[150px_1fr] gap-8 relative">
       <div className="sticky top-[84px] self-start hidden md:block">
@@ -53,7 +59,8 @@ export default function TableOfContent({
           <a
             href={`#${heading.id}`}
             className={twMerge(
-              `ml-${heading.level - 2} block relative`,
+              `block relative`,
+              heading.level - 2 > 0 && "ml-2",
               heading.active ? "text-[#462002] font-bold" : "text-[#462002]/60",
             )}
             key={index}
@@ -104,10 +111,7 @@ export default function TableOfContent({
             {headings.map((heading, index) => (
               <a
                 href={`#${heading.id}`}
-                className={twMerge(
-                  `ml-${heading.level - 2} block relative`,
-                  "text-[#462002]",
-                )}
+                className={twMerge(`block relative`, "text-[#462002]")}
                 key={index}
                 onClick={() => setIsMenuOpen(false)}
               >
