@@ -1,4 +1,7 @@
+"use client";
 import Button from "@/components/website/button";
+import staffData from "./staff.json";
+import { motion } from "framer-motion";
 export default function Page() {
   return (
     <div className="container">
@@ -23,6 +26,37 @@ export default function Page() {
           郵件論壇
         </Button>
       </div>
+      {staffData.map((group, index) => (
+        <motion.div
+          key={index}
+          className="my-10"
+          initial={{ opacity: 0 }}
+          whileInView={{
+            opacity: 1,
+            transition: { duration: 0.25 },
+          }}
+          viewport={{ once: true }}
+        >
+          <h1 className="text-xl md:text-2xl font-bold">{group.group}</h1>
+          <p>{group.description}</p>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(72px,1fr))] gap-x-6 md:gap-12 md:gap-y-6 mt-6">
+            {group.staff.map((member, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-start text-center"
+              >
+                <motion.img
+                  src={`https://www.gravatar.com/avatar/${member.email}?s=512&d=https://sitcon.org/2022/imgs/deafult_avatar.jpg&r=g`}
+                  className="w-full aspect-square rounded-full bg-white"
+                  whileHover={{ scale: 1.1 }}
+                />
+                <h1 className="mt-2 leading-6">{member.name}</h1>
+                <h1 className="text-xs mt-1">{member.role}</h1>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      ))}
     </div>
   );
 }
