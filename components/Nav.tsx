@@ -15,7 +15,7 @@ const NavLinks = [
   },
   {
     name: "會場地圖",
-    href: "/map/",
+    href: "/venue/",
   },
   {
     name: "交通方式",
