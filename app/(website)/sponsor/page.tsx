@@ -103,6 +103,18 @@ export default function Page() {
           索取贊助徵求書
         </Button>
       </div>
+      <h1 className="text-2xl md:text-4xl font-bold mb-4" id="主辦單位">
+        主辦單位
+      </h1>
+      <h1 className="text-2xl md:text-4xl font-bold mb-4" id="共同主辦">
+        共同主辦
+      </h1>
+      <h1 className="text-2xl md:text-4xl font-bold mb-4" id="協辦單位">
+        協辦單位
+      </h1>
+      <h1 className="text-2xl md:text-4xl font-bold mb-4" id="贊助夥伴">
+        贊助夥伴
+      </h1>
     </TableOfContent>
   );
 }
