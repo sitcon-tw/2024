@@ -45,15 +45,21 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="text-lg font-bold font-rubik hover:bg-black/5 px-2 py-1 rounded relative"
+      className="text-lg font-bold font-rubik px-2 py-1 relative group"
     >
       {children}
-      {isActive && (
-        <motion.div
-          layoutId="underline"
-          initial={false}
-          className="absolute -bottom-0.5 left-0 w-full h-[3px] bg-[#462002] rounded-full"
-        />
+      <AnimatePresence>
+        {isActive && (
+          <motion.div
+            className="absolute -bottom-0.5 left-0 w-full h-[3px] bg-[#462002] rounded-full"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+          />
+        )}
+      </AnimatePresence>
+      {!isActive && (
+        <motion.div className="absolute -bottom-0.5 left-0 w-full h-[3px] bg-[#462002] rounded-full opacity-0 group-hover:opacity-50 transition-all duration-300 ease-in-out" />
       )}
     </Link>
   );
