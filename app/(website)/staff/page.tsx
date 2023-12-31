@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Page() {
   return (
     <div className="container">
-      <h1 className="text-2xl md:text-5xl font-bold mb-4">SITCON 團隊</h1>
+      <h1 className="text-2xl md:text-4xl font-bold mb-4">SITCON 團隊</h1>
       <p>
         SITCON
         年會每年皆是許多志工奉獻時間與精神所舉辦，沒有大家的付出，就不可能會有如此內容豐富且高品質的年會，

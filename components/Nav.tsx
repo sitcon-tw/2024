@@ -63,7 +63,7 @@ export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <nav className="sticky top-0 bg-[#F8F3E8]/90 backdrop-blur-lg">
+      <nav className="sticky top-0 bg-[#F8F3E8]/90 backdrop-blur-lg z-10">
         <div className="flex justify-between items-center py-6 container">
           <Link
             href="/"
