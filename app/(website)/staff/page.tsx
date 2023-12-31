@@ -39,14 +39,14 @@ export default function Page() {
         >
           <h1 className="text-xl md:text-2xl font-bold">{group.group}</h1>
           <p>{group.description}</p>
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(72px,1fr))] gap-x-6 md:gap-12 md:gap-y-6 mt-6">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(72px,1fr))] gap-6 md:gap-12 mt-6">
             {group.staff.map((member, index) => (
               <div
                 key={index}
                 className="flex flex-col items-center justify-start text-center"
               >
                 <motion.img
-                  src={`https://www.gravatar.com/avatar/${member.email}?s=512&d=https://sitcon.org/2022/imgs/deafult_avatar.jpg&r=g`}
+                  src={`https://www.gravatar.com/avatar/${member.email}?s=512`}
                   className="w-full aspect-square rounded-full bg-white"
                   whileHover={{ scale: 1.1 }}
                 />
