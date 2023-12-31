@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -61,6 +61,13 @@ function NavLink({
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMenuOpen]);
   return (
     <>
       <nav className="sticky top-0 bg-[#F8F3E8]/90 backdrop-blur-lg z-10">
@@ -85,7 +92,9 @@ export default function Nav() {
           </div>
           <div className="hidden lg:flex gap-4">
             {NavLinks.map((link) => (
-              <NavLink href={link.href}>{link.name}</NavLink>
+              <NavLink href={link.href} key={link.name}>
+                {link.name}
+              </NavLink>
             ))}
           </div>
         </div>
@@ -96,7 +105,7 @@ export default function Nav() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="fixed top-0 left-0 w-screen h-screen bg-[#F8F3E8]/90 backdrop-blur-lg flex flex-col"
+            className="fixed top-0 left-0 w-screen h-screen bg-[#F8F3E8]/90 backdrop-blur-lg flex flex-col z-10"
           >
             <div
               className="absolute inset-0 m-auto -z-10 w-[350px] max-w-full opacity-10"
