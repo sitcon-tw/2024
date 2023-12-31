@@ -2,10 +2,13 @@
 import Button from "@/components/website/button";
 import { FeatureCard } from "@/components/cfp/Sponsorship";
 import Counter from "@/components/cfp/Counter";
+import TableOfContent from "@/components/TableOfContent";
 export default function Page() {
   return (
-    <div className="container">
-      <h1 className="text-2xl md:text-4xl font-bold mb-4">支持我們</h1>
+    <TableOfContent>
+      <h1 className="text-2xl md:text-4xl font-bold mb-4" id="page-title">
+        支持我們
+      </h1>
       <p>
         十年以來，SITCON
         一直秉持著不向與會者收費的原則來舉辦資訊研討會，不僅創造許多學生們交流、教學互長的機會，也帶領無數學子踏入資訊的殿堂。
@@ -100,6 +103,6 @@ export default function Page() {
           索取贊助徵求書
         </Button>
       </div>
-    </div>
+    </TableOfContent>
   );
 }
