@@ -7,6 +7,12 @@ import {
 } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
+type Headings = {
+  id: string;
+  text: string;
+  level: number;
+  active: boolean;
+}[];
 export default function TableOfContent({
   children,
   selector = "h1, h2, h3, h4",
@@ -14,9 +20,7 @@ export default function TableOfContent({
   children: React.ReactNode;
   selector?: string;
 }) {
-  const [headings, setHeadings] = useState<
-    { id: string; text: string; level: number; active: boolean }[]
-  >([]);
+  const [headings, setHeadings] = useState<Headings>([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   useEffect(() => {
@@ -29,13 +33,12 @@ export default function TableOfContent({
         active: false,
       }),
     );
-    setHeadings(elements);
-    updateHeadings();
+    updateHeadings(elements);
   }, []);
   useMotionValueEvent(scrollY, "change", () => {
-    updateHeadings();
+    updateHeadings(headings);
   });
-  function updateHeadings() {
+  function updateHeadings(headings: Headings) {
     const scrollY = document.documentElement.scrollTop;
     let newHeadings = [...headings].map((heading) => ({
       ...heading,
@@ -69,18 +72,9 @@ export default function TableOfContent({
             <AnimatePresence>
               {heading.active && (
                 <motion.div
-                  initial={{
-                    opacity: 0,
-                    x: 1,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  exit={{
-                    opacity: 0,
-                    x: 1,
-                  }}
+                  initial={{ opacity: 0, x: 1 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 1 }}
                   className="absolute top-0 bottom-0 m-auto -left-3 w-[4px] h-[1em] bg-[#462002] rounded"
                 />
               )}
@@ -102,7 +96,7 @@ export default function TableOfContent({
         {isMenuOpen && (
           <motion.div
             className={twMerge(
-              "absolute bg-[#F8F3E8] w-[calc(100%-32px)] border-2 border-[#462002] rounded-b-lg px-4 -mt-[18px] overflow-hidden",
+              "absolute bg-[#F8F3E8] w-[calc(100%-32px)] border-2 border-[#462002] rounded-b-lg px-4 -mt-[18px] overflow-hidden flex flex-col gap-2",
             )}
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
