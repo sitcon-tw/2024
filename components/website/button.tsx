@@ -4,10 +4,11 @@ import { MouseEventHandler } from "react";
 import { twMerge } from "tailwind-merge";
 
 const style = {
-  base: "px-5 rounded-full text-2xl font-bold h-[60px]",
+  base: "px-6 rounded-full text-2xl font-bold h-[60px]",
   color: {
-    yellow: "bg-[#FFCA73] text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D]",
-    blue: "bg-[#385AAC] text-[#F8F3E8] shadow-[0px_6px_6px_0px_#5D7DDB4D]",
+    yellow:
+      "bg-[#FFCA73] text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]",
+    blue: "bg-[#385AAC] text-[#F8F3E8] shadow-[0px_6px_6px_0px_#5D7DDB4D] hover:bg-[#304e96] active:bg-[#263d75]",
   },
 };
 
