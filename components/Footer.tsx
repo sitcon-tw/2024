@@ -60,9 +60,9 @@ export default function Footer() {
     <>
       <div
         className={twMerge(
-          "md:flex md:justify-between md:items-center md:px-10",
+          "md:flex md:justify-between md:items-center",
           "grid grid-cols-5 gap-4",
-          "my-10 container",
+          "mt-10 mb-4 px-5",
         )}
       >
         {socialMedia.map(({ href, icon }, index) => (
@@ -75,9 +75,8 @@ export default function Footer() {
             style={
               {
                 "--shift":
-                  (Math.abs(index - (socialMedia.length / 2 - 0.5)) / 3.14) *
-                  1.5 *
-                  1.5,
+                  Math.sinh(Math.abs(index - (socialMedia.length / 2 - 0.5))) /
+                  15,
               } as React.CSSProperties
             }
           >
@@ -93,7 +92,7 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <footer className="bg-[#B1884C] text-white text-center py-10 rounded-t-[40vw] md:rounded-t-[50%]">
+      <footer className="bg-[#B1884C] text-white text-center py-10 rounded-[100%_100%_0_0/50%_50%]">
         <div className="font-bold text-lg">學生計算機年會</div>
         <div className="text-lg">
           Students' Information Technology Conference
