@@ -6,11 +6,11 @@ export default function EventSection({ title, content, backgroundImage, backgrou
         backgroundPosition: `${backgroundPosition} center`,
     };
     return (
-        <div className="mb-16" style={backgroundStyle}>
+        <div className="pb-16 mb-10" style={backgroundStyle}>
             <h3 className="font-bold text-3xl">{title}</h3>
             <div className="ml-20 mt-9">
                 {content.map((line, index) => (
-                    <p key={index}>{line}{index !== content.length - 1 && <span><br /><br /></span>}</p>
+                    <p key={index}>{line}{index !== content.length - 1 && <span><br/><br/></span>}</p>
                 ))}
             </div>
         </div>
