@@ -25,7 +25,7 @@ function FeatureCards({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-function FeatureCard({
+export function FeatureCard({
   children,
   bg,
 }: {
