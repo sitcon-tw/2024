@@ -14,15 +14,14 @@ export default function Page() {
       </p>
       <div className="flex justify-center items-center gap-6 mt-6">
         <Button
-          text="跳坑表單"
           color="blue"
           url="https://docs.google.com/forms/d/e/1FAIpQLSfZHHumwRKY9UzBpMUD7MWzimnOLvm-cPu4noIzyoWPHbaaHA/viewform"
-        />
-        <Button
-          text="郵件論壇"
-          color="blue"
-          url="https://groups.google.com/g/sitcon-general/"
-        />
+        >
+          跳坑表單
+        </Button>
+        <Button color="blue" url="https://groups.google.com/g/sitcon-general/">
+          郵件論壇
+        </Button>
       </div>
     </div>
   );

@@ -17,14 +17,14 @@ type Style = {
 };
 
 type ButtonProps = {
-  text: string;
+  children?: React.ReactNode;
   className?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   url?: never;
 };
 
 type LinkProps = {
-  text: string;
+  children?: React.ReactNode;
   className?: string;
   onClick?: never;
   url: string;
@@ -32,37 +32,52 @@ type LinkProps = {
 
 type Props = (ButtonProps | LinkProps) & Style;
 
-export default function Button({ text, color, onClick, url }: Props) {
+export default function Button({ children, color, onClick, url }: Props) {
   if (onClick)
-    return <ClickButton text={text} color={color} onClick={onClick} />;
-  if (url) return <LinkButton text={text} color={color} url={url} />;
-  return <ClickButton text={text} color={color} />;
+    return (
+      <ClickButton color={color} onClick={onClick}>
+        {children}
+      </ClickButton>
+    );
+  if (url)
+    return (
+      <LinkButton color={color} url={url}>
+        {children}
+      </LinkButton>
+    );
+  return <ClickButton color={color}>{children}</ClickButton>;
 }
 
-function ClickButton({ text, onClick, color, className }: ButtonProps & Style) {
+function ClickButton({
+  children,
+  onClick,
+  color,
+  className,
+}: ButtonProps & Style) {
   return (
     <button
       onClick={onClick}
       className={twMerge(className, style.base, style.color[color])}
     >
-      {text}
+      {children}
     </button>
   );
 }
 
-function LinkButton({ text, url, color, className }: LinkProps & Style) {
+function LinkButton({ children, url, color, className }: LinkProps & Style) {
   return (
-    <div
+    <Link
       className={twMerge(
         className,
         style.base,
         style.color[color],
         "flex items-center justify-center",
       )}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
     >
-      <Link href={url} target="_blank" rel="noopener noreferrer">
-        {text}
-      </Link>
-    </div>
+      {children}
+    </Link>
   );
 }

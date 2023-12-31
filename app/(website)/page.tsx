@@ -55,8 +55,8 @@ export default function Page() {
       </h1>
       {/* two buttons */}
       <div className="grid w-full grid-cols-2 gap-5">
-        <Button color="yellow" text="活動報名" />
-        <Button color="yellow" text="支持我們" />
+        <Button color="yellow">活動報名</Button>
+        <Button color="yellow">支持我們</Button>
       </div>
       {/* theme */}
       <div className="bg-[#061740] py-10">
@@ -123,21 +123,21 @@ export default function Page() {
       <div className="flex w-full justify-end">
         <div className="flex flex-wrap justify-center gap-8">
           <Button
-            text="預約跳坑表單"
             color="blue"
             url="https://docs.google.com/forms/d/e/1FAIpQLSfZHHumwRKY9UzBpMUD7MWzimnOLvm-cPu4noIzyoWPHbaaHA/viewform"
-          />
+          >
+            預約跳坑表單
+          </Button>
           <div className="flex justify-center gap-8">
             <Button
-              text="郵件論壇"
               color="blue"
               url="https://groups.google.com/g/sitcon-general"
-            />
-            <Button
-              text="籌備紀錄"
-              color="blue"
-              url="https://gitlab.com/sitcon-tw/2024/board"
-            />
+            >
+              郵件論壇
+            </Button>
+            <Button color="blue" url="https://gitlab.com/sitcon-tw/2024/board">
+              籌備紀錄
+            </Button>
           </div>
         </div>
       </div>
