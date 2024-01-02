@@ -55,9 +55,9 @@ export default function TableOfContent({
   }
 
   return (
-    <div className="container md:grid md:grid-cols-[150px_1fr] gap-8 relative">
-      <div className="sticky top-[84px] self-start hidden md:block">
-        <div className="font-bold text-lg">本頁目錄</div>
+    <div className="container relative gap-8 md:grid md:grid-cols-[150px_1fr]">
+      <div className="sticky top-[84px] hidden self-start md:block">
+        <div className="text-lg font-bold">本頁目錄</div>
         {headings.map((heading, index) => (
           <a
             href={`#${heading.id}`}
@@ -75,7 +75,7 @@ export default function TableOfContent({
                   initial={{ opacity: 0, x: 1 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 1 }}
-                  className="absolute top-0 bottom-0 m-auto -left-3 w-[4px] h-[1em] bg-[#462002] rounded"
+                  className="absolute -left-3 bottom-0 top-0 m-auto h-[1em] w-[4px] rounded bg-[#462002]"
                 />
               )}
             </AnimatePresence>
@@ -84,7 +84,7 @@ export default function TableOfContent({
       </div>
       <button
         className={twMerge(
-          "md:hidden flex justify-between items-center border-2 border-[#462002] px-4 cursor-pointer relative w-full text-[#462002] mb-4",
+          "relative mb-4 flex w-full cursor-pointer items-center justify-between border-2 border-[#462002] px-4 text-[#462002] md:hidden",
           isMenuOpen ? "rounded-t-lg" : "rounded-lg",
         )}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -96,7 +96,7 @@ export default function TableOfContent({
         {isMenuOpen && (
           <motion.div
             className={twMerge(
-              "absolute bg-[#F8F3E8] w-[calc(100%-32px)] border-2 border-[#462002] rounded-b-lg px-4 -mt-[18px] overflow-hidden flex flex-col gap-2",
+              "absolute -mt-[18px] flex w-[calc(100%-32px)] flex-col gap-2 overflow-hidden rounded-b-lg border-2 border-[#462002] bg-[#F8F3E8] px-4",
             )}
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
@@ -105,7 +105,7 @@ export default function TableOfContent({
             {headings.map((heading, index) => (
               <a
                 href={`#${heading.id}`}
-                className={twMerge(`block relative`, "text-[#462002]")}
+                className={twMerge(`relative block`, "text-[#462002]")}
                 key={index}
                 onClick={() => setIsMenuOpen(false)}
               >
