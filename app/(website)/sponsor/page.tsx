@@ -215,11 +215,10 @@ export default function Page() {
         贊助夥伴
       </h1>
       {sponsorData.sponsors.map((sponsorType) => (
-        <>
+        <div key={sponsorType.title}>
           <h2
             className="mb-4 mt-8 text-xl font-bold md:text-2xl"
             id={sponsorType.title}
-            key={sponsorType.title}
           >
             {sponsorType.title}
           </h2>
@@ -228,9 +227,8 @@ export default function Page() {
             largeSponsor={
               sponsorType.title === "領航級" || sponsorType.title === "深耕級"
             }
-            key={sponsorType.title + "s"}
           />
-        </>
+        </div>
       ))}
       <h1 className="my-8 text-2xl font-bold md:text-4xl" id="特別感謝">
         特別感謝
