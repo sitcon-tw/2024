@@ -62,9 +62,9 @@ export default function TableOfContent({
           <a
             href={`#${heading.id}`}
             className={twMerge(
-              `block relative`,
-              heading.level - 2 > 0 && "ml-2",
-              heading.active ? "text-[#462002] font-bold" : "text-[#462002]/60",
+              `relative block`,
+              heading.level - 1 > 0 && "ml-2",
+              heading.active ? "font-bold text-[#462002]" : "text-[#462002]/60",
             )}
             key={index}
           >
