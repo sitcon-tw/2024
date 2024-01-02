@@ -45,13 +45,13 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="text-lg font-bold font-rubik px-2 py-1 relative group"
+      className="group relative px-2 py-1 font-rubik text-lg font-bold"
     >
       {children}
       <AnimatePresence>
         {isActive && (
           <motion.div
-            className="absolute -bottom-0.5 left-0 w-full h-[3px] bg-[#462002] rounded-full"
+            className="absolute -bottom-0.5 left-0 h-[3px] w-full rounded-full bg-[#462002]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
@@ -59,7 +59,7 @@ function NavLink({
         )}
       </AnimatePresence>
       {!isActive && (
-        <motion.div className="absolute -bottom-0.5 left-0 w-full h-[3px] bg-[#462002] rounded-full opacity-0 group-hover:opacity-50 transition-all duration-300 ease-in-out" />
+        <motion.div className="absolute -bottom-0.5 left-0 h-[3px] w-full rounded-full bg-[#462002] opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-50" />
       )}
     </Link>
   );
@@ -77,15 +77,15 @@ export default function Nav() {
   return (
     <>
       <motion.nav
-        className="sticky top-0 bg-[#F8F3E8]/90 backdrop-blur-lg z-10"
+        className="sticky top-0 z-10 bg-[#F8F3E8]/90 backdrop-blur-lg"
         style={{ position: "sticky" }}
         layoutRoot
         layout
       >
-        <div className="flex justify-between items-center py-6 container">
+        <div className="container flex items-center justify-between py-6">
           <Link
             href="/"
-            className="text-2xl font-bold font-rubik"
+            className="font-rubik text-2xl font-bold"
             style={{
               background:
                 "linear-gradient(90deg, rgba(56, 90, 172, 0.80) 0%, rgba(148, 110, 52, 0.75) 58.96%, #462002 100%)",
@@ -101,7 +101,7 @@ export default function Nav() {
               <IoMenu className="text-2xl" />
             </button>
           </div>
-          <div className="hidden lg:flex gap-4">
+          <div className="hidden gap-4 lg:flex">
             {NavLinks.map((link) => (
               <NavLink href={link.href} key={link.name}>
                 {link.name}
@@ -116,10 +116,10 @@ export default function Nav() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="fixed top-0 left-0 w-screen h-screen bg-[#F8F3E8]/90 backdrop-blur-lg flex flex-col z-10"
+            className="fixed left-0 top-0 z-10 flex h-screen w-screen flex-col bg-[#F8F3E8]/90 backdrop-blur-lg"
           >
             <div
-              className="absolute inset-0 m-auto -z-10 w-[350px] max-w-full opacity-10"
+              className="absolute inset-0 -z-10 m-auto w-[350px] max-w-full opacity-10"
               style={{
                 backgroundImage: "url('/2024/website/nav_mobile_bg.webp')",
                 backgroundSize: "contain",
@@ -127,16 +127,16 @@ export default function Nav() {
                 backgroundRepeat: "no-repeat",
               }}
             />
-            <div className="flex justify-end items-center py-6 container">
+            <div className="container flex items-center justify-end py-6">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <IoClose className="text-2xl" />
               </button>
             </div>
-            <div className="gap-12 flex justify-center items-center flex-col container grow pb-40">
+            <div className="container flex grow flex-col items-center justify-center gap-12 pb-40">
               {NavLinks.map((link) => (
                 <Link
                   href={link.href}
-                  className="text-xl font-bold font-rubik hover:underline underline-offset-8 decoration-2 text-[#462002] decoration-[#462002]"
+                  className="font-rubik text-xl font-bold text-[#462002] decoration-[#462002] decoration-2 underline-offset-8 hover:underline"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}

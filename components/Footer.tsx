@@ -60,16 +60,16 @@ export default function Footer() {
     <>
       <div
         className={twMerge(
-          "md:flex md:justify-between md:items-center",
+          "md:flex md:items-center md:justify-between",
           "grid grid-cols-5 gap-4",
-          "mt-10 mb-4 px-5",
+          "mb-4 mt-10 px-5",
         )}
       >
         {socialMedia.map(({ href, icon }, index) => (
           <div
             key={href}
             className={twMerge(
-              "flex justify-center items-center",
+              "flex items-center justify-center",
               "md:-translate-y-[calc(var(--shift)*-1rem)]",
             )}
             style={
@@ -81,26 +81,25 @@ export default function Footer() {
             }
           >
             <a
-              key={href}
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="text-3xl lg:text-5xl text-[#462002] hover:text-[#323232] transition-all ease-in-out hover:-translate-y-2"
+              className="text-3xl text-[#462002] transition-all ease-in-out hover:-translate-y-2 hover:text-[#323232] lg:text-5xl"
             >
               {icon}
             </a>
           </div>
         ))}
       </div>
-      <footer className="bg-[#B1884C] text-white text-center py-10 rounded-[100%_100%_0_0/50%_50%]">
-        <div className="font-bold text-lg">學生計算機年會</div>
+      <footer className="rounded-[100%_100%_0_0/50%_50%] bg-[#B1884C] py-10 text-center text-white">
+        <div className="text-lg font-bold">學生計算機年會</div>
         <div className="text-lg">
           Students' Information Technology Conference
         </div>
-        <div className="mt-4 flex justify-center items-center gap-20">
-          <div className="flex flex-col justify-center items-center leading-7">
+        <div className="mt-4 flex items-center justify-center gap-20">
+          <div className="flex flex-col items-center justify-center leading-7">
             <MdHandshake className="text-5xl" />
-            <div className="font-bold mt-2">合作聯繫</div>
+            <div className="mt-2 font-bold">合作聯繫</div>
             <a
               href="mailto:contact@sitcon.org"
               className="underline underline-offset-2"
@@ -108,9 +107,9 @@ export default function Footer() {
               contact@sitcon.org
             </a>
           </div>
-          <div className="flex flex-col justify-center items-center leading-7">
+          <div className="flex flex-col items-center justify-center leading-7">
             <IoTicket className="text-5xl" />
-            <div className="font-bold mt-2">票務問題</div>
+            <div className="mt-2 font-bold">票務問題</div>
             <a
               href="mailto:ticket@sitcon.org"
               className="underline underline-offset-2"
@@ -119,8 +118,8 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="font-bold mt-2">歷年網站</div>
-        <div className="flex justify-center gap-x-12 gap-y-4 md:gap-6 flex-wrap items-center">
+        <div className="mt-2 font-bold">歷年網站</div>
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 md:gap-6">
           {
             // 2013 to 2023
             Array.from({ length: 11 }, (_, i) => 2013 + i).map((year) => (
