@@ -3,6 +3,36 @@ import Button from "@/components/website/button";
 import { FeatureCard } from "@/components/cfp/Sponsorship";
 import Counter from "@/components/cfp/Counter";
 import TableOfContent from "@/components/TableOfContent";
+import sponsorData from "./sponsorData";
+import { twMerge } from "tailwind-merge";
+function Sponsors({
+  sponsors,
+  largeSponsor = false,
+}: {
+  sponsors: typeof sponsorData.specialThanks;
+  largeSponsor?: boolean;
+}) {
+  return (
+    <div
+      className={twMerge(
+        "grid grid-cols-2 gap-4",
+        largeSponsor
+          ? "md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))]"
+          : "md:grid-cols-[repeat(auto-fill,minmax(180px,1fr))]",
+      )}
+    >
+      {sponsors.map((sponsor, i) => (
+        <img
+          src={`/2024/sponsor/${sponsor.image}`}
+          className="mx-auto mb-4 w-full rounded"
+          alt={sponsor.title}
+          key={i}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function Page() {
   return (
     <TableOfContent>
@@ -106,12 +136,12 @@ export default function Page() {
       <h1 className="my-8 text-2xl font-bold md:text-4xl" id="主辦單位">
         主辦單位
       </h1>
-      <div className="mb-4 text-center text-xl font-bold md:text-2xl">
+      <div className="text-center text-xl font-bold md:text-2xl">
         SITCON 學生計算機年會籌備團隊
       </div>
       <img
         src="/2024/website/SITCON_green.svg"
-        className="mx-auto mb-6 w-full max-w-[350px]"
+        className="mx-auto mb-8 mt-6 w-full max-w-[300px]"
       />
       <p className="my-2">
         SITCON 學生計算機年會 (Students’ Information Technology Conference)
@@ -133,10 +163,12 @@ export default function Page() {
           <div className="mb-2 text-center text-xl font-bold md:text-2xl">
             中央研究院資訊科學研究所
           </div>
-          <img
-            src="/2024/sponsor/iis.png"
-            className="mx-auto mb-4 w-full max-w-[300px]"
-          />
+          <a href="https://www.iis.sinica.edu.tw/" target="_blank">
+            <img
+              src="/2024/sponsor/iis.png"
+              className="mx-auto mb-4 w-full max-w-[300px]"
+            />
+          </a>
           <p className="my-2">
             中央研究院資訊科學研究所於 1977 年開始設立籌備處，歷經五年籌備， 於
             1982 年 9
@@ -145,14 +177,16 @@ export default function Page() {
             位專任之資訊技術人員與非全時之研究助理，支援資訊領域之研究與系統之開發。「件件工作，反映自我，凡經我手，必為佳作」是全體同仁一致秉持的工作信念，重視工作之卓越品質，發揮最佳綜效之團隊精神。
           </p>
         </div>
-        <div>
+        <div className="mt-6 md:mt-0">
           <div className="mb-2 text-center text-xl font-bold md:text-2xl">
             財團法人開放文化基金會
           </div>
-          <img
-            src="/2024/sponsor/ocf.png"
-            className="mx-auto mb-4 w-full max-w-[300px]"
-          />
+          <a href="https://ocf.tw/" target="_blank">
+            <img
+              src="/2024/sponsor/ocf.png"
+              className="mx-auto mb-4 w-full max-w-[300px]"
+            />
+          </a>
           <p className="my-2">
             開放文化基金會成立於 2014
             年，由多個開源社群及活動組織共同發起，希望協助台灣蓬勃的開放社群，進一步促進開放源碼、開放資料、開放硬體等自由精神，能更廣泛的於各領域中應用，同時也協助政府、企業及非政府組織更能了解開源軟體的優勢、開放資料的重要，進而推廣開放協作的文化。
@@ -167,10 +201,12 @@ export default function Page() {
       <div className="mb-2 text-center text-xl font-bold md:text-2xl">
         智慧創新跨域人才培育計畫
       </div>
-      <img
-        src="/2024/sponsor/itsa.png"
-        className="mx-auto mb-4 w-full max-w-[300px]"
-      />
+      <a href="https://www.itsa.org.tw/" target="_blank">
+        <img
+          src="/2024/sponsor/itsa.png"
+          className="mx-auto mb-4 w-full max-w-[300px]"
+        />
+      </a>
       <p className="my-2">
         ITSA
         為教育部智慧創新跨域人才培育計畫，協助進行數位人才之培育，聚焦於「智慧感知與互動體驗」、「大數據分析與資料科學」、「文化創意與多媒體」、「電商金融科技」四大類新興數位軟體之人才培育，以及以開源模式培養雲端運算系統軟體、嵌入式系統軟體及軟體工程人才，以補足我國各產業在相關數位應用人才需求之缺口，擴大國內各產業晉用數位軟體人才的來源。
@@ -178,12 +214,32 @@ export default function Page() {
       <h1 className="my-8 text-2xl font-bold md:text-4xl" id="贊助夥伴">
         贊助夥伴
       </h1>
+      {sponsorData.sponsors.map((sponsorType) => (
+        <>
+          <h2
+            className="mb-4 mt-8 text-xl font-bold md:text-2xl"
+            id={sponsorType.title}
+            key={sponsorType.title}
+          >
+            {sponsorType.title}
+          </h2>
+          <Sponsors
+            sponsors={sponsorType.items}
+            largeSponsor={
+              sponsorType.title === "領航級" || sponsorType.title === "深耕級"
+            }
+            key={sponsorType.title + "s"}
+          />
+        </>
+      ))}
       <h1 className="my-8 text-2xl font-bold md:text-4xl" id="特別感謝">
         特別感謝
       </h1>
+      <Sponsors sponsors={sponsorData.specialThanks} />
       <h1 className="my-8 text-2xl font-bold md:text-4xl" id="媒體夥伴">
         媒體夥伴
       </h1>
+      <Sponsors sponsors={sponsorData.mediaPartners} />
     </TableOfContent>
   );
 }
