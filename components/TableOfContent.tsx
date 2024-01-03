@@ -53,6 +53,14 @@ export default function TableOfContent({
       }
     }
   }
+  function scrollToElement(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      // onscrollend
+      window.document.onscrollend = () => (location.hash = id);
+    }
+  }
 
   return (
     <div className="container relative gap-8 md:grid md:grid-cols-[150px_1fr]">
@@ -60,13 +68,13 @@ export default function TableOfContent({
         <div className="text-lg font-bold">本頁目錄</div>
         {headings.map((heading, index) => (
           <a
-            href={`#${heading.id}`}
             className={twMerge(
-              `relative block`,
+              `relative block cursor-pointer`,
               heading.level - 1 > 0 && "ml-2",
               heading.active ? "font-bold text-[#462002]" : "text-[#462002]/60",
             )}
             key={index}
+            onClick={() => scrollToElement(heading.id)}
           >
             {heading.text}
             <AnimatePresence>
