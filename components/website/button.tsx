@@ -32,16 +32,22 @@ type LinkProps = {
 
 type Props = (ButtonProps | LinkProps) & Style;
 
-export default function Button({ children, color, onClick, url }: Props) {
+export default function Button({
+  children,
+  color,
+  onClick,
+  url,
+  className,
+}: Props) {
   if (onClick)
     return (
-      <ClickButton color={color} onClick={onClick}>
+      <ClickButton color={color} onClick={onClick} className={className}>
         {children}
       </ClickButton>
     );
   if (url)
     return (
-      <LinkButton color={color} url={url}>
+      <LinkButton color={color} url={url} className={className}>
         {children}
       </LinkButton>
     );
@@ -57,7 +63,7 @@ function ClickButton({
   return (
     <button
       onClick={onClick}
-      className={twMerge(className, style.base, style.color[color])}
+      className={twMerge(style.base, style.color[color], className)}
     >
       {children}
     </button>
@@ -68,9 +74,9 @@ function LinkButton({ children, url, color, className }: LinkProps & Style) {
   return (
     <Link
       className={twMerge(
-        className,
         style.base,
         style.color[color],
+        className,
         "flex items-center justify-center",
       )}
       href={url}
