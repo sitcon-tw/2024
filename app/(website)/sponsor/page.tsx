@@ -65,11 +65,11 @@ function Sponsor({
           </div>
         </div>
         <div
-          className="h-4 w-full rounded-b-[10px]"
+          className="h-4 w-full md:rounded-b-[10px]"
           style={{
             backgroundImage: `linear-gradient(90deg, rgba(56, 90, 172, 0.80) 0%, rgba(148, 110, 52, 0.75) 58.96%, #462002 100%)`,
           }}
-        ></div>
+        />
       </Dialog>
     </>
   );
