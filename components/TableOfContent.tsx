@@ -11,7 +11,6 @@ type Headings = {
   id: string;
   text: string;
   level: number;
-  active: boolean;
 }[];
 export default function TableOfContent({
   children,
@@ -21,34 +20,28 @@ export default function TableOfContent({
   selector?: string;
 }) {
   const [headings, setHeadings] = useState<Headings>([]);
+  const [activeHeading, setActiveHeading] = useState<string>("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll(selector)).map(
-      (elem) => ({
+    setHeadings(
+      Array.from(document.querySelectorAll(selector)).map((elem) => ({
         id: elem.id,
         //@ts-ignore
         text: elem.innerText,
         level: Number(elem.nodeName.charAt(1)),
-        active: false,
-      }),
+      })),
     );
-    updateHeadings(elements);
   }, []);
   useMotionValueEvent(scrollY, "change", () => {
-    updateHeadings(headings);
+    updateHeadings();
   });
-  function updateHeadings(headings: Headings) {
+  function updateHeadings() {
     const scrollY = document.documentElement.scrollTop;
-    let newHeadings = [...headings].map((heading) => ({
-      ...heading,
-      active: false,
-    }));
-    for (let heading of newHeadings) {
-      //@ts-ignore
+    for (let heading of headings) {
+      // @ts-ignore
       if (scrollY <= document.getElementById(heading.id)?.offsetTop + 84) {
-        heading.active = true;
-        setHeadings(newHeadings);
+        setActiveHeading(heading.id);
         return;
       }
     }
@@ -70,15 +63,17 @@ export default function TableOfContent({
           <a
             className={twMerge(
               `relative block cursor-pointer`,
-              heading.level - 1 > 0 && "ml-2",
-              heading.active ? "font-bold text-[#462002]" : "text-[#462002]/60",
+              heading.level - 1 > 0 && "ml-4",
+              heading.id === activeHeading
+                ? "font-bold text-[#462002]"
+                : "text-[#462002]/60",
             )}
             key={index}
             onClick={() => scrollToElement(heading.id)}
           >
             {heading.text}
             <AnimatePresence>
-              {heading.active && (
+              {heading.id === activeHeading && (
                 <motion.div
                   initial={{ opacity: 0, x: 1 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -104,7 +99,7 @@ export default function TableOfContent({
         {isMenuOpen && (
           <motion.div
             className={twMerge(
-              "absolute -mt-[18px] flex w-[calc(100%-32px)] flex-col gap-2 overflow-hidden rounded-b-lg border-2 border-[#462002] bg-[#F8F3E8] px-4",
+              "absolute z-10 -mt-[18px] flex w-[calc(100%-32px)] flex-col gap-2 overflow-hidden rounded-b-lg border-2 border-[#462002] bg-[#F8F3E8] px-4",
             )}
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
