@@ -85,7 +85,7 @@ export default function Page() {
         十年以來，SITCON
         一直秉持著不向與會者收費的原則來舉辦資訊研討會，不僅創造許多學生們交流、教學互長的機會，也帶領無數學子踏入資訊的殿堂。
       </p>
-      <div className="my-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="my-4 grid grid-cols-2 gap-4 xl:grid-cols-4">
         <FeatureCard bg="1">
           <span>累積逾</span>
           <div>
