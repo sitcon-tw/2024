@@ -39,6 +39,17 @@ const config: Config = {
         "2-6": { light: "#BFBFBF", DEFAULT: "#BFBFBF", dark: "#D9D9D9" },
         "1-6": { light: "#D9D9D9", DEFAULT: "#D9D9D9", dark: "#FFFFFF" },
       },
+      animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+      },
     },
   },
   plugins: [],
