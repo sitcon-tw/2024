@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
+"use client";
 import { twMerge } from "tailwind-merge";
 import { MdHandshake } from "react-icons/md";
 import { IoTicket } from "react-icons/io5";
-import MovingSponsorCards from "./website/MovingSponsorCards";
 import {
   FaDiscord,
   FaFacebookF,
@@ -14,6 +13,8 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiPlurk, SiOdysee } from "react-icons/si";
+import MovingSponsorCards from "./website/MovingSponsorCards";
+import { usePathname } from "next/navigation";
 const socialMedia = [
   {
     href: "https://sitcon.org/fb",
@@ -57,9 +58,10 @@ const socialMedia = [
   },
 ];
 export default function Footer() {
+  const isSponsorPage = usePathname().startsWith("/sponsor");
   return (
     <>
-      <MovingSponsorCards />
+      {!isSponsorPage && <MovingSponsorCards />}
       <div
         className={twMerge(
           "md:flex md:items-center md:justify-between",
