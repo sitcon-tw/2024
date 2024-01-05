@@ -3,12 +3,12 @@ import SponsorCard from "./SponsorCard";
 import sponsorData from "../../app/(website)/sponsor/sponsorData";
 export default function MovingSponsorCards() {
   const data = [
+    ...sponsorData.sponsors.map((x) => x.items).flat(),
     ...sponsorData.specialThanks,
     ...sponsorData.mediaPartners,
-    ...sponsorData.sponsors.map((x) => x.items).flat(),
   ];
   return (
-    <div className="relative mb-4 mt-8 flex flex-col items-center justify-center overflow-hidden rounded-md border-b border-t border-[#4620021A] antialiased">
+    <div className="relative mb-4 mt-16 flex flex-col items-center justify-center overflow-hidden rounded-md border-b border-t border-[#4620021A] antialiased md:mt-24">
       <InfiniteMovingCards direction="right" speed="slow">
         {data.slice(0, data.length / 2).map((sponsor, i) => (
           <SponsorCard
