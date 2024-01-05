@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { MdHandshake } from "react-icons/md";
 import { IoTicket } from "react-icons/io5";
+import MovingSponsorCards from "./website/MovingSponsorCards";
 import {
   FaDiscord,
   FaFacebookF,
@@ -58,6 +59,7 @@ const socialMedia = [
 export default function Footer() {
   return (
     <>
+      <MovingSponsorCards />
       <div
         className={twMerge(
           "md:flex md:items-center md:justify-between",
