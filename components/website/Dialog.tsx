@@ -3,6 +3,8 @@ import { Drawer } from "vaul";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import { IoCloseCircle } from "react-icons/io5";
+import { createPortal } from "react-dom";
+
 export default function Dialog({
   children,
   open,
@@ -31,7 +33,7 @@ export default function Dialog({
       </Drawer.Root>
     );
   }
-  return (
+  return createPortal(
     <AnimatePresence>
       {open && (
         <div className="fixed inset-0 z-20">
@@ -60,6 +62,7 @@ export default function Dialog({
           </motion.div>
         </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }
