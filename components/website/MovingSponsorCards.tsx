@@ -3,6 +3,8 @@ import SponsorCard from "./SponsorCard";
 import sponsorData from "../../app/(website)/sponsor/sponsorData";
 export default function MovingSponsorCards() {
   const data = [
+    ...sponsorData.coOrganizer,
+    ...sponsorData.coSponsor,
     ...sponsorData.sponsors.map((x) => x.items).flat(),
     ...sponsorData.specialThanks,
     ...sponsorData.mediaPartners,
