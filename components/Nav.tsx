@@ -77,7 +77,7 @@ export default function Nav() {
   return (
     <>
       <motion.nav
-        className="sticky top-0 z-10 bg-[#F8F3E8]/90 backdrop-blur-lg"
+        className="sticky top-0 z-40 bg-[#F8F3E8]/90 backdrop-blur-lg"
         style={{ position: "sticky" }}
         layoutRoot
         layout
@@ -116,10 +116,10 @@ export default function Nav() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="fixed left-0 top-0 z-10 flex h-screen w-screen flex-col bg-[#F8F3E8]/90 backdrop-blur-lg"
+            className="fixed left-0 top-0 z-40 flex h-screen w-screen flex-col bg-[#F8F3E8]/90 backdrop-blur-lg"
           >
             <div
-              className="absolute inset-0 -z-10 m-auto w-[350px] max-w-full opacity-10"
+              className="absolute inset-0 -z-40 m-auto w-[350px] max-w-full opacity-10"
               style={{
                 backgroundImage: "url('/2024/website/nav_mobile_bg.webp')",
                 backgroundSize: "contain",
