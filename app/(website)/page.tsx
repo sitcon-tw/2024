@@ -92,7 +92,7 @@ export default function Page() {
         </div>
       </div>
       {/* theme */}
-      <div className="px-8">
+      <div className="px-8 px-[160px]">
         <div className="relative py-40">
           {/* this need dynamic height base on how height the content is */}
           {/* <div className="absolute -top-[600px] z-0 h-[2127px] w-[1095px] rotate-[76.379deg] bg-[#061740] blur-[100px]"> */}
