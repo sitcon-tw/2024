@@ -4,6 +4,7 @@ import Dialog from "@/components/website/Dialog";
 import { useState } from "react";
 import sponsorData from "../../app/(website)/sponsor/sponsorData";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
 export default function SponsorCard({
   data,
   className,
@@ -14,11 +15,16 @@ export default function SponsorCard({
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   return (
     <>
-      <img
+      <motion.img
         src={`/2024/sponsor/${data.image}`}
-        className={twMerge("mx-auto w-full cursor-pointer rounded", className)}
+        className={twMerge(
+          "mx-auto w-full cursor-pointer rounded transition-all hover:drop-shadow-lg",
+          className,
+        )}
         alt={data.title}
         onClick={() => setIsDialogOpen(true)}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       />
       <Dialog open={isDialogOpen} setOpen={setIsDialogOpen}>
         <div className="flex flex-col gap-4 p-6">
