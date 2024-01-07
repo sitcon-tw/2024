@@ -1,4 +1,5 @@
 "use client";
+import { CiGift } from "react-icons/ci";
 import Button from "@/components/website/button";
 import TicketSection from "@/components/website/ticketSection";
 import TableOfContent from "@/components/TableOfContent";
@@ -34,9 +35,40 @@ export default function Page() {
       <h1 className="text-2xl md:text-4xl font-bold mb-4" id="post-info">
         投稿資訊
       </h1>
+      <div className="mb-10 flex flex-row justify-around pb-16">
+        <div className="flex flex-col">
+          <p>
+            SITCON
+            期望成為學生展現自己的舞台，如果你有想要與大家分享的經驗、技術或專案，歡迎於
+            2024/01/20
+            前用以下形式的投搞，我們歡迎任何與資訊或電腦軟硬體相關的講題。
+          </p>
+          <ul className="ml-16 list-disc mt-4">
+            <li>
+              一般議程：10 分鐘與 40
+              分鐘的議程，帶給會眾知識的洗禮與思想的壯遊。
+            </li>
+            <li>
+              開放式議程：40
+              分鐘的議程，不限定進行方式，歡迎任何非傳統、實現性質的形式進行此場議程。
+            </li>
+            <li>海報投稿：以靜態海報展出學生個人或團隊專案研究作品。</li>
+          </ul>
+        </div>
+        <div className="flex flex-col ml-4">
+          <Button color="blue">了解更多</Button>
+        </div>
+      </div>
       <h1 className="text-2xl md:text-4xl font-bold mb-4" id="souvenir-info">
         紀念品資訊
       </h1>
+      <div className="container flex flex-col justify-center items-center text-center pt-20 gap-4">
+        <CiGift className="text-8xl" />
+        <div>
+          <div className="text-4xl font-bold">紀念品</div>
+          <div className="text-2xl">即將上線！</div>
+        </div>
+      </div>
     </TableOfContent>
   );
 }
