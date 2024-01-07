@@ -10,6 +10,18 @@ export default function Page() {
       <h1 className="text-2xl md:text-4xl font-bold mb-4" id="page-title">
         報名資訊
       </h1>
+      <div className="mb-10 flex flex-row justify-around pb-16">
+        <div className="basis-4/5">
+          <p>
+            SITCON
+            年會堅持不收費原則，秉持著「降低學生參與門檻」的理念，預算全數由個人／企業贊助或是政府／教育單位協助，若您也認同
+            SITCON 的理念，歡迎支持我們。
+          </p>
+        </div>
+        <div className="basis-1/5">
+          <Button color="blue">支持我們</Button>
+        </div>
+      </div>
       <div className="flex flex-col">
         <TicketSection
           name="一般票"
@@ -36,7 +48,7 @@ export default function Page() {
         投稿資訊
       </h1>
       <div className="mb-10 flex flex-row justify-around pb-16">
-        <div className="flex flex-col">
+        <div className="basis-4/5">
           <p>
             SITCON
             期望成為學生展現自己的舞台，如果你有想要與大家分享的經驗、技術或專案，歡迎於
@@ -55,7 +67,7 @@ export default function Page() {
             <li>海報投稿：以靜態海報展出學生個人或團隊專案研究作品。</li>
           </ul>
         </div>
-        <div className="flex flex-col ml-4">
+        <div className="basis-1/5">
           <Button color="blue">了解更多</Button>
         </div>
       </div>
