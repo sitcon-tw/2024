@@ -32,8 +32,8 @@ export default function Dialog({
     return (
       <Drawer.Root open={open} onOpenChange={setOpen}>
         <Drawer.Portal>
-          <Drawer.Overlay className="fixed inset-0 z-20 bg-black/40 backdrop-blur" />
-          <Drawer.Content className="fixed bottom-0 left-0 right-0 z-20 mt-24 flex h-max flex-col rounded-t-[10px] bg-[#F8F3E8]">
+          <Drawer.Overlay className="fixed inset-0 z-50 bg-black/40 backdrop-blur" />
+          <Drawer.Content className="fixed bottom-0 left-0 right-0 z-50 mt-24 flex h-max flex-col rounded-t-[10px] bg-[#F8F3E8]">
             <div className="m-auto mt-3 h-1.5 w-20 rounded-full bg-black/20" />
             {children}
           </Drawer.Content>
@@ -45,7 +45,7 @@ export default function Dialog({
     ? createPortal(
         <AnimatePresence>
           {open && (
-            <div className="fixed inset-0 z-20">
+            <div className="fixed inset-0 z-50">
               <motion.div
                 className="fixed inset-0 cursor-pointer bg-black/40 backdrop-blur"
                 onClick={() => setOpen(false)}
