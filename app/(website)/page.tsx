@@ -1,10 +1,13 @@
 "use client";
 import Button from "@/components/website/button";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-function Readmore({ content }: { content: string[] }) {
+function Readmore({ content, footer }: { content: string[], footer: string }) {
   const [open, setOpen] = useState(false);
+
+  const Line = () => <div className="w-[10%] h-0 border-[2px] border-[#FFB191] rounded "/>
+
   return (
     <div className="grid-row-2 grid place-items-center">
       {/* TODO: this will blink when open */}
@@ -25,6 +28,19 @@ function Readmore({ content }: { content: string[] }) {
             {item}
           </p>
         ))}
+        <div>
+
+        </div>
+      </div>
+
+      <div className={twMerge("hidden pt-16 text-[#FFB191] text-2xl font-bold  items-center w-full", open && 'flex')}>
+        <div className="md:grow" />
+        <Line />
+        <div className="grow" />
+        <p>{footer}</p>
+        <div className="grow" />
+        <Line />
+        <div className="md:grow" />
       </div>
 
       <button
@@ -124,7 +140,7 @@ export default function Page() {
             width={2048}
             height={2048}
             alt=""
-            className="t-[-4rem] absolute left-[-12rem] z-0 h-full w-[300%] max-w-none rotate-[-14deg] opacity-10"
+            className="t-[-4rem] absolute left-[-12rem] z-0 h-full h-[150%] top-[-25%] max-w-none rotate-[-14deg] opacity-10"
           />
           <img
             src="/2024/website/flame_opacity.png"
@@ -170,6 +186,8 @@ export default function Page() {
                 "身為學生的我們將持續學習、滾動歷史的巨輪，不斷地透過計算機發明各種工具，解決各式各樣的問題；我們將擁抱我們的好奇心，盡己所能和大家討論研究，並將成果取之開源、用之開源；我們將站在巨人的肩膀上，繼承知識及智慧，做到更多前人做不到的事情。",
                 "雖然我們的軀體受到壽命的限制，卻因為好奇心和熱情驅使我們不斷學習、探索、傳承知識。作為學生，我們將在人類歷史的長河中繼續創造奇蹟，貢獻自己的力量，生而為人感到驕傲。",
               ]}
+              footer="因為 我們終究是人類。"
+              
             />
           </div>
         </div>
