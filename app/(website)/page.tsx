@@ -152,7 +152,7 @@ export default function Page() {
         </div>
         {/* two buttons */}
         <div className="absolute bottom-0 grid w-full grid-cols-2 gap-5 px-8 md:-bottom-24 md:right-8 md:w-[40%] lg:w-[30%]">
-          <Button color="yellow">活動報名</Button>
+          <Button color="yellow" url="/signup">活動報名</Button>
           <Button color="yellow">支持我們</Button>
         </div>
       </div>

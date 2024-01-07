@@ -71,6 +71,7 @@ function ClickButton({
 }
 
 function LinkButton({ children, url, color, className }: LinkProps & Style) {
+  const isExternal = url[0] !== "/";
   return (
     <Link
       className={twMerge(
@@ -80,8 +81,8 @@ function LinkButton({ children, url, color, className }: LinkProps & Style) {
         "flex items-center justify-center",
       )}
       href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
     >
       {children}
     </Link>
