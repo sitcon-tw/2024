@@ -30,7 +30,7 @@ function Readmore({ content }: { content: string[] }) {
       <button
         className={twMerge(
           open && "hidden",
-          "w-fit rounded-2xl border border-white px-8 py-4 text-[18px] text-white shadow-[0px_4px_25px_0px_#FFFFFF4D]",
+          "w-fit rounded-2xl border border-white px-8 py-4 text-[18px] text-white shadow-[0px_4px_25px_0px_#FFFFFF4D] mt-8",
         )}
         onClick={() => setOpen(true)}
       >
@@ -40,32 +40,46 @@ function Readmore({ content }: { content: string[] }) {
   );
 }
 
+function Heading({ chinese, english }: {chinese: string, english: string}) {
+  return <>
+    <h1 className="pt-[110px] pb-[12px] text-3xl font-bold md:pt-[120px] md:pb-[30px] md:text-5xl">{chinese}</h1>
+    <h2 className="pb-[40px] text-2xl font-bold md:pb-[56px] md:text-4xl">{english}</h2>
+  </>
+}
+
 export default function Page() {
   return (
     <div className="overflow-hidden">
       {/* title */}
       {/* TODO: style this section */}
-      <div className="relative z-[5] min-h-[550px]">
+      <div className="relative z-[5] min-h-[460px]">
         <img
-          src="/2024/website/title_mobile.png"
-          width={428}
-          height={529}
+          src="/2024/website/title_bg.png"
+          width={5760}
+          height={3024}
           alt=""
-          className="absolute -top-12 w-[180%] sm:-top-32  md:hidden "
+          className="absolute w-[150%] max-w-none opacity-20 md:w-[100%] md:top-[-13rem]"
         />
         <img
-          src="/2024/website/title_desktop.png"
-          width={428}
-          height={529}
+          src="/2024/website/title.png"
+          width={3289}
+          height={1282}
           alt=""
-          className="absolute -top-12 hidden w-[180%] md:block lg:-top-[7rem]"
+          className="absolute left-4 top-32 w-[80%] md:w-[60%] md:left-24"
         />
+        {/* <img */}
+        {/*   src="/2024/website/title_desktop.png" */}
+        {/*   width={428} */}
+        {/*   height={529} */}
+        {/*   alt="" */}
+        {/*   className="absolute -top-12 hidden w-[180%] md:block lg:-top-[7rem]" */}
+        {/* /> */}
         <img
           src="/2024/website/flame.png"
           width={150 * 0.8}
           height={238 * 0.8}
           alt=""
-          className="absolute bottom-2 right-0 md:bottom-[8.5rem] md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
+          className="absolute bottom-[1.5rem] right-0 md:bottom-0 md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
         />
 
         <img
@@ -73,35 +87,35 @@ export default function Page() {
           width={150 * 0.8}
           height={238 * 0.8}
           alt=""
-          className="absolute bottom-2 right-0 md:bottom-[8.5rem] md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
+          className="absolute bottom-[1.5rem] right-0 md:bottom-0 md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
         />
 
-        <h1 className="absolute right-8 top-16 text-2xl font-bold text-[#061740] md:right-16">
+        <h1 className="absolute right-8 top-16 text-xl md:text-2xl font-bold text-[#061740] md:right-16">
           SITCON 學生計算機年會 2024
         </h1>
-        <div className="absolute left-8 top-[370px] md:left-40 md:top-[420px]">
-          <h1 className="pb-4 text-2xl font-bold text-black">2024.03.09</h1>
-          <h1 className="text-2xl font-bold text-black">
+        <div className="absolute left-8 top-[290px] md:left-[160px] md:top-[490px]">
+          <h1 className="pb-4 text-2xl md:text-3xl font-bold text-black">2024.03.09</h1>
+          <h1 className="text-2xl font-bold md:text-3xl text-black">
             中央研究院 人文社會科學館
           </h1>
         </div>
         {/* two buttons */}
-        <div className="absolute bottom-0 grid w-full grid-cols-2 gap-5 px-8 md:bottom-12 md:right-8 md:w-[40%] lg:w-[30%]">
+        <div className="absolute bottom-0 grid w-full grid-cols-2 gap-5 px-8 md:-bottom-24 md:right-8 md:w-[40%] lg:w-[30%]">
           <Button color="yellow">活動報名</Button>
           <Button color="yellow">支持我們</Button>
         </div>
       </div>
       {/* theme */}
-      <div className="px-8 px-[160px]">
-        <div className="relative py-40">
+      <div className="px-8 md:px-[160px] md:pt-[360px]">
+        <div className="relative pt-40 md:pb-[200px]">
           {/* this need dynamic height base on how height the content is */}
           {/* <div className="absolute -top-[600px] z-0 h-[2127px] w-[1095px] rotate-[76.379deg] bg-[#061740] blur-[100px]"> */}
-          <div className="absolute -left-[500px] -top-[175px] z-0 h-[1200px] w-[3000px] rotate-[-14deg] bg-[#061740] blur-[100px] md:h-[900px]">
+          <div className="absolute -left-[500px] -top-[175px] z-0 h-[1200px] w-[3000px] rotate-[-14deg] bg-[#061740] blur-[100px] md:h-[1200px] md:top-[-300px]">
             {/* TODO: bug fix: It doesn't appear */}
             {/* <img src="/2024/website/bg-texture.png" width={756.82} height={2339.65} alt="" className="relative z-20"/> */}
           </div>
           <div className="relative z-[5]">
-            <h1 className="text-3xl font-bold text-white">年會主題</h1>
+            <h1 className="text-3xl font-bold text-white md:text-5xl">年會主題</h1>
             <img
               src="/2024/website/human after all.png"
               width={370}
@@ -138,19 +152,13 @@ export default function Page() {
           </div>
         </div>
         {/* about */}
-        <h1 className="mb-[12px] mt-[110px] text-3xl font-bold text-black">
-          關於 SITCON
-        </h1>
-        <h1 className="text-2xl font-bold text-black">About SITCON</h1>
+        <Heading chinese="關於 SITCON" english="About SITCON" />
         <p className="text-[18px]">
           學生計算機年會（Students’ Information Technology Conference）自 2013
           年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，希望引領更多學子踏入資訊的殿堂，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發，達到「學以致用、教學相長」的實際展現。
         </p>
         {/* CoC */}
-        <h1 className="mb-[12px] mt-[110px] text-3xl font-bold text-black">
-          行為準則
-        </h1>
-        <h1 className="text-2xl font-bold text-black">Code of Conduct</h1>
+        <Heading chinese="行為準則" english="Code of Conduct"/>
         <p className="text-[18px]">
           SITCON
           歡迎不同身分、來自不同背景的與會者，也非常鼓勵女性、性少數與多元背景的參與者。為了讓大家都能愉快的參加
@@ -158,10 +166,7 @@ export default function Page() {
           Conduct），共同創造一個友善的環境。
         </p>
         {/* community */}
-        <h1 className="mb-[12px] mt-[110px] text-3xl font-bold text-black">
-          參與討論
-        </h1>
-        <h1 className="text-2xl font-bold text-black">Join the community</h1>
+        <Heading chinese="參與討論"english="Join the community"/>
         <p className="text-[18px]">
           SITCON
           是個開放的社群，許多籌備的相關事項都會在公開的郵件論壇上進行討論，如果有興趣參與，歡迎訂閱
