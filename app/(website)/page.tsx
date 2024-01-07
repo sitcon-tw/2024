@@ -1,12 +1,23 @@
 "use client";
 import Button from "@/components/website/button";
-import { ReactNode, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-function Readmore({ content, footer }: { content: string[], footer: string }) {
+function Readmore({
+  content,
+  footer,
+  updateHeight,
+}: {
+  content: string[];
+  footer: string;
+  updateHeight: () => void;
+}) {
   const [open, setOpen] = useState(false);
+  useEffect(() => updateHeight(), [open]);
 
-  const Line = () => <div className="w-[10%] h-0 border-[2px] border-[#FFB191] rounded "/>
+  const Line = () => (
+    <div className="h-0 w-[10%] rounded border-[2px] border-[#FFB191] " />
+  );
 
   return (
     <div className="grid-row-2 grid place-items-center">
@@ -28,12 +39,15 @@ function Readmore({ content, footer }: { content: string[], footer: string }) {
             {item}
           </p>
         ))}
-        <div>
-
-        </div>
+        <div></div>
       </div>
 
-      <div className={twMerge("hidden pt-16 text-[#FFB191] text-2xl font-bold  items-center w-full", open && 'flex')}>
+      <div
+        className={twMerge(
+          "hidden w-full items-center pt-16 text-2xl  font-bold text-[#FFB191]",
+          open && "flex",
+        )}
+      >
         <div className="md:grow" />
         <Line />
         <div className="grow" />
@@ -70,6 +84,19 @@ function Heading({ chinese, english }: { chinese: string; english: string }) {
 }
 
 export default function Page() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(674);
+  const calculateBgHeight = (h: number) => h / 1.0002985993537754; // magic number = sec(1.4 deg)
+
+  const updateHeight = () => setHeight(ref.current?.clientHeight || 674);
+
+  useEffect(() => {
+    addEventListener("resize", updateHeight);
+    return () => {
+      removeEventListener("resize", updateHeight);
+    };
+  }, []);
+
   return (
     <div className="overflow-hidden">
       {/* title */}
@@ -131,16 +158,19 @@ export default function Page() {
       </div>
       {/* theme */}
       <div className="relative px-8 md:px-[160px] md:pt-[360px]">
-        <div className="relative pt-40 md:pb-[200px]">
+        <div className="relative pt-40 md:pb-[200px]" ref={ref}>
           {/* this need dynamic height base on how height the content is */}
           {/* <div className="absolute -top-[600px] z-0 h-[2127px] w-[1095px] rotate-[76.379deg] bg-[#061740] blur-[100px]"> */}
-          <div className="absolute -left-[500px] -top-[175px] z-0 h-[1200px] w-[3000px] rotate-[-14deg] bg-[#061740] blur-[100px] md:top-[-300px] md:h-[1200px]" />
+          <div
+            className="absolute -left-[500px] -top-[175px] z-0 h-[1200px] w-[3000px] rotate-[-14deg] bg-[#061740] blur-[100px] md:top-[-300px] md:h-[1200px]"
+            style={{ height: calculateBgHeight(height) }}
+          />
           <img
             src="/2024/website/bg-texture.png"
             width={2048}
             height={2048}
             alt=""
-            className="t-[-4rem] absolute left-[-12rem] z-0 h-full h-[150%] top-[-25%] max-w-none rotate-[-14deg] opacity-10"
+            className="t-[-4rem] absolute left-[-12rem] top-[-25%] z-0 h-[150%] h-full max-w-none rotate-[-14deg] opacity-10"
           />
           <img
             src="/2024/website/flame_opacity.png"
@@ -187,7 +217,7 @@ export default function Page() {
                 "雖然我們的軀體受到壽命的限制，卻因為好奇心和熱情驅使我們不斷學習、探索、傳承知識。作為學生，我們將在人類歷史的長河中繼續創造奇蹟，貢獻自己的力量，生而為人感到驕傲。",
               ]}
               footer="因為 我們終究是人類。"
-              
+              updateHeight={updateHeight}
             />
           </div>
         </div>
