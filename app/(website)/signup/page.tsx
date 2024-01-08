@@ -22,29 +22,64 @@ export default function Page() {
           <Button color="blue">支持我們</Button>
         </div>
       </div>
-      <div className="flex flex-col">
-        <TicketSection
-          name="一般票"
-          description={[
-            "第一波售票 2024/01/14 20:00 ~ 2024/01/27 23:59",
-            "第二波售票 2024/02/04 20:00 ~ 2024/02/17 23:59",
-          ]}
-          button="立即購票"
-          url="/ticket/general"
-        >
-        </TicketSection>
-        <TicketSection
-          name="一般票"
-          description={[
-            "第一波售票 2024/01/14 20:00 ~ 2024/01/27 23:59",
-            "第二波售票 2024/02/04 20:00 ~ 2024/02/17 23:59",
-          ]}
-          button="立即購票"
-          url="/ticket/general"
-        >
-        </TicketSection>
-      </div>
-      <h1 className="text-2xl md:text-4xl font-bold mb-4" id="post-info">
+      <div className="grid grid-cols-2 grid-rows-3 content-center justify-center gap-5 gap-y-20 align-middle md:grid-cols-3 md:grid-rows-2">
+            <div className="flex flex-col content-center justify-center align-middle">
+              <div className="flex justify-center align-middle content-center">
+                <img className="w-32" src="/2024/website/ticket.svg" alt="SITCON Logo" />
+              </div>
+              <p className="text-center text-xl font-bold">一般票</p>
+            </div>
+            <div className="grid content-center justify-start">
+              <ul className="list-disc col-span-1">
+                <li>
+                  第一波售票
+                  <br />
+                  2024/01/14 20:00 ~ 2024/01/27 23:59
+                </li>
+                <li>
+                  第二波售票
+                  <br />
+                  2024/02/04 20:00 ~ 2024/02/17 23:59
+                </li>
+              </ul>
+            </div>
+            <div className="grid content-center justify-center">
+              <Button color="blue">KKTIX 報名連結</Button>
+            </div>
+            <div className="flex flex-col content-center justify-center align-middle">
+              <div className="flex justify-center align-middle content-center">
+                <img className="w-32" src="/2024/website/ticket.svg" alt="SITCON Logo" />
+              </div>
+              <p className="text-center text-xl font-bold">遠道而來票</p>
+            </div>
+            <div className="grid content-center justify-start">
+              <ul className="list-disc">
+                <li>資格限制：住在偏鄉或離島、海外地區的學生。</li>
+                <li>先到先審制，報名者需在 2024/01/05 23:59 前填寫 <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2mKwyjpJyMylQmCrjHDSzt3a6LIMQPWXS3NIYfLIhilBQcg/closedform">申請表單</a>。</li>
+                <li>申請資格及更詳細的申請說明，請參考 SITCON 2024 遠道而來票。</li>
+              </ul>
+            </div>
+            <div className="grid content-center justify-center">
+              <Button color="blue">立即取得</Button>
+            </div>
+            <div className="flex flex-col content-center justify-center align-middle">
+              <div className="flex justify-center align-middle content-center">
+                <img className="w-32" src="/2024/website/ticket.svg" alt="SITCON Logo" />
+              </div>
+              <p className="text-center text-xl font-bold">SITCON x OSCVPass <br/>開源貢獻票</p>
+            </div>
+            <div className="grid content-center justify-start">
+              <ul className="list-disc">
+                <li>資格限制：對開源專案有貢獻者。</li>
+                <li>需要事先申請。申請表單、申請資格及更詳細的申請說明，請參考 開源貢獻者快速通關。</li>
+                <li>關於歷年來 OSCVPass 申請通過者的專案列表，請參考 OSCVPass 專案介紹。</li>
+              </ul>
+            </div>
+            <div className="grid content-center justify-center">
+              <Button color="blue">立即取得</Button>
+            </div>
+        </div>
+      <h1 className="text-2xl md:text-4xl font-bold mb-4 mt-20" id="post-info">
         投稿資訊
       </h1>
       <div className="mb-10 flex flex-row justify-around pb-16">
