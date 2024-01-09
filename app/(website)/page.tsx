@@ -107,14 +107,14 @@ export default function Page() {
           width={5760}
           height={3024}
           alt=""
-          className="absolute w-[150%] max-w-none opacity-20 md:top-[-13rem] md:w-[100%]"
+          className="absolute w-[150%] max-w-none opacity-20 md:top-[-13rem] md:w-[100%] top-[-15%] md:top-[-30%]"
         />
         <img
-          src="/2024/website/title.png"
-          width={3289}
-          height={1282}
+          src="/2024/website/title.svg"
+          width={1440}
+          height={795}
           alt=""
-          className="absolute left-4 top-32 w-[80%] md:left-24 md:w-[60%]"
+          className="absolute left-0 top-4 max-w-none w-[130%] md:left-12 md:w-[90%] md:top-0"
         />
         {/* <img */}
         {/*   src="/2024/website/title_desktop.png" */}
@@ -124,14 +124,6 @@ export default function Page() {
         {/*   className="absolute -top-12 hidden w-[180%] md:block lg:-top-[7rem]" */}
         {/* /> */}
         <img
-          src="/2024/website/flame.png"
-          width={150 * 0.8}
-          height={238 * 0.8}
-          alt=""
-          className="absolute bottom-[1.5rem] right-0 md:bottom-0 md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
-        />
-
-        <img
           src="/2024/website/ellipse.png"
           width={150 * 0.8}
           height={238 * 0.8}
@@ -139,7 +131,15 @@ export default function Page() {
           className="absolute bottom-[1.5rem] right-0 md:bottom-0 md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
         />
 
-        <h1 className="absolute right-8 top-16 text-xl font-bold text-[#061740] md:right-16 md:text-2xl">
+        <img
+          src="/2024/website/flame.png"
+          width={150 * 0.8}
+          height={238 * 0.8}
+          alt=""
+          className="absolute bottom-[1.5rem] right-0 md:bottom-0 md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
+        />
+
+        <h1 className="absolute right-8 top-4 md:top-16 text-xl font-bold text-[#061740] md:right-24 md:text-2xl">
           SITCON 學生計算機年會 2024
         </h1>
         <div className="absolute left-8 top-[290px] md:left-[160px] md:top-[490px]">
