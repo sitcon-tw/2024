@@ -19,7 +19,7 @@ export default function Page() {
           </p>
         </div>
         <div className="justify-end">
-          <Button color="blue">支持我們</Button>
+          <Button color="blue" url="/sponsor/">支持我們</Button>
         </div>
       </div>
       <div className="grid grid-cols-2 grid-rows-3 content-center justify-center gap-5 gap-y-20 align-middle md:grid-cols-3 md:grid-rows-2">
@@ -48,7 +48,9 @@ export default function Page() {
           </ul>
         </div>
         <div className="grid content-center justify-end">
-          <Button color="blue">KKTIX 報名連結</Button>
+          <Button color="blue" url="https://sitcon.kktix.cc/events/sitcon2024">
+            KKTIX 報名連結
+          </Button>
         </div>
         <div className="flex flex-col content-center justify-center align-middle">
           <div className="flex justify-center align-middle content-center">
@@ -73,7 +75,13 @@ export default function Page() {
           </ul>
         </div>
         <div className="grid content-center justify-end">
-          <Button color="blue">立即取得</Button>
+          <Button
+            color="gray"
+            url="https://sitcon.kktix.cc/events/sitcon2024"
+            className="cursor-not-allowed"
+          >
+            立即取得
+          </Button>
         </div>
         <div className="flex flex-col content-center justify-center align-middle">
           <div className="flex justify-center align-middle content-center">
@@ -101,7 +109,9 @@ export default function Page() {
           </ul>
         </div>
         <div className="grid content-center justify-end">
-          <Button color="blue">立即取得</Button>
+          <Button color="blue" url="https://ocf.tw/p/oscvpass/">
+            立即取得
+          </Button>
         </div>
       </div>
       <h1 className="text-2xl md:text-4xl font-bold mb-4 mt-20" id="post-info">
@@ -128,7 +138,7 @@ export default function Page() {
           </ul>
         </div>
         <div className="justify-end">
-          <Button color="blue">了解更多</Button>
+          <Button color="blue" url="/events/">了解更多</Button>
         </div>
       </div>
       <h1 className="text-2xl md:text-4xl font-bold mb-4" id="souvenir-info">
