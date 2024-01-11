@@ -29,77 +29,34 @@ export default {
       title: "領航級",
       items: [
         {
-          title: "餅乾怪獸工廠",
-          image: "cookie.png",
+          title: "LINE",
+          image: "LINE.png",
           description:
-            "歡迎來到餅乾怪獸工廠，這裡是一個專注於製造美味、有趣且獨特的餅乾的地方。我們不僅致力於提供高品質的產品，更將創意融入每一塊餅乾中，讓您感受到滿滿的驚喜。",
-          url: "https://www.facebook.com/taiwanbingbing/",
+            "總部位於日本的LINE以「拉近你我的距離」為企業使命，透過多元的行動服務與內容，致力將人們、資訊與社會緊密連結。自2011年6月以通訊軟體的型態推出，現更推展其多元的全球生態系，並將觸角延伸至人工智慧、金融科技等領域，積極實現「智慧入口」的願景，2021年3月，LINE與日本規模最大的網路科技集團之一Z Holdings 正式整併，未來也將持續提供用戶享有最即時、便利的行動生活。",
+          url: "https://techblog.lycorp.co.jp/zh-hant/search?q=intern",
         },
       ],
     },
     {
       title: "深耕級",
       items: [
-        {
-          title: "餅乾樂園",
-          image: "cookie1.jpg",
-          description:
-            "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "魔法口袋",
-          image: "cookie2.jpg",
-          description:
-            "探索魔法口袋，發現不同口味和形狀的餅乾驚喜。從巧克力夢幻到水果仙境，每一口都是一場味覺的冒險。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "餅乾超市",
-          image: "cookie3.jpg",
-          description:
-            "歡迎來到餅乾超市，您尋找甜蜜與多樣口味的理想之地！我們致力於提供最豐富的餅乾選擇，滿足您的味蕾，讓購物成為一場美味的冒險。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "餅乾博物館",
-          image: "cookie4.jpg",
-          description:
-            "歡迎蒞臨餅乾博物館，這裡是一個充滿歷史、創意和美味的餅乾之旅。我們致力於呈現餅乾的多元面向，讓您透過視覺、聽覺和味覺感受餅乾的豐富世界。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
       ],
     },
     {
       title: "前瞻級",
       items: [
         {
-          title: "餅乾樂園",
-          image: "cookie1.jpg",
+          title: "曉數碼 Akatsuki Taiwan Inc.",
+          image: "akatsuki.png",
           description:
-            "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
-          url: "https://www.facebook.com/taiwanbingbing/",
+            "曉數碼為 Akatsuki Inc. 於 2014 年在台灣設立的子公司，以「與創作者共鳴，娛樂全世界」為使命，致力於開發、營運各種能躍動人心的遊戲。曉數碼重視在地化品質並放眼國際市場，團隊中聚集來自各地的成員，包含台、日、韓、英、法、德、西與印度等多語言人才。我們亦積極打造幸福職場，以此支持成員們盡情發揮創意，使其發光發熱，共同成長。",
+          url: "https://bit.ly/3bwhylS",
         },
         {
-          title: "魔法口袋",
-          image: "cookie2.jpg",
-          description:
-            "探索魔法口袋，發現不同口味和形狀的餅乾驚喜。從巧克力夢幻到水果仙境，每一口都是一場味覺的冒險。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "餅乾超市",
-          image: "cookie3.jpg",
-          description:
-            "歡迎來到餅乾超市，您尋找甜蜜與多樣口味的理想之地！我們致力於提供最豐富的餅乾選擇，滿足您的味蕾，讓購物成為一場美味的冒險。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "餅乾博物館",
-          image: "cookie4.jpg",
-          description:
-            "歡迎蒞臨餅乾博物館，這裡是一個充滿歷史、創意和美味的餅乾之旅。我們致力於呈現餅乾的多元面向，讓您透過視覺、聽覺和味覺感受餅乾的豐富世界。",
-          url: "https://www.facebook.com/taiwanbingbing/",
+          title: "Panasonic",
+          image: "Panasonic_b_posi.png",
+          description:"Panasonic 致力於通過開發多元化的物聯網（IoT）產品，來讓人們的生活變得更美好。我們非常關注產品網路安全和客戶隱私，因此在日本總部不僅設立了 Product Security Center (PSC) 和 Product Security Incident Response Team (PSIRT)，還在台灣成立了 Panasonic Cyber Security Lab (PCSL)。PSC 和 PCSL 與全球各個業務集團合作，執行了需多的產品安全專案。這些專案包括對 IoT 產品網路威脅的深入研究、滲透測試、產品網路安全的事件響應，以及培養集團的網路安全人才。我們的目標是不斷增強和保護 Panasonic 產品的網路安全，確保我們的客戶獲得方便、安全的體驗。我們熱切歡迎有前瞻性的企業和優秀的個人加入我們的旅程，一同提升產品安全。如果您有合作意願，請隨時聯絡我們，Email 地址是 panasonic.pcsl@gmail.com。讓我們共同創建一個更安全、更緊密聯繫的世界！",
+          url: "https://sitcon.org",
         },
       ],
     },
@@ -107,60 +64,11 @@ export default {
       title: "新芽級",
       items: [
         {
-          title: "餅乾樂園",
-          image: "cookie1.jpg",
+          title: "ZUSO Generation 如梭世代",
+          image: "zuso.png",
           description:
-            "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "魔法口袋",
-          image: "cookie2.jpg",
-          description:
-            "探索魔法口袋，發現不同口味和形狀的餅乾驚喜。從巧克力夢幻到水果仙境，每一口都是一場味覺的冒險。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "餅乾超市",
-          image: "cookie3.jpg",
-          description:
-            "歡迎來到餅乾超市，您尋找甜蜜與多樣口味的理想之地！我們致力於提供最豐富的餅乾選擇，滿足您的味蕾，讓購物成為一場美味的冒險。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "餅乾博物館",
-          image: "cookie4.jpg",
-          description:
-            "歡迎蒞臨餅乾博物館，這裡是一個充滿歷史、創意和美味的餅乾之旅。我們致力於呈現餅乾的多元面向，讓您透過視覺、聽覺和味覺感受餅乾的豐富世界。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "餅乾樂園",
-          image: "cookie1.jpg",
-          description:
-            "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "魔法口袋",
-          image: "cookie2.jpg",
-          description:
-            "探索魔法口袋，發現不同口味和形狀的餅乾驚喜。從巧克力夢幻到水果仙境，每一口都是一場味覺的冒險。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "餅乾超市",
-          image: "cookie3.jpg",
-          description:
-            "歡迎來到餅乾超市，您尋找甜蜜與多樣口味的理想之地！我們致力於提供最豐富的餅乾選擇，滿足您的味蕾，讓購物成為一場美味的冒險。",
-          url: "https://www.facebook.com/taiwanbingbing/",
-        },
-        {
-          title: "餅乾博物館",
-          image: "cookie4.jpg",
-          description:
-            "歡迎蒞臨餅乾博物館，這裡是一個充滿歷史、創意和美味的餅乾之旅。我們致力於呈現餅乾的多元面向，讓您透過視覺、聽覺和味覺感受餅乾的豐富世界。",
-          url: "https://www.facebook.com/taiwanbingbing/",
+            "ZUSO 如梭世代為臺灣本土的資安服務業者，提供紅隊演練、滲透測試及顧問服務與事件調查等服務。團隊在駭客攻擊手法研究和威脅風險解析上擁有超過10年的豐富經驗，致力為企業客戶提供客製化資安解決方案，期望透過最高標準的安全措施，協助各行業建立強固的安全防線。",
+          url: "https://zuso.ai",
         },
       ],
     },
@@ -173,27 +81,6 @@ export default {
         "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
       url: "https://www.facebook.com/taiwanbingbing/",
     },
-    {
-      title: "魔法口袋",
-      image: "cookie2.jpg",
-      description:
-        "探索魔法口袋，發現不同口味和形狀的餅乾驚喜。從巧克力夢幻到水果仙境，每一口都是一場味覺的冒險。",
-      url: "https://www.facebook.com/taiwanbingbing/",
-    },
-    {
-      title: "餅乾超市",
-      image: "cookie3.jpg",
-      description:
-        "歡迎來到餅乾超市，您尋找甜蜜與多樣口味的理想之地！我們致力於提供最豐富的餅乾選擇，滿足您的味蕾，讓購物成為一場美味的冒險。",
-      url: "https://www.facebook.com/taiwanbingbing/",
-    },
-    {
-      title: "餅乾博物館",
-      image: "cookie4.jpg",
-      description:
-        "歡迎蒞臨餅乾博物館，這裡是一個充滿歷史、創意和美味的餅乾之旅。我們致力於呈現餅乾的多元面向，讓您透過視覺、聽覺和味覺感受餅乾的豐富世界。",
-      url: "https://www.facebook.com/taiwanbingbing/",
-    },
   ],
   mediaPartners: [
     {
@@ -201,27 +88,6 @@ export default {
       image: "cookie1.jpg",
       description:
         "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
-      url: "https://www.facebook.com/taiwanbingbing/",
-    },
-    {
-      title: "魔法口袋",
-      image: "cookie2.jpg",
-      description:
-        "探索魔法口袋，發現不同口味和形狀的餅乾驚喜。從巧克力夢幻到水果仙境，每一口都是一場味覺的冒險。",
-      url: "https://www.facebook.com/taiwanbingbing/",
-    },
-    {
-      title: "餅乾超市",
-      image: "cookie3.jpg",
-      description:
-        "歡迎來到餅乾超市，您尋找甜蜜與多樣口味的理想之地！我們致力於提供最豐富的餅乾選擇，滿足您的味蕾，讓購物成為一場美味的冒險。",
-      url: "https://www.facebook.com/taiwanbingbing/",
-    },
-    {
-      title: "餅乾博物館",
-      image: "cookie4.jpg",
-      description:
-        "歡迎蒞臨餅乾博物館，這裡是一個充滿歷史、創意和美味的餅乾之旅。我們致力於呈現餅乾的多元面向，讓您透過視覺、聽覺和味覺感受餅乾的豐富世界。",
       url: "https://www.facebook.com/taiwanbingbing/",
     },
   ],
