@@ -138,7 +138,7 @@ export default function Page() {
           </ul>
         </div>
         <div className="justify-end">
-          <Button color="blue" url="/events/">了解更多</Button>
+          <Button color="blue" url="/cfp/">了解更多</Button>
         </div>
       </div>
       <h1 className="text-2xl md:text-4xl font-bold mb-4" id="souvenir-info">
