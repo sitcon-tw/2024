@@ -67,17 +67,29 @@ export default function Page() {
             <li>資格限制：住在偏鄉或離島、海外地區的學生。</li>
             <li>
               先到先審制，報名者需在 2024/01/05 23:59 前填寫{" "}
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2mKwyjpJyMylQmCrjHDSzt3a6LIMQPWXS3NIYfLIhilBQcg/closedform">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSc2mKwyjpJyMylQmCrjHDSzt3a6LIMQPWXS3NIYfLIhilBQcg/closedform"
+                target="_blank"
+                className="underline underline-offset-2"
+              >
                 申請表單
               </a>。
             </li>
-            <li>申請資格及更詳細的申請說明，請參考 SITCON 2024 遠道而來票。</li>
+            <li>
+              申請資格及更詳細的申請說明，請參考<a
+                href="https://hackmd.io/@SITCON/HyCidZ0Wa"
+                target="_blank"
+                className="underline underline-offset-2"
+              >
+                SITCON 2024 遠道而來票
+              </a>。
+            </li>
           </ul>
         </div>
         <div className="grid content-center justify-end">
           <Button
             color="gray"
-            url="https://sitcon.kktix.cc/events/sitcon2024"
+            url="https://hackmd.io/@SITCON/HyCidZ0Wa"
             className="cursor-not-allowed"
           >
             立即取得
@@ -100,11 +112,23 @@ export default function Page() {
             <li>資格限制：對開源專案有貢獻者。</li>
             <li>
               需要事先申請。申請表單、申請資格及更詳細的申請說明，請參考
-              開源貢獻者快速通關。
+              <a
+                href="https://ocf.tw/p/oscvpass/"
+                target="_blank"
+                className="underline underline-offset-2"
+              >
+                開源貢獻者快速通關
+              </a>。
             </li>
             <li>
-              關於歷年來 OSCVPass 申請通過者的專案列表，請參考 OSCVPass
-              專案介紹。
+              關於歷年來 OSCVPass 申請通過者的專案列表，請參考{" "}
+              <a
+                href="https://oscvpass.ocf.tw/"
+                target="_blank"
+                className="underline underline-offset-2"
+              >
+                OSCVPass 專案介紹
+              </a>。
             </li>
           </ul>
         </div>
