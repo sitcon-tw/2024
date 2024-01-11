@@ -138,6 +138,7 @@ export default function Nav() {
                   href={link.href}
                   className="font-rubik text-xl font-bold text-[#462002] decoration-[#462002] decoration-2 underline-offset-8 hover:underline"
                   onClick={() => setIsMenuOpen(false)}
+                  key={link.name}
                 >
                   {link.name}
                 </Link>

@@ -98,7 +98,7 @@ export default function Footer() {
       <footer className="rounded-[100%_100%_0_0/50%_50%] bg-[#B1884C] py-10 text-center text-white">
         <div className="text-lg font-bold">學生計算機年會</div>
         <div className="text-lg">
-          Students' Information Technology Conference
+          Students&apos; Information Technology Conference
         </div>
         <div className="mt-4 flex items-center justify-center gap-20">
           <div className="flex flex-col items-center justify-center leading-7">

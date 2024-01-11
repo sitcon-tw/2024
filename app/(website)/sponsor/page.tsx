@@ -156,7 +156,7 @@ export default function Page() {
       </h1>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {sponsorData.coOrganizer.map((x) => (
-          <div>
+          <div key={x.title}>
             <div className="mb-2 text-center text-xl font-bold md:text-2xl">
               {x.title}
             </div>
@@ -174,7 +174,7 @@ export default function Page() {
         協辦單位
       </h1>
       {sponsorData.coSponsor.map((x) => (
-        <div>
+        <div key={x.title}>
           <div className="mb-2 text-center text-xl font-bold md:text-2xl">
             {x.title}
           </div>
