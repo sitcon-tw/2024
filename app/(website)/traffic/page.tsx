@@ -265,7 +265,7 @@ function PublicTransportation() {
 
       {/* -------- */}
 
-      <Block className="col-span-3 h-full w-full xl:col-span-1 xl:row-span-3">
+      <Block className="col-span-3 xl:h-full w-full xl:col-span-1 xl:row-span-3">
         中研院
         <br />
         人文社會科學館
@@ -276,7 +276,7 @@ function PublicTransportation() {
 
 function Drive() {
   return (
-    <div className="grid place-items-center gap-4 px-[165px] xl:grid-flow-col">
+    <div className="grid place-items-center gap-4 xl:grid-flow-col">
       <Icon
         type="car"
         desc={
