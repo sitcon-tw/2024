@@ -9,7 +9,7 @@ export default function SponsorCard({
   data,
   className,
 }: {
-  data: (typeof sponsorData.specialThanks)[0];
+  data: (typeof sponsorData.sponsors)[0]["items"][0];
   className?: string;
 }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);

@@ -37,11 +37,10 @@ export default {
         },
       ],
     },
-    {
-      title: "深耕級",
-      items: [
-      ],
-    },
+    // {
+    //   title: "深耕級",
+    //   items: [],
+    // },
     {
       title: "前瞻級",
       items: [
@@ -55,7 +54,8 @@ export default {
         {
           title: "Panasonic",
           image: "Panasonic_b_posi.png",
-          description:"Panasonic 致力於通過開發多元化的物聯網（IoT）產品，來讓人們的生活變得更美好。我們非常關注產品網路安全和客戶隱私，因此在日本總部不僅設立了 Product Security Center (PSC) 和 Product Security Incident Response Team (PSIRT)，還在台灣成立了 Panasonic Cyber Security Lab (PCSL)。PSC 和 PCSL 與全球各個業務集團合作，執行了需多的產品安全專案。這些專案包括對 IoT 產品網路威脅的深入研究、滲透測試、產品網路安全的事件響應，以及培養集團的網路安全人才。我們的目標是不斷增強和保護 Panasonic 產品的網路安全，確保我們的客戶獲得方便、安全的體驗。我們熱切歡迎有前瞻性的企業和優秀的個人加入我們的旅程，一同提升產品安全。如果您有合作意願，請隨時聯絡我們，Email 地址是 panasonic.pcsl@gmail.com。讓我們共同創建一個更安全、更緊密聯繫的世界！",
+          description:
+            "Panasonic 致力於通過開發多元化的物聯網（IoT）產品，來讓人們的生活變得更美好。我們非常關注產品網路安全和客戶隱私，因此在日本總部不僅設立了 Product Security Center (PSC) 和 Product Security Incident Response Team (PSIRT)，還在台灣成立了 Panasonic Cyber Security Lab (PCSL)。PSC 和 PCSL 與全球各個業務集團合作，執行了需多的產品安全專案。這些專案包括對 IoT 產品網路威脅的深入研究、滲透測試、產品網路安全的事件響應，以及培養集團的網路安全人才。我們的目標是不斷增強和保護 Panasonic 產品的網路安全，確保我們的客戶獲得方便、安全的體驗。我們熱切歡迎有前瞻性的企業和優秀的個人加入我們的旅程，一同提升產品安全。如果您有合作意願，請隨時聯絡我們，Email 地址是 panasonic.pcsl@gmail.com。讓我們共同創建一個更安全、更緊密聯繫的世界！",
           url: "https://sitcon.org",
         },
       ],
@@ -74,21 +74,21 @@ export default {
     },
   ],
   specialThanks: [
-    {
-      title: "餅乾樂園",
-      image: "cookie1.jpg",
-      description:
-        "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
-      url: "https://www.facebook.com/taiwanbingbing/",
-    },
+    // {
+    //   title: "餅乾樂園",
+    //   image: "cookie1.jpg",
+    //   description:
+    //     "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
+    //   url: "https://www.facebook.com/taiwanbingbing/",
+    // },
   ],
   mediaPartners: [
-    {
-      title: "餅乾樂園",
-      image: "cookie1.jpg",
-      description:
-        "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
-      url: "https://www.facebook.com/taiwanbingbing/",
-    },
+    // {
+    //   title: "餅乾樂園",
+    //   image: "cookie1.jpg",
+    //   description:
+    //     "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
+    //   url: "https://www.facebook.com/taiwanbingbing/",
+    // },
   ],
 };

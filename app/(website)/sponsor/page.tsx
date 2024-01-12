@@ -10,7 +10,7 @@ function Sponsors({
   sponsors,
   largeSponsor = false,
 }: {
-  sponsors: typeof sponsorData.specialThanks;
+  sponsors: (typeof sponsorData.sponsors)[0]["items"];
   largeSponsor?: boolean;
 }) {
   return (
@@ -190,30 +190,42 @@ export default function Page() {
       <h1 className="my-8 text-2xl font-bold md:text-4xl" id="贊助夥伴">
         贊助夥伴
       </h1>
-      {sponsorData.sponsors.map((sponsorType) => (
-        <div key={sponsorType.title}>
-          <h2
-            className="mb-4 mt-8 text-xl font-bold md:text-2xl"
-            id={sponsorType.title}
-          >
-            {sponsorType.title}
-          </h2>
-          <Sponsors
-            sponsors={sponsorType.items}
-            largeSponsor={
-              sponsorType.title === "領航級" || sponsorType.title === "深耕級"
-            }
-          />
-        </div>
-      ))}
-      <h1 className="my-8 text-2xl font-bold md:text-4xl" id="特別感謝">
-        特別感謝
-      </h1>
-      <Sponsors sponsors={sponsorData.specialThanks} />
-      <h1 className="my-8 text-2xl font-bold md:text-4xl" id="媒體夥伴">
-        媒體夥伴
-      </h1>
-      <Sponsors sponsors={sponsorData.mediaPartners} />
+      {sponsorData.sponsors.map(
+        (sponsorType) =>
+          sponsorType.items.length > 0 && (
+            <div key={sponsorType.title}>
+              <h2
+                className="mb-4 mt-8 text-xl font-bold md:text-2xl"
+                id={sponsorType.title}
+              >
+                {sponsorType.title}
+              </h2>
+              <Sponsors
+                sponsors={sponsorType.items}
+                largeSponsor={
+                  sponsorType.title === "領航級" ||
+                  sponsorType.title === "深耕級"
+                }
+              />
+            </div>
+          ),
+      )}
+      {sponsorData.specialThanks.length && (
+        <>
+          <h1 className="my-8 text-2xl font-bold md:text-4xl" id="特別感謝">
+            特別感謝
+          </h1>
+          <Sponsors sponsors={sponsorData.specialThanks} />
+        </>
+      )}
+      {sponsorData.mediaPartners.length && (
+        <>
+          <h1 className="my-8 text-2xl font-bold md:text-4xl" id="媒體夥伴">
+            媒體夥伴
+          </h1>
+          <Sponsors sponsors={sponsorData.mediaPartners} />
+        </>
+      )}
     </TableOfContent>
   );
 }
