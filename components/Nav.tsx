@@ -97,16 +97,32 @@ export default function Nav() {
             SITCON 2024
           </Link>
           <div className="flex gap-6 lg:hidden">
+            {new Date().getTime() < 1705766399000 && (
+              <Link
+                href="/cfp/"
+                className="rounded-xl bg-[#FFCA73] px-3 font-bold text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]"
+              >
+                立即投稿
+              </Link>
+            )}
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <IoMenu className="text-2xl" />
             </button>
           </div>
-          <div className="hidden gap-4 lg:flex">
+          <div className="hidden gap-2 lg:flex xl:gap-4">
             {NavLinks.map((link) => (
               <NavLink href={link.href} key={link.name}>
                 {link.name}
               </NavLink>
             ))}
+            {new Date().getTime() < 1705766399000 && (
+              <Link
+                href="/cfp/"
+                className="flex items-center justify-center rounded-xl bg-[#FFCA73] px-3 font-bold text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]"
+              >
+                立即投稿
+              </Link>
+            )}
           </div>
         </div>
       </motion.nav>
