@@ -23,7 +23,7 @@ function Sponsors({
       )}
     >
       {sponsors.map((sponsor, i) => (
-        <div key={i} className="group/sponsor relative rounded-lg bg-white">
+        <div key={i} className="group/sponsor relative rounded-lg bg-white p-4">
           <div
             className="absolute inset-0 scale-0 opacity-0 blur-xl transition-all duration-300 group-hover/sponsor:scale-100 group-hover/sponsor:opacity-50"
             style={{
