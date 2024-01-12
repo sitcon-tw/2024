@@ -2,7 +2,7 @@
 import Button from "@/components/website/button";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
-
+import { motion } from "framer-motion";
 function Readmore({
   content,
   footer,
@@ -107,14 +107,14 @@ export default function Page() {
           width={5760}
           height={3024}
           alt=""
-          className="absolute w-[150%] max-w-none opacity-20 md:top-[-13rem] md:w-[100%] top-[-15%] md:top-[-30%]"
+          className="pointer-events-none absolute top-[-15%] w-[150%] max-w-none select-none opacity-20 md:top-[-30%] md:w-[100%]"
         />
         <img
           src="/2024/website/title.svg"
           width={1440}
           height={795}
           alt=""
-          className="absolute left-0 top-4 max-w-none w-[130%] md:left-12 md:w-[90%] md:top-0"
+          className="pointer-events-none absolute left-0 top-4 w-[130%] max-w-none select-none md:left-12 md:top-0 md:w-[90%]"
         />
         {/* <img */}
         {/*   src="/2024/website/title_desktop.png" */}
@@ -128,7 +128,7 @@ export default function Page() {
           width={150 * 0.8}
           height={238 * 0.8}
           alt=""
-          className="absolute bottom-[1.5rem] right-0 md:bottom-0 md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
+          className="pointer-events-none absolute bottom-[1.5rem] right-0 select-none md:bottom-0 md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
         />
 
         <img
@@ -136,10 +136,10 @@ export default function Page() {
           width={150 * 0.8}
           height={238 * 0.8}
           alt=""
-          className="absolute bottom-[1.5rem] right-0 md:bottom-0 md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
+          className="pointer-events-none absolute bottom-[1.5rem] right-0 select-none md:bottom-0 md:right-[8rem] md:scale-[2.5] lg:right-[12rem]"
         />
 
-        <h1 className="absolute right-8 top-4 md:top-16 text-xl font-bold text-[#061740] md:right-24 md:text-2xl">
+        <h1 className="absolute right-8 top-4 text-xl font-bold text-[#061740] md:right-24 md:top-16 md:text-2xl">
           SITCON 學生計算機年會 2024
         </h1>
         <div className="absolute left-8 top-[290px] md:left-[160px] md:top-[490px]">
@@ -195,14 +195,14 @@ export default function Page() {
             width={2048}
             height={2048}
             alt=""
-            className="t-[-4rem] absolute left-[-12rem] top-[-25%] z-0 h-[150%] h-full max-w-none rotate-[-14deg] opacity-10"
+            className="t-[-4rem] absolute left-[-12rem] top-[-25%] z-0 h-full max-w-none rotate-[-14deg] select-none  opacity-10"
           />
           <img
             src="/2024/website/flame_opacity.png"
             width={153}
             height={253}
             alt=""
-            className="absolute bottom-[-50rem] left-0 right-0 top-0 z-0 m-auto md:-bottom-16"
+            className="absolute bottom-[-50rem] left-0 right-0 top-0 z-0 m-auto select-none  md:-bottom-16"
           />
 
           <div className="relative z-[5]">
@@ -229,7 +229,7 @@ export default function Page() {
               width={169.58}
               height={270.57}
               alt=""
-              className="absolute right-[-90px] top-[220px] -z-10 rotate-[37.046deg] md:top-[100px] md:scale-[2]"
+              className="absolute right-[-90px] top-[220px] -z-10 rotate-[37.046deg] select-none md:top-[100px]  md:scale-[2]"
             />
 
             <Readmore
@@ -301,7 +301,7 @@ export default function Page() {
             width={193.51}
             height={308.35}
             alt=""
-            className="absolute -left-[97px] -top-[6.5rem] rotate-[31.79deg] lg:left-[40px] lg:top-[-4.5rem] lg:scale-[2]"
+            className="pointer-events-none absolute -left-[97px] -top-[6.5rem] rotate-[31.79deg] select-none lg:left-[40px] lg:top-[-4.5rem] lg:scale-[2]"
           />
           <div className="flex min-h-[160px] flex-wrap justify-center gap-8">
             <Button

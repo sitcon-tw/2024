@@ -8,9 +8,8 @@ const style = {
   color: {
     yellow:
       "bg-[#FFCA73] text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]",
-    blue:
-      "bg-[#385AAC] text-[#F8F3E8] shadow-[0px_6px_6px_0px_#5D7DDB4D] hover:bg-[#304e96] active:bg-[#263d75]",
-    gray: "bg-[#808080] text-[#FFFFFF] shadow-[0px_6px_6px_0px_#5D7DDB4D]",
+    blue: "bg-[#385AAC] text-[#F8F3E8] shadow-[0px_6px_6px_0px_#5D7DDB4D] hover:bg-[#304e96] active:bg-[#263d75]",
+    gray: "bg-[#808080] text-[#FFFFFF] shadow-[0px_6px_6px_0px_#8080804D]",
   },
 };
 
@@ -81,8 +80,8 @@ function LinkButton({ children, url, color, className }: LinkProps & Style) {
       className={twMerge(
         style.base,
         style.color[color],
-        className,
         "flex items-center justify-center",
+        className,
       )}
       href={url}
       target={isExternal ? "_blank" : undefined}
