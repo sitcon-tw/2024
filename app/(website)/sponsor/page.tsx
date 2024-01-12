@@ -23,7 +23,16 @@ function Sponsors({
       )}
     >
       {sponsors.map((sponsor, i) => (
-        <SponsorCard data={sponsor} key={i} />
+        <div key={i} className="group/sponsor relative rounded-lg bg-white">
+          <div
+            className="absolute inset-0 scale-0 opacity-0 blur-xl transition-all duration-300 group-hover/sponsor:scale-100 group-hover/sponsor:opacity-50"
+            style={{
+              backgroundImage: `linear-gradient(90deg, rgba(56, 90, 172, 0.80) 0%, rgba(148, 110, 52, 0.75) 58.96%, #462002 100%)`,
+            }}
+          />
+          <div className="absolute inset-0 rounded-lg bg-white" />
+          <SponsorCard data={sponsor} />
+        </div>
       ))}
     </div>
   );

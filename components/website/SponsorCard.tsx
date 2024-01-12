@@ -18,12 +18,11 @@ export default function SponsorCard({
       <motion.img
         src={`/2024/sponsor/${data.image}`}
         className={twMerge(
-          "mx-auto w-full cursor-pointer rounded transition-all hover:drop-shadow-lg",
+          "relative mx-auto w-full cursor-pointer rounded transition-all",
           className,
         )}
         alt={data.title}
         onClick={() => setIsDialogOpen(true)}
-        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       />
       <Dialog open={isDialogOpen} setOpen={setIsDialogOpen}>
