@@ -210,7 +210,7 @@ export default function Page() {
             </div>
           ),
       )}
-      {sponsorData.specialThanks.length && (
+      {sponsorData.specialThanks.length > 0 && (
         <>
           <h1 className="my-8 text-2xl font-bold md:text-4xl" id="特別感謝">
             特別感謝
@@ -218,7 +218,7 @@ export default function Page() {
           <Sponsors sponsors={sponsorData.specialThanks} />
         </>
       )}
-      {sponsorData.mediaPartners.length && (
+      {sponsorData.mediaPartners.length > 0 && (
         <>
           <h1 className="my-8 text-2xl font-bold md:text-4xl" id="媒體夥伴">
             媒體夥伴
