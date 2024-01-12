@@ -162,6 +162,27 @@ export default function Page() {
       </div>
       {/* theme */}
       <div className="relative px-8 md:px-[160px] md:pt-[360px]">
+        {new Date().getTime() < 1705766399000 && (
+          <motion.div
+            className="relative z-10 mx-4 flex max-w-full items-center justify-between gap-4 rounded-lg bg-[#FFCA73] px-6 py-4 md:container max-md:mt-16 max-md:flex-col"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+          >
+            <div>
+              <div className="text-xl font-bold">投稿資訊</div>
+              SITCON
+              期望成為學生展現自己的舞台，如果你有想要與大家分享的經驗、技術或專案，歡迎於
+              2024/01/20 前投搞，我們歡迎任何與資訊或電腦軟硬體相關的講題。
+            </div>
+            <Button color="blue" url="/cfp/">
+              了解更多
+            </Button>
+          </motion.div>
+        )}
         <div className="relative pt-40 md:pb-[200px]" ref={ref}>
           {/* this need dynamic height base on how height the content is */}
           {/* <div className="absolute -top-[600px] z-0 h-[2127px] w-[1095px] rotate-[76.379deg] bg-[#061740] blur-[100px]"> */}
