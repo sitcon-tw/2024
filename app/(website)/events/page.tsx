@@ -1,14 +1,15 @@
+"use client";
 import EventSection from "@/components/website/eventSection";
-
+import TableOfContent from "@/components/TableOfContent";
 export default function Page() {
   return (
-    <div className="container">
-      <h1 className="mb-14 text-2xl font-bold md:text-4xl" id="page-title">
+    <TableOfContent>
+      <div className="mb-14 text-2xl font-bold md:text-4xl" id="page-title">
         年會活動
-      </h1>
-      <h2 className="mb-16 text-4xl font-bold">
+      </div>
+      <div className="mb-16 text-4xl font-bold">
         你是第一次參加 SITCON 年會嗎？
-      </h2>
+      </div>
       <EventSection
         title="導遊團"
         backgroundImage="guide.svg"
@@ -27,9 +28,9 @@ export default function Page() {
           "天使計劃不僅是指引之旅，更是共同成長的機會。無論您是天使還是初心者，每個人都能在這裡找到屬於自己的位置，齊心創造一個開放、互相學習的環境。",
         ]}
       />
-      <h2 className="mb-16 text-4xl font-bold">
+      <div className="mb-16 text-4xl font-bold">
         有話想跟大家說，想要分享你的想法嗎？
-      </h2>
+      </div>
       <EventSection
         title="白板大戰"
         backgroundImage="whiteboard.svg"
@@ -72,7 +73,7 @@ export default function Page() {
           "在追求創新的時代，我們為講者提供了開放式議程這個選項，跳脫講者對聽眾單向陳述式的演講，開放式議程更加強調主講者和與會者的雙向交流。SITCON 作為學生展現自己的舞台，我們期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是一同探討學生相關議題等。",
         ]}
       />
-      <h2 className="mb-16 text-4xl font-bold">議程之間不知道要幹嘛嗎？</h2>
+      <div className="mb-16 text-4xl font-bold">議程之間不知道要幹嘛嗎？</div>
       <EventSection
         title="大地遊戲"
         backgroundImage="ground.svg"
@@ -81,6 +82,6 @@ export default function Page() {
           "第一次參加 SITCON，還沒進入狀況嗎？今年有各式各樣的活動，精彩議程、海報展、咖啡廳和攤位等等，還摸不著頭緒要先去哪裡逛逛嗎？還在猶豫怎麼規劃最充實的時間利用嗎？別擔心！跟著感覺走，讓我們來指引你方向！今年的大地遊戲，我們依照不同主題設計了幾條有趣好玩的路線，邀請您來一同參與。只要找到自己有興趣的路線，並完成路線上各關卡指定任務，就可以獲得認證，來指定地點兌換 SITCON 紀念禮品點數折抵哦～！",
         ]}
       />
-    </div>
+    </TableOfContent>
   );
 }
