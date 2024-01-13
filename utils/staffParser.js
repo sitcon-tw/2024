@@ -19,7 +19,7 @@ const groupDescription = {
   開發組:
     "SITCON 開發組主要負責年會的官網與通關 App 開發，適合對網頁開發有興趣、想法，有新鮮肝可以炸的朋友們！",
   編輯組:
-    "SITCON 編輯組負責年會的社群媒體經營與互動，包含 Facebook、Instagram、Plurk、Twitter、Telegram Channel，以及開源相關活動推廣與其他組別公告事項、大會公告等文案撰寫需求。適合對社群媒體經營有興趣，有新鮮腦汁可以榨的朋友們！",
+    "SITCON 編輯組負責年會的社群媒體經營與互動，包含 Facebook、Instagram、Plurk、X、Telegram Channel、Mastodon、Discord、Medium 等平台，以及開源相關活動推廣與其他組別公告事項、大會公告等文案撰寫需求。適合對社群媒體經營有興趣，有新鮮腦汁可以榨的朋友們！",
   行銷組:
     "行銷組是銜接 SITCON 與社會的橋樑，負責探詢潛在的合作單位，連結更多支持 SITCON 理念的創作者、媒體與贊助商，適合善於溝通協調、勇於嘗試的你！",
 };
