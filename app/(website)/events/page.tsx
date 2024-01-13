@@ -3,7 +3,9 @@ import EventSection from "@/components/website/eventSection";
 export default function Page() {
   return (
     <div className="container">
-      <h1 className="mb-14 text-5xl font-bold">年會活動</h1>
+      <h1 className="mb-14 text-2xl font-bold md:text-4xl" id="page-title">
+        年會活動
+      </h1>
       <h2 className="mb-16 text-4xl font-bold">
         你是第一次參加 SITCON 年會嗎？
       </h2>
