@@ -3,17 +3,8 @@ import Button from "@/components/website/button";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
-function Readmore({
-  content,
-  footer,
-  updateHeight,
-}: {
-  content: string[];
-  footer: string;
-  updateHeight: () => void;
-}) {
+function Readmore({ content, footer }: { content: string[]; footer: string }) {
   const [open, setOpen] = useState(false);
-  useEffect(() => updateHeight(), [open]);
 
   const Line = () => (
     <div className="h-0 w-[10%] rounded border-[2px] border-[#FFB191] " />
@@ -84,19 +75,6 @@ function Heading({ chinese, english }: { chinese: string; english: string }) {
 }
 
 export default function Page() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(1250);
-  const calculateBgHeight = (h: number) => h / 1.0002985993537754; // magic number = sec(1.4 deg)
-
-  const updateHeight = () => setHeight(ref.current?.clientHeight || 674);
-
-  useEffect(() => {
-    addEventListener("resize", updateHeight);
-    return () => {
-      removeEventListener("resize", updateHeight);
-    };
-  }, []);
-
   return (
     <div className="overflow-hidden">
       {/* title */}
@@ -161,14 +139,22 @@ export default function Page() {
         </div>
       </div>
       {/* theme */}
-      <div className="relative px-8 md:px-[160px] md:pt-[360px]">
-        <div className="relative pt-40 md:pb-[200px]" ref={ref}>
-          {/* this need dynamic height base on how height the content is */}
-          {/* <div className="absolute -top-[600px] z-0 h-[2127px] w-[1095px] rotate-[76.379deg] bg-[#061740] blur-[100px]"> */}
-          <div
-            className="absolute -left-[500px] -top-[175px] z-0 h-[1200px] w-[3000px] rotate-[-14deg] bg-[#061740] blur-[100px] md:top-[-300px] md:h-[1200px]"
-            style={{ height: calculateBgHeight(height) }}
-          />
+      <div className="relative -my-[120px] bg-[#061740] px-8 py-[360px] md:px-[160px]">
+        <div
+          className="absolute left-0 top-0 h-[600px] w-full -translate-y-6 bg-[#F8F3E8]"
+          style={{
+            maskImage:
+              "linear-gradient(-15deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 50%)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 h-[600px] w-full bg-[#F8F3E8]"
+          style={{
+            maskImage:
+              "linear-gradient(-15deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 60%)",
+          }}
+        />
+        <div className="relative pt-40 md:pb-[200px]">
           <img
             src="/2024/website/bg-texture.png"
             width={2048}
@@ -221,10 +207,11 @@ export default function Page() {
                 "雖然我們的軀體受到壽命的限制，卻因為好奇心和熱情驅使我們不斷學習、探索、傳承知識。作為學生，我們將在人類歷史的長河中繼續創造奇蹟，貢獻自己的力量，生而為人感到驕傲。",
               ]}
               footer="因為 我們終究是人類。"
-              updateHeight={updateHeight}
             />
           </div>
         </div>
+      </div>
+      <div className="relative pb-8 md:px-[160px]">
         {/* about */}
         <div className="relative">
           <Heading chinese="關於 SITCON" english="About SITCON" />
