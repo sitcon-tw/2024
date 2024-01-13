@@ -29,7 +29,7 @@ function Readmore({
         <p
           className={twMerge(
             !open &&
-              "bg-gradient-to-b from-white to-[#061740] bg-clip-text text-transparent",
+            "bg-gradient-to-b from-white from-5% to-transparent bg-clip-text text-transparent",
           )}
         >
           {content[2]}
@@ -85,7 +85,7 @@ function Heading({ chinese, english }: { chinese: string; english: string }) {
 
 export default function Page() {
   const ref = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(674);
+  const [height, setHeight] = useState(1250);
   const calculateBgHeight = (h: number) => h / 1.0002985993537754; // magic number = sec(1.4 deg)
 
   const updateHeight = () => setHeight(ref.current?.clientHeight || 674);
