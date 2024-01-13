@@ -35,7 +35,7 @@ export default function SponsorCard({
             className="mx-auto w-full max-w-[240px] rounded"
             alt={data.title}
           />
-          <div>{data.description}</div>
+          <div className="max-md:text-sm">{data.description}</div>
           <div className="flex items-center justify-center gap-6">
             <Button
               color="blue"
