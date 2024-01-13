@@ -32,8 +32,8 @@ export default function Page() {
       ]}
     />
     <EventSection
-      title="Lightening Talk 閃電秀"
-      backgroundImage="lightening.svg"
+      title="Lightning Talk 閃電秀"
+      backgroundImage="lightning.svg"
       backgroundPosition="right"
       content={[
         "你知道 Lightning Talk 為什麼有 Lightning 這個詞嗎？因為這是像閃電一樣短的演講！",
