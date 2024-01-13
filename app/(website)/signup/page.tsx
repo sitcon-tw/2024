@@ -10,7 +10,7 @@ export default function Page() {
       <h1 className="mb-4 text-2xl font-bold md:text-4xl" id="page-title">
         報名資訊
       </h1>
-      <div className="mb-10 flex flex-col md:flex-row justify-around pb-16">
+      <div className="mb-10 flex flex-col justify-around pb-16 md:flex-row">
         <div className="grid">
           <p>
             SITCON
@@ -18,7 +18,7 @@ export default function Page() {
             SITCON 的理念，歡迎支持我們。
           </p>
         </div>
-        <div className="md:justify-end justify-center mt-7 md:mt-0">
+        <div className="mt-7 justify-center md:mt-0 md:justify-end">
           <Button color="blue" url="/sponsor/">
             支持我們
           </Button>
@@ -36,7 +36,7 @@ export default function Page() {
           <p className="text-center text-xl font-bold">一般票</p>
         </div>
         <div className="grid content-center justify-start">
-          <ul className="col-span-1 list-disc ml-5">
+          <ul className="col-span-1 ml-5 list-disc">
             <li>
               第一波售票
               <br />
@@ -49,7 +49,7 @@ export default function Page() {
             </li>
           </ul>
         </div>
-        <div className="grid content-center md:justify-end justify-center">
+        <div className="grid content-center justify-center md:justify-end">
           <Button color="blue" url="https://sitcon.kktix.cc/events/sitcon2024">
             KKTIX 報名連結
           </Button>
@@ -65,7 +65,7 @@ export default function Page() {
           <p className="text-center text-xl font-bold">遠道而來票</p>
         </div>
         <div className="grid content-center justify-start">
-          <ul className="list-disc ml-5">
+          <ul className="ml-5 list-disc">
             <li>資格限制：住在偏鄉或離島、海外地區的學生。</li>
             <li>
               先到先審制，報名者需在 2024/01/05 23:59 前填寫{" "}
@@ -91,13 +91,13 @@ export default function Page() {
             </li>
           </ul>
         </div>
-        <div className="grid content-center md:justify-end justify-center">
+        <div className="grid content-center justify-center md:justify-end">
           <Button
             color="gray"
             className="pointer-events-none cursor-not-allowed opacity-50"
             url="#"
           >
-            立即取得
+            已截止
           </Button>
         </div>
         <div className="flex flex-col content-center justify-center align-middle">
@@ -114,7 +114,7 @@ export default function Page() {
           </p>
         </div>
         <div className="grid content-center justify-start">
-          <ul className="list-disc ml-5">
+          <ul className="ml-5 list-disc">
             <li>資格限制：對開源專案有貢獻者。</li>
             <li>
               需要事先申請。申請表單、申請資格及更詳細的申請說明，請參考
@@ -140,16 +140,20 @@ export default function Page() {
             </li>
           </ul>
         </div>
-        <div className="grid content-center md:justify-end justify-center">
-          <Button color="blue" url="https://ocf.tw/p/oscvpass/">
-            立即取得
+        <div className="grid content-center justify-center md:justify-end">
+          <Button
+            color="gray"
+            className="pointer-events-none cursor-not-allowed opacity-50"
+            url="#"
+          >
+            已截止
           </Button>
         </div>
       </div>
       <h1 className="mb-4 mt-20 text-2xl font-bold md:text-4xl" id="post-info">
         投稿資訊
       </h1>
-      <div className="mb-10 flex flex-col md:flex-row justify-around pb-16">
+      <div className="mb-10 flex flex-col justify-around pb-16 md:flex-row">
         <div className="mr-4 grid">
           <p>
             SITCON
@@ -169,7 +173,7 @@ export default function Page() {
             <li>海報投稿：以靜態海報展出學生個人或團隊專案研究作品。</li>
           </ul>
         </div>
-        <div className="md:justify-end justify-center mt-7 md:mt-0">
+        <div className="mt-7 justify-center md:mt-0 md:justify-end">
           <Button color="blue" url="/cfp/">
             了解更多
           </Button>
