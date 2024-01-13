@@ -140,7 +140,7 @@ export default function Page() {
       </div>
       {/* theme */}
       <div
-        className="relative -mb-[240px] -mt-[280px] bg-[#061740] px-8 pb-[360px] pt-[240px] md:-mt-[120px] md:px-[160px]"
+        className="relative -mb-[240px] -mt-[280px] bg-[#061740] px-8 pb-[360px] pt-[240px] md:-mt-[120px] md:px-[160px] md:pt-[360px]"
         style={{
           backgroundImage: "url(/2024/website/bg-texture.png)",
           backgroundSize: "cover",
