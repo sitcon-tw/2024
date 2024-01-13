@@ -282,7 +282,7 @@ export default function Page() {
             alt=""
             className="pointer-events-none absolute -left-[97px] -top-[6.5rem] rotate-[31.79deg] select-none lg:left-[40px] lg:top-[-4.5rem] lg:scale-[2]"
           />
-          <div className="flex min-h-[160px] flex-wrap justify-center gap-8">
+          <div className="mt-4 flex min-h-[160px] flex-wrap justify-center gap-8">
             <Button
               color="blue"
               url="https://docs.google.com/forms/d/e/1FAIpQLSfZHHumwRKY9UzBpMUD7MWzimnOLvm-cPu4noIzyoWPHbaaHA/viewform"
