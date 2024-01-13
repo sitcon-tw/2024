@@ -1,8 +1,8 @@
 "use client";
 import Button from "@/components/website/button";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 function Readmore({ content, footer }: { content: string[]; footer: string }) {
   const [open, setOpen] = useState(false);
 
@@ -14,22 +14,30 @@ function Readmore({ content, footer }: { content: string[]; footer: string }) {
     <div className="grid-row-2 grid place-items-center">
       {/* TODO: this will blink when open */}
       <div className="text-[18px] text-white">
-        {content.slice(0, 2).map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
-        <p
-          className={twMerge(
-            !open &&
-              "bg-gradient-to-b from-white from-5% to-transparent bg-clip-text text-transparent",
-          )}
+        <div
+          style={{
+            maskImage: open
+              ? "linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%)"
+              : `linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)`,
+          }}
         >
-          {content[2]}
-        </p>
-        {content.slice(3).map((item, index) => (
-          <p key={index} className={twMerge(!open && "hidden")}>
-            {item}
-          </p>
-        ))}
+          {content.slice(0, 3).map((item, index) => (
+            <p key={index}>{item}</p>
+          ))}
+        </div>
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              className="overflow-hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+            >
+              {content.slice(3).map((item, index) => (
+                <p key={index}>{item}</p>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div></div>
       </div>
 
