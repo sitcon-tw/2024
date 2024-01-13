@@ -139,7 +139,13 @@ export default function Page() {
         </div>
       </div>
       {/* theme */}
-      <div className="relative -my-[120px] bg-[#061740] px-8 py-[360px] md:px-[160px]">
+      <div
+        className="relative -mb-[240px] -mt-[280px] bg-[#061740] px-8 pb-[360px] pt-[240px] md:-mt-[120px] md:px-[160px]"
+        style={{
+          backgroundImage: "url(/2024/website/bg-texture.png)",
+          backgroundSize: "cover",
+        }}
+      >
         <div
           className="absolute left-0 top-0 h-[600px] w-full -translate-y-6 bg-[#F8F3E8]"
           style={{
@@ -155,13 +161,6 @@ export default function Page() {
           }}
         />
         <div className="relative pt-40 md:pb-[200px]">
-          <img
-            src="/2024/website/bg-texture.png"
-            width={2048}
-            height={2048}
-            alt=""
-            className="t-[-4rem] absolute left-[-12rem] top-[-25%] z-0 h-full max-w-none rotate-[-14deg] select-none  opacity-10"
-          />
           <img
             src="/2024/website/flame_opacity.png"
             width={153}
@@ -211,7 +210,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="relative pb-8 md:px-[160px]">
+      <div className="relative px-8 pb-8 md:px-[160px]">
         {/* about */}
         <div className="relative">
           <Heading chinese="關於 SITCON" english="About SITCON" />
@@ -223,7 +222,6 @@ export default function Page() {
             className="absolute right-24 top-32 w-[30px] rotate-[-32.731deg] opacity-20 md:right-[40rem] md:top-48"
           />
           <p className="text-[18px]">
-            {" "}
             學生計算機年會（Students’ Information Technology Conference）自 2013
             年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，希望引領更多學子踏入資訊的殿堂，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發，達到「學以致用、教學相長」的實際展現。
           </p>
