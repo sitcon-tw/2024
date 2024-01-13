@@ -29,7 +29,7 @@ function Readmore({
         <p
           className={twMerge(
             !open &&
-            "bg-gradient-to-b from-white from-5% to-transparent bg-clip-text text-transparent",
+              "bg-gradient-to-b from-white from-5% to-transparent bg-clip-text text-transparent",
           )}
         >
           {content[2]}
