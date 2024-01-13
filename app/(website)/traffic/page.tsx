@@ -353,8 +353,7 @@ export default function Page() {
       <div className="container my-4">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14459.18734000737!2d121.6113732!3d25.0409679!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab46b3aaaaab%3A0x6ad0b8243ddc70ef!2z5Lit5aSu56CU56m26Zmi5Lq65paH56S-5pyD56eR5a246aSo!5e0!3m2!1szh-TW!2stw!4v1705165279899!5m2!1szh-TW!2stw"
-          className="w-full"
-          height="600"
+          className="h-[400px] w-full md:h-[600px]"
           style={{
             border: 0,
           }}
