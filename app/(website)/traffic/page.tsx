@@ -90,7 +90,7 @@ function Block({
   return (
     <div
       className={twMerge(
-        "flex h-full w-fit flex-col items-center gap-2 break-keep rounded-xl bg-[#FFD598] p-5 text-center xl:h-fit xl:flex-row",
+        "flex h-full w-fit flex-col items-center gap-2 rounded-xl bg-[#FFD598] p-5 text-center xl:h-fit xl:flex-row",
         className,
       )}
     >
