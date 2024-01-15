@@ -59,6 +59,13 @@ export default {
          url: "https://bit.ly/3bwhylS",
        },
       //  {
+      //   title: "Dcard 狄卡科技",
+      //   image: "dcard.png",
+      //   description:
+      //     "Dcard 是全台最大匿名社群， 從台灣走向世界，每月不重複訪客高達 2,200 萬，發展出廣告、電商、跨國市場等領域，持續探索新型商業模式，邁向世界級網路公司前進。",
+      //   url: "https://join.dcard.today/",
+      // },
+      //  {
       //    title: "Panasonic",
       //    image: "panasonic.png",
       //    description:
