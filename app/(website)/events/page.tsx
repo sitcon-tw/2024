@@ -62,7 +62,7 @@ export default function Page() {
       />
       <EventSection
         title="咖啡廳"
-        backgroundImage="chat.svg"
+        backgroundImage="coffee.svg"
         backgroundPosition="right"
         content={[
           "想與來自四面八方的會眾進行交流嗎？還是想繼續討論剛剛精彩的議程嗎？抑或是想要有個地方好好休息呢？那麼歡迎來到 SITCON 咖啡廳。在這裡，我們提供悠閒的環境、舒適的空間，以及不可或缺的——咖啡，讓各個需求的會眾都能在這裡找到屬於自己的小天地，無論你是想與人聊天、討論，或是在一整天豐富的行程中想稍微喘口氣，甚至是在這裡腦力激盪出一項專案，我們都歡迎！",
