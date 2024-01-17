@@ -244,9 +244,9 @@ function PublicTransportation() {
           <div className="flex flex-col">
             <p>中研院附近的 YouBike 2.0 站牌 :</p>
             <ol className="ml-4 list-decimal">
-              <li>中研院人文社會科學館中</li>
-              <li>研院綜合體育館</li>
-              <li>東側研究院舊莊街口</li>
+              <li>中研院人文社會科學館</li>
+              <li>中研院綜合體育館</li>
+              <li>研究院舊莊街口</li>
             </ol>
           </div>
         }
