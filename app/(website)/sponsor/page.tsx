@@ -115,7 +115,7 @@ export default function Page() {
         」，您的支持將會成為我們的動力，讓更多學生能在舞台上展現自我、讓資訊教育遍及臺灣的每個角落！
         若您有興趣成為我們的贊助夥伴，歡迎點擊下方「
         <a
-          href="https://i.sitcon.org/2024cfs"
+          href="https://i.sitcon.org/2024cfs-form"
           target="_blank"
           className="underline underline-offset-2"
         >
@@ -134,7 +134,7 @@ export default function Page() {
         <Button color="blue" url="https://sitcon.org/donate">
           個人贊助
         </Button>
-        <Button color="blue" url="https://i.sitcon.org/2024cfs">
+        <Button color="blue" url="https://i.sitcon.org/2024cfs-form">
           索取贊助徵求書
         </Button>
       </div>
