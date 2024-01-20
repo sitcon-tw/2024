@@ -200,19 +200,16 @@ export default function Page() {
           <p className="my-2">{x.description}</p>
         </div>
       ))}
-      <h1 className="my-8 text-2xl font-bold md:text-4xl" id="贊助夥伴">
-        贊助夥伴
-      </h1>
       {sponsorData.sponsors.map(
         (sponsorType) =>
           sponsorType.items.length > 0 && (
             <div key={sponsorType.title}>
-              <h2
-                className="mb-4 mt-8 text-xl font-bold md:text-2xl"
+              <h1
+                className="my-8 text-2xl font-bold md:text-4xl"
                 id={sponsorType.title}
               >
                 {sponsorType.title}
-              </h2>
+              </h1>
               <Sponsors
                 sponsors={sponsorType.items}
                 largeSponsor={
