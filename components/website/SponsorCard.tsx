@@ -36,14 +36,27 @@ export default function SponsorCard({
             alt={data.title}
           />
           <div className="max-md:text-sm">{data.description}</div>
-          <div className="flex items-center justify-center gap-6">
-            <Button
-              color="blue"
-              url={data.url}
-              className="text-base md:text-xl"
-            >
-              前往網站
-            </Button>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {data.url && (
+              <Button
+                color="blue"
+                url={data.url}
+                className="text-base md:text-xl"
+              >
+                前往網站
+              </Button>
+            )}
+            {data.urls &&
+              data.urls.map((x) => (
+                <Button
+                  key={x.title}
+                  color="blue"
+                  url={x.url}
+                  className="text-base md:text-xl"
+                >
+                  {x.title}
+                </Button>
+              ))}
           </div>
         </div>
         <div
