@@ -23,7 +23,11 @@ function Sponsors({
       )}
     >
       {sponsors.map((sponsor, i) => (
-        <div key={i} className="group/sponsor relative rounded-lg bg-white p-4">
+        <div
+          key={i}
+          className="group/sponsor relative rounded-lg bg-white p-4"
+          id={sponsor.image.split(".").slice(0, -1).join(".")}
+        >
           <div
             className="absolute inset-0 scale-0 opacity-0 blur-xl transition-all duration-300 group-hover/sponsor:scale-100 group-hover/sponsor:opacity-50"
             style={{
@@ -165,7 +169,7 @@ export default function Page() {
       </h1>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {sponsorData.coOrganizer.map((x) => (
-          <div key={x.title}>
+          <div key={x.title} id={x.image.split(".").slice(0, -1).join(".")}>
             <div className="mb-2 text-center text-xl font-bold md:text-2xl">
               {x.title}
             </div>
@@ -183,7 +187,7 @@ export default function Page() {
         協辦單位
       </h1>
       {sponsorData.coSponsor.map((x) => (
-        <div key={x.title}>
+        <div key={x.title} id={x.image.split(".").slice(0, -1).join(".")}>
           <div className="mb-2 text-center text-xl font-bold md:text-2xl">
             {x.title}
           </div>
