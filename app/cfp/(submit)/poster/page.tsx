@@ -26,10 +26,10 @@ export default function Page() {
         <div>
           <Event time={[2023, "Nov.", 19]} type={["poster"]} name="開始徵稿" />
           <Event
-            time={[2024, "Jan.", 20]}
+            time={[2024, "Jan.", 24]}
             type={["poster"]}
             name="投稿截止"
-            desc="至 2024 年 1 月 20 日（六）23:59"
+            desc="延長至 2024 年 1 月 24 日（三）23:59"
           />
           <Event
             time={[2024, "Jan.", "下旬"]}

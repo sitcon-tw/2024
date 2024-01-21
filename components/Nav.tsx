@@ -97,12 +97,12 @@ export default function Nav() {
             SITCON 2024
           </Link>
           <div className="flex gap-6 lg:hidden">
-            {new Date().getTime() < 1705766399000 && (
+            {new Date().getTime() < 1706111999000 && (
               <Link
-                href="/cfp/"
+                href="/cfp/poster/"
                 className="rounded-xl bg-[#FFCA73] px-3 font-bold text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]"
               >
-                立即投稿
+                海報投稿
               </Link>
             )}
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -115,12 +115,12 @@ export default function Nav() {
                 {link.name}
               </NavLink>
             ))}
-            {new Date().getTime() < 1705766399000 && (
+            {new Date().getTime() < 1706111999000 && (
               <Link
-                href="/cfp/"
+                href="/cfp/poster/"
                 className="flex items-center justify-center rounded-xl bg-[#FFCA73] px-3 font-bold text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]"
               >
-                立即投稿
+                海報投稿
               </Link>
             )}
           </div>
