@@ -158,10 +158,16 @@ export default function Page() {
         <div className="mr-4 grid">
           <p>
             SITCON
-            期望成為學生展現自己的舞台，如果你有想要與大家分享的經驗、技術或專案，歡迎於
-            2024/01/20
-            前用以下形式的投搞，我們歡迎任何與資訊或電腦軟硬體相關的講題。
+            期望成為學生展現自己的舞台，如果你有想要與大家分享的經驗、技術或專案，我們歡迎任何與資訊或電腦軟硬體相關的講題。{" "}
           </p>
+          <p>歡迎於 2024/01/24 前用以下形式的投搞 </p>
+          <ul className="my-4 ml-16 list-disc">
+            <li>海報投稿：以靜態海報展出學生個人或團隊專案研究作品。</li>
+          </ul>
+          <p>
+            <s>歡迎於 2024/01/20 前用以下形式的投搞</s>（已截止）
+          </p>
+
           <ul className="ml-16 mt-4 list-disc">
             <li>
               一般議程：10 分鐘與 40
@@ -171,7 +177,6 @@ export default function Page() {
               開放式議程：40
               分鐘的議程，不限定進行方式，歡迎任何非傳統、實現性質的形式進行此場議程。
             </li>
-            <li>海報投稿：以靜態海報展出學生個人或團隊專案研究作品。</li>
           </ul>
         </div>
         <div className="mt-7 justify-center md:mt-0 md:justify-end">
