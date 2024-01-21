@@ -23,12 +23,12 @@ function CountdownItem({
   timeClassName?: string;
 }) {
   return (
-    <div className="leading-[1em] flex flex-col justify-center items-center gap-2">
+    <div className="flex flex-col items-center justify-center gap-2 leading-[1em]">
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           className={twMerge(
-            "text-[32px] lg:text-[64px] leading-[1em]",
-            timeClassName
+            "text-[32px] leading-[1em] lg:text-[64px]",
+            timeClassName,
           )}
           key={time}
           initial={{
@@ -50,7 +50,7 @@ function CountdownItem({
           {time}
         </motion.div>
       </AnimatePresence>
-      <div className="font-medium text-[10px] lg:text-[16px] leading-[1em] text-gold">
+      <div className="text-[10px] font-medium leading-[1em] text-gold lg:text-[16px]">
         {label}
       </div>
     </div>
@@ -62,7 +62,7 @@ function Countdown() {
   return (
     <div className="flex flex-col items-center gap-4 text-center">
       <p>距離投稿截止還有：</p>
-      <div className="w-full border-gold border-2 rounded-full py-7 px-14 lg:py-[50px] lg:px-[100px] grid grid-cols-4 leading-7">
+      <div className="grid w-full grid-cols-4 rounded-full border-2 border-gold px-14 py-7 leading-7 lg:px-[100px] lg:py-[50px]">
         <CountdownItem time={days} label="DAYS" timeClassName="text-pink" />
         <CountdownItem time={hours} label="HOURS" timeClassName="text-purple" />
         <CountdownItem
@@ -78,7 +78,10 @@ function Countdown() {
       </div>
       <div>
         <p className="font-bold">截止日期</p>
-        <p>即日起至 2024 年 1 月 20 日（六）23:59</p>
+        <p>海報投稿延長至 2024 年 1 月 24 日（三）23:59</p>
+        <p>
+          <s>即日起至 2024 年 1 月 20 日（六）23:59</s>
+        </p>
       </div>
     </div>
   );
@@ -92,7 +95,7 @@ function HeroBgImage() {
 
   return (
     <div
-      className="w-[calc(100vw-70%)] xl:w-[calc(100vw-60%)] -z-10 fixed bottom-0 right-0"
+      className="fixed bottom-0 right-0 -z-10 w-[calc(100vw-70%)] xl:w-[calc(100vw-60%)]"
       ref={ref}
     >
       <motion.img
@@ -121,14 +124,14 @@ function ToButton({
       href={href}
       className={twMerge(
         bgColor,
-        "px-4 pt-10 pb-2 text-center w-full lg:w-[192px] text-xl text-white rounded-lg transition-colors hover:bg-opacity-80 active:bg-opacity-100 group",
-        "flex justify-between items-center"
+        "group w-full rounded-lg px-4 pb-2 pt-10 text-center text-xl text-white transition-colors hover:bg-opacity-80 active:bg-opacity-100 lg:w-[192px]",
+        "flex items-center justify-between",
       )}
     >
       {children}
       <FontAwesomeIcon
         icon={faArrowRight}
-        className="ml-2 group-hover:translate-x-1 transition-transform"
+        className="ml-2 transition-transform group-hover:translate-x-1"
       />
     </Link>
   );
@@ -149,10 +152,10 @@ function ToggleButton({
   return (
     <motion.button
       className={twMerge(
-        `rounded-full px-4 py-1 flex justify-center items-center gap-2 transition-colors relative group`,
+        `group relative flex items-center justify-center gap-2 rounded-full px-4 py-1 transition-colors`,
         type === buttonType
           ? `text-white`
-          : `text-gray-500 hover:text-gray-600 active:text-gray-700`
+          : `text-gray-500 hover:text-gray-600 active:text-gray-700`,
       )}
       onClick={() => toggleType(type)}
       whileTap={{
@@ -162,7 +165,7 @@ function ToggleButton({
       <div
         className={twMerge(
           type === buttonType ? "bg-white" : bgColor,
-          "w-1.5 h-1.5 rounded-full transition-all group-hover:scale-125"
+          "h-1.5 w-1.5 rounded-full transition-all group-hover:scale-125",
         )}
       />
       {children}
@@ -170,8 +173,8 @@ function ToggleButton({
         {type === buttonType && (
           <motion.div
             className={twMerge(
-              "w-full h-full rounded-full absolute top-0 left-0 -z-10",
-              bgColor
+              "absolute left-0 top-0 -z-10 h-full w-full rounded-full",
+              bgColor,
             )}
             initial={{
               scale: 0,
@@ -195,7 +198,7 @@ export default function Page() {
   const [type, toggleType] = useReducer(
     (state: EventType | "", action: EventType | "") =>
       state === action ? "" : action,
-    ""
+    "",
   );
 
   return (
@@ -205,7 +208,7 @@ export default function Page() {
       {/* count down */}
       <Countdown />
       {/* submit botton */}
-      <div className="flex justify-center items-center relative flex-col lg:flex-row gap-2">
+      <div className="relative flex flex-col items-center justify-center gap-2 lg:flex-row">
         <ToButton bgColor="bg-purple" href="/cfp/normal">
           一般議程
         </ToButton>
@@ -219,11 +222,11 @@ export default function Page() {
 
       {/* time table */}
       <div className="flex flex-col gap-4 pt-16">
-        <div className="flex items-center gap-6 flex-wrap max-w-[512px]">
+        <div className="flex max-w-[512px] flex-wrap items-center gap-6">
           <div>
             <h2 className="text-[32px] font-medium">時程表</h2>
           </div>
-          <div className="flex -gap-2">
+          <div className="-gap-2 flex">
             <ToggleButton
               type="general"
               toggleType={toggleType}
@@ -260,10 +263,17 @@ export default function Page() {
           />
           <Event
             time={[2024, "Jan.", 20]}
-            type={["general", "undefined", "poster"]}
+            type={["general", "undefined"]}
             selectedType={type}
             name="投稿截止"
             desc="至 2024 年 1 月 20 日（六）23:59"
+          />
+          <Event
+            time={[2024, "Jan.", 24]}
+            type={["poster"]}
+            selectedType={type}
+            name="海報投稿截止"
+            desc="至 2024 年 1 月 24 日（三）23:59"
           />
           <Event
             time={[2024, "Jan.", "下旬"]}

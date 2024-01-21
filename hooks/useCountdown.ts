@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useInterval } from "usehooks-ts";
 export default function useCountdown() {
-  const [deadline] = useState(new Date("2024-01-20T23:59:00+08:00"));
+  const [deadline] = useState(new Date("2024-01-24T23:59:00+08:00"));
   const [days, setDays] = useState("00");
   const [hours, setHours] = useState("00");
   const [minutes, setMinutes] = useState("00");
