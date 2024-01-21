@@ -16,11 +16,11 @@ export default function Page() {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row-reverse relative gap-6">
+    <div className="relative flex flex-col gap-6 lg:flex-row-reverse">
       <Toc sections={tocs}>
         <SubmissionBtn href="https://forms.gle/LmkTzxLKMdTHDu2d7" />
       </Toc>
-      <div className="flex flex-col mb-12">
+      <div className="mb-12 flex flex-col">
         <Title>海報投稿</Title>
         <Subtitle id="time">重要時程</Subtitle>
         <div>
@@ -73,7 +73,7 @@ export default function Page() {
           </h4>
           <small>
             請以 PDF 檔案上傳，需簡要說明：
-            <ul className="list-disc ml-4">
+            <ul className="ml-4 list-disc">
               <li>（一）研究動機與目的 Research Question or Problem</li>
               <li>（二）研究方法與過程 Methodology</li>
               <li>
@@ -94,19 +94,20 @@ export default function Page() {
             海報內容 Poster Content <Public />
           </h4>
           <small>
-            <span className="text-purple font-bold">錄取後上傳</span>
+            <span className="font-bold text-purple">錄取後上傳</span>
             。以呈現研究結果為主，除題目與摘要之外，建議依序可包含前言、研究方法、結論及參考文獻等，內容請投稿作者自行斟酌，以不超過海報尺寸為限，大會方將會提供參考模板給錄取者。
-            <span className="text-purple font-bold">
+            <span className="font-bold text-purple">
               請以直版寬 841 mm、高 1189 mm（A0 大小）規格製作為 PDF 檔案
             </span>
-            ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明於 2024 年 2 月 18 日前上傳最終版海報檔案，
-            <span className="text-purple font-bold">
+            ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明於 2024 年 2 月 18
+            日前上傳最終版海報檔案，
+            <span className="font-bold text-purple">
               統一由大會進行印製與佈展
             </span>
             。
             <br />
             海報格式：
-            <ul className="list-disc ml-4">
+            <ul className="ml-4 list-disc">
               <li>
                 中文名稱：字體大小範圍為 70 號字〜90
                 號字，且建議最多不超過兩行，置中對齊方式。
@@ -116,7 +117,8 @@ export default function Page() {
                 號字，且建議最多不超過兩行，置中對齊方式。
               </li>
               <li>
-                作者中、英文姓名：字體大小範圍建議 30 號字〜40 號字，置中對齊方式。
+                作者中、英文姓名：字體大小範圍建議 30 號字〜40
+                號字，置中對齊方式。
               </li>
               <li>海報頁面的上下側及左右邊各留至少 5 公分。</li>
               <li>
@@ -146,10 +148,7 @@ export default function Page() {
           </h4>
           <small>
             公開於講者海報旁及網站的稱呼，
-            <span className="text-purple font-bold">
-              至多三人
-            </span>
-            。
+            <span className="font-bold text-purple">至多三人</span>。
           </small>
           <h4>
             自我介紹 Self Introduction <Required /> <Public />
@@ -162,8 +161,9 @@ export default function Page() {
           </h4>
           <small>
             請提供聯絡方式的「連結網址」（亦可提供電子郵件或電話，請擇一），
-            由大會印製與設計成 QR code 貼於年會當天的海報旁，將有助會眾更容易與你交流。
-            （連結網址不限 Facebook、Instagram、Telegram、Linktree 等）
+            由大會印製與設計成 QR code
+            貼於年會當天的海報旁，將有助會眾更容易與你交流。 （連結網址不限
+            Facebook、Instagram、Telegram、Linktree 等）
           </small>
           <h4>
             手機號碼 Phone <Required />
@@ -183,7 +183,7 @@ export default function Page() {
             工作人員、業界人士及學界人士組成。
           </p>
           <p>審稿委員將針對以下項目進行篩選：</p>
-          <ul className="list-disc ml-4">
+          <ul className="ml-4 list-disc">
             <li>
               題材創新性：研究專案內容與方法具原創與可行性，產生貢獻或影響之潛力。
             </li>
@@ -196,19 +196,17 @@ export default function Page() {
           <Subtitle id="present">佈展與其它</Subtitle>
           <p>
             請以
-            <span className="text-purple font-bold">
+            <span className="font-bold text-purple">
               直版寬 841 mm、高 1189 mm （A0 大小）規格製作為 PDF 檔案
             </span>
             ，一篇投稿一面看板，請於收到錄取通知後依據郵件說明上傳最終版海報檔案，統一由大會進行印製與佈展。
           </p>
           <p>佈展方式與地點：地點於 2 樓梯廳，其餘細節將於稿件錄取後通知。</p>
           <p>補充說明：</p>
-          <ul className="list-disc ml-4">
+          <ul className="ml-4 list-disc">
             <li>
               海報投稿
-              <span className="text-purple font-bold">
-                不辦理
-              </span>
+              <span className="font-bold text-purple">不辦理</span>
               彩排與試講。
             </li>
             <li>錄取後會請作者填寫表單，在可配合的時段於海報旁與會眾交流。</li>
