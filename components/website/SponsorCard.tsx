@@ -5,6 +5,7 @@ import { useState } from "react";
 import sponsorData from "../../app/(website)/sponsor/sponsorData";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
+import Markdown from "react-markdown";
 export default function SponsorCard({
   data,
   className,
@@ -35,7 +36,7 @@ export default function SponsorCard({
             className="mx-auto w-full max-w-[240px] rounded"
             alt={data.title}
           />
-          <div className="max-md:text-sm">{data.description}</div>
+          <Markdown className="max-md:text-sm">{data.description}</Markdown>
           <div className="flex flex-wrap items-center justify-center gap-4">
             {data.url && (
               <Button
