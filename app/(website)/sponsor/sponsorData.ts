@@ -48,7 +48,7 @@ export default {
           title: "帕亞科技股份有限公司 & 臺科大營建系",
           image: "paia-and-ntust-cce.png",
           description:
-            "帕亞科技目前主力產品為 PAIA 遊戲AI競賽平台，我們打造了一個遊戲情境，讓使用者可以上傳各自的AI在平台上競賽，也提供積木式的開發工具，讓國中小學生可以輕易使用，學習AI。臺科大營建系資訊組以促進資通訊科技於土木營建與防災工程的全生命週期導入與應用為目標，朝向智慧營建及永續土木工程等方向發展。",
+            "帕亞科技目前主力產品為 PAIA 遊戲AI競賽平台，我們打造了一個遊戲情境，讓使用者可以上傳各自的AI在平台上競賽，也提供積木式的開發工具，讓國中小學生可以輕易使用，學習AI。\n臺科大營建系資訊組以促進資通訊科技於土木營建與防災工程的全生命週期導入與應用為目標，朝向智慧營建及永續土木工程等方向發展。",
           urls: [
             {
               title: "帕亞科技股份有限公司",
@@ -97,13 +97,13 @@ export default {
     },
   ],
   specialThanks: [
-    // {
-    //   title: "餅乾樂園",
-    //   image: "cookie1.jpg",
-    //   description:
-    //     "歡迎踏入餅乾樂園，這裡是一個充滿甜蜜和歡笑的奇幻之地。我們致力於打造獨特而美味的餅乾體驗，讓您沉浸在甜蜜的幸福中。",
-    //   url: "https://www.facebook.com/taiwanbingbing/",
-    // },
+    {
+      title: "中央研究院資訊服務處",
+      image: "its.png",
+      description:
+        "",
+      url: "https://its.sinica.edu.tw/",
+    },
   ],
   mediaPartners: [
     // {
