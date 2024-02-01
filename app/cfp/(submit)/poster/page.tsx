@@ -9,7 +9,7 @@ import SubmissionBtn from "@/components/cfp/SubmissionBtn";
 export default function Page() {
   const tocs = [
     { link: "#time", name: "重要時程" },
-    { link: "#description", name: "海報投稿說明" },
+    { link: "#description", name: "靜態海報展投稿說明" },
     { link: "#format", name: "投稿格式" },
     { link: "#review", name: "審稿方式" },
     { link: "#present", name: "佈展與其它" },
@@ -21,7 +21,7 @@ export default function Page() {
         <SubmissionBtn href="https://forms.gle/LmkTzxLKMdTHDu2d7" />
       </Toc>
       <div className="mb-12 flex flex-col">
-        <Title>海報投稿</Title>
+        <Title>靜態海報展投稿</Title>
         <Subtitle id="time">重要時程</Subtitle>
         <div>
           <Event time={[2023, "Nov.", 19]} type={["poster"]} name="開始徵稿" />
@@ -45,9 +45,9 @@ export default function Page() {
         </div>
 
         <div className="content">
-          <Subtitle id="description">海報投稿說明</Subtitle>
+          <Subtitle id="description">靜態海報展投稿說明</Subtitle>
           <p>
-            海報投稿以靜態海報展出學生個人或團隊專案研究作品，作品以資訊相關領域為主，不限語言，不接受一稿多投，若為延伸作品需於投稿時載明。期望透過此方式使更多學生能有展現自我的機會，同時為會眾帶來不同形式的學習與交流。
+            靜態海報展投稿以靜態海報展出學生個人或團隊專案研究作品，作品以資訊相關領域為主，不限語言，不接受一稿多投，若為延伸作品需於投稿時載明。期望透過此方式使更多學生能有展現自我的機會，同時為會眾帶來不同形式的學習與交流。
           </p>
 
           <Subtitle id="format">投稿格式</Subtitle>
