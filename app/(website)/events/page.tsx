@@ -53,11 +53,11 @@ export default function Page() {
         ]}
       />
       <EventSection
-        title="Poster"
+        title="靜態海報展"
         backgroundImage="poster.svg"
         backgroundPosition="left"
         content={[
-          "這是 SITCON 2024 的新嘗試！我們提供學生們一個展現自我的舞台，讓大家可以透過 Poster 發表自己做的研究，同時也能和志同道合的同學當面交流想法，碰撞出知識的火花！歡迎投稿 Poster，一起加入這場學術派對！",
+          "這是 SITCON 2024 的新嘗試！我們提供學生們一個展現自我的舞台，讓大家可以透過靜態海報展發表自己做的研究，同時也能和志同道合的同學當面交流想法，碰撞出知識的火花！歡迎投稿靜態海報展，一起加入這場學術派對！",
         ]}
       />
       <EventSection

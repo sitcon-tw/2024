@@ -43,8 +43,8 @@ export default function SubmitLayout({
         <NavLink href="/cfp/submit/">投稿頁面</NavLink>
         <NavLink href="/cfp/normal/">一般議程</NavLink>
         <NavLink href="/cfp/undefined/">開放式議程</NavLink>
-        <NavLink href="/cfp/poster/">海報</NavLink>
         <div className="text-[#FF3495] font-bold text-lg mt-2">其他事項</div>
+        <NavLink href="/cfp/poster/">靜態海報展</NavLink>
         <NavLink href="/cfp/coc/">Code of Conduct</NavLink>
         <NavLink href="/cfp/notice/">投稿注意事項與授權</NavLink>
         <NavLink href="/cfp/rehearsal/">試講與彩排</NavLink>
