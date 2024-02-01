@@ -14,16 +14,16 @@ function NavLink({
     <Link
       href={href}
       className={twMerge(
-        "flex items-center gap-2 transition-colors -translate-x-3 group",
+        "group flex -translate-x-3 items-center gap-2 transition-colors",
         !isActive
           ? "text-[#808080] hover:text-[#595959]"
-          : "text-[#1E1E1E] font-bold"
+          : "font-bold text-[#1E1E1E]",
       )}
     >
       <div
         className={twMerge(
-          "h-[1.2em] w-1 rounded-full transition-all duration-300 bg-[#AC24FF]",
-          isActive ? "opacity-100" : "opacity-0 h-1"
+          "h-[1.2em] w-1 rounded-full bg-[#AC24FF] transition-all duration-300",
+          isActive ? "opacity-100" : "h-1 opacity-0",
         )}
       />
       {children}
@@ -37,14 +37,14 @@ export default function SubmitLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-6 container my-6">
-      <div className="min-w-[180px] hidden lg:flex flex-col gap-2 sticky top-[88px] self-start">
-        <div className="text-[#0CE295] font-bold text-lg">議程與海報徵稿</div>
+    <div className="container my-6 flex gap-6">
+      <div className="sticky top-[88px] hidden min-w-[180px] flex-col gap-2 self-start lg:flex">
+        <div className="text-lg font-bold text-[#0CE295]">議程與海報徵稿</div>
         <NavLink href="/cfp/submit/">投稿頁面</NavLink>
         <NavLink href="/cfp/normal/">一般議程</NavLink>
         <NavLink href="/cfp/undefined/">開放式議程</NavLink>
-        <div className="text-[#FF3495] font-bold text-lg mt-2">其他事項</div>
         <NavLink href="/cfp/poster/">靜態海報展</NavLink>
+        <div className="mt-2 text-lg font-bold text-[#FF3495]">其他事項</div>
         <NavLink href="/cfp/coc/">Code of Conduct</NavLink>
         <NavLink href="/cfp/notice/">投稿注意事項與授權</NavLink>
         <NavLink href="/cfp/rehearsal/">試講與彩排</NavLink>
