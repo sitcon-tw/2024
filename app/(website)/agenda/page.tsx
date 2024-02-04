@@ -10,15 +10,17 @@ export default function Page() {
       hour: '2-digit',
       minute: '2-digit',
       hour12: false,
-    }).replace(/\:/g, '');
+    });
   }
   const times = sessions.sessions.map(session => session.start)
     .map(item => new Date(item))
-    .sort();
+    .sort()
+    .map(item => parseTime(item))
+    .filter((item, index, self) => self.indexOf(item) === index);
   const rooms = sessions.rooms;
   const timeTableStyle = {
     gridTemplateColumns: "[time] auto" + rooms.map(room => `[${room.id}] 1fr`).join(' ') + " [end] auto",
-    gridTemplateRows: "[room] auto" + times.map(time => `[${parseTime(time)}] auto`).join(' ') + " [end] auto",
+    gridTemplateRows: "[room] auto" + times.map(time => `[${time.replace(":", "")}] auto`).join(' ') + " [end] auto",
   };
   return (
     <div className="container">
@@ -34,12 +36,12 @@ export default function Page() {
         ))}
         {/* times */}
         {times.map(time => (
-          <div key={parseTime(time)} style={{
+          <div key={time} style={{
             gridColumn:"time",
-            gridRow: parseTime(time),
+            gridRow: time.replace(":", ""),
             transform: "translateY(-50%)",
           }} className="text-[#B1884C] mr-5">
-            {parseTime(time).replace(/(\d{2})(\d{2})/, "$1:$2")}
+            {time}
           </div>
         ))}
         {/* sessions */}
