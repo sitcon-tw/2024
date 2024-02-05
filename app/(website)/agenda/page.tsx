@@ -40,9 +40,18 @@ export default function Page() {
             gridColumn:"time",
             gridRow: time.replace(":", ""),
             transform: "translateY(-50%)",
-          }} className="text-[#B1884C] mr-5">
+          }} className="text-[#B1884C] mr-10 bg-[#F8F3E8] pr-6 z-10">
             {time}
           </div>
+        ))}
+        {/* bars */}
+        {times.map(time => (
+            <div key={time + "bar"} style={{
+              gridColumn: "time / end",
+              gridRow: time.replace(":", ""),
+              borderTop: "1px solid #B1884C66",
+              zIndex: 1,
+            }}></div>
         ))}
         {/* sessions */}
         {sessions.sessions.map(session => {
