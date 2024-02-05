@@ -189,17 +189,17 @@ export default function Page() {
         紀念品資訊
       </h1>
       <div className="grid gap-12 gap-y-5 md:grid-cols-2 grid-cols-1">
-        <SouvenirCard image="coasters.svg" description={[
+        <SouvenirCard image="coasters.jpeg" description={[
           "杯墊價格：120 元／個（以年會當天現場實際價格為準）",
           "材質：歸藻土",
           "用途：保護桌面、防滑，並裝飾環境。",
         ]} />
-        <SouvenirCard image="cup.svg" description={[
+        <SouvenirCard image="cup.jpeg" description={[
           "啤酒杯價格：300 元／個（以年會當天現場實際價格為準）",
           "材質：玻璃，圖案會用轉印的形式印製於杯上",
           "用途：提升喝酒時的視覺享受和風味體驗！",
         ]} />
-        <SouvenirCard image="t-shirt.svg" description={[
+        <SouvenirCard image="t-shirt.png" description={[
           "紀念Ｔ價格：400 元／件（以年會當天現場實際價格為準）",
           "用途：永久保存 SITCON 2024 年會的特別時刻，為這段難忘回憶增添時尚風采！",
         ]} />
