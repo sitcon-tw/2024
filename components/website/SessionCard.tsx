@@ -125,7 +125,7 @@ export default function SessionCard({ id }: { id: string }) {
     >
       <div
         onClick={handleSessionClick}
-        className={`mx-2 my-1 flex flex-1 flex-col bg-[#B1884C26] ${hoverEffect()} justify-between rounded-lg border border-[#B1884C80] p-3 transition`}
+        className={`mx-3 my-2 flex flex-1 flex-col bg-[#B1884C26] ${hoverEffect()} justify-between rounded-lg border border-[#B1884C80] p-3 transition`}
       >
         <div className={`flex flex-1 flex-col gap-1 ${sessionMarginBottom()}`}>
           <p
