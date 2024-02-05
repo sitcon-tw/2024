@@ -97,6 +97,11 @@ export default function SessionCard({ id }: { id: string }) {
       : "hover:bg-[#b1894c44] cursor-pointer";
   }
 
+  function handleSessionClick() {
+    if (["Ev"].includes(session!.type)) return;
+    setIsDialogOpen(true);
+  }
+
   const extraTags = [];
   extraTags.push(
     sessions.session_types.find((x) => x.id == session!.type)?.zh.name,
@@ -119,7 +124,7 @@ export default function SessionCard({ id }: { id: string }) {
       className="flex"
     >
       <div
-        onClick={() => setIsDialogOpen(true)}
+        onClick={handleSessionClick}
         className={`mx-2 my-1 flex flex-1 flex-col bg-[#B1884C26] ${hoverEffect()} justify-between rounded-lg border border-[#B1884C80] p-3 transition`}
       >
         <div className={`flex flex-1 flex-col gap-1 ${sessionMarginBottom()}`}>
@@ -160,15 +165,12 @@ export default function SessionCard({ id }: { id: string }) {
           className="grid gap-7 text-white"
           style={{
             gridTemplateColumns: "1fr 2fr",
-            gridTemplateRows: "auto auto",
+            gridTemplateRows: "auto".repeat(session!.speakers.length + 1),
           }}
         >
           <div className="flex flex-col gap-3">
-            {/* video and links */}
-            {/* video */}
             <img src="/2024/website/empty.png" alt="video" />
             <div className="flex flex-row gap-2">
-              {/* links */}
               <Button
                 color="blue"
                 url="https://www.google.com"
@@ -193,7 +195,6 @@ export default function SessionCard({ id }: { id: string }) {
             </div>
           </div>
           <div>
-            {/* about session */}
             <div className="flex gap-3">
               <p className="text-xl font-bold">
                 {
@@ -241,9 +242,27 @@ export default function SessionCard({ id }: { id: string }) {
             <p className="font-bold">議程介紹：</p>
             <Markdown className="max-md:text-sm">{description}</Markdown>
           </div>
-          {/* about speaker */}
-          <div>{/* speaker image */}</div>
-          <div>{/* about speaker */}</div>
+          {
+            session!.speakers.map((speaker, idx) => (
+              <div key={speaker} style={{
+                gridRow: idx + 2,
+              }}>
+                  <img className="rounded-xl" src={sessions.speakers.find(x => x.id == speaker)?.avatar} alt="speaker" />
+              </div>
+            ))
+          }
+          {
+            session!.speakers.map((speaker) => (
+              <div key={speaker} className="flex flex-col gap-3">
+                <div>
+                  <p className="text-2xl font-bold">
+                    {sessions.speakers.find((x) => x.id == speaker)?.zh.name}
+                  </p>
+                  <Markdown>{sessions.speakers.find((x) => x.id == speaker)?.zh.bio}</Markdown>
+                </div>
+              </div>
+            ))
+          }
         </div>
       </SessionDialog>
     </div>

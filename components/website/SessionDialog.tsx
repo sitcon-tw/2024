@@ -54,20 +54,22 @@ export default function Dialog({
                 exit={{ opacity: 0 }}
               />
               <motion.div
-                className="fixed inset-0 m-auto mt-20 flex w-9/12 flex-col rounded-[10px] bg-transparent overflow-scroll"
+                className="fixed inset-0 m-auto flex w-screen px-24 flex-col rounded-[10px] bg-transparent overflow-scroll"
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
               >
                 <motion.button
                   onClick={() => setOpen(false)}
-                  className="absolute right-0 top-0 m-0"
+                  className="fixed right-16 top-16 m-2"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <IoCloseCircle className="text-3xl text-[#ffffff]" />
                 </motion.button>
-                {children}
+                <div className="px-10 py-20">
+                  {children}
+                </div>
               </motion.div>
             </div>
           )}
