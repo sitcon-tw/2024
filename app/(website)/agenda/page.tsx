@@ -86,9 +86,7 @@ export default function Page() {
               gridRow: time.replace(":", ""),
               transform: "translateY(-50%)",
             }}
-            className={`text-[#B1884C] ${
-              isMobile ? "mr-1" : "mr-10"
-            } bg-[#F8F3E8] ${isMobile ? "pr-2" : "pr-6"} z-10`}
+            className={`text-[#B1884C] mr-1 md:mr-10 bg-[#F8F3E8] pr-2 md:pr-6 z-10`}
           >
             {time}
           </div>

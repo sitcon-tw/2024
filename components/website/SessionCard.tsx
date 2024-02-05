@@ -172,12 +172,15 @@ export default function SessionCard({ id, selectedRoom }: { id: string, selected
       <SessionDialog open={isDialogOpen} setOpen={setIsDialogOpen}>
         <div
           className="grid gap-7 text-white"
-          style={{
-            gridTemplateColumns: "1fr 2fr",
+          style={isMobile ? {} : {
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
             gridTemplateRows: "auto".repeat(session!.speakers.length + 1),
           }}
         >
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3" style={!isMobile ? {} : {
+            gridColumn: "1",
+            gridRow: "2",
+          }}>
             <img src="/2024/website/empty.png" alt="video" />
             <div className="flex flex-row gap-2">
               <Button
@@ -203,7 +206,10 @@ export default function SessionCard({ id, selectedRoom }: { id: string, selected
               </Button>
             </div>
           </div>
-          <div>
+          <div style={!isMobile ? {} : {
+            gridColumn: "1",
+            gridRow: "1",
+          }}>
             <div className="flex gap-3">
               <p className="text-xl font-bold">
                 {
@@ -254,15 +260,17 @@ export default function SessionCard({ id, selectedRoom }: { id: string, selected
           {
             session!.speakers.map((speaker, idx) => (
               <div key={speaker} style={{
-                gridRow: idx + 2,
+                gridRow: isMobile ? 3 + idx * 2 + 1 : idx + 2,
               }}>
                   <img className="rounded-xl" src={sessions.speakers.find(x => x.id == speaker)?.avatar} alt="speaker" />
               </div>
             ))
           }
           {
-            session!.speakers.map((speaker) => (
-              <div key={speaker} className="flex flex-col gap-3">
+            session!.speakers.map((speaker, idx) => (
+              <div key={speaker} className="flex flex-col gap-3" style={isMobile ? {
+                gridRow: 3 + idx * 2,
+              } : {}}>
                 <div>
                   <p className="text-2xl font-bold">
                     {sessions.speakers.find((x) => x.id == speaker)?.zh.name}
