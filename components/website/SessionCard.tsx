@@ -3,9 +3,10 @@ import { useState } from "react";
 import SessionDialog from "@/components/website/SessionDialog";
 import sessions from "@/public/sessions.json";
 import Button from "./button";
+import useMediaQuery from "@/hooks/use-media-query";
 import { IoLocation, IoTime } from "react-icons/io5";
 import Markdown from "react-markdown";
-export default function SessionCard({ id }: { id: string }) {
+export default function SessionCard({ id, selectedRoom }: { id: string, selectedRoom: string }) {
   function parseTime(time: Date) {
     return time
       .toLocaleTimeString("en-US", {
@@ -15,6 +16,8 @@ export default function SessionCard({ id }: { id: string }) {
       })
       .replace(/\:/g, "");
   }
+
+  const { isMobile } = useMediaQuery();
 
   const session = sessions.sessions.find((x) => x.id == id);
 
@@ -45,7 +48,9 @@ export default function SessionCard({ id }: { id: string }) {
 
   let gridColumnString = "";
 
-  if (broadcast != null) {
+  if (isMobile) {
+    gridColumnString = "R0 / end";
+  } else if (broadcast != null) {
     const roomStartID: number = Math.min(
       ...session!.broadcast.map((x) =>
         sessions.rooms.map((x) => x.id).indexOf(x),
@@ -68,15 +73,15 @@ export default function SessionCard({ id }: { id: string }) {
   }
 
   function sessionFontSize() {
-    return ["Ev", "K", "L"].includes(session!.type) ? "text-base" : "text-sm";
+    return ["Ev", "K", "L"].includes(session!.type) && !isMobile ? "text-base" : "text-sm";
   }
 
   function sessionSpeakerFontSize() {
-    return ["Ev", "K", "L"].includes(session!.type) ? "text-sm" : "text-xs";
+    return ["Ev", "K", "L"].includes(session!.type) && !isMobile ? "text-sm" : "text-xs";
   }
 
   function sessionTextAlign() {
-    return ["Ev", "K", "L"].includes(session!.type)
+    return ["Ev", "K", "L"].includes(session!.type) && !isMobile
       ? "text-center"
       : "text-left";
   }
@@ -86,7 +91,7 @@ export default function SessionCard({ id }: { id: string }) {
   }
 
   function sessionTagsAlign() {
-    return ["Ev", "K", "L"].includes(session!.type)
+    return ["Ev", "K", "L"].includes(session!.type) && !isMobile
       ? "justify-center"
       : "justify-start";
   }
@@ -111,6 +116,10 @@ export default function SessionCard({ id }: { id: string }) {
     while (extraTags.length) {
       extraTags.pop();
     }
+  }
+
+  if (isMobile && session?.room != selectedRoom && !(broadcast && broadcast.includes(selectedRoom))) {
+      return null;
   }
 
   return (
