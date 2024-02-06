@@ -10,10 +10,12 @@ export default function Dialog({
   children,
   open,
   setOpen,
+  isOpenByDefault
 }: {
   children: React.ReactNode;
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isOpenByDefault?: boolean;
 }) {
   const [mounted, setMounted] = useState(false);
   const { isMobile } = useMediaQuery();
@@ -23,6 +25,15 @@ export default function Dialog({
     return () => setMounted(false);
   }, []);
 
+  function handleClose() {
+    setOpen(false);
+    if (isOpenByDefault) {
+      history.pushState(null, "", window.location.pathname.split("agenda").slice(0, -1).join("") + "agenda/");
+    } else {
+      history.back();
+    }
+  }
+
   return mounted
     ? createPortal(
         <AnimatePresence>
@@ -30,7 +41,7 @@ export default function Dialog({
             <div className="fixed inset-0 z-50 overflow-scroll">
               <motion.div
                 className="fixed inset-0 cursor-pointer bg-black/50 backdrop-blur"
-                onClick={() => setOpen(false)}
+                onClick={handleClose}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -42,7 +53,7 @@ export default function Dialog({
                 exit={{ opacity: 0, scale: 0.95 }}
               >
                 <motion.button
-                  onClick={() => setOpen(false)}
+                  onClick={handleClose}
                   className="fixed right-2 top-2 md:right-16 md:top-16 m-2"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}

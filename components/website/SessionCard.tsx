@@ -3,10 +3,12 @@ import { useState } from "react";
 import SessionDialog from "@/components/website/SessionDialog";
 import sessions from "@/public/sessions.json";
 import Button from "./button";
+import { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import useMediaQuery from "@/hooks/use-media-query";
 import { IoLocation, IoTime } from "react-icons/io5";
 import Markdown from "react-markdown";
-export default function SessionCard({ id, selectedRoom }: { id: string, selectedRoom: string }) {
+export default function SessionCard({ sessionID, selectedRoom, openSessionID, isOpenByDefault }: { sessionID: string, selectedRoom: string, openSessionID?: string, isOpenByDefault?: boolean }) {
   function parseTime(time: Date) {
     return time
       .toLocaleTimeString("en-US", {
@@ -19,15 +21,17 @@ export default function SessionCard({ id, selectedRoom }: { id: string, selected
 
   const { isMobile } = useMediaQuery();
 
-  const session = sessions.sessions.find((x) => x.id == id);
+  const session = sessions.sessions.find((x) => x.id == sessionID);
 
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(openSessionID == sessionID);
 
   const start = new Date(session!.start);
   const end = new Date(session!.end);
   const startString = parseTime(start);
   const endString = parseTime(end);
   const broadcast = session!.broadcast;
+  const router = useRouter();
+  const { id } = useParams();
 
   let description = session!.zh.description;
   const sections = description.split("##");
@@ -104,6 +108,7 @@ export default function SessionCard({ id, selectedRoom }: { id: string, selected
 
   function handleSessionClick() {
     if (["Ev"].includes(session!.type)) return;
+    history.pushState(null, "", `/2024/agenda/${session!.id}/`);
     setIsDialogOpen(true);
   }
 
@@ -169,7 +174,7 @@ export default function SessionCard({ id, selectedRoom }: { id: string, selected
             ))}
         </div>
       </div>
-      <SessionDialog open={isDialogOpen} setOpen={setIsDialogOpen}>
+      <SessionDialog open={isDialogOpen} setOpen={setIsDialogOpen} isOpenByDefault={isOpenByDefault}>
         <div
           className="grid gap-7 text-white"
           style={isMobile ? {} : {
