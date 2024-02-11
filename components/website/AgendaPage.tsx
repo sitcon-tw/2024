@@ -55,7 +55,7 @@ export default function Page({
       </h1>
       {isMobile && (
         <div
-          className="mb-6 flex flex-wrap justify-around text-[#B1884C]"
+          className="sticky top-[80px] z-40 mb-6 flex flex-wrap justify-around bg-[#F8F3E8]/90 text-[#B1884C] backdrop-blur-lg"
           style={{
             boxShadow: "0 4px 2px -2px #B1884C40",
           }}

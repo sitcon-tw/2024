@@ -3,12 +3,20 @@ import { useState } from "react";
 import SessionDialog from "@/components/website/SessionDialog";
 import sessions from "@/public/sessions.json";
 import Button from "./button";
-import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
 import useMediaQuery from "@/hooks/use-media-query";
 import { IoLocation, IoTime } from "react-icons/io5";
 import Markdown from "react-markdown";
-export default function SessionCard({ sessionID, selectedRoom, openSessionID, isOpenByDefault }: { sessionID: string, selectedRoom: string, openSessionID?: string, isOpenByDefault?: boolean }) {
+export default function SessionCard({
+  sessionID,
+  selectedRoom,
+  openSessionID,
+  isOpenByDefault,
+}: {
+  sessionID: string;
+  selectedRoom: string;
+  openSessionID?: string;
+  isOpenByDefault?: boolean;
+}) {
   function parseTime(time: Date) {
     return time
       .toLocaleTimeString("en-US", {
@@ -18,7 +26,6 @@ export default function SessionCard({ sessionID, selectedRoom, openSessionID, is
       })
       .replace(/\:/g, "");
   }
-
   const { isMobile } = useMediaQuery();
 
   const session = sessions.sessions.find((x) => x.id == sessionID)!;
@@ -31,8 +38,6 @@ export default function SessionCard({ sessionID, selectedRoom, openSessionID, is
   const startString = parseTime(start);
   const endString = parseTime(end);
   const broadcast = session!.broadcast;
-  const router = useRouter();
-  const { id } = useParams();
 
   let description = session!.zh.description;
   const sections = description.split("##");
@@ -78,11 +83,15 @@ export default function SessionCard({ sessionID, selectedRoom, openSessionID, is
   }
 
   function sessionFontSize() {
-    return ["Ev", "K", "L"].includes(session!.type) && !isMobile ? "text-base" : "text-sm";
+    return ["Ev", "K", "L"].includes(session!.type) && !isMobile
+      ? "text-base"
+      : "text-sm";
   }
 
   function sessionSpeakerFontSize() {
-    return ["Ev", "K", "L"].includes(session!.type) && !isMobile ? "text-sm" : "text-xs";
+    return ["Ev", "K", "L"].includes(session!.type) && !isMobile
+      ? "text-sm"
+      : "text-xs";
   }
 
   function sessionTextAlign() {
@@ -122,8 +131,12 @@ export default function SessionCard({ sessionID, selectedRoom, openSessionID, is
     }
   }
 
-  if (isMobile && session?.room != selectedRoom && !(broadcast && broadcast.includes(selectedRoom))) {
-      return null;
+  if (
+    isMobile &&
+    session?.room != selectedRoom &&
+    !(broadcast && broadcast.includes(selectedRoom))
+  ) {
+    return null;
   }
 
   return (
@@ -173,47 +186,68 @@ export default function SessionCard({ sessionID, selectedRoom, openSessionID, is
             ))}
         </div>
       </div>
-      <SessionDialog open={isDialogOpen} setOpen={setIsDialogOpen} isOpenByDefault={isOpenByDefault}>
+      <SessionDialog
+        open={isDialogOpen}
+        setOpen={setIsDialogOpen}
+        isOpenByDefault={isOpenByDefault}
+      >
         <div
           className="grid gap-7 text-white"
-          style={isMobile ? {} : {
-            gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
-            gridTemplateRows: "auto".repeat(session!.speakers.length + 1),
-          }}
+          style={
+            isMobile
+              ? {}
+              : {
+                  gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
+                  gridTemplateRows: "auto".repeat(session!.speakers.length + 1),
+                }
+          }
         >
-          <div className="flex flex-col gap-3" style={!isMobile ? {} : {
-            gridColumn: "1",
-            gridRow: "2",
-          }}>
+          <div
+            className="flex flex-col gap-3"
+            style={
+              !isMobile
+                ? {}
+                : {
+                    gridColumn: "1",
+                    gridRow: "2",
+                  }
+            }
+          >
             <img src="/2024/website/empty.png" alt="video" />
             <div className="flex flex-row gap-2">
               <Button
                 color="blue"
                 url="https://www.google.com"
-                className="text-base md:text-base px-4 py-2"
+                className="px-4 py-2 text-base md:text-base"
               >
                 即時提問
               </Button>
               <Button
                 color="blue"
                 url="https://www.google.com"
-                className="text-base md:text-base px-4 py-2"
+                className="px-4 py-2 text-base md:text-base"
               >
                 簡報連結
               </Button>
               <Button
                 color="blue"
                 url="https://www.google.com"
-                className="text-base md:text-base px-4 py-2"
+                className="px-4 py-2 text-base md:text-base"
               >
                 共筆連結
               </Button>
             </div>
           </div>
-          <div style={!isMobile ? {} : {
-            gridColumn: "1",
-            gridRow: "1",
-          }}>
+          <div
+            style={
+              !isMobile
+                ? {}
+                : {
+                    gridColumn: "1",
+                    gridRow: "1",
+                  }
+            }
+          >
             <div className="flex gap-3">
               <p className="text-xl font-bold">
                 {
@@ -261,29 +295,42 @@ export default function SessionCard({ sessionID, selectedRoom, openSessionID, is
             <p className="font-bold">議程介紹：</p>
             <Markdown className="max-md:text-sm">{description}</Markdown>
           </div>
-          {
-            session!.speakers.map((speaker, idx) => (
-              <div key={speaker} style={{
+          {session!.speakers.map((speaker, idx) => (
+            <div
+              key={speaker}
+              style={{
                 gridRow: isMobile ? 3 + idx * 2 + 1 : idx + 2,
-              }}>
-                  <img className="rounded-xl" src={sessions.speakers.find(x => x.id == speaker)?.avatar} alt="speaker" />
+              }}
+            >
+              <img
+                className="rounded-xl"
+                src={sessions.speakers.find((x) => x.id == speaker)?.avatar}
+                alt="speaker"
+              />
+            </div>
+          ))}
+          {session!.speakers.map((speaker, idx) => (
+            <div
+              key={speaker}
+              className="flex flex-col gap-3"
+              style={
+                isMobile
+                  ? {
+                      gridRow: 3 + idx * 2,
+                    }
+                  : {}
+              }
+            >
+              <div>
+                <p className="text-2xl font-bold">
+                  {sessions.speakers.find((x) => x.id == speaker)?.zh.name}
+                </p>
+                <Markdown>
+                  {sessions.speakers.find((x) => x.id == speaker)?.zh.bio}
+                </Markdown>
               </div>
-            ))
-          }
-          {
-            session!.speakers.map((speaker, idx) => (
-              <div key={speaker} className="flex flex-col gap-3" style={isMobile ? {
-                gridRow: 3 + idx * 2,
-              } : {}}>
-                <div>
-                  <p className="text-2xl font-bold">
-                    {sessions.speakers.find((x) => x.id == speaker)?.zh.name}
-                  </p>
-                  <Markdown>{sessions.speakers.find((x) => x.id == speaker)?.zh.bio}</Markdown>
-                </div>
-              </div>
-            ))
-          }
+            </div>
+          ))}
         </div>
       </SessionDialog>
     </div>

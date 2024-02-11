@@ -18,13 +18,13 @@ export default function SouvenirCard({
   }, []);
 
   return (
-    <div className="mb-10 shadow-xl rounded-lg">
+    <div className="mb-10 rounded-lg shadow-xl">
       <div className="flex flex-col">
         <img src={`/2024/website/${image}`} />
-        <ul className="ml-8 list-disc text-start p-5">
-            {description.map((item) => (
-                <li key={item}>{item}</li>
-            ))}
+        <ul className="ml-8 list-disc p-5 text-start">
+          {description.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </div>
     </div>

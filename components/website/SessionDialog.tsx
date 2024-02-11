@@ -10,7 +10,7 @@ export default function Dialog({
   children,
   open,
   setOpen,
-  isOpenByDefault
+  isOpenByDefault,
 }: {
   children: React.ReactNode;
   open: boolean;
@@ -28,7 +28,12 @@ export default function Dialog({
   function handleClose() {
     setOpen(false);
     if (isOpenByDefault) {
-      history.pushState(null, "", window.location.pathname.split("agenda").slice(0, -1).join("") + "agenda/");
+      history.pushState(
+        null,
+        "",
+        window.location.pathname.split("agenda").slice(0, -1).join("") +
+          "agenda/",
+      );
     } else {
       history.back();
     }
@@ -47,14 +52,14 @@ export default function Dialog({
                 exit={{ opacity: 0 }}
               />
               <motion.div
-                className={`fixed inset-0 m-auto flex w-screen md:px-24 flex-col rounded-[10px] bg-transparent overflow-scroll`}
+                className={`fixed inset-0 m-auto flex w-screen flex-col overflow-scroll rounded-[10px] bg-transparent md:px-24`}
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
               >
                 <motion.button
                   onClick={handleClose}
-                  className="fixed right-2 top-2 md:right-16 md:top-16 m-2"
+                  className="fixed right-2 top-2 m-2 md:right-16 md:top-16"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
