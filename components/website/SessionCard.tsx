@@ -312,7 +312,7 @@ export default function SessionCard({
             {targetAudience ? (
               <div>
                 <p className="font-bold">目標受眾：</p>
-                <Markdown className="leading-7 max-md:text-sm">
+                <Markdown className="prose leading-7 text-white max-md:text-sm">
                   {targetAudience}
                 </Markdown>
               </div>
@@ -320,13 +320,13 @@ export default function SessionCard({
             {priorKnowledge ? (
               <div>
                 <p className="font-bold">先備知識：</p>
-                <Markdown className="leading-7 max-md:text-sm">
+                <Markdown className="prose leading-7 text-white max-md:text-sm">
                   {priorKnowledge}
                 </Markdown>
               </div>
             ) : null}
             <p className="font-bold">議程介紹：</p>
-            <Markdown className="leading-7 max-md:text-sm">
+            <Markdown className="prose leading-7 text-white max-md:text-sm">
               {description}
             </Markdown>
           </div>
@@ -360,7 +360,7 @@ export default function SessionCard({
                 <p className="text-2xl font-bold">
                   {sessions.speakers.find((x) => x.id == speaker)?.zh.name}
                 </p>
-                <Markdown className="leading-7 max-md:text-sm">
+                <Markdown className="prose leading-7 text-white max-md:text-sm">
                   {sessions.speakers.find((x) => x.id == speaker)?.zh.bio}
                 </Markdown>
               </div>
