@@ -4,8 +4,9 @@ import SessionDialog from "@/components/website/SessionDialog";
 import sessions from "@/public/sessions.json";
 import Button from "./button";
 import useMediaQuery from "@/hooks/use-media-query";
-import { IoLocation, IoTime } from "react-icons/io5";
+import { IoLocation, IoTime, IoPlay } from "react-icons/io5";
 import Markdown from "react-markdown";
+import { twMerge } from "tailwind-merge";
 export default function SessionCard({
   sessionID,
   selectedRoom,
@@ -110,10 +111,6 @@ export default function SessionCard({
       : "justify-start";
   }
 
-  function hoverEffect() {
-    return clickable ? "hover:bg-[#b1894c44] cursor-pointer" : "";
-  }
-
   function handleSessionClick() {
     if (!clickable) return;
     history.pushState(null, "", `/2024/agenda/${session!.id}/`);
@@ -151,7 +148,10 @@ export default function SessionCard({
     >
       <div
         onClick={handleSessionClick}
-        className={`mx-3 my-2 flex flex-1 flex-col bg-[#B1884C26] ${hoverEffect()} justify-between rounded-lg border border-[#B1884C80] p-3 transition`}
+        className={twMerge(
+          `mx-3 my-2 flex flex-1 flex-col justify-between rounded-lg border border-[#d0b892] bg-[#eee4d2] p-3 transition`,
+          clickable && "cursor-pointer hover:bg-[#e6d8c2]",
+        )}
       >
         <div className={`flex flex-1 flex-col gap-1 ${sessionMarginBottom()}`}>
           <p
@@ -213,32 +213,61 @@ export default function SessionCard({
                   }
             }
           >
-            <img src="/2024/website/empty.png" alt="video" />
+            <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-xl bg-black/10">
+              <IoPlay className="text-5xl" />
+              <div>即將上線</div>
+            </div>
+
             <div className="flex flex-row gap-2">
-              <Button
-                color="blue"
-                url="https://www.google.com"
-                className="px-4 py-2 text-base md:text-base"
-              >
-                即時提問
-              </Button>
-              <Button
-                color="blue"
-                url="https://www.google.com"
-                className="px-4 py-2 text-base md:text-base"
-              >
-                簡報連結
-              </Button>
-              <Button
-                color="blue"
-                url="https://www.google.com"
-                className="px-4 py-2 text-base md:text-base"
-              >
-                共筆連結
-              </Button>
+              {session.qa && (
+                <Button
+                  color="blue"
+                  url={session.qa}
+                  className="px-4 py-2 text-base md:text-base"
+                >
+                  即時提問
+                </Button>
+              )}
+              {session.slide && (
+                <Button
+                  color="blue"
+                  url={session.slide}
+                  className="px-4 py-2 text-base md:text-base"
+                >
+                  簡報連結
+                </Button>
+              )}
+              {session.co_write && (
+                <Button
+                  color="blue"
+                  url={session.co_write}
+                  className="px-4 py-2 text-base md:text-base"
+                >
+                  共筆連結
+                </Button>
+              )}
+              {session.live && (
+                <Button
+                  color="blue"
+                  url={session.live}
+                  className="px-4 py-2 text-base md:text-base"
+                >
+                  直播連結
+                </Button>
+              )}
+              {session.record && (
+                <Button
+                  color="blue"
+                  url={session.record}
+                  className="px-4 py-2 text-base md:text-base"
+                >
+                  議程錄影
+                </Button>
+              )}
             </div>
           </div>
           <div
+            className="flex flex-col gap-2"
             style={
               !isMobile
                 ? {}
@@ -259,7 +288,7 @@ export default function SessionCard({
                 {session!.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="gap-2 rounded-full bg-[#F8F3E8] px-3 py-[0.4rem] text-xs text-[#061740]"
+                    className="gap-2 rounded-full bg-[#F8F3E8] px-3 py-1.5 text-xs text-[#061740]"
                   >
                     #{sessions.tags.find((x) => x.id == tag)?.zh.name}
                   </span>
