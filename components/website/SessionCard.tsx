@@ -21,7 +21,8 @@ export default function SessionCard({ sessionID, selectedRoom, openSessionID, is
 
   const { isMobile } = useMediaQuery();
 
-  const session = sessions.sessions.find((x) => x.id == sessionID);
+  const session = sessions.sessions.find((x) => x.id == sessionID)!;
+  const clickable = session.zh.description != "";
 
   const [isDialogOpen, setIsDialogOpen] = useState(openSessionID == sessionID);
 
@@ -101,13 +102,11 @@ export default function SessionCard({ sessionID, selectedRoom, openSessionID, is
   }
 
   function hoverEffect() {
-    return ["Ev"].includes(session!.type)
-      ? ""
-      : "hover:bg-[#b1894c44] cursor-pointer";
+    return clickable ? "hover:bg-[#b1894c44] cursor-pointer" : "";
   }
 
   function handleSessionClick() {
-    if (["Ev"].includes(session!.type)) return;
+    if (!clickable) return;
     history.pushState(null, "", `/2024/agenda/${session!.id}/`);
     setIsDialogOpen(true);
   }
