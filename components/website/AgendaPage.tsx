@@ -111,10 +111,9 @@ export default function Page({
               gridColumn: "time / end",
               gridRow: time.replace(":", ""),
               borderTop: "1px solid #B1884C66",
-              zIndex: 1,
               height: 0,
             }}
-          ></div>
+          />
         ))}
         {/* sessions */}
         {sessions.sessions.map((session) => {
