@@ -10,6 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Set timezone to Asia/Taipei
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Taipei"
+          timezoneMacos: "Asia/Taipei"
+      - name: Generate Schedule Json
+        uses: CCIP-App/schedule-json-generator-action@v2
+        with:
+          gcp-api-key: ${{ secrets.GCP_API_KEY }}
+          spreadsheet-key: "1nb5A8ZdsYEtZh2JrRQS7yp7uu426Ey8tmnZKUzIZOLM"
+          default-avatar: "https://sitcon.org/2022/imgs/deafult_avatar.jpg"
+          avatar-base-url: "https://sitcon.org/2024/avatars/"
+          output-path: ./public/sessions.json
       - uses: actions/setup-node@v4
         with:
           node-version: 20
