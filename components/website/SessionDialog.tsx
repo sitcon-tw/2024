@@ -1,6 +1,5 @@
 "use client";
 import useMediaQuery from "@/hooks/use-media-query";
-import { Drawer } from "vaul";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { IoCloseCircle } from "react-icons/io5";
@@ -52,20 +51,20 @@ export default function Dialog({
                 exit={{ opacity: 0 }}
               />
               <motion.div
-                className={`fixed inset-0 m-auto flex w-screen flex-col overflow-scroll rounded-[10px] bg-transparent md:px-24`}
+                className="fixed inset-0 m-auto flex w-screen flex-col overflow-y-scroll rounded-[10px] bg-transparent md:px-24"
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
               >
                 <motion.button
                   onClick={handleClose}
-                  className="fixed right-2 top-2 m-2 md:right-16 md:top-16"
+                  className="fixed right-2 top-2 m-2 text-3xl md:right-16 md:top-16"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <IoCloseCircle className="text-3xl text-[#ffffff]" />
                 </motion.button>
-                <div className={` ${isMobile ? "p-4 pt-14" : "px-10 py-20"}`}>
+                <div className="max-md:p-4 max-md:pt-14 md:px-10 md:py-20">
                   {children}
                 </div>
               </motion.div>
