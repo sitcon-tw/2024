@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { IoCloseCircle } from "react-icons/io5";
 import { createPortal } from "react-dom";
-
+import { RemoveScroll } from "react-remove-scroll";
 export default function Dialog({
   children,
   open,
@@ -43,7 +43,7 @@ export default function Dialog({
     ? createPortal(
         <AnimatePresence>
           {open && (
-            <div className="fixed inset-0 z-50 overflow-scroll">
+            <RemoveScroll className="fixed inset-0 z-50 overflow-scroll">
               <motion.div
                 className="fixed inset-0 cursor-pointer bg-black/50 backdrop-blur"
                 onClick={handleClose}
@@ -69,7 +69,7 @@ export default function Dialog({
                   {children}
                 </div>
               </motion.div>
-            </div>
+            </RemoveScroll>
           )}
         </AnimatePresence>,
         document.body,
