@@ -8,7 +8,5 @@ export function generateStaticParams() {
 
 export default function Page({ params }: { params: { id: string } }) {
   const { id } = params;
-  return (
-    <AgendaPage openSessionID={id} isOpenByDefault={true} />
-  );
+  return <AgendaPage openSessionID={id} isOpenByDefault={true} />;
 }
