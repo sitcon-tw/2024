@@ -35,4 +35,7 @@ yarn-error.log*
 next-env.d.ts
 dist
 utils/SITCON 2024 工作人員（for 官網） - 工作表1.csv
+
 public/sessions.json
+public/sessions/*.png
+utils/preview_generator/node_modules
