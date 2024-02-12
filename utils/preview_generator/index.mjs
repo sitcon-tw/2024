@@ -112,7 +112,7 @@ await Promise.all(
     const resvg = new Resvg(svg, {
       fitTo: {
         mode: "width",
-        width: 2400,
+        value: 2400,
       },
     });
     const pngData = resvg.render();
