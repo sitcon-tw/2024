@@ -21,7 +21,7 @@ jobs:
           gcp-api-key: ${{ secrets.GCP_API_KEY }}
           spreadsheet-key: "1nb5A8ZdsYEtZh2JrRQS7yp7uu426Ey8tmnZKUzIZOLM"
           default-avatar: "https://sitcon.org/2022/imgs/deafult_avatar.jpg"
-          avatar-base-url: "https://sitcon.org/2024/avatars/"
+          avatar-base-url: "https://sitcon.org/2024/avatar/"
           output-path: ./public/sessions.json
       - uses: actions/setup-node@v4
         with:
