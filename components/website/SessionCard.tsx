@@ -156,13 +156,9 @@ export default function SessionCard({
     }
   }
 
-  if (
-    isMobile &&
+  const hide = isMobile &&
     session?.room != selectedRoom &&
-    !(broadcast && broadcast.includes(selectedRoom))
-  ) {
-    return null;
-  }
+    !(broadcast && broadcast.includes(selectedRoom));
 
   return (
     <div
@@ -171,6 +167,7 @@ export default function SessionCard({
         gridColumn: gridColumnString,
         gridRowStart: startString,
         gridRowEnd: endString,
+        display: hide ? "none" : "block",
       }}
       className="flex"
     >

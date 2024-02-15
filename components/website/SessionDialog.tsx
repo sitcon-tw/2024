@@ -17,7 +17,6 @@ export default function Dialog({
   isOpenByDefault?: boolean;
 }) {
   const [mounted, setMounted] = useState(false);
-  const { isMobile } = useMediaQuery();
 
   useEffect(() => {
     setMounted(true);

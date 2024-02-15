@@ -88,7 +88,7 @@ export default function Page({
         >
           {rooms.map((room) => (
             <button
-              key={room.id}
+              key={`mobile-${room.id}`}
               onClick={() => setSelectedRoom(room.id)}
               className={`border-b-2 px-4 font-bold transition ${
                 selectedRoom == room.id
@@ -104,11 +104,13 @@ export default function Page({
       
       <div className="container grid" style={timeTableStyle}>
         {/* empty cell in left top */}
-        <div
-          style={{ gridColumn: "time", gridRow: "room", boxShadow: "rgba(177, 136, 76, 0.07) 0px 4px 2px -1px",
-          }}
-          className="bg-[#f8f3e8] sticky top-[80px] z-20 border-b-[#B1884C66] border-b mb-5"
-        ></div>
+        {
+          !isMobile && (<div
+            style={{ gridColumn: "time", gridRow: "room", boxShadow: "rgba(177, 136, 76, 0.07) 0px 4px 2px -1px",
+            }}
+            className="bg-[#f8f3e8] sticky top-[80px] z-20 border-b-[#B1884C66] border-b mb-5"
+          ></div>)
+        }
         {/* rooms */}
         {rooms
           .filter(() => !isMobile)
