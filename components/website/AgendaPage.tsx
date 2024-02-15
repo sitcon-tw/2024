@@ -34,7 +34,33 @@ export default function Page({
     .sort()
     .map((item) => parseTime(item))
     .filter((item, index, self) => self.indexOf(item) === index);
-  const rooms = sessions.rooms;
+  const rooms = [
+    {
+      "id": "R2",
+      "zh": { "name": "R2", "description": "" },
+      "en": { "name": "R2", "description": "" }
+    },
+    {
+      "id": "R0",
+      "zh": { "name": "R0", "description": "" },
+      "en": { "name": "R0", "description": "" }
+    },
+    {
+      "id": "R1",
+      "zh": { "name": "R1", "description": "" },
+      "en": { "name": "R1", "description": "" }
+    },
+    {
+      "id": "R3",
+      "zh": { "name": "R3", "description": "" },
+      "en": { "name": "R3", "description": "" }
+    },
+    {
+      "id": "S",
+      "zh": { "name": "S", "description": "" },
+      "en": { "name": "S", "description": "" }
+    }
+  ];
   const timeTableStyle = {
     gridTemplateColumns:
       "[time] auto" +

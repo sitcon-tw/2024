@@ -29,6 +29,34 @@ export default function SessionCard({
   }
   const { isMobile } = useMediaQuery();
 
+  const rooms = [
+    {
+      "id": "R2",
+      "zh": { "name": "R2", "description": "" },
+      "en": { "name": "R2", "description": "" }
+    },
+    {
+      "id": "R0",
+      "zh": { "name": "R0", "description": "" },
+      "en": { "name": "R0", "description": "" }
+    },
+    {
+      "id": "R1",
+      "zh": { "name": "R1", "description": "" },
+      "en": { "name": "R1", "description": "" }
+    },
+    {
+      "id": "R3",
+      "zh": { "name": "R3", "description": "" },
+      "en": { "name": "R3", "description": "" }
+    },
+    {
+      "id": "S",
+      "zh": { "name": "S", "description": "" },
+      "en": { "name": "S", "description": "" }
+    }
+  ];
+
   const session = sessions.sessions.find((x) => x.id == sessionID)!;
   const clickable = session.zh.description != "";
 
@@ -64,16 +92,16 @@ export default function SessionCard({
   } else if (broadcast != null) {
     const roomStartID: number = Math.min(
       ...session!.broadcast.map((x) =>
-        sessions.rooms.map((x) => x.id).indexOf(x),
+        rooms.map((x) => x.id).indexOf(x),
       ),
     );
     const roomEndID: number = Math.max(
       ...session!.broadcast.map((x) =>
-        sessions.rooms.map((x) => x.id).indexOf(x),
+        rooms.map((x) => x.id).indexOf(x),
       ),
     );
-    const roomStart = sessions.rooms.map((x) => x.id)[roomStartID] || "time";
-    const roomEnd = sessions.rooms.map((x) => x.id)[roomEndID + 1] || "end";
+    const roomStart = rooms.map((x) => x.id)[roomStartID] || "time";
+    const roomEnd = rooms.map((x) => x.id)[roomEndID + 1] || "end";
     gridColumnString = `${roomStart} / ${roomEnd}`;
   } else {
     gridColumnString = session!.room;
