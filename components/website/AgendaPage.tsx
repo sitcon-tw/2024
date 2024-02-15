@@ -101,16 +101,22 @@ export default function Page({
           ))}
         </div>
       )}
-
+      
       <div className="container grid" style={timeTableStyle}>
+        {/* empty cell in left top */}
+        <div
+          style={{ gridColumn: "time", gridRow: "room", boxShadow: "rgba(177, 136, 76, 0.07) 0px 4px 2px -1px",
+          }}
+          className="bg-[#f8f3e8] sticky top-[80px] z-20 border-b-[#B1884C66] border-b mb-5"
+        ></div>
         {/* rooms */}
         {rooms
           .filter(() => !isMobile)
           .map((room) => (
             <div
               key={room.id}
-              style={{ gridColumn: room.id, gridRow: "room / end" }}
-              className="p-3 text-center text-xl font-bold text-[#B1884C]"
+              style={{ gridColumn: room.id, gridRow: "room / end", boxShadow: "rgba(177, 136, 76, 0.07) 0px 4px 2px -1px" }}
+              className="py-3 mb-5 text-center text-xl font-bold text-[#B1884C] sticky self-start top-[80px] bg-[#f8f3e8]  border-b-[#B1884C66] border-b"
             >
               {room.id}
             </div>
