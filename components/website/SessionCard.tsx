@@ -139,6 +139,10 @@ export default function SessionCard({
       : "justify-start";
   }
 
+  function sessionJustify() {
+    return ["Ev"].includes(session!.type) ? "justify-center" : "justify-start";
+  }
+
   function handleSessionClick() {
     if (!clickable) return;
     history.pushState(null, "", `/2024/agenda/${session!.id}/`);
@@ -171,14 +175,15 @@ export default function SessionCard({
       }}
       className="flex"
     >
+      <div className="h-full flex">
       <div
         onClick={handleSessionClick}
         className={twMerge(
-          `mx-3 my-2 flex flex-1 flex-col justify-between rounded-lg border border-[#d0b892] bg-[#eee4d2] p-3 transition`,
+          `flex flex-1 mx-3 my-2 flex-col justify-between rounded-lg border border-[#d0b892] bg-[#eee4d2] p-3 transition`,
           clickable && "cursor-pointer hover:bg-[#e6d8c2]",
         )}
       >
-        <div className={`flex flex-1 flex-col gap-1 ${sessionMarginBottom()}`}>
+        <div className={`flex flex-1 flex-col gap-1 ${sessionJustify()} ${sessionMarginBottom()}`}>
           <p
             className={`font-bold ${sessionTextAlign()} ${sessionTextColor()} ${sessionFontSize()}`}
           >
@@ -210,7 +215,9 @@ export default function SessionCard({
               </span>
             ))}
         </div>
+        </div>
       </div>
+      
       <SessionDialog
         open={isDialogOpen}
         setOpen={setIsDialogOpen}
