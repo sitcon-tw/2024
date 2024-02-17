@@ -43,16 +43,16 @@ jobs:
         run: |
           npm install
           node index.mjs
+      - name: Install npm packages
+        run: npm install
+      - name: Build Pages
+        run: npm run build
       - name: Build Email
         working-directory: ./utils/mail
         run: |
           npm install -E
           npm run export
-          cp -r out/SITCON-2024.html ../../public/SITCON-2024.html
-      - name: Install npm packages
-        run: npm install
-      - name: Build Pages
-        run: npm run build
+          cp -r ./out/SITCON-2024.html ../../dist/mail/SITCON-2024.html
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
