@@ -37,10 +37,25 @@ export default {
         },
       ],
     },
-    // {
-    //   title: "深耕級",
-    //   items: [],
-    // },
+    {
+      title: "深耕級",
+      items: [
+        {
+          title: "社團法人台灣駭客協會",
+          image: "hit.png",
+          description:
+            "社團法人台灣駭客協會 (HIT) 致力於透過研討會、競賽、教育訓練等各種形式推廣資訊安全。在眾多活動中，最讓人期待的資安年度盛會：HITCON Community (CMT) ，將於今年 8/23（五）- 8/24（六）舉辦，後續相關消息將持續於 HITCON 粉絲專頁公告。\n\n同時，為協助台灣資安社群發展，協會推出「台灣資安社群補助計畫」，若有相關需求，歡迎至協會官網提出申請。",
+          url: "https://hacker.org.tw",
+        },
+        {
+          title: "美商超微半導體股份有限公司台灣分公司",
+          image: "amd.png",
+          description:
+            "50多年來，AMD（NASDAQ：AMD）推動創新高效能運算、繪圖及視覺技術，建構遊戲、高臨場感平台與資料中心等重要領域。全球數十億的消費者、世界500強企業以及尖端科學研究機構皆仰賴AMD的技術來改善生活、工作及娛樂。AMD員工致力於研發領先的高效能與自行調適產品，不斷突破技術的極限。",
+          url: "https://www.amd.com/zh-hant",
+        },
+      ],
+    },
     {
       title: "前瞻級",
       items: [
@@ -107,8 +122,7 @@ export default {
     {
       title: "中央研究院資訊服務處",
       image: "its.png",
-      description:
-        "",
+      description: "",
       url: "https://its.sinica.edu.tw/",
     },
   ],
