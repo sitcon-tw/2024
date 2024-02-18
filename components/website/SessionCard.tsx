@@ -31,30 +31,30 @@ export default function SessionCard({
 
   const rooms = [
     {
-      "id": "R2",
-      "zh": { "name": "R2", "description": "" },
-      "en": { "name": "R2", "description": "" }
+      id: "R2",
+      zh: { name: "R2", description: "" },
+      en: { name: "R2", description: "" },
     },
     {
-      "id": "R0",
-      "zh": { "name": "R0", "description": "" },
-      "en": { "name": "R0", "description": "" }
+      id: "R0",
+      zh: { name: "R0", description: "" },
+      en: { name: "R0", description: "" },
     },
     {
-      "id": "R1",
-      "zh": { "name": "R1", "description": "" },
-      "en": { "name": "R1", "description": "" }
+      id: "R1",
+      zh: { name: "R1", description: "" },
+      en: { name: "R1", description: "" },
     },
     {
-      "id": "R3",
-      "zh": { "name": "R3", "description": "" },
-      "en": { "name": "R3", "description": "" }
+      id: "R3",
+      zh: { name: "R3", description: "" },
+      en: { name: "R3", description: "" },
     },
     {
-      "id": "S",
-      "zh": { "name": "S", "description": "" },
-      "en": { "name": "S", "description": "" }
-    }
+      id: "S",
+      zh: { name: "S", description: "" },
+      en: { name: "S", description: "" },
+    },
   ];
 
   const session = sessions.sessions.find((x) => x.id == sessionID)!;
@@ -91,14 +91,10 @@ export default function SessionCard({
     gridColumnString = "R0 / end";
   } else if (broadcast != null) {
     const roomStartID: number = Math.min(
-      ...session!.broadcast.map((x) =>
-        rooms.map((x) => x.id).indexOf(x),
-      ),
+      ...session!.broadcast.map((x) => rooms.map((x) => x.id).indexOf(x)),
     );
     const roomEndID: number = Math.max(
-      ...session!.broadcast.map((x) =>
-        rooms.map((x) => x.id).indexOf(x),
-      ),
+      ...session!.broadcast.map((x) => rooms.map((x) => x.id).indexOf(x)),
     );
     const roomStart = rooms.map((x) => x.id)[roomStartID] || "time";
     const roomEnd = rooms.map((x) => x.id)[roomEndID + 1] || "end";
@@ -160,7 +156,8 @@ export default function SessionCard({
     }
   }
 
-  const hide = isMobile &&
+  const hide =
+    isMobile &&
     session?.room != selectedRoom &&
     !(broadcast && broadcast.includes(selectedRoom));
 
@@ -175,49 +172,51 @@ export default function SessionCard({
       }}
       className="flex"
     >
-      <div className="h-full flex">
-      <div
-        onClick={handleSessionClick}
-        className={twMerge(
-          `flex flex-1 mx-3 my-2 flex-col justify-between rounded-lg border border-[#d0b892] bg-[#eee4d2] p-3 transition`,
-          clickable && "cursor-pointer hover:bg-[#e6d8c2]",
-        )}
-      >
-        <div className={`flex flex-1 flex-col gap-1 ${sessionJustify()} ${sessionMarginBottom()}`}>
-          <p
-            className={`font-bold ${sessionTextAlign()} ${sessionTextColor()} ${sessionFontSize()}`}
+      <div className="flex h-full">
+        <div
+          onClick={handleSessionClick}
+          className={twMerge(
+            `mx-3 my-2 flex flex-1 flex-col justify-between rounded-lg border border-[#d0b892] bg-[#eee4d2] p-3 transition`,
+            clickable && "cursor-pointer hover:bg-[#e6d8c2]",
+          )}
+        >
+          <div
+            className={`flex flex-1 flex-col gap-1 ${sessionJustify()} ${sessionMarginBottom()}`}
           >
-            {session!.zh.title}
-          </p>
-          {session!.speakers.length ? (
             <p
-              className={`text-[#385AAC] ${sessionTextAlign()} ${sessionSpeakerFontSize()}`}
+              className={`font-bold ${sessionTextAlign()} ${sessionTextColor()} ${sessionFontSize()}`}
             >
-              {session!.speakers
-                .map(
-                  (speaker) =>
-                    sessions.speakers.find((x) => x.id == speaker)?.zh.name,
-                )
-                .join(" / ")}
+              {session!.zh.title}
             </p>
-          ) : null}
-        </div>
-        <div className={`flex flex-wrap gap-1 ${sessionTagsAlign()}`}>
-          {session!.tags
-            .map((tag) => sessions.tags.find((x) => x.id == tag)?.zh.name)
-            .concat(extraTags)
-            .map((tag) => (
-              <span
-                key={tag}
-                className="rounded-lg bg-[#385AAC1A] p-1 px-1 text-xs text-[#061740]"
+            {session!.speakers.length ? (
+              <p
+                className={`text-[#385AAC] ${sessionTextAlign()} ${sessionSpeakerFontSize()}`}
               >
-                #{tag}
-              </span>
-            ))}
-        </div>
+                {session!.speakers
+                  .map(
+                    (speaker) =>
+                      sessions.speakers.find((x) => x.id == speaker)?.zh.name,
+                  )
+                  .join(" / ")}
+              </p>
+            ) : null}
+          </div>
+          <div className={`flex flex-wrap gap-1 ${sessionTagsAlign()}`}>
+            {session!.tags
+              .map((tag) => sessions.tags.find((x) => x.id == tag)?.zh.name)
+              .concat(extraTags)
+              .map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-lg bg-[#385AAC1A] p-1 px-1 text-xs text-[#061740]"
+                >
+                  #{tag}
+                </span>
+              ))}
+          </div>
         </div>
       </div>
-      
+
       <SessionDialog
         open={isDialogOpen}
         setOpen={setIsDialogOpen}
