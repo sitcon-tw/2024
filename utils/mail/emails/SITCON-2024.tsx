@@ -99,7 +99,9 @@ function SITCON2024Email() {
                 <br />
                 很高興能在 SITCON 2024
                 看到您！年會即將在下週六（03/09）揭開序幕，若您臨時有事無法來到現場一起共襄盛舉，請至
-                官方換票樓
+                <a href="https://www.facebook.com/events/350818157889474/permalink/351378694500087/">
+                  官方換票樓
+                </a>
                 將您的票卷釋出，讓其他有興趣參與但沒有票的朋友也能有機會一起參加活動。
                 <br />
                 <br />
@@ -109,8 +111,15 @@ function SITCON2024Email() {
                 <H1>活動地點</H1>
                 <Text>
                   年會地點位於<strong>中央研究院 人文社會科學館</strong>
-                  （台北市南港區研究院路二段 128 號），詳細位置可以參考 SITCON
-                  2024 官方網站 或中央研究院 院區導覽圖。
+                  （台北市南港區研究院路二段 128 號），詳細位置可以參考{" "}
+                  <a href="https://sitcon.org/2024/traffic/">
+                    SITCON 2024 官方網站
+                  </a>{" "}
+                  或中央研究院{" "}
+                  <a href="https://file.apps.sinica.edu.tw/filepool/asweb/file/2023/2605xVrmDnbrVzHHAKAYtAeZ/asmap-00.pdf">
+                    院區導覽圖
+                  </a>
+                  。
                 </Text>
                 <H1>接駁車</H1>
                 <Text>
@@ -134,7 +143,7 @@ function SITCON2024Email() {
                   請透過以下專屬連結下載、啟動 OPass：
                 </Text>
                 <Text className="text-center">
-                  {`{{ App Link }}`}
+                  <a href={`{{ App Link }}`}>{`{{ App Link }}`}</a>
                   <br />
                 </Text>
                 <Text>
