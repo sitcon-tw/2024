@@ -20,14 +20,18 @@ const baseUrl = "";
 
 function IconLink({ icon, href }: { icon: string; href: string }) {
   return (
-    <a href={href}>
-      <Img
-        src={`https://sitcon.org/2024/mail/${icon}.png`}
-        width="24"
-        height="24"
-        alt={icon}
-      />
-    </a>
+    <Column>
+      <center>
+        <a href={href} className="mx-auto">
+          <Img
+            src={`https://sitcon.org/2024/mail/${icon}.png`}
+            width="24"
+            height="24"
+            alt={icon}
+          />
+        </a>
+      </center>
+    </Column>
   );
 }
 
@@ -82,7 +86,10 @@ function SITCON2024Email() {
             <Container className="mx-auto my-[40px] max-w-[465px] px-2 ">
               <Section className="w-full rounded bg-[#42352E] p-2 text-center text-[#C7D2CA]">
                 若您無法順利閱讀此信件，請參閱{" "}
-                <a href="https://sitcon.org/2024/mail/SITCON-2024.html">
+                <a
+                  href="https://sitcon.org/2024/mail/SITCON-2024.html"
+                  className="text-[#DCCEBD]"
+                >
                   線上版本
                 </a>
                 。
@@ -202,7 +209,8 @@ function SITCON2024Email() {
                 <Text>
                   不論您是要宣傳社團、推廣
                   Vim、畫一隻貓、還是只是想說個嗨，白板大戰就是您的天空，透過揮灑創意的墨水，讓不同想法穿越時間進行對話，相互交織。
-                  <br /> <br />
+                </Text>
+                <Text className="text-center font-serif text-[16px] font-bold">
                   歡迎加入，白板大戰！
                 </Text>
                 <H2>靜態海報展</H2>
@@ -319,15 +327,17 @@ function SITCON2024Email() {
                 className="mx-auto my-8"
               />{" "}
               <Section className="w-full rounded-full bg-[#42352E] p-2 text-center text-[#C7D2CA]">
-                <IconLink href="https://sitcon.org/twitter" icon="twitter" />
-                <IconLink href="https://sitcon.org/fb" icon="facebook" />
-                <IconLink href="https://sitcon.org/flickr" icon="flickr" />
-                <IconLink
-                  href="https://sitcon.org/instagram"
-                  icon="instagram"
-                />
-                <IconLink href="https://sitcon.org/tg" icon="telegram" />
-                <IconLink href="https://sitcon.org/yt" icon="youtube" />
+                <Row>
+                  <IconLink href="https://sitcon.org/twitter" icon="twitter" />
+                  <IconLink href="https://sitcon.org/fb" icon="facebook" />
+                  <IconLink href="https://sitcon.org/flickr" icon="flickr" />
+                  <IconLink
+                    href="https://sitcon.org/instagram"
+                    icon="instagram"
+                  />
+                  <IconLink href="https://sitcon.org/tg" icon="telegram" />
+                  <IconLink href="https://sitcon.org/yt" icon="youtube" />
+                </Row>
               </Section>
             </Container>
           </Container>
