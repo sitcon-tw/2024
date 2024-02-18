@@ -76,11 +76,11 @@ export default function SessionCard({
 
   for (const section of sections) {
     if (section.includes("先備知識")) {
-      priorKnowledge = section.replaceAll(" 先備知識\n", "");
+      priorKnowledge = section.replaceAll(" 先備知識\r\n", "");
       description = description.replaceAll("##" + section, "");
     }
     if (section.includes("目標聽眾")) {
-      targetAudience = section.replaceAll(" 目標聽眾\n", "");
+      targetAudience = section.replaceAll(" 目標聽眾\r\n", "");
       description = description.replaceAll("##" + section, "");
     }
   }
