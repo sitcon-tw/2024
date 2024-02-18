@@ -140,6 +140,8 @@ function SITCON2024Email() {
                   <strong>9 點</strong> 準時開始。在到達會場後，連上年會現場的
                   Wi-Fi，即可用「OPass」App
                   進行報到，並到會場四樓依工作人員指示排隊領取迎賓袋。十點半後請到三樓服務台領取迎賓袋。
+                  <br />
+                  <br />
                   請透過以下專屬連結下載、啟動 OPass：
                 </Text>
                 <Text className="text-center">
