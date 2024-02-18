@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import useIsApp from "@/hooks/useIsApp";
 const NavLinks = [
   {
     name: "年會活動",
@@ -67,6 +68,11 @@ function NavLink({
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // get mode from query string
+  const isApp = useIsApp();
+  if (isApp) {
+    return <></>;
+  }
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";

@@ -1,9 +1,11 @@
 "use client";
 
+import useIsApp from "@/hooks/useIsApp";
 import { useState } from "react";
 import sessions from "@/public/sessions.json";
 import SessionCard from "@/components/website/SessionCard";
 import useMediaQuery from "@/hooks/use-media-query";
+import { twMerge } from "tailwind-merge";
 
 export default function Page({
   openSessionID,
@@ -12,6 +14,7 @@ export default function Page({
   openSessionID?: string;
   isOpenByDefault?: boolean;
 }) {
+  const isApp = useIsApp();
   function parseTime(time: Date) {
     return time.toLocaleTimeString("en-US", {
       hour: "2-digit",
@@ -36,30 +39,30 @@ export default function Page({
     .filter((item, index, self) => self.indexOf(item) === index);
   const rooms = [
     {
-      "id": "R2",
-      "zh": { "name": "R2", "description": "" },
-      "en": { "name": "R2", "description": "" }
+      id: "R2",
+      zh: { name: "R2", description: "" },
+      en: { name: "R2", description: "" },
     },
     {
-      "id": "R0",
-      "zh": { "name": "R0", "description": "" },
-      "en": { "name": "R0", "description": "" }
+      id: "R0",
+      zh: { name: "R0", description: "" },
+      en: { name: "R0", description: "" },
     },
     {
-      "id": "R1",
-      "zh": { "name": "R1", "description": "" },
-      "en": { "name": "R1", "description": "" }
+      id: "R1",
+      zh: { name: "R1", description: "" },
+      en: { name: "R1", description: "" },
     },
     {
-      "id": "R3",
-      "zh": { "name": "R3", "description": "" },
-      "en": { "name": "R3", "description": "" }
+      id: "R3",
+      zh: { name: "R3", description: "" },
+      en: { name: "R3", description: "" },
     },
     {
-      "id": "S",
-      "zh": { "name": "S", "description": "" },
-      "en": { "name": "S", "description": "" }
-    }
+      id: "S",
+      zh: { name: "S", description: "" },
+      en: { name: "S", description: "" },
+    },
   ];
   const timeTableStyle = {
     gridTemplateColumns:
@@ -81,7 +84,10 @@ export default function Page({
       </h1>
       {isMobile && (
         <div
-          className="sticky top-[80px] z-20 mb-6 flex flex-wrap justify-around bg-[#F8F3E8]/90 text-[#B1884C] backdrop-blur-lg"
+          className={twMerge(
+            "sticky z-20 mb-6 flex flex-wrap justify-around bg-[#F8F3E8]/90 text-[#B1884C] backdrop-blur-lg",
+            isApp ? "top-0" : "top-[80px]",
+          )}
           style={{
             boxShadow: "0 4px 2px -2px #B1884C40",
           }}
@@ -101,24 +107,37 @@ export default function Page({
           ))}
         </div>
       )}
-      
+
       <div className="container grid" style={timeTableStyle}>
         {/* empty cell in left top */}
-        {
-          !isMobile && (<div
-            style={{ gridColumn: "time", gridRow: "room", boxShadow: "rgba(177, 136, 76, 0.07) 0px 4px 2px -1px",
+        {!isMobile && (
+          <div
+            style={{
+              gridColumn: "time",
+              gridRow: "room",
+              boxShadow: "rgba(177, 136, 76, 0.07) 0px 4px 2px -1px",
             }}
-            className="bg-[#f8f3e8] sticky top-[80px] z-20 border-b-[#B1884C66] border-b mb-5"
-          ></div>)
-        }
+            className={twMerge(
+              "sticky z-20 mb-5 border-b border-b-[#B1884C66] bg-[#f8f3e8]",
+              isApp ? "top-0" : "top-[80px]",
+            )}
+          />
+        )}
         {/* rooms */}
         {rooms
           .filter(() => !isMobile)
           .map((room) => (
             <div
               key={room.id}
-              style={{ gridColumn: room.id, gridRow: "room / end", boxShadow: "rgba(177, 136, 76, 0.07) 0px 4px 2px -1px" }}
-              className="py-3 mb-5 text-center text-xl font-bold text-[#B1884C] sticky self-start top-[80px] bg-[#f8f3e8]  border-b-[#B1884C66] border-b"
+              style={{
+                gridColumn: room.id,
+                gridRow: "room / end",
+                boxShadow: "rgba(177, 136, 76, 0.07) 0px 4px 2px -1px",
+              }}
+              className={twMerge(
+                "sticky mb-5 self-start border-b border-b-[#B1884C66] bg-[#f8f3e8] py-3 text-center text-xl font-bold text-[#B1884C]",
+                isApp ? "top-0" : "top-[80px]",
+              )}
             >
               {room.id}
             </div>
