@@ -167,7 +167,9 @@ function SITCON2024Email() {
               </TitleSection>
               <TitleSection title="年會活動">
                 <Text>
-                  除了一整天 精彩的議程，今年的 SITCON
+                  除了一整天{" "}
+                  <a href="https://sitcon.org/2024/agenda">精彩的議程</a>
+                  ，今年的 SITCON
                   也有許多有趣的活動可以參加！不論是抓緊機會表現自己，或是想在年會認識新朋友，都千萬別錯過囉！{" "}
                 </Text>
                 <H2>紀念品販售</H2>
