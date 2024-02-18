@@ -70,9 +70,6 @@ export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // get mode from query string
   const isApp = useIsApp();
-  if (isApp) {
-    return <></>;
-  }
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -82,56 +79,58 @@ export default function Nav() {
   }, [isMenuOpen]);
   return (
     <>
-      <motion.nav
-        className="sticky top-0 z-40 bg-[#F8F3E8]/90 backdrop-blur-lg"
-        style={{ position: "sticky" }}
-        layoutRoot
-        layout
-      >
-        <div className="container flex items-center justify-between py-6">
-          <Link
-            href="/"
-            className="font-rubik text-2xl font-bold"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(56, 90, 172, 0.80) 0%, rgba(148, 110, 52, 0.75) 58.96%, #462002 100%)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            SITCON 2024
-          </Link>
-          <div className="flex gap-6 lg:hidden">
-            {new Date().getTime() < 1706111999000 && (
-              <Link
-                href="/cfp/poster/"
-                className="rounded-xl bg-[#FFCA73] px-3 font-bold text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]"
-              >
-                海報投稿
-              </Link>
-            )}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              <IoMenu className="text-2xl" />
-            </button>
+      {!isApp && (
+        <motion.nav
+          className="sticky top-0 z-40 bg-[#F8F3E8]/90 backdrop-blur-lg"
+          style={{ position: "sticky" }}
+          layoutRoot
+          layout
+        >
+          <div className="container flex items-center justify-between py-6">
+            <Link
+              href="/"
+              className="font-rubik text-2xl font-bold"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(56, 90, 172, 0.80) 0%, rgba(148, 110, 52, 0.75) 58.96%, #462002 100%)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+              }}
+            >
+              SITCON 2024
+            </Link>
+            <div className="flex gap-6 lg:hidden">
+              {new Date().getTime() < 1706111999000 && (
+                <Link
+                  href="/cfp/poster/"
+                  className="rounded-xl bg-[#FFCA73] px-3 font-bold text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]"
+                >
+                  海報投稿
+                </Link>
+              )}
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <IoMenu className="text-2xl" />
+              </button>
+            </div>
+            <div className="hidden gap-2 lg:flex xl:gap-4">
+              {NavLinks.map((link) => (
+                <NavLink href={link.href} key={link.name}>
+                  {link.name}
+                </NavLink>
+              ))}
+              {new Date().getTime() < 1706111999000 && (
+                <Link
+                  href="/cfp/poster/"
+                  className="flex items-center justify-center rounded-xl bg-[#FFCA73] px-3 font-bold text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]"
+                >
+                  海報投稿
+                </Link>
+              )}
+            </div>
           </div>
-          <div className="hidden gap-2 lg:flex xl:gap-4">
-            {NavLinks.map((link) => (
-              <NavLink href={link.href} key={link.name}>
-                {link.name}
-              </NavLink>
-            ))}
-            {new Date().getTime() < 1706111999000 && (
-              <Link
-                href="/cfp/poster/"
-                className="flex items-center justify-center rounded-xl bg-[#FFCA73] px-3 font-bold text-[#462002] shadow-[0px_5px_8px_0px_#FFBA474D] hover:bg-[#e3b364] active:bg-[#cca15a]"
-              >
-                海報投稿
-              </Link>
-            )}
-          </div>
-        </div>
-      </motion.nav>
+        </motion.nav>
+      )}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
