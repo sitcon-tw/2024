@@ -82,13 +82,13 @@ export default {
             "曉數碼為 Akatsuki Inc. 於 2014 年在台灣設立的子公司，以「與創作者共鳴，娛樂全世界」為使命，致力於開發、營運各種能躍動人心的遊戲。曉數碼重視在地化品質並放眼國際市場，團隊中聚集來自各地的成員，包含台、日、韓、英、法、德、西與印度等多語言人才。我們亦積極打造幸福職場，以此支持成員們盡情發揮創意，使其發光發熱，共同成長。",
           url: "https://bit.ly/3bwhylS",
         },
-        //  {
-        //   title: "Dcard 狄卡科技",
-        //   image: "dcard.png",
-        //   description:
-        //     "Dcard 是全台最大匿名社群， 從台灣走向世界，每月不重複訪客高達 2,200 萬，發展出廣告、電商、跨國市場等領域，持續探索新型商業模式，邁向世界級網路公司前進。",
-        //   url: "https://join.dcard.today/",
-        // },
+        {
+           title: "Dcard 狄卡科技",
+           image: "dcard.png",
+           description:
+             "Dcard 是全台最大匿名社群， 從台灣走向世界，每月不重複訪客高達 2,200 萬，發展出廣告、電商、跨國市場等領域，持續探索新型商業模式，邁向世界級網路公司前進。",
+           url: "https://join.dcard.today/",
+        },
         //  {
         //    title: "Panasonic",
         //    image: "panasonic.png",
