@@ -32,7 +32,8 @@ export default function Page({
         (session.broadcast &&
           session.broadcast.some((item) => item.includes(selectedRoom))),
     )
-    .map((session) => session.start)
+    .map((session) => [session.start, session.end])
+    .flat(1)
     .map((item) => new Date(item))
     .sort()
     .map((item) => parseTime(item))
