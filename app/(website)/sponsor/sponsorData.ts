@@ -115,6 +115,10 @@ export default {
             "SuDo Research Labs 總部設於台北 101 大樓，已有扎實的核心團隊、近三十位菁英夥伴和從 2017 年累積至今的實績，期待夥伴在嶄新的辦公空間中穩定成長，目前亦正積極擴編中！我們會持續發展頂尖的區塊鏈工程與相關研究，以既有的產品路線為根基，同時持續探索新的應用機會，掌握時機快速切入市場，成為新領域的領頭羊。",
           url: "https://www.yourator.co/companies/sudoresearch",
         },
+        {
+          title: "合勤基金會",
+          image: "zyxel.png",
+        },
       ],
     },
   ],
