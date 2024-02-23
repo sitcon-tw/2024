@@ -103,13 +103,13 @@ export default {
         //      "Panasonic 致力於通過開發多元化的物聯網（IoT）產品，來讓人們的生活變得更美好。我們非常關注產品網路安全和客戶隱私，因此在日本總部不僅設立了 Product Security Center (PSC) 和 Product Security Incident Response Team (PSIRT)，還在台灣成立了 Panasonic Cyber Security Lab (PCSL)。PSC 和 PCSL 與全球各個業務集團合作，執行了需多的產品安全專案。這些專案包括對 IoT 產品網路威脅的深入研究、滲透測試、產品網路安全的事件響應，以及培養集團的網路安全人才。我們的目標是不斷增強和保護 Panasonic 產品的網路安全，確保我們的客戶獲得方便、安全的體驗。我們熱切歡迎有前瞻性的企業和優秀的個人加入我們的旅程，一同提升產品安全。如果您有合作意願，請隨時聯絡我們，Email 地址是 panasonic.pcsl@gmail.com。讓我們共同創建一個更安全、更緊密聯繫的世界！",
         //    url: "https://sitcon.org",
         //  },
-        // {
-        //   title: "趨勢科技",
-        //   image: "trendmicro.png",
-        //   description:
-        //     "趨勢科技為資訊安全解提供決方案全球領導廠商，致力建立一個安全的資訊交換世界。為資料中心、雲端工作負載、網路、端點裝置提供多層式安全防護。",
-        //   url: "https://careers.trendmicro.tw",
-        // },
+        {
+          title: "趨勢科技",
+          image: "trendmicro.png",
+          description:
+            "趨勢科技為資訊安全解提供決方案全球領導廠商，致力建立一個安全的資訊交換世界。為資料中心、雲端工作負載、網路、端點裝置提供多層式安全防護。",
+          url: "https://careers.trendmicro.tw",
+        },
       ],
     },
     {
