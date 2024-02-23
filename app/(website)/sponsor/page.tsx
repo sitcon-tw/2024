@@ -31,7 +31,8 @@ function Sponsors({
           <div
             className="absolute inset-0 scale-0 opacity-0 blur-xl transition-all duration-300 group-hover/sponsor:scale-100 group-hover/sponsor:opacity-50"
             style={{
-              backgroundImage: `linear-gradient(90deg, rgba(56, 90, 172, 0.80) 0%, rgba(148, 110, 52, 0.75) 58.96%, #462002 100%)`,
+              backgroundImage:
+                `linear-gradient(90deg, rgba(56, 90, 172, 0.80) 0%, rgba(148, 110, 52, 0.75) 58.96%, #462002 100%)`,
             }}
           />
           <div className="absolute inset-0 rounded-lg bg-white" />
@@ -58,6 +59,9 @@ export default function Page() {
           <div>
             <span className="mr-1 text-2xl lg:text-4xl">
               <Counter value={11000} />
+              <noscript>
+                11000
+              </noscript>
             </span>
             名
           </div>
@@ -67,6 +71,9 @@ export default function Page() {
           <div>
             <span className="mr-1 text-2xl lg:text-4xl">
               <Counter value={400} />
+              <noscript>
+                400
+              </noscript>
             </span>
             名
           </div>
@@ -79,6 +86,9 @@ export default function Page() {
               <div>
                 <span className="mr-1 text-2xl lg:text-4xl">
                   <Counter value={400} />
+                  <noscript>
+                    400
+                  </noscript>
                 </span>
                 場
               </div>
@@ -88,6 +98,9 @@ export default function Page() {
               <div>
                 <span className="mr-1 text-2xl lg:text-4xl">
                   <Counter value={8} />
+                  <noscript>
+                    8
+                  </noscript>
                 </span>
                 場
               </div>
@@ -100,6 +113,9 @@ export default function Page() {
           <div>
             <span className="mr-1 text-2xl lg:text-4xl">
               <Counter value={1100} />
+              <noscript>
+                1100
+              </noscript>
             </span>
             名
           </div>
@@ -220,10 +236,8 @@ export default function Page() {
               </h1>
               <Sponsors
                 sponsors={sponsorType.items}
-                largeSponsor={
-                  sponsorType.title === "領航級" ||
-                  sponsorType.title === "深耕級"
-                }
+                largeSponsor={sponsorType.title === "領航級" ||
+                  sponsorType.title === "深耕級"}
               />
             </div>
           ),
