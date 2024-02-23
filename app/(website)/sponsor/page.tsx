@@ -59,9 +59,6 @@ export default function Page() {
           <div>
             <span className="mr-1 text-2xl lg:text-4xl">
               <Counter value={11000} />
-              <noscript>
-                11000
-              </noscript>
             </span>
             名
           </div>
@@ -71,9 +68,6 @@ export default function Page() {
           <div>
             <span className="mr-1 text-2xl lg:text-4xl">
               <Counter value={400} />
-              <noscript>
-                400
-              </noscript>
             </span>
             名
           </div>
@@ -86,9 +80,6 @@ export default function Page() {
               <div>
                 <span className="mr-1 text-2xl lg:text-4xl">
                   <Counter value={400} />
-                  <noscript>
-                    400
-                  </noscript>
                 </span>
                 場
               </div>
@@ -98,9 +89,6 @@ export default function Page() {
               <div>
                 <span className="mr-1 text-2xl lg:text-4xl">
                   <Counter value={8} />
-                  <noscript>
-                    8
-                  </noscript>
                 </span>
                 場
               </div>
@@ -113,9 +101,6 @@ export default function Page() {
           <div>
             <span className="mr-1 text-2xl lg:text-4xl">
               <Counter value={1100} />
-              <noscript>
-                1100
-              </noscript>
             </span>
             名
           </div>

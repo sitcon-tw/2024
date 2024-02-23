@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 
 /**
- *
  * @param root0
  * @param root0.value
  */
@@ -33,12 +32,17 @@ export default function Counter({
       springValue.on("change", (latest) => {
         if (ref.current) {
           ref.current.textContent = Intl.NumberFormat("en-US").format(
-            latest.toFixed(0)
+            latest.toFixed(0),
           );
         }
       }),
-    [springValue]
+    [springValue],
   );
 
-  return <span className="tabular-nums" ref={ref} />;
+  return (
+    <>
+      <span className="tabular-nums" ref={ref} />
+      <noscript>{value}</noscript>
+    </>
+  );
 }
