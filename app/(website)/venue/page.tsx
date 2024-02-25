@@ -25,7 +25,7 @@ function NumberInfo({
   return (
     <>
       <div
-        className="flex cursor-pointer gap-3 rounded-sm leading-7 hover:bg-[#B1884C]/10 active:bg-[#B1884C]/20"
+        className="flex cursor-pointer gap-3 break-all rounded-sm leading-7 hover:bg-[#B1884C]/10 active:bg-[#B1884C]/20"
         aria-role="button"
         tabIndex={0}
         onClick={() => setIsDialogOpen(true)}
@@ -33,7 +33,7 @@ function NumberInfo({
         <h2 className="flex w-14 shrink-0 items-center justify-center rounded-sm bg-[#B1884C] text-center text-3xl tabular-nums text-white">
           {item.number}
         </h2>
-        <div className="pr-1">
+        <div className="pb-1 pr-1">
           <h3 className="font-bold text-[#B1884C]">{item.title}</h3>
           <p className="line-clamp-2 text-ellipsis text-sm">
             <Markdown>{item.description}</Markdown>
@@ -41,7 +41,7 @@ function NumberInfo({
         </div>
       </div>
       <Dialog open={isDialogOpen} setOpen={setIsDialogOpen}>
-        <div className="flex flex-col gap-4 p-6">
+        <div className="flex flex-col gap-4 break-all p-6">
           <div className="flex items-center justify-start gap-3 text-2xl font-bold md:text-3xl">
             <h2 className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[#B1884C] text-center text-2xl tabular-nums text-white">
               {item.number}
