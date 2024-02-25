@@ -96,13 +96,13 @@ export default {
             "Dcard 是全台最大匿名社群， 從台灣走向世界，每月不重複訪客高達 2,200 萬，發展出廣告、電商、跨國市場等領域，持續探索新型商業模式，邁向世界級網路公司前進。",
           url: "https://join.dcard.today/",
         },
-        //  {
-        //    title: "Panasonic",
-        //    image: "panasonic.png",
-        //    description:
-        //      "Panasonic 致力於通過開發多元化的物聯網（IoT）產品，來讓人們的生活變得更美好。我們非常關注產品網路安全和客戶隱私，因此在日本總部不僅設立了 Product Security Center (PSC) 和 Product Security Incident Response Team (PSIRT)，還在台灣成立了 Panasonic Cyber Security Lab (PCSL)。PSC 和 PCSL 與全球各個業務集團合作，執行了需多的產品安全專案。這些專案包括對 IoT 產品網路威脅的深入研究、滲透測試、產品網路安全的事件響應，以及培養集團的網路安全人才。我們的目標是不斷增強和保護 Panasonic 產品的網路安全，確保我們的客戶獲得方便、安全的體驗。我們熱切歡迎有前瞻性的企業和優秀的個人加入我們的旅程，一同提升產品安全。如果您有合作意願，請隨時聯絡我們，Email 地址是 panasonic.pcsl@gmail.com。讓我們共同創建一個更安全、更緊密聯繫的世界！",
-        //    url: "https://sitcon.org",
-        //  },
+         {
+           title: "Panasonic",
+           image: "panasonic.png",
+           description:
+             "Panasonic 致力於通過開發多元化的物聯網（IoT）產品，來讓人們的生活變得更美好。我們非常關注產品網路安全和客戶隱私，因此在日本總部不僅設立了 Product Security Center (PSC) 和 Product Security Incident Response Team (PSIRT)，還在台灣成立了 Panasonic Cyber Security Lab (PCSL)。PSC 和 PCSL 與全球各個業務集團合作，執行了需多的產品安全專案。這些專案包括對 IoT 產品網路威脅的深入研究、滲透測試、產品網路安全的事件響應，以及培養集團的網路安全人才。我們的目標是不斷增強和保護 Panasonic 產品的網路安全，確保我們的客戶獲得方便、安全的體驗。我們熱切歡迎有前瞻性的企業和優秀的個人加入我們的旅程，一同提升產品安全。如果您有合作意願，請隨時聯絡我們，Email 地址是 panasonic.pcsl@gmail.com。讓我們共同創建一個更安全、更緊密聯繫的世界！",
+           urls: [],
+         },
         {
           title: "趨勢科技",
           image: "trendmicro.png",
@@ -136,30 +136,30 @@ export default {
             "合勤基金會以發揚合勤投控及合勤科技、兆勤科技、盟創科技等子公司之共同信念：力行社會公益及推動創新創業為出發點，並以鼓勵創新、支持創業、培育優秀人才與善盡社會責任四大面向為主軸，推展相關活動，期望成為火種，拋磚引玉的展現回饋社會的企業精神。",
           urls: [],
         },
-        // {
-        //   title: "五之神",
-        //   image: "",
-        //   description: "",
-        //   urls: [],
-        // },
-        // {
-        //   title: "資策會",
-        //   image: "",
-        //   description: "",
-        //   urls: [],
-        // },
-        // {
-        //   title: "祐生研究基金會",
-        //   image: "archilife.png",
-        //   description: "",
-        //   urls: [],
-        // },
-        // {
-        //   title: "COSCUP",
-        //   image: "coscup.png",
-        //   description: "",
-        //   urls: [],
-        // },
+        {
+          title: "五之神",
+          image: "gonokami.png",
+          description: "",
+          urls: [],
+        },
+        {
+          title: "資策會",
+          image: "iii.png",
+          description: "",
+          urls: [],
+        },
+        {
+          title: "祐生研究基金會",
+          image: "archilife.png",
+          description: "",
+          urls: [],
+        },
+        {
+          title: "COSCUP",
+          image: "coscup.png",
+          description: "",
+          urls: [],
+        },
       ],
     },
   ],
