@@ -268,7 +268,8 @@ function SITCON2024Email() {
                   (´・ω・`)
                   <ul className="text-[14px]">
                     <li className="mb-4">
-                      <strong>午餐</strong>：美味的午餐將從上午 11 點開始，於 4F
+                      <strong>午餐</strong>：美味的午餐將從上午 11 點 15
+                      分開始，於 4F
                       國際會議廳（R0）後方兩側的轉角處發放；素食則在 4F
                       北側領取，請各位不要跑錯囉！
                       <br />
