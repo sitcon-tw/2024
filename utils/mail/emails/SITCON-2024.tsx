@@ -302,7 +302,8 @@ function SITCON2024Email() {
               </TitleSection>
               <TitleSection title="遺失物">
                 <Text>
-                  若您在現場遺失物品或拾獲遺失物，請填寫下方表單並前往大會服務台諮詢服務台人員：
+                  若您在現場遺失物品或拾獲遺失物，請填寫下方表單並前往大會服務台諮詢服務台人員：{" "}
+                  <br />
                   我遺失 / 撿到東西了，填寫表單：
                   <a href="https://forms.gle/mEnzUn3oxn9qz4JT6">
                     https://forms.gle/mEnzUn3oxn9qz4JT6
