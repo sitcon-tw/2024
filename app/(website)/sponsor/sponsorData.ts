@@ -137,28 +137,32 @@ export default {
           urls: [],
         },
         {
-          title: "五之神",
+          title: "五之神製作所、麵屋 雞金",
           image: "gonokami.png",
-          description: "",
-          urls: [],
+          description: 
+            "五之神製作所、麵屋雞金 長期受到各位好朋友的照顧，我們非常感激，大家以後繼續支持喔。",
+          urls: "https://www.facebook.com/gonokamitw",
         },
         {
-          title: "資策會",
+          title: "財團法人資訊工業策進會",
           image: "iii.png",
-          description: "",
-          urls: [],
+          description: 
+            "財團法人資訊工業策進會（資策會）以「數位轉型的化育者（Digital Transformation Enabler）」為定位，肩負了「賦能產業轉型」及「健全產業秩序」重責大任。為了重拾「資訊工業策進」的初衷，資策會以「數位經濟」、「軟體技術」、「數位轉型」、「資安產業」等四大主軸推動產業生態系，重要任務包含擔任智庫角色，提供價值倡議、前瞻研發網絡，發展宏觀軟體技術、提供場域實證，推動數位轉型，發展信任治理，完善資訊安全。資策會藉此奠基發展專業第三方服務的能量，建構產業數位生態系，帶領產業轉型共榮，為臺灣產業在數位領域上定義新秩序、開創新局面，並接軌全世界。",
+          urls: "https://www.iii.org.tw",
         },
         {
           title: "祐生研究基金會",
           image: "archilife.png",
-          description: "",
-          urls: [],
+          description: 
+            "祐生研究基金會由推動建築與環境永續發展之研究開始，推動長期的知識累積與人才培養。除了過去建築、環境、生態、健康與資訊社會與文化等面向之碩士論文獎助主題外，本會目前定期舉辦的聯誼會及讀書會，強化祐生成員的知識密度。其後，於 2011 年起，本會持續針對國內開源活動進行贊助，也針對國內獨立遊戲開發者，推動知識與資訊分享聚會，期能幫助國內相關社群之發展。",
+          urls: "https://www.archilife.org/",
         },
         {
-          title: "COSCUP",
+          title: "COSCUP 開源人年會",
           image: "coscup.png",
-          description: "",
-          urls: [],
+          description: 
+            "COSCUP 是由台灣開放原始碼社群聯合推動的研討會，希望藉由每一屆的年度會議，讓全球的 FLOSS 愛好者齊聚一堂。無論您是開放原始碼的開發者、推廣者、使用者、還是想了解軟體的新手，都歡迎您來參加開源人年會。",
+          urls: "https://coscup.org/",
         },
       ],
     },
