@@ -174,6 +174,18 @@ export default {
       description: "",
       url: "https://its.sinica.edu.tw/",
     },
+    {
+      title: "HackMD",
+      image: "hackmd.png",
+      description: "",
+      url: "https://hackmd.io/",
+    },
+    {
+      title: "iCHEF 資廚",
+      image: "ichef.png",
+      description: "",
+      url: "https://www.ichefpos.com/zh-tw",
+    },
   ],
   mediaPartners: [
     // {
