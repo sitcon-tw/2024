@@ -137,7 +137,7 @@ export default {
           urls: [],
         },
         {
-          title: "五之神製作所、麵屋 雞金",
+          title: "五之神製作所、麵屋雞金",
           image: "gonokami.png",
           description:
             "五之神製作所、麵屋雞金 長期受到各位好朋友的照顧，我們非常感激，大家以後繼續支持喔。",
