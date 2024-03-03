@@ -7,6 +7,13 @@ import useMediaQuery from "@/hooks/use-media-query";
 import { IoLocation, IoTime, IoPlay } from "react-icons/io5";
 import Markdown from "react-markdown";
 import { twMerge } from "tailwind-merge";
+import {
+  faQuestionCircle,
+  faPen,
+  faDisplay,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { YouTubeEmbed } from "@next/third-parties/google";
 export default function SessionCard({
   sessionID,
   selectedRoom,
@@ -245,18 +252,31 @@ export default function SessionCard({
                   }
             }
           >
-            <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-xl bg-black/10">
-              <IoPlay className="text-5xl" />
-              <div>即將上線</div>
-            </div>
+            {!session.live && !session.record && (
+              <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-xl bg-black/10">
+                <IoPlay className="text-5xl" />
+                <div>即將上線</div>
+              </div>
+            )}
+            {session.live && (
+              <YouTubeEmbed
+                videoid={new URL(session.live).searchParams.get("v")!}
+              />
+            )}
+            {session.record && (
+              <YouTubeEmbed
+                videoid={new URL(session.record).searchParams.get("v")!}
+              />
+            )}
 
             <div className="flex flex-row gap-2">
               {session.qa && (
                 <Button
                   color="blue"
                   url={session.qa}
-                  className="px-4 py-2 text-base md:text-base"
+                  className="flex items-center gap-2 px-4 py-2 text-base md:text-base"
                 >
+                  <FontAwesomeIcon icon={faQuestionCircle} />
                   即時提問
                 </Button>
               )}
@@ -264,8 +284,9 @@ export default function SessionCard({
                 <Button
                   color="blue"
                   url={session.slide}
-                  className="px-4 py-2 text-base md:text-base"
+                  className="flex items-center gap-2 px-4 py-2 text-base md:text-base"
                 >
+                  <FontAwesomeIcon icon={faDisplay} />
                   簡報連結
                 </Button>
               )}
@@ -273,8 +294,9 @@ export default function SessionCard({
                 <Button
                   color="blue"
                   url={session.co_write}
-                  className="px-4 py-2 text-base md:text-base"
+                  className="flex items-center gap-2 px-4 py-2 text-base md:text-base"
                 >
+                  <FontAwesomeIcon icon={faPen} />
                   共筆連結
                 </Button>
               )}
