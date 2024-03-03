@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import { IoCloseCircle } from "react-icons/io5";
 import { createPortal } from "react-dom";
 import { RemoveScroll } from "react-remove-scroll";
+
+type OnEscapeFunction = () => void;
+
 export default function Dialog({
   children,
   open,
@@ -23,8 +26,12 @@ export default function Dialog({
     return () => setMounted(false);
   }, []);
 
+  let closed = false;
+
   function handleClose() {
     setOpen(false);
+    if (!closed) {
+    closed = true;
     if (isOpenByDefault) {
       history.pushState(
         null,
@@ -35,7 +42,14 @@ export default function Dialog({
     } else {
       history.back();
     }
+    }
   }
+
+  window.addEventListener('keyup', (event: KeyboardEvent) => {
+    if (event.keyCode === 27) {
+      handleClose();
+    }
+  });
 
   return mounted
     ? createPortal(
