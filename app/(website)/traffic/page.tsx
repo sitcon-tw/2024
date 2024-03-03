@@ -15,9 +15,10 @@ function Tab({
   return (
     <button
       className={twMerge(
-        "h-[90px] grow text-xl font-bold transition-all",
-        selected &&
-          "rounded-xl border-2 border-[#F8C57B] bg-[#F8C57B33] shadow-[0px_4px_20px_0px_#F8C57B6E]",
+        "grow rounded-full border-2 border-transparent py-2 text-sm  font-bold sm:text-base md:py-5 md:text-xl",
+        selected
+          ? "border-[#F8C57B] bg-[#F8C57B] text-white shadow-[0px_4px_20px_0px_#F8C57B6E]"
+          : "hover:bg-[#F8C57B]/30 active:hover:bg-[#F8C57B]/60",
       )}
       onClick={onSelected}
     >
@@ -340,17 +341,15 @@ export default function Page() {
   const [tab, setTab] = useState(1);
 
   return (
-    <>
-      <h1 className="mx-8 mb-8 mt-12 text-5xl font-bold xl:mx-[165px] xl:mb-6">
-        交通方式
-      </h1>
+    <div className="container">
+      <h1 className="my-8 text-5xl font-bold xl:mb-6">交通方式</h1>
       <h3 className="text-center text-xl font-bold xl:mb-6">
         中央研究院 人文社會科學館
       </h3>
       <h3 className="mt-3 text-center text-xl font-bold">
         台北市南港區研究院路 2 段 128 號
       </h3>
-      <div className="container my-4">
+      <div className="my-4">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14459.18734000737!2d121.6113732!3d25.0409679!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab46b3aaaaab%3A0x6ad0b8243ddc70ef!2z5Lit5aSu56CU56m26Zmi5Lq65paH56S-5pyD56eR5a246aSo!5e0!3m2!1szh-TW!2stw!4v1705165279899!5m2!1szh-TW!2stw"
           className="h-[400px] w-full md:h-[600px]"
@@ -363,12 +362,12 @@ export default function Page() {
         />
       </div>
 
-      <div className="mb-10 mt-8 flex gap-3 px-3 xl:mx-[165px] xl:mb-[100px]">
+      <div className="mb-10 mt-8 grid grid-cols-3 rounded-full bg-white/40">
         <Tab selected={tab === 0} onSelected={() => setTab(0)}>
           大會接駁車
         </Tab>
         <Tab selected={tab === 1} onSelected={() => setTab(1)}>
-          大眾運輸工具
+          大眾運輸
         </Tab>
         <Tab selected={tab === 2} onSelected={() => setTab(2)}>
           自行開車
@@ -377,6 +376,6 @@ export default function Page() {
       <div className="flex w-full items-center justify-center gap-8 px-5 text-xl xl:text-xl ">
         <TabContent tab={tab} />
       </div>
-    </>
+    </div>
   );
 }
