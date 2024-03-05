@@ -35,6 +35,21 @@ export default function Dialog({
     setOpen(false);
   }
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        handleClose();
+      }
+    };
+  
+    document.addEventListener('keydown', handleKeyDown);
+  
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  });
+  
+
   return mounted
     ? createPortal(
         <div>
@@ -60,9 +75,6 @@ export default function Dialog({
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     ref={closeButtonRef}
-                    onKeyDown={(e) => {
-                      if (e.key === "Escape") handleClose();
-                    }}
                   >
                     <IoCloseCircle className="text-3xl text-[#ffffff]" />
                   </motion.button>
