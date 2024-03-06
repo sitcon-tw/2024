@@ -20,6 +20,7 @@ export default function Page({
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
+      timeZone: "Asia/Taipei",
     });
   }
   const [selectedRoom, setSelectedRoom] = useState("R1");

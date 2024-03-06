@@ -27,7 +27,7 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       locale: "zh_TW",
-      url: "https://sitcon.org/2024/",
+      url: `https://sitcon.org/2024/agenda/${session.id}`,
       title,
       description,
       siteName: "SITCON 2024",

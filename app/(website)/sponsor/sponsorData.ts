@@ -96,13 +96,13 @@ export default {
             "Dcard 是全台最大匿名社群， 從台灣走向世界，每月不重複訪客高達 2,200 萬，發展出廣告、電商、跨國市場等領域，持續探索新型商業模式，邁向世界級網路公司前進。",
           url: "https://join.dcard.today/",
         },
-        //  {
-        //    title: "Panasonic",
-        //    image: "panasonic.png",
-        //    description:
-        //      "Panasonic 致力於通過開發多元化的物聯網（IoT）產品，來讓人們的生活變得更美好。我們非常關注產品網路安全和客戶隱私，因此在日本總部不僅設立了 Product Security Center (PSC) 和 Product Security Incident Response Team (PSIRT)，還在台灣成立了 Panasonic Cyber Security Lab (PCSL)。PSC 和 PCSL 與全球各個業務集團合作，執行了需多的產品安全專案。這些專案包括對 IoT 產品網路威脅的深入研究、滲透測試、產品網路安全的事件響應，以及培養集團的網路安全人才。我們的目標是不斷增強和保護 Panasonic 產品的網路安全，確保我們的客戶獲得方便、安全的體驗。我們熱切歡迎有前瞻性的企業和優秀的個人加入我們的旅程，一同提升產品安全。如果您有合作意願，請隨時聯絡我們，Email 地址是 panasonic.pcsl@gmail.com。讓我們共同創建一個更安全、更緊密聯繫的世界！",
-        //    url: "https://sitcon.org",
-        //  },
+        {
+          title: "Panasonic",
+          image: "panasonic.png",
+          description:
+            "Panasonic 致力於通過開發多元化的物聯網（IoT）產品，來讓人們的生活變得更美好。我們非常關注產品網路安全和客戶隱私，因此在日本總部不僅設立了 Product Security Center (PSC) 和 Product Security Incident Response Team (PSIRT)，還在台灣成立了 Panasonic Cyber Security Lab (PCSL)。PSC 和 PCSL 與全球各個業務集團合作，執行了需多的產品安全專案。這些專案包括對 IoT 產品網路威脅的深入研究、滲透測試、產品網路安全的事件響應，以及培養集團的網路安全人才。我們的目標是不斷增強和保護 Panasonic 產品的網路安全，確保我們的客戶獲得方便、安全的體驗。我們熱切歡迎有前瞻性的企業和優秀的個人加入我們的旅程，一同提升產品安全。如果您有合作意願，請隨時聯絡我們，Email 地址是 panasonic.pcsl@gmail.com。讓我們共同創建一個更安全、更緊密聯繫的世界！",
+          urls: [],
+        },
         {
           title: "趨勢科技",
           image: "trendmicro.png",
@@ -132,33 +132,38 @@ export default {
         {
           title: "合勤基金會",
           image: "zyxel.png",
-          description: "",
+          description:
+            "合勤基金會以發揚合勤投控及合勤科技、兆勤科技、盟創科技等子公司之共同信念：力行社會公益及推動創新創業為出發點，並以鼓勵創新、支持創業、培育優秀人才與善盡社會責任四大面向為主軸，推展相關活動，期望成為火種，拋磚引玉的展現回饋社會的企業精神。",
           urls: [],
         },
-        // {
-        //   title: "五之神",
-        //   image: "",
-        //   description: "",
-        //   urls: [],
-        // },
-        // {
-        //   title: "資策會",
-        //   image: "",
-        //   description: "",
-        //   urls: [],
-        // },
-        // {
-        //   title: "祐生研究基金會",
-        //   image: "archilife.png",
-        //   description: "",
-        //   urls: [],
-        // },
-        // {
-        //   title: "COSCUP",
-        //   image: "coscup.png",
-        //   description: "",
-        //   urls: [],
-        // },
+        {
+          title: "五之神製作所、麵屋雞金",
+          image: "gonokami.png",
+          description:
+            "五之神製作所、麵屋雞金 長期受到各位好朋友的照顧，我們非常感激，大家以後繼續支持喔。",
+          url: "https://www.facebook.com/gonokamitw",
+        },
+        {
+          title: "財團法人資訊工業策進會",
+          image: "iii.png",
+          description:
+            "財團法人資訊工業策進會（資策會）以「數位轉型的化育者（Digital Transformation Enabler）」為定位，肩負了「賦能產業轉型」及「健全產業秩序」重責大任。為了重拾「資訊工業策進」的初衷，資策會以「數位經濟」、「軟體技術」、「數位轉型」、「資安產業」等四大主軸推動產業生態系，重要任務包含擔任智庫角色，提供價值倡議、前瞻研發網絡，發展宏觀軟體技術、提供場域實證，推動數位轉型，發展信任治理，完善資訊安全。資策會藉此奠基發展專業第三方服務的能量，建構產業數位生態系，帶領產業轉型共榮，為臺灣產業在數位領域上定義新秩序、開創新局面，並接軌全世界。",
+          url: "https://www.iii.org.tw",
+        },
+        {
+          title: "祐生研究基金會",
+          image: "archilife.png",
+          description:
+            "祐生研究基金會長期推動建築與環境領域的知識密度提升與人才培養，亦贊助國內開源論壇及獨立遊戲開發者之資訊分享聚會，期能促進國內相關社群之發展。",
+          url: "https://www.archilife.org/",
+        },
+        {
+          title: "COSCUP 開源人年會",
+          image: "coscup.png",
+          description:
+            "COSCUP 是由台灣開放原始碼社群聯合推動的研討會，希望藉由每一屆的年度會議，讓全球的 FLOSS 愛好者齊聚一堂。無論您是開放原始碼的開發者、推廣者、使用者、還是想了解軟體的新手，都歡迎您來參加開源人年會。",
+          url: "https://coscup.org/",
+        },
       ],
     },
   ],
@@ -168,6 +173,18 @@ export default {
       image: "its.png",
       description: "",
       url: "https://its.sinica.edu.tw/",
+    },
+    {
+      title: "HackMD",
+      image: "hackmd.png",
+      description: "",
+      url: "https://hackmd.io/",
+    },
+    {
+      title: "iCHEF 資廚",
+      image: "ichef.png",
+      description: "",
+      url: "https://www.ichefpos.com/zh-tw",
     },
   ],
   mediaPartners: [

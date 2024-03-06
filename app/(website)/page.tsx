@@ -84,7 +84,7 @@ function Heading({ chinese, english }: { chinese: string; english: string }) {
 
 export default function Page() {
   return (
-    <div className="overflow-hidden">
+    <div className="mx-auto max-w-[1920px] overflow-hidden">
       {/* title */}
       {/* TODO: style this section */}
       <div className="relative z-[5] min-h-[460px]">
@@ -158,14 +158,14 @@ export default function Page() {
           className="absolute left-0 top-0 h-[600px] w-full -translate-y-6 bg-[#F8F3E8]"
           style={{
             maskImage:
-              "linear-gradient(-15deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 50%)",
+              "linear-gradient(-12deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 50%)",
           }}
         />
         <div
           className="absolute bottom-0 left-0 h-[600px] w-full bg-[#F8F3E8]"
           style={{
             maskImage:
-              "linear-gradient(-15deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 60%)",
+              "linear-gradient(-12deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 60%)",
           }}
         />
         <div className="relative pt-40 md:pb-[200px]">

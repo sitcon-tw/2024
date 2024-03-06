@@ -69,7 +69,7 @@ function H2({ children }: { children: React.ReactNode }) {
 }
 
 function SITCON2024Email() {
-  const previewText = `Hi {{ nickname }}，很高興能在 SITCON 2024 看到您！年會即將在下週六（03/09）揭開序幕，若您臨時有事無法來到現場一起共襄盛舉，請至官方換票樓將您的票卷釋出，讓其他有興趣參與但沒有票的朋友也能有機會一起參加活動。`;
+  const previewText = `Hi {{ nickname }}，很高興能在 SITCON 2024 看到您！年會即將在下週六（03/09）揭開序幕，若您臨時有事無法來到現場一起共襄盛舉，請至官方換票樓將您的票券釋出，讓其他有興趣參與但沒有票的朋友也能有機會一起參加活動。`;
 
   return (
     <Html lang="zh-TW">
@@ -102,7 +102,7 @@ function SITCON2024Email() {
                 <a href="https://www.facebook.com/events/350818157889474/permalink/351378694500087/">
                   官方換票樓
                 </a>
-                將您的票卷釋出，讓其他有興趣參與但沒有票的朋友也能有機會一起參加活動。
+                將您的票券釋出，讓其他有興趣參與但沒有票的朋友也能有機會一起參加活動。
                 <br />
                 <br />
                 我們整理了一些實用的資訊，還請花 5 分鐘詳細閱讀：
@@ -268,7 +268,8 @@ function SITCON2024Email() {
                   (´・ω・`)
                   <ul className="text-[14px]">
                     <li className="mb-4">
-                      <strong>午餐</strong>：美味的午餐將從上午 11 點開始，於 4F
+                      <strong>午餐</strong>：美味的午餐將從上午 11 點 15
+                      分開始，於 4F
                       國際會議廳（R0）後方兩側的轉角處發放；素食則在 4F
                       北側領取，請各位不要跑錯囉！
                       <br />
@@ -301,7 +302,8 @@ function SITCON2024Email() {
               </TitleSection>
               <TitleSection title="遺失物">
                 <Text>
-                  若您在現場遺失物品或拾獲遺失物，請填寫下方表單並前往大會服務台諮詢服務台人員：
+                  若您在現場遺失物品或拾獲遺失物，請填寫下方表單並前往大會服務台諮詢服務台人員：{" "}
+                  <br />
                   我遺失 / 撿到東西了，填寫表單：
                   <a href="https://forms.gle/mEnzUn3oxn9qz4JT6">
                     https://forms.gle/mEnzUn3oxn9qz4JT6
