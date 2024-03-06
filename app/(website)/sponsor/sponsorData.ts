@@ -188,6 +188,20 @@ export default {
     },
   ],
   mediaPartners: [
+    {
+      title: "Linzin 阿哲",
+      image: "linzin.png",
+      description:
+        "喜歡各種科技事物，更喜歡分享自己生活的小小 YT 創作者",
+      url: "https://www.youtube.com/@linzin",
+    },
+    {
+      title: "在地上滾的工程師 Nic",
+      image: "nic.png",
+      description:
+        "Bito 幣託交易所技術總監\n不服輸的 ENFP\n生活跟挑戰都要兼具\n於是就開始了上班軟體開發，下班拍攝影片的人生",
+      url: "https://www.youtube.com/@niclin",
+    },
     // {
     //   title: "餅乾樂園",
     //   image: "cookie1.jpg",
