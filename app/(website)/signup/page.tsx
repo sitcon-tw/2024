@@ -191,7 +191,7 @@ export default function Page() {
       <div className="grid gap-12 gap-y-5 md:grid-cols-2 grid-cols-1">
         <SouvenirCard image="coasters.jpeg" description={[
           "杯墊價格：120 元／個（以年會當天現場實際價格為準）",
-          "材質：歸藻土",
+          "材質：珪藻土",
           "用途：保護桌面、防滑，並裝飾環境。",
         ]} />
         <SouvenirCard image="cup.jpeg" description={[
