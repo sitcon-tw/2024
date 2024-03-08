@@ -4,13 +4,17 @@ import SessionDialog from "@/components/website/SessionDialog";
 import sessions from "@/public/sessions.json";
 import Button from "./button";
 import useMediaQuery from "@/hooks/use-media-query";
-import { IoLocation, IoTime, IoPlay } from "react-icons/io5";
+import { IoLocation, IoPlay, IoTime } from "react-icons/io5";
 import Markdown from "react-markdown";
+import { CiStreamOn } from "react-icons/ci";
+import { FaVideo } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 import {
-  faQuestionCircle,
-  faPen,
   faDisplay,
+  faPen,
+  faQuestionCircle,
+  faSignal,
+  faStream,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { YouTubeEmbed } from "@next/third-parties/google";
@@ -164,8 +168,7 @@ export default function SessionCard({
     }
   }
 
-  const hide =
-    isMobile &&
+  const hide = isMobile &&
     session?.room != selectedRoom &&
     !(broadcast && broadcast.includes(selectedRoom));
 
@@ -196,18 +199,20 @@ export default function SessionCard({
             >
               {session!.zh.title}
             </p>
-            {session!.speakers.length ? (
-              <p
-                className={`text-[#385AAC] ${sessionTextAlign()} ${sessionSpeakerFontSize()}`}
-              >
-                {session!.speakers
-                  .map(
-                    (speaker) =>
-                      sessions.speakers.find((x) => x.id == speaker)?.zh.name,
-                  )
-                  .join(" / ")}
-              </p>
-            ) : null}
+            {session!.speakers.length
+              ? (
+                <p
+                  className={`text-[#385AAC] ${sessionTextAlign()} ${sessionSpeakerFontSize()}`}
+                >
+                  {session!.speakers
+                    .map(
+                      (speaker) =>
+                        sessions.speakers.find((x) => x.id == speaker)?.zh.name,
+                    )
+                    .join(" / ")}
+                </p>
+              )
+              : null}
           </div>
           <div className={`flex flex-wrap gap-1 ${sessionTagsAlign()}`}>
             {session!.tags
@@ -232,25 +237,17 @@ export default function SessionCard({
       >
         <div
           className="grid gap-7 text-white"
-          style={
-            isMobile
-              ? {}
-              : {
-                  gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
-                  gridTemplateRows: "auto".repeat(session!.speakers.length + 1),
-                }
-          }
+          style={isMobile ? {} : {
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
+            gridTemplateRows: "auto".repeat(session!.speakers.length + 1),
+          }}
         >
           <div
             className="flex flex-col gap-3"
-            style={
-              !isMobile
-                ? {}
-                : {
-                    gridColumn: "1",
-                    gridRow: "2",
-                  }
-            }
+            style={!isMobile ? {} : {
+              gridColumn: "1",
+              gridRow: "2",
+            }}
           >
             {!session.live && !session.record && (
               <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-xl bg-black/10">
@@ -304,8 +301,9 @@ export default function SessionCard({
                 <Button
                   color="blue"
                   url={session.live}
-                  className="px-4 py-2 text-base md:text-base"
+                  className="flex items-center gap-2 px-4 py-2 text-base md:text-base"
                 >
+                  <CiStreamOn />
                   直播連結
                 </Button>
               )}
@@ -313,8 +311,9 @@ export default function SessionCard({
                 <Button
                   color="blue"
                   url={session.record}
-                  className="px-4 py-2 text-base md:text-base"
+                  className="flex items-center gap-2 px-4 py-2 text-base md:text-base"
                 >
+                  <FaVideo />
                   議程錄影
                 </Button>
               )}
@@ -322,21 +321,15 @@ export default function SessionCard({
           </div>
           <div
             className="flex flex-col gap-2"
-            style={
-              !isMobile
-                ? {}
-                : {
-                    gridColumn: "1",
-                    gridRow: "1",
-                  }
-            }
+            style={!isMobile ? {} : {
+              gridColumn: "1",
+              gridRow: "1",
+            }}
           >
             <div className="flex gap-3">
               <p className="text-xl font-bold">
-                {
-                  sessions.session_types.find((x) => x.id == session!.type)?.zh
-                    .name
-                }
+                {sessions.session_types.find((x) => x.id == session!.type)?.zh
+                  .name}
               </p>
               <div className="flex gap-2">
                 {session!.tags.map((tag) => (
@@ -363,22 +356,26 @@ export default function SessionCard({
                 <p>{session!.room}</p>
               </div>
             </div>
-            {targetAudience ? (
-              <div>
-                <p className="font-bold">目標受眾：</p>
-                <Markdown className="prose leading-7 text-white max-md:text-sm">
-                  {targetAudience}
-                </Markdown>
-              </div>
-            ) : null}
-            {priorKnowledge ? (
-              <div>
-                <p className="font-bold">先備知識：</p>
-                <Markdown className="prose leading-7 text-white max-md:text-sm">
-                  {priorKnowledge}
-                </Markdown>
-              </div>
-            ) : null}
+            {targetAudience
+              ? (
+                <div>
+                  <p className="font-bold">目標受眾：</p>
+                  <Markdown className="prose leading-7 text-white max-md:text-sm">
+                    {targetAudience}
+                  </Markdown>
+                </div>
+              )
+              : null}
+            {priorKnowledge
+              ? (
+                <div>
+                  <p className="font-bold">先備知識：</p>
+                  <Markdown className="prose leading-7 text-white max-md:text-sm">
+                    {priorKnowledge}
+                  </Markdown>
+                </div>
+              )
+              : null}
             <p className="font-bold">議程介紹：</p>
             <Markdown className="prose leading-7 text-white max-md:text-sm">
               {description}
@@ -402,13 +399,11 @@ export default function SessionCard({
             <div
               key={speaker}
               className="flex flex-col gap-3"
-              style={
-                isMobile
-                  ? {
-                      gridRow: 3 + idx * 2,
-                    }
-                  : {}
-              }
+              style={isMobile
+                ? {
+                  gridRow: 3 + idx * 2,
+                }
+                : {}}
             >
               <div>
                 <p className="text-2xl font-bold">
