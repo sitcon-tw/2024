@@ -15,6 +15,9 @@ await Promise.all(
       .filter((x) => x)
       .join("、");
     if (session.zh.description == "") return;
+    const type = sessions.session_types
+      .map((x) => (x.id == session.type ? x.zh.name : ""))
+      .filter((x) => x)[0];
 
     const svg = await satori(
       {
@@ -33,7 +36,7 @@ await Promise.all(
             {
               type: "div",
               props: {
-                children: "Presentation",
+                children: type,
                 style: {
                   fontSize: 32,
                 },
@@ -81,7 +84,8 @@ await Promise.all(
                       height: 128,
                       src: `data:image/png;base64,${Buffer.from(
                         logoImage,
-                      ).toString("base64")}`,
+                      ).toString("base64")
+                        }`,
                     },
                   },
                 ],
