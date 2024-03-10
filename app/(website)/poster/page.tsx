@@ -12,8 +12,9 @@ export default function Page() {
       <div className="flex flex-col gap-4 md:gap-8">
         {posterData.map((poster, index) => (
           <div
-            className="relative items-center overflow-hidden rounded-2xl bg-white p-4 shadow-md"
+            className="relative scroll-m-[100px] items-center overflow-hidden rounded-2xl bg-white p-4 shadow-md"
             key={index}
+            id={`poster-${index}`}
           >
             <div className="flex flex-col lg:flex-row">
               <div className="w-full shrink-0 lg:w-[400px]">

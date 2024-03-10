@@ -1,6 +1,7 @@
 "use client";
 import EventSection from "@/components/website/eventSection";
 import TableOfContent from "@/components/TableOfContent";
+import Link from "next/link";
 export default function Page() {
   return (
     <TableOfContent>
@@ -64,6 +65,14 @@ export default function Page() {
           "中午 11:35 左右開始，各海報的講者將會出現在海報旁邊和大家交流，可以對感興趣的海報進行提問，順便認識厲害的講者們。熱愛探索新知的你，千萬不能錯過這場學術派對的行列！",
         ]}
       />
+      <div className="-mt-16 mb-16 flex justify-end gap-4">
+        <Link
+          href="/poster/"
+          className="flex items-center justify-center gap-2 break-keep rounded-full bg-[#385AAC] p-4 py-1.5 text-xl font-bold text-[#F8F3E8] shadow-[0px_6px_6px_0px_#5D7DDB4D] hover:bg-[#304e96] active:bg-[#263d75] md:text-lg"
+        >
+          查看海報
+        </Link>
+      </div>
       <EventSection
         title="咖啡廳"
         backgroundImage="coffee.svg"
