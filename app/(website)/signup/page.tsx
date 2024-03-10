@@ -1,7 +1,5 @@
 "use client";
-import { CiGift } from "react-icons/ci";
 import Button from "@/components/website/button";
-import TicketSection from "@/components/website/ticketSection";
 import TableOfContent from "@/components/TableOfContent";
 import SouvenirCard from "@/components/website/SouvenirCard";
 
@@ -188,21 +186,30 @@ export default function Page() {
       <h1 className="mb-4 text-2xl font-bold md:text-4xl" id="souvenir-info">
         紀念品資訊
       </h1>
-      <div className="grid gap-12 gap-y-5 md:grid-cols-2 grid-cols-1">
-        <SouvenirCard image="coasters.jpeg" description={[
-          "杯墊價格：120 元／個（以年會當天現場實際價格為準）",
-          "材質：珪藻土",
-          "用途：保護桌面、防滑，並裝飾環境。",
-        ]} />
-        <SouvenirCard image="cup.jpeg" description={[
-          "啤酒杯價格：300 元／個（以年會當天現場實際價格為準）",
-          "材質：玻璃，圖案會用轉印的形式印製於杯上",
-          "用途：提升喝酒時的視覺享受和風味體驗！",
-        ]} />
-        <SouvenirCard image="t-shirt.png" description={[
-          "紀念Ｔ價格：400 元／件（以年會當天現場實際價格為準）",
-          "用途：永久保存 SITCON 2024 年會的特別時刻，為這段難忘回憶增添時尚風采！",
-        ]} />
+      <div className="grid grid-cols-1 gap-12 gap-y-5 md:grid-cols-2">
+        <SouvenirCard
+          image="coasters.jpeg"
+          description={[
+            "杯墊價格：120 元／個（以年會當天現場實際價格為準）",
+            "材質：珪藻土",
+            "用途：保護桌面、防滑，並裝飾環境。",
+          ]}
+        />
+        <SouvenirCard
+          image="cup.jpeg"
+          description={[
+            "啤酒杯價格：300 元／個（以年會當天現場實際價格為準）",
+            "材質：玻璃，圖案會用轉印的形式印製於杯上",
+            "用途：提升喝酒時的視覺享受和風味體驗！",
+          ]}
+        />
+        <SouvenirCard
+          image="t-shirt.png"
+          description={[
+            "紀念Ｔ價格：400 元／件（以年會當天現場實際價格為準）",
+            "用途：永久保存 SITCON 2024 年會的特別時刻，為這段難忘回憶增添時尚風采！",
+          ]}
+        />
       </div>
     </TableOfContent>
   );
