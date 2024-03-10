@@ -48,7 +48,7 @@ GitHub: [https://github.com/jwliao1209](https://github.com/jwliao1209)`,
     description:
       "隨著 ChatGPT 等語言模型的使用快速成長，可以預期未來網路上將充斥著大型自然語言模型 (Large Language Models，簡稱 LLM) 直接生成的文章。我們不禁好奇，這些 LLM 會不會偏好自己生成的文章呢？更明確地說，給定 LLM 數篇可用以回答問題的參考文章時，它們是否更傾向以自己生成的內容作為回答依據，造成 LLM 的回答不夠中立，甚至被自己的文章誤導、產生幻覺呢？在這場演講中，將以嚴謹的實驗討論 ChatGPT 與 Llama 2 這兩個 LLM 對「人類撰寫的文章」、「自己生成的文章」、「其他 LLM 生成的文章」分別的偏好程度。",
     tags: [`NLP`, `LLM`, `Retrieval Augmented Generation`],
-    file: "摸透語言模型的習性 LLM 會偏袒什麼樣的文章?.pdf",
+    file: "摸透語言模型的習性 LLM 會偏袒什麼樣的文章.pdf",
     image: "摸透語言模型的習性 LLM 會偏袒什麼樣的文章.webp",
     avatars: ["摸透語言模型的習性 LLM 會偏袒什麼樣的文章_1.webp"],
   },

@@ -15,6 +15,10 @@ const NavLinks = [
     href: "/agenda/",
   },
   {
+    name: "靜態海報展",
+    href: "/poster/",
+  },
+  {
     name: "會場地圖",
     href: "/venue/",
   },
@@ -46,7 +50,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="group relative px-2 py-1 font-rubik text-lg font-bold"
+      className="group relative px-2 py-1 font-rubik text-lg font-bold tracking-tighter"
     >
       {children}
       <AnimatePresence>
