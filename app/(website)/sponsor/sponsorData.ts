@@ -202,6 +202,13 @@ export default {
         "Bito 幣託交易所技術總監\n不服輸的 ENFP\n生活跟挑戰都要兼具\n於是就開始了上班軟體開發，下班拍攝影片的人生",
       url: "https://www.youtube.com/@niclin",
     },
+    {
+      title: "蘋果仁",
+      image: "applealmond.png",
+      description:
+        "",
+      url: "https://applealmond.com/",
+    },
     // {
     //   title: "餅乾樂園",
     //   image: "cookie1.jpg",
