@@ -168,7 +168,8 @@ export default function SessionCard({
     }
   }
 
-  const hide = isMobile &&
+  const hide =
+    isMobile &&
     session?.room != selectedRoom &&
     !(broadcast && broadcast.includes(selectedRoom));
 
@@ -199,20 +200,18 @@ export default function SessionCard({
             >
               {session!.zh.title}
             </p>
-            {session!.speakers.length
-              ? (
-                <p
-                  className={`text-[#385AAC] ${sessionTextAlign()} ${sessionSpeakerFontSize()}`}
-                >
-                  {session!.speakers
-                    .map(
-                      (speaker) =>
-                        sessions.speakers.find((x) => x.id == speaker)?.zh.name,
-                    )
-                    .join(" / ")}
-                </p>
-              )
-              : null}
+            {session!.speakers.length ? (
+              <p
+                className={`text-[#385AAC] ${sessionTextAlign()} ${sessionSpeakerFontSize()}`}
+              >
+                {session!.speakers
+                  .map(
+                    (speaker) =>
+                      sessions.speakers.find((x) => x.id == speaker)?.zh.name,
+                  )
+                  .join(" / ")}
+              </p>
+            ) : null}
           </div>
           <div className={`flex flex-wrap gap-1 ${sessionTagsAlign()}`}>
             {session!.tags
@@ -237,34 +236,43 @@ export default function SessionCard({
       >
         <div
           className="grid gap-7 text-white"
-          style={isMobile ? {} : {
-            gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
-            gridTemplateRows: "auto".repeat(session!.speakers.length + 1),
-          }}
+          style={
+            isMobile
+              ? {}
+              : {
+                gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
+                gridTemplateRows: "auto".repeat(session!.speakers.length + 1),
+              }
+          }
         >
           <div
             className="flex flex-col gap-3"
-            style={!isMobile ? {} : {
-              gridColumn: "1",
-              gridRow: "2",
-            }}
+            style={
+              !isMobile
+                ? {}
+                : {
+                  gridColumn: "1",
+                  gridRow: "2",
+                }
+            }
           >
-            {!session.live && !session.record && (
-              <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-xl bg-black/10">
-                <IoPlay className="text-5xl" />
-                <div>即將上線</div>
-              </div>
-            )}
-            {session.live && (
-              <YouTubeEmbed
-                videoid={new URL(session.live).searchParams.get("v")!}
-              />
-            )}
-            {session.record && (
-              <YouTubeEmbed
-                videoid={new URL(session.record).searchParams.get("v")!}
-              />
-            )}
+            {/* 製播組還在整理影片，等弄好再放上來 by SimbaFs */}
+            {/* {!session.live && !session.record && ( */}
+            <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-xl bg-black/10">
+              <IoPlay className="text-5xl" />
+              <div>即將上線</div>
+            </div>
+            {/* )} */}
+            {/* {session.live && ( */}
+            {/*   <YouTubeEmbed */}
+            {/*     videoid={new URL(session.live).searchParams.get("v")!} */}
+            {/*   /> */}
+            {/* )} */}
+            {/* {session.record && ( */}
+            {/*   <YouTubeEmbed */}
+            {/*     videoid={new URL(session.record).searchParams.get("v")!} */}
+            {/*   /> */}
+            {/* )} */}
 
             <div className="flex flex-row gap-2">
               {session.qa && (
@@ -297,39 +305,45 @@ export default function SessionCard({
                   共筆連結
                 </Button>
               )}
-              {session.live && (
-                <Button
-                  color="blue"
-                  url={session.live}
-                  className="flex items-center gap-2 px-4 py-2 text-base md:text-base"
-                >
-                  <CiStreamOn />
-                  直播連結
-                </Button>
-              )}
-              {session.record && (
-                <Button
-                  color="blue"
-                  url={session.record}
-                  className="flex items-center gap-2 px-4 py-2 text-base md:text-base"
-                >
-                  <FaVideo />
-                  議程錄影
-                </Button>
-              )}
+              {/* {session.live && ( */}
+              {/*   <Button */}
+              {/*     color="blue" */}
+              {/*     url={session.live} */}
+              {/*     className="flex items-center gap-2 px-4 py-2 text-base md:text-base" */}
+              {/*   > */}
+              {/*     <CiStreamOn /> */}
+              {/*     直播連結 */}
+              {/*   </Button> */}
+              {/* )} */}
+              {/* {session.record && ( */}
+              {/*   <Button */}
+              {/*     color="blue" */}
+              {/*     url={session.record} */}
+              {/*     className="flex items-center gap-2 px-4 py-2 text-base md:text-base" */}
+              {/*   > */}
+              {/*     <FaVideo /> */}
+              {/*     議程錄影 */}
+              {/*   </Button> */}
+              {/* )} */}
             </div>
           </div>
           <div
             className="flex flex-col gap-2"
-            style={!isMobile ? {} : {
-              gridColumn: "1",
-              gridRow: "1",
-            }}
+            style={
+              !isMobile
+                ? {}
+                : {
+                  gridColumn: "1",
+                  gridRow: "1",
+                }
+            }
           >
             <div className="flex gap-3">
               <p className="text-xl font-bold">
-                {sessions.session_types.find((x) => x.id == session!.type)?.zh
-                  .name}
+                {
+                  sessions.session_types.find((x) => x.id == session!.type)?.zh
+                    .name
+                }
               </p>
               <div className="flex gap-2">
                 {session!.tags.map((tag) => (
@@ -356,26 +370,22 @@ export default function SessionCard({
                 <p>{session!.room}</p>
               </div>
             </div>
-            {targetAudience
-              ? (
-                <div>
-                  <p className="font-bold">目標受眾：</p>
-                  <Markdown className="prose leading-7 text-white max-md:text-sm">
-                    {targetAudience}
-                  </Markdown>
-                </div>
-              )
-              : null}
-            {priorKnowledge
-              ? (
-                <div>
-                  <p className="font-bold">先備知識：</p>
-                  <Markdown className="prose leading-7 text-white max-md:text-sm">
-                    {priorKnowledge}
-                  </Markdown>
-                </div>
-              )
-              : null}
+            {targetAudience ? (
+              <div>
+                <p className="font-bold">目標受眾：</p>
+                <Markdown className="prose leading-7 text-white max-md:text-sm">
+                  {targetAudience}
+                </Markdown>
+              </div>
+            ) : null}
+            {priorKnowledge ? (
+              <div>
+                <p className="font-bold">先備知識：</p>
+                <Markdown className="prose leading-7 text-white max-md:text-sm">
+                  {priorKnowledge}
+                </Markdown>
+              </div>
+            ) : null}
             <p className="font-bold">議程介紹：</p>
             <Markdown className="prose leading-7 text-white max-md:text-sm">
               {description}
@@ -399,11 +409,13 @@ export default function SessionCard({
             <div
               key={speaker}
               className="flex flex-col gap-3"
-              style={isMobile
-                ? {
-                  gridRow: 3 + idx * 2,
-                }
-                : {}}
+              style={
+                isMobile
+                  ? {
+                    gridRow: 3 + idx * 2,
+                  }
+                  : {}
+              }
             >
               <div>
                 <p className="text-2xl font-bold">
