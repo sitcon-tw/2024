@@ -285,7 +285,7 @@ export default function Page() {
           <div className="mt-4 flex min-h-[160px] flex-wrap justify-center gap-8">
             <Button
               color="blue"
-              url="https://docs.google.com/forms/d/e/1FAIpQLSfZHHumwRKY9UzBpMUD7MWzimnOLvm-cPu4noIzyoWPHbaaHA/viewform"
+              url="https://forms.gle/pAyR1ztX587L85Wm7"
             >
               預約跳坑表單
             </Button>
