@@ -256,23 +256,22 @@ export default function SessionCard({
                 }
             }
           >
-            {/* 製播組還在整理影片，等弄好再放上來 by SimbaFs */}
             {/* {!session.live && !session.record && ( */}
-            <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-xl bg-black/10">
-              <IoPlay className="text-5xl" />
-              <div>即將上線</div>
-            </div>
+            {/* <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-xl bg-black/10"> */}
+            {/*   <IoPlay className="text-5xl" /> */}
+            {/*   <div>即將上線</div> */}
+            {/* </div> */}
             {/* )} */}
             {/* {session.live && ( */}
             {/*   <YouTubeEmbed */}
             {/*     videoid={new URL(session.live).searchParams.get("v")!} */}
             {/*   /> */}
             {/* )} */}
-            {/* {session.record && ( */}
-            {/*   <YouTubeEmbed */}
-            {/*     videoid={new URL(session.record).searchParams.get("v")!} */}
-            {/*   /> */}
-            {/* )} */}
+            {session.record && (
+              <YouTubeEmbed
+                videoid={session.record}
+              />
+            )}
 
             <div className="flex flex-row gap-2">
               {session.qa && (
