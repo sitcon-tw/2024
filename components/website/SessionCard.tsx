@@ -269,7 +269,7 @@ export default function SessionCard({
             {/* )} */}
             {session.record && (
               <YouTubeEmbed
-                videoid={session.record}
+                videoid={session.record.replace("https://youtu.be/", "")}
               />
             )}
 
