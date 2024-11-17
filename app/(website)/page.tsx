@@ -230,7 +230,7 @@ export default function Page() {
             className="absolute right-24 top-32 w-[30px] rotate-[-32.731deg] opacity-20 md:right-[40rem] md:top-48"
           />
           <p className="text-[18px]">
-            學生計算機年會（Students’ Information Technology Conference）自 2013
+            學生計算機年會（Students’ Information Technology Conference）自 2012
             年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，希望引領更多學子踏入資訊的殿堂，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發，達到「學以致用、教學相長」的實際展現。
           </p>
         </div>
