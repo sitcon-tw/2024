@@ -1,9 +1,9 @@
 export const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Event",
-  name: "SITCON 2025",
-  url: "https://sitcon.org/2025/",
-  startDate: "2025-03-08T08:30+08:00",
+  name: "SITCON 2024",
+  url: "https://sitcon.org/2024/",
+  startDate: "2024-03-09T08:30+08:00",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   location: {
     "@type": "EventVenue",
@@ -26,10 +26,10 @@ export const jsonLd = {
       "https://flickr.com/photos/sitcon",
     ],
   },
-  image: ["https://sitcon.org/2025/og.jpg"],
+  image: ["https://sitcon.org/2024/og.jpg"],
   description:
     "學生計算機年會（Students’ Information Technology Conference）自 2012 年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，鼓勵學生們成為實踐者，貢獻程式碼、打造並部署服務、透過實際行動推動專案，最後將這些結晶分享出去，讓更多人能關注你認為重要的議題，打造更緊密的社群。",
-  endDate: "2025-03-08T18:00+08:00",
+  endDate: "2024-03-09T18:00+08:00",
   performer: {
     "@type": "Organization",
     url: "https://sitcon.org",
