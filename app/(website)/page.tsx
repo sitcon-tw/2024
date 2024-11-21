@@ -1,6 +1,7 @@
 import Button from "@/components/website/button";
 import Readmore from "./Readmore";
 import { jsonLd } from "./jsonLd";
+import { Metadata } from "next";
 function Heading({ chinese, english }: { chinese: string; english: string }) {
   return (
     <>
@@ -13,7 +14,9 @@ function Heading({ chinese, english }: { chinese: string; english: string }) {
     </>
   );
 }
-
+export const metadata: Metadata = {
+  alternates: { canonical: "https://sitcon.org/2024/" },
+};
 export default function Page() {
   return (
     <div className="mx-auto max-w-[1920px] overflow-hidden">
