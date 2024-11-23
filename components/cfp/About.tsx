@@ -83,7 +83,7 @@ export default function About() {
             <h1 className="text-4xl font-bold mb-4">關於 SITCON</h1>
             <div>
               學生計算機年會（Students’ Information Technology Conference）自
-              2013
+              2012
               年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，希望引領更多學子踏入資訊的殿堂，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發，達到「學以致用、教學相長」的實際展現。
             </div>
             <h1 className="text-4xl font-bold mb-4 mt-16">參與討論</h1>
