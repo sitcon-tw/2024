@@ -90,16 +90,6 @@ export default function Nav() {
           layoutRoot
           layout
         >
-          <motion.div
-            className="w-full bg-[#FFCA73] text-[#462002] p-1 font-bold text-center overflow-hidden flex justify-center items-center gap-4"
-            animate={{ height: 40, opacity: 1 }}
-            transition={{ duration: 0.5,
-              delay: 2,
-             }}
-            initial={{ height: 0, opacity: 0 }}
-          >
-            SITCON 2025 熱烈徵稿中！<Link target="_blank" href="https://sitcon.org/2025/cfp/" className="underline">查看投稿資訊</Link>
-          </motion.div>
           <div className="container flex items-center justify-between py-6">
             <Link
               href="/"
